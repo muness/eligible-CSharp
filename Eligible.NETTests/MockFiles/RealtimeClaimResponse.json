@@ -1,0 +1,159 @@
+﻿{
+  "id": "BHUYT876IKOIJU",
+  "created_at": "2009-05-13T14:54:40",
+  "status_code": "adjudicated",
+  "status_label": "Claim has been adjudicated successfully.",
+  "acknowledgements": [],
+  "report": {
+    "reference_id": "A837PHM01",
+    "effective_date": "2008-10-06",
+    "payer": {
+      "name": "MOUNTAIN STATE BLUE CROSS/BLUE SHIELD",
+      "id": null,
+      "address": {
+        "street_line_1": "614 MARKET STREET",
+        "street_line_2": null,
+        "city": "PARKERSBURG",
+        "state": "WV",
+        "zip": "26101"
+      },
+      "contacts": [
+        {
+          "department_code": "CX",
+          "department_label": "Payers Claim Office. Location responsible for paying bills related to medical care received",
+          "name": "",
+          "details": [
+            {
+              "type_code": "TE",
+              "type_label": "Telephone",
+              "value": "8669755054"
+            }
+          ]
+        }
+      ]
+    },
+    "financials": {
+      "type_code": "H",
+      "type_label": "Notification Only",
+      "total_payment_amount": "0",
+      "credit": true,
+      "debit": false,
+      "payment_method_code": "NON",
+      "payment_method_label": "Non-Payment Data",
+      "payment_format_code": "",
+      "payment_format_label": "",
+      "payment_date": "2008-10-06",
+      "payment_trace_number": "7801636695",
+      "sender": {
+        "dfi_id_qualifier": "",
+        "dfi_id_qualifier_label": "",
+        "dfi_id": "",
+        "account_number": "",
+        "id": "",
+        "supplemental_code": ""
+      },
+      "receiver": {
+        "dfi_id_qualifier": "",
+        "dfi_id_qualifier_label": "",
+        "dfi_id": "",
+        "account_type": "",
+        "account_number": ""
+      }
+    },
+    "payee": {
+      "name": "SOME DOCTORS OFFICEI",
+      "npi": "999999999",
+      "address": {
+        "street_line_1": "123 MAIN STREET",
+        "street_line_2": "SUITE 100 B",
+        "city": "ANYTOWN",
+        "state": "WV",
+        "zip": "999996459"
+      },
+      "additional_ids": [
+        {
+          "type_code": "PQ",
+          "type_label": "Payee Identification",
+          "value": "9999999"
+        }
+      ]
+    },
+    "patient": {
+      "first_name": "TEST",
+      "last_name": "PATIENT",
+      "middle_name": "J",
+      "id": "123456789"
+    },
+    "claim": {
+      "control_number": "08280551402",
+      "received_date": "2008-10-06",
+      "filing_indicator_type": "16",
+      "filing_indicator_label": "Health Maintenance Organization (HMO) Medicare Risk",
+      "place_of_service": null,
+      "frequency": null,
+      "responsibility_sequence": null,
+      "status": [
+        "denied"
+      ],
+      "amount": {
+        "billed": 480,
+        "paid": 0,
+        "patient_responsibility": 480
+      },
+      "service_lines": [
+        {
+          "procedure_qualifier": "HC>99212",
+          "procedure_code": null,
+          "procedure_modifiers": [],
+          "revenue_code": null,
+          "service_start": "2004-12-08",
+          "service_end": "2004-12-08",
+          "amount": {
+            "billed": 240,
+            "paid": 0
+          },
+          "quantity": {
+            "billed": 0,
+            "paid": 0
+          },
+          "adjustments": [
+            {
+              "type_code": "PR",
+              "type_label": "Patient Responsibility",
+              "reason_code": "31",
+              "reason_label": "Patient cannot be identified as our insured.",
+              "amount": 240,
+              "quantity": 0
+            }
+          ]
+        },
+        {
+          "procedure_qualifier": "HC>99212",
+          "procedure_code": null,
+          "procedure_modifiers": [],
+          "revenue_code": null,
+          "service_start": "2004-12-10",
+          "service_end": "2004-12-10",
+          "amount": {
+            "billed": 240,
+            "paid": 0
+          },
+          "quantity": {
+            "billed": 0,
+            "paid": 0
+          },
+          "adjustments": [
+            {
+              "type_code": "PR",
+              "type_label": "Patient Responsibility",
+              "reason_code": "31",
+              "reason_label": "Patient cannot be identified as our insured.",
+              "amount": 240,
+              "quantity": 0
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

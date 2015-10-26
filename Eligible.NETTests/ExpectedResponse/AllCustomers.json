@@ -1,0 +1,19 @@
+﻿{
+	"customers": [{
+		"customer": {
+			"id": "TN344YY67HH09KK",
+			"name": "XYZ company",
+			"site_name": "XYZ site name"
+		}
+	}, {
+		"customer": {
+			"id": "TN344YY67HH09KK",
+			"name": "XYZ company",
+			"site_name": "XYZ site name"
+		}
+	}],
+	"num_of_pages": 1,
+	"page": 1,
+	"per_page": 30,
+	"total": 1
+}

@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9607A330-9FDA-4EFD-95DF-65B2CE79A594}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>EligibleService.Net</RootNamespace>
+    <AssemblyName>Eligible.Net</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Externalconsole>true</Externalconsole>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net45\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Eligible.cs" />
+    <Compile Include="EligibleResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EligibleResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\EligibleService.Common\EligibleError.cs" />
+    <Compile Include="src\EligibleService.Common\FormatInputWithRequestOptions.cs" />
+    <Compile Include="src\EligibleService.Common\RequestProcess.cs" />
+    <Compile Include="src\EligibleService.Core\Referral.cs" />
+    <Compile Include="src\EligibleService.Exceptions\ErrorsStructures\BasicError.cs" />
+    <Compile Include="src\EligibleService.Exceptions\AuthenticationException.cs" />
+    <Compile Include="src\EligibleService.Core\BaseCore.cs" />
+    <Compile Include="src\EligibleService.Core\Claim.cs" />
+    <Compile Include="src\EligibleService.Core\CostEstimates.cs" />
+    <Compile Include="src\EligibleService.Core\Coverage.cs" />
+    <Compile Include="src\EligibleService.Common\RequestExecute.cs" />
+    <Compile Include="src\EligibleService.Core\Customer.cs" />
+    <Compile Include="src\EligibleService.Exceptions\EligibleApiException.cs" />
+    <Compile Include="src\EligibleService.Core\EnrollmentNpi.cs" />
+    <Compile Include="src\EligibleService.Core\Payers.cs" />
+    <Compile Include="src\EligibleService.Core\PaymentStatus.cs" />
+    <Compile Include="src\EligibleService.Core\Precertification.cs" />
+    <Compile Include="src\EligibleService.Core\RealtimeClaims.cs" />
+    <Compile Include="src\EligibleService.Exceptions\InvalidRequestException.cs" />
+    <Compile Include="src\EligibleService.Exceptions\JsonDeserilizationException.cs" />
+    <Compile Include="src\EligibleService.Model\BasicParams.cs" />
+    <Compile Include="src\EligibleService.Model\ClaimReports\Actual.cs" />
+    <Compile Include="src\EligibleService.Model\ClaimReports\Amount.cs" />
+    <Compile Include="src\EligibleService.Model\ClaimReports\BaseAmount.cs" />
+    <Compile Include="src\EligibleService.Model\ClaimReports\ReportsClaim.cs" />
+    <Compile Include="src\EligibleService.Model\ClaimReports\ClaimAdjustment.cs" />
+    <Compile Include="src\EligibleService.Model\ClaimReports\ClaimPaymentReport.cs" />
+    <Compile Include="src\EligibleService.Model\ClaimReports\Contact.cs" />
+    <Compile Include="src\EligibleService.Model\ClaimReports\CrossoverPayer.cs" />
+    <Compile Include="src\EligibleService.Model\ClaimReports\Detail.cs" />
+    <Compile Include="src\EligibleService.Model\ClaimReports\Estimated.cs" />
+    <Compile Include="src\EligibleService.Model\ClaimReports\Financials.cs" />
+    <Compile Include="src\EligibleService.Model\ClaimReports\Patient.cs" />
+    <Compile Include="src\EligibleService.Model\ClaimReports\Payee.cs" />
+    <Compile Include="src\EligibleService.Model\ClaimReports\Payer.cs" />
+    <Compile Include="src\EligibleService.Model\ClaimReports\ProviderAdjustment.cs" />
+    <Compile Include="src\EligibleService.Model\ClaimReports\Quantity.cs" />
+    <Compile Include="src\EligibleService.Model\ClaimReports\Quantity2.cs" />
+    <Compile Include="src\EligibleService.Model\ClaimReports\Receiver.cs" />
+    <Compile Include="src\EligibleService.Model\ClaimReports\RemittanceDeliverMethod.cs" />
+    <Compile Include="src\EligibleService.Model\ClaimReports\RenderingProviderId.cs" />
+    <Compile Include="src\EligibleService.Model\ClaimReports\Sender.cs" />
+    <Compile Include="src\EligibleService.Model\ClaimReports\ServiceLine.cs" />
+    <Compile Include="src\EligibleService.Model\ClaimReports\ServiceProvider.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\Adjustments.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\Admission.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\Ambulance.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\AttendingProvider.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\BillingProvider.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\Claim.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\ClaimAcknowledgements.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\ClaimResponse.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\ClaimClass.cs" />
+    <Compile Include="src\EligibleService.Exceptions\ErrorsStructures\ClaimError.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\Cob.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\ContractInformation.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\Dependent.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\DurableMedicalEquipment.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\MedicareCrossOverInfo.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\OutpatientAdjuducationInformation.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\Payer.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\PayToPlan.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\Principleprocedure.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\Provider.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\PurchasedServiceProvider.cs" />
+    <Compile Include="src\EligibleService.Exceptions\ErrorsStructures\RealtimeClaimError.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\RealtimeClaimsParams\Claim.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\RealtimeClaimsParams\Dependent.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\RealtimeClaimsParams\Payer.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\RealtimeClaimsParams\RealtimeClaimsParams.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\RealtimeClaimsParams\RenderingProvider.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\RealtimeClaimsParams\ServiceLine.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\RealtimeClaimsParams\Subscriber.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\RealtimeClaim\Adjustment.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\RealtimeClaim\Amount.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\RealtimeClaim\Claim.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\RealtimeClaim\Contact.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\RealtimeClaim\Detail.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\RealtimeClaim\Financials.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\RealtimeClaim\Patient.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\RealtimeClaim\Payee.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\RealtimeClaim\Payer.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\RealtimeClaim\Quantity.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\RealtimeClaim\RealtimeClaims.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\RealtimeClaim\Receiver.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\RealtimeClaim\Report.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\RealtimeClaim\Sender.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\RealtimeClaim\ServiceLine.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\Receiver.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\RenderingProvider.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\ServiceFacility.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\ServiceLine.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\SupplementalInformation.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\Tooth.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\ValueCodes.cs" />
+    <Compile Include="src\EligibleService.Model\CostEstimates\Coinsurance.cs" />
+    <Compile Include="src\EligibleService.Model\CostEstimates\Copayment.cs" />
+    <Compile Include="src\EligibleService.Model\CostEstimates\CostEstimate.cs" />
+    <Compile Include="src\EligibleService.Model\CostEstimates\CostEstimateAlternatives.cs" />
+    <Compile Include="src\EligibleService.Model\CostEstimates\CostEstimateEquation.cs" />
+    <Compile Include="src\EligibleService.Model\CostEstimates\CostEstimates.cs" />
+    <Compile Include="src\EligibleService.Model\CostEstimates\PaymentBase.cs" />
+    <Compile Include="src\EligibleService.Model\CostEstimates\StopLoss.cs" />
+    <Compile Include="src\EligibleService.Model\Coverage\AdditionalInsurancePolicy.cs" />
+    <Compile Include="src\EligibleService.Model\Address.cs" />
+    <Compile Include="src\EligibleService.Model\Coverage\BenefitDetails.cs" />
+    <Compile Include="src\EligibleService.Model\Contact.cs" />
+    <Compile Include="src\EligibleService.Model\Coverage\ContactDetail.cs" />
+    <Compile Include="src\EligibleService.Model\Coverage\CoverageResponse.cs" />
+    <Compile Include="src\EligibleService.Model\Coverage\Demographic.cs" />
+    <Compile Include="src\EligibleService.Model\Coverage\Dependent.cs" />
+    <Compile Include="src\EligibleService.Model\CreateCustomer.cs" />
+    <Compile Include="src\EligibleService.Model\Customer.cs" />
+    <Compile Include="src\EligibleService.Model\Dates.cs" />
+    <Compile Include="src\EligibleService.Model\Coverage\Demographics.cs" />
+    <Compile Include="src\EligibleService.Model\Coverage\Exclusions.cs" />
+    <Compile Include="src\EligibleService.Model\Coverage\Financial.cs" />
+    <Compile Include="src\EligibleService.Model\Coverage\FinancialFlow.cs" />
+    <Compile Include="src\EligibleService.Model\Coverage\FinancialFlows.cs" />
+    <Compile Include="src\EligibleService.Model\Coverage\FinancialFlowsAmounts.cs" />
+    <Compile Include="src\EligibleService.Model\Coverage\FinancialFlowsList.cs" />
+    <Compile Include="src\EligibleService.Model\Coverage\FinancialFlowsPercents.cs" />
+    <Compile Include="src\EligibleService.Model\Coverage\Financials.cs" />
+    <Compile Include="src\EligibleService.Model\Coverage\Insurence.cs" />
+    <Compile Include="src\EligibleService.Model\EnrollmentNpis\AuthorizedSigner.cs" />
+    <Compile Include="src\EligibleService.Model\EnrollmentNpis\Coordinate.cs" />
+    <Compile Include="src\EligibleService.Model\EnrollmentNpis\EnrollmentNpi.cs" />
+    <Compile Include="src\EligibleService.Model\EnrollmentNpis\EnrollmentNpis.cs" />
+    <Compile Include="src\EligibleService.Model\EnrollmentNpis\EnrollmentParams.cs" />
+    <Compile Include="src\EligibleService.Model\EnrollmentNpis\OriginalSignaturePdf.cs" />
+    <Compile Include="src\EligibleService.Model\EnrollmentNpis\Payer.cs" />
+    <Compile Include="src\EligibleService.Model\EnrollmentNpis\PdfResponse.cs" />
+    <Compile Include="src\EligibleService.Model\EnrollmentNpis\PDFs\OriginalSignaturePdf.cs" />
+    <Compile Include="src\EligibleService.Model\EnrollmentNpis\PDFs\ReceivedPdf.cs" />
+    <Compile Include="src\EligibleService.Model\EnrollmentNpis\ReceivedPdf.cs" />
+    <Compile Include="src\EligibleService.Model\EnrollmentNpis\Signature.cs" />
+    <Compile Include="src\EligibleService.Exceptions\ErrorsStructures\CoverageError.cs" />
+    <Compile Include="src\EligibleService.Model\JsonResponse.cs" />
+    <Compile Include="src\EligibleService.Model\Medicare\MedicareResponse.cs" />
+    <Compile Include="src\EligibleService.Model\Medicare\BasicDetails.cs" />
+    <Compile Include="src\EligibleService.Model\Medicare\DatesPeriod.cs" />
+    <Compile Include="src\EligibleService.Model\Medicare\EligibleDate.cs" />
+    <Compile Include="src\EligibleService.Model\Medicare\HospitalAndProfessionalDetails.cs" />
+    <Compile Include="src\EligibleService.Model\Medicare\MCDetails.cs" />
+    <Compile Include="src\EligibleService.Model\Medicare\MedicareService.cs" />
+    <Compile Include="src\EligibleService.Model\Medicare\PaymentDetails.cs" />
+    <Compile Include="src\EligibleService.Model\Medicare\PlanDetails.cs" />
+    <Compile Include="src\EligibleService.Model\Medicare\PlanType.cs" />
+    <Compile Include="src\EligibleService.Model\Medicare\ProcedureCodes.cs" />
+    <Compile Include="src\EligibleService.Model\Coverage\NonCovered.cs" />
+    <Compile Include="src\EligibleService.Model\Mediciad\ContactDetail.cs" />
+    <Compile Include="src\EligibleService.Model\Mediciad\ManagedCare.cs" />
+    <Compile Include="src\EligibleService.Model\Mediciad\Medicaid.cs" />
+    <Compile Include="src\EligibleService.Model\Mediciad\Physician.cs" />
+    <Compile Include="src\EligibleService.Model\PaymentStatus\Amount.cs" />
+    <Compile Include="src\EligibleService.Model\PaymentStatus\Claim.cs" />
+    <Compile Include="src\EligibleService.Model\PaymentStatus\Code.cs" />
+    <Compile Include="src\EligibleService.Model\PaymentStatus\Contact.cs" />
+    <Compile Include="src\EligibleService.Model\PaymentStatus\PayementStatusResponse.cs" />
+    <Compile Include="src\EligibleService.Model\PaymentStatus\Payer.cs" />
+    <Compile Include="src\EligibleService.Model\PaymentStatus\ServiceLine.cs" />
+    <Compile Include="src\EligibleService.Model\PaymentStatus\Status.cs" />
+    <Compile Include="src\EligibleService.Model\Payers\PayersResponse.cs" />
+    <Compile Include="src\EligibleService.Model\Payers\Endpoint.cs" />
+    <Compile Include="src\EligibleService.Model\Payers\PayerSearchOption.cs" />
+    <Compile Include="src\EligibleService.Model\Coverage\Physician.cs" />
+    <Compile Include="src\EligibleService.Model\Coverage\Plan.cs" />
+    <Compile Include="src\EligibleService.Model\Coverage\PreExistingCondition.cs" />
+    <Compile Include="src\EligibleService.Model\Coverage\Reference.cs" />
+    <Compile Include="src\EligibleService.Model\Coverage\Service.cs" />
+    <Compile Include="src\EligibleService.Model\Coverage\ServiceProviders.cs" />
+    <Compile Include="src\EligibleService.Model\Payers\PayerStatus.cs" />
+    <Compile Include="src\EligibleService.Model\Person.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\Subscriber.cs" />
+    <Compile Include="src\EligibleService.Model\Precertification\PrecertificationInquiry\Certification.cs" />
+    <Compile Include="src\EligibleService.Model\Precertification\PrecertificationInquiry\ServiceCertification.cs" />
+    <Compile Include="src\EligibleService.Model\Precertification\PrecertificationInquiry\Delivery.cs" />
+    <Compile Include="src\EligibleService.Model\Precertification\PrecertificationInquiry\Dependent.cs" />
+    <Compile Include="src\EligibleService.Model\Precertification\PrecertificationInquiry\PatientEvent.cs" />
+    <Compile Include="src\EligibleService.Model\Precertification\PrecertificationInquiry\Payer.cs" />
+    <Compile Include="src\EligibleService.Model\Precertification\PrecertificationInquiry\PrecertificationInquiryResponse.cs" />
+    <Compile Include="src\EligibleService.Model\Precertification\PrecertificationInquiry\Provider.cs" />
+    <Compile Include="src\EligibleService.Model\Precertification\PrecertificationInquiry\Requester.cs" />
+    <Compile Include="src\EligibleService.Model\Precertification\PrecertificationInquiry\Service.cs" />
+    <Compile Include="src\EligibleService.Model\Precertification\PrecertificationInquiry\Subscriber.cs" />
+    <Compile Include="src\EligibleService.Model\Precertification\PrecertificationParams\Delivery.cs" />
+    <Compile Include="src\EligibleService.Model\Precertification\PrecertificationParams\Dependent.cs" />
+    <Compile Include="src\EligibleService.Model\Precertification\PrecertificationParams\Diagnosi.cs" />
+    <Compile Include="src\EligibleService.Model\Precertification\PrecertificationParams\Event.cs" />
+    <Compile Include="src\EligibleService.Model\Precertification\PrecertificationParams\Payer.cs" />
+    <Compile Include="src\EligibleService.Model\Precertification\PrecertificationParams\PrecertParams.cs" />
+    <Compile Include="src\EligibleService.Model\Precertification\PrecertificationParams\Provider.cs" />
+    <Compile Include="src\EligibleService.Model\Precertification\PrecertificationParams\Requester.cs" />
+    <Compile Include="src\EligibleService.Model\Precertification\PrecertificationParams\Service.cs" />
+    <Compile Include="src\EligibleService.Model\Precertification\PrecertificationParams\Subscriber.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <EmbeddedResource Include="EligibleResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>EligibleResources1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+</Project>

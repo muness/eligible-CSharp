@@ -1,0 +1,19 @@
+﻿{
+	"statuses": [{
+		"payer_id": "00002",
+		"payer_name": "Aetna | AHP of New Jersey  Parsippany | AHP of New Jersey  Purchase  NY | Ohio Valley HMO  Cincinnati (Aetna) | PHP of Georgia  Atlanta  Aetna | PHP of North Ohio  Cleveland  Aetna | Primary Choice (Aetna Health Plan of NY/NJ) | Select Choice (Aetna Health Plan of NY/NJ) | Senior Choice (Aetna Health Plan of NY/NJ) | Southwest Health Plan (Aetna HMO)",
+		"transaction_type": "270",
+		"status": "available",
+		"details": "Payer is working fine.",
+		"updated_at": "09-12-2015 13:40",
+		"message": null
+	}, {
+		"payer_id": "00002",
+		"payer_name": "Aetna",
+		"transaction_type": "276",
+		"status": "available",
+		"details": "Payer is working fine.",
+		"updated_at": "05-06-2014 21:11",
+		"message": null
+	}]
+}

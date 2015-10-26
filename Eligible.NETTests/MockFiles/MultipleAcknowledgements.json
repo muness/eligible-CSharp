@@ -1,0 +1,63 @@
+﻿{  
+   "acknowledgements":[  
+      {  
+         "reference_id":"8HAB9VVS963YCP",
+         "submission_status":"accepted",
+         "effective_date":"2013-06-09",
+         "codes":{  
+            "category_code":"A2",
+            "category_label":"Acknowledgement/Acceptance into adjudication system-The claim/encounter has been accepted into the adjudication system.",
+            "status_code":"20",
+            "status_label":"Accepted for processing."
+         }
+      },
+      {  
+         "reference_id":"31WIGIOEIE9KO",
+         "submission_status":"received",
+         "effective_date":"2013-06-07",
+         "codes":{  
+            "category_code":"A1",
+            "category_label":"Acknowledgement/Receipt-The claim/encounter has been received. This does not mean that the claim has been accepted for adjudication.",
+            "status_code":"16",
+            "status_label":"Claim/encounter has been forwarded to entity. Note: This code requires use of an Entity Code."
+         }
+      },
+      {  
+         "reference_id":"8HAB9VVSCWO2W6",
+         "submission_status":"accepted",
+         "effective_date":"2013-06-11",
+         "codes":{  
+            "category_code":"A2",
+            "category_label":"Acknowledgement/Acceptance into adjudication system-The claim/encounter has been accepted into the adjudication system.",
+            "status_code":"20",
+            "status_label":"Accepted for processing."
+         }
+      },
+      {  
+         "reference_id":"UJ14L6S1H2PR2",
+         "submission_status":"accepted",
+         "effective_date":"2013-06-11",
+         "codes":{  
+            "category_code":"A2",
+            "category_label":"Acknowledgement/Acceptance into adjudication system-The claim/encounter has been accepted into the adjudication system.",
+            "status_code":"20",
+            "status_label":"Accepted for processing."
+         }
+      },
+      {  
+         "reference_id":"31WIGIOEKH1X9",
+         "submission_status":"accepted",
+         "effective_date":"2013-06-11",
+         "codes":{  
+            "category_code":"A2",
+            "category_label":"Acknowledgement/Acceptance into adjudication system-The claim/encounter has been accepted into the adjudication system.",
+            "status_code":"20",
+            "status_label":"Accepted for processing."
+         }
+      }
+   ],
+   "page":1,
+   "per_page":30,
+   "num_of_pages":2,
+   "total":35
+}

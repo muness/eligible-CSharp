@@ -1,0 +1,8 @@
+﻿{
+    "original_signature_pdf": {
+        "name": "signed_enrollment.pdf",
+        "created_at": "2015-02-02T19:36:20Z",
+        "updated_at": "2015-02-02T19:36:20Z",
+        "download_url": "https://gds.eligibleapi.com/v1.5/enrollment_npis/51/original_signature_pdf/download?api_key=YOUR_API_KEY"
+    }
+}

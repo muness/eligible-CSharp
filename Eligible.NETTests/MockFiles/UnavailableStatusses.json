@@ -1,0 +1,40 @@
+{
+    "statuses": [
+        {
+            "payer_id": "00028",
+            "payer_name": "Test1 Medicaid",
+            "transaction_type": "270",
+            "status": "unavailable",
+            "details": "Payer is experiencing high number of failures.",
+            "updated_at": "06-08-2015 04:57",
+            "message": null
+        },
+        {
+            "payer_id": "00032",
+            "payer_name": "Pop Healthcare | Pop Health Plan",
+            "transaction_type": "270",
+            "status": "unavailable",
+            "details": "Payer is experiencing high number of failures.",
+            "updated_at": "06-08-2015 00:23",
+            "message": null
+        },
+        {
+            "payer_id": "00038",
+            "payer_name": "Something Medicaid",
+            "transaction_type": "270",
+            "status": "unavailable",
+            "details": "Payer is experiencing high number of failures.",
+            "updated_at": "04-11-2015 17:20",
+            "message": null
+        },
+        {
+            "payer_id": "00052",
+            "payer_name": "Nevada medicaid",
+            "transaction_type": "270",
+            "status": "unavailable",
+            "details": "Payer is experiencing high number of failures.",
+            "updated_at": "20-06-2014 18:10",
+            "message": null
+        }
+    ]
+}

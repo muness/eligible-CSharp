@@ -1,0 +1,206 @@
+﻿{
+  "created_at": "1234-12-123",
+  "eligible_id": "12345-12345-124531-122121",
+  "payer": {
+    "name": "AETNA",
+    "id": "60054"
+  },
+  "requester": {
+    "first_name": null,
+    "last_name": null,
+    "middle_name": null,
+    "organization_name": "Union Imaging",
+    "npi": "1111111111",
+    "taxonomy_code": null
+  },
+  "subscriber": {
+    "first_name": "TEST",
+    "last_name": "TEST",
+    "middle_name": "M",
+    "id": "1234567890",
+    "ssn": null,
+    "dob": "1966-09-09",
+    "gender": null,
+    "address": {
+      "street_line_1": null,
+      "street_line_2": null,
+      "city": null,
+      "state": null,
+      "zip": null
+    }
+  },
+   "dependent": {
+        "first_name": "TEST",
+        "last_name": "TEST",
+        "middle_name": "M",
+        "ssn": "987987987",
+        "dob": "1966-09-09",
+        "gender": "M",
+        "relationship_code": null,
+        "address": {
+            "street_line_1": "Some street",
+            "street_line_2": "second",
+            "city": "San Francisco",
+            "state": "CA",
+            "zip": "94109"
+        }
+   },
+  "patient_events": [
+    {
+      "place_of_service": "22",
+      "diagnosis_codes": [
+        "72610"
+      ],
+      "message": null,
+      "certification": {
+        "action_code": "A3",
+        "action_label": "Not Certified",
+        "id": "1234567",
+        "decision_code": null,
+        "decision_label": null,
+        "admin_ref_number": null,
+        "previous_review_auth_number": null,
+        "expiration_date": null,
+        "effective_start_date": null,
+        "effective_end_date": null
+      },
+      "providers": [
+        {
+          "type": "Facility",
+          "first_name": null,
+          "last_name": null,
+          "middle_name": null,
+          "organization_name": "ABC Diagnostic",
+          "npi": "1111111111",
+          "taxonomy_code": null,
+          "address": {
+            "street_line_1": null,
+            "street_line_2": null,
+            "city": null,
+            "state": null,
+            "zip": null
+          }
+        },
+        {
+          "type": "Attending Physician",
+          "first_name": "BEN",
+          "last_name": "FRANKLIN",
+          "middle_name": "R",
+          "organization_name": null,
+          "npi": "1222222222",
+          "taxonomy_code": null,
+          "address": {
+            "street_line_1": null,
+            "street_line_2": null,
+            "city": null,
+            "state": null,
+            "zip": null
+          }
+        }
+      ],
+      "services": [
+        {
+          "procedure_code": "73221",
+          "procedure_modifiers": [],
+          "amount": null,
+          "quantity": null,
+          "message": null,
+          "certification": {
+            "action_code": "A3",
+            "action_label": "Not Certified",
+            "id": "1111111111",
+            "decision_code": "0N",
+            "decision_label": "No Prior Approval",
+            "admin_ref_number": null,
+            "previous_review_auth_number": null,
+            "service_start_date": "2014-04-30",
+            "service_end_date": "2014-04-30",
+            "issue_date": null,
+            "expiration_date": null,
+            "effective_start_date": null,
+            "effective_end_date": null
+          },
+          "providers": []
+        }
+      ]
+    },
+    {
+      "place_of_service": "22",
+      "diagnosis_codes": [
+        "7220"
+      ],
+      "message": null,
+      "certification": {
+        "action_code": "A1",
+        "action_label": "Certified in total",
+        "id": "1111111111",
+        "decision_code": null,
+        "decision_label": null,
+        "admin_ref_number": null,
+        "previous_review_auth_number": null,
+        "expiration_date": null,
+        "effective_start_date": null,
+        "effective_end_date": null
+      },
+      "providers": [
+        {
+          "type": "Facility",
+          "first_name": null,
+          "last_name": null,
+          "middle_name": null,
+          "organization_name": "ABC DIAGNOSTICS",
+          "npi": "1111111111",
+          "taxonomy_code": null,
+          "address": {
+            "street_line_1": null,
+            "street_line_2": null,
+            "city": null,
+            "state": null,
+            "zip": null
+          }
+        },
+        {
+          "type": "Attending Physician",
+          "first_name": "BEN",
+          "last_name": "FRANKLIN",
+          "middle_name": "R",
+          "organization_name": null,
+          "npi": "1111111111",
+          "taxonomy_code": null,
+          "address": {
+            "street_line_1": null,
+            "street_line_2": null,
+            "city": null,
+            "state": null,
+            "zip": null
+          }
+        }
+      ],
+      "services": [
+        {
+          "procedure_code": "72141",
+          "procedure_modifiers": [],
+          "amount": null,
+          "quantity": null,
+          "message": null,
+          "certification": {
+            "action_code": "A1",
+            "action_label": "Certified in total",
+            "id": "1234567890",
+            "decision_code": null,
+            "decision_label": null,
+            "admin_ref_number": null,
+            "previous_review_auth_number": null,
+            "service_start_date": "2014-04-30",
+            "service_end_date": "2014-07-29",
+            "issue_date": null,
+            "expiration_date": null,
+            "effective_start_date": null,
+            "effective_end_date": null
+          },
+          "providers": []
+        }
+      ]
+    }
+  ]
+}

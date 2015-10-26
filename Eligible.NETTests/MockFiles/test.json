@@ -1,0 +1,55 @@
+﻿{
+   "amount": "4350",
+   "time_period": "25",
+   "time_period_label": "contract",
+   "level": "INDIVIDUAL",
+   "network": "IN",
+   "insurance_type": "SELF",
+   "insurance_type_label": "SELFLABEL",
+   "pos": "POS",
+   "pos_label": "POSLABEL",
+   "authorization_required": null,
+   "description": "Test",
+   "contact_details": [
+      {
+         "entity_code": "PR",
+         "entity_code_label": "Payer",
+         "last_name": "Aetna",
+         "first_name": null,
+         "identification_type": null,
+         "identification_code": null,
+         "contacts": [
+            {
+               "contact_type": "TESTTYPE",
+               "contact_value": "123456789"
+            }
+         ],
+         "address": {
+            "street_line_1": "PO Box 1234",
+            "street_line_2": null,
+            "city": "Lexington",
+            "state": "KY",
+            "zip": "1234"
+         }
+      }
+   ],
+   "dates": [
+      {
+         "date_type": "plan_begin",
+         "date_value": "2010-06-01"
+      },
+      {
+         "date_type": "service",
+         "date_value": "2013-11-10"
+      },
+      {
+         "date_type": "eligibility_begin",
+         "date_value": "2010-07-10"
+      }
+   ],
+   "comments": [
+      "INT MED AND RX,DED INCLUDED IN OOP,Visit or Evaluation by Chiropractor,Manipulation by Chiropractor,Emergency use of Emergency Room,Outpatient Surgery Facility,Outpatient Medical Ancillary,Ambulatory Medical Ancillary,Medical Ancillary,Inpatient Xray and Lab",
+      "Room and Board,Intensive Care Room and Board,Non Emergency use of Emergency Room,Emergency Room Physician,Urgent Care,Non Urgent Services at an Urgent Care Facility,GYN Visit,Specialist Visit or Evaluation,Primary Care Visit or Evaluation,Physician Xray and Lab",
+      "Xray and Lab,Outpatient Xray and Lab"
+   ]
+}

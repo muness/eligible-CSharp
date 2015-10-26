@@ -1,0 +1,40 @@
+{
+    "statuses": [
+        {
+            "payer_id": "00001",
+            "payer_name": "Connecticut General",
+            "transaction_type": "270",
+            "status": "available",
+            "details": "Payer is working fine.",
+            "updated_at": "05-08-2015 20:21",
+            "message": null
+        },
+        {
+            "payer_id": "00002",
+            "payer_name": "Southwest Health Plan",
+            "transaction_type": "270",
+            "status": "intermittent_failures",
+            "details": "Payer is experiencing transient failures.",
+            "updated_at": "28-10-2015 16:51",
+            "message": null
+        },
+        {
+            "payer_id": "00003",
+            "payer_name": "Health Plans",
+            "transaction_type": "270",
+            "status": "available",
+            "details": "Payer is working fine.",
+            "updated_at": "05-08-2015 23:23",
+            "message": null
+        },
+        {
+            "payer_id": "00004",
+            "payer_name": "Cal Medicaid",
+            "transaction_type": "270",
+            "status": "available",
+            "details": "Payer is working fine.",
+            "updated_at": "06-08-2015 00:25",
+            "message": null
+        }
+    ]
+}

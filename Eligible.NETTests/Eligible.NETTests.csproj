@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B35B28FB-17A4-441A-8441-1EC5D897C556}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EligibleService.NETTests</RootNamespace>
+    <AssemblyName>Eligible.NETTests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.2.1510.2205\lib\net40\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Ploeh.AutoFixture">
+      <HintPath>..\packages\AutoFixture.3.36.10\lib\net40\Ploeh.AutoFixture.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net45\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\Eligible.Core\CoreTests\BaseTestClass.cs" />
+    <Compile Include="src\Eligible.Core\CoreTests\CoverageTests.cs" />
+    <Compile Include="src\Eligible.Core\CoreTests\PayersTests.cs" />
+    <Compile Include="src\Eligible.Core\CoreTests\ClaimTests.cs" />
+    <Compile Include="src\Eligible.Core\CoreTests\CostEstimatesTests.cs" />
+    <Compile Include="src\Eligible.Core\CoreTests\PaymentStatusTests.cs" />
+    <Compile Include="src\Eligible.Core\CoreTests\CustomerTests.cs" />
+    <Compile Include="src\Eligible.Core\CoreTests\EnrollmentTests.cs" />
+    <Compile Include="src\Eligible.Core\CoreTests\PrecertificationTests.cs" />
+    <Compile Include="src\Eligible.Core\CoreTests\RealtimeClaimsTests.cs" />
+    <Compile Include="src\Eligible.Core\CoreTests\ReferralTests.cs" />
+    <Compile Include="src\Eligible.Core\MockTests\ClaimTests.cs" />
+    <Compile Include="src\Eligible.Core\MockTests\CostEstimatesTests.cs" />
+    <Compile Include="src\Eligible.Core\MockTests\CustomerTests.cs" />
+    <Compile Include="src\Eligible.Core\MockTests\EnrollmentTests.cs" />
+    <Compile Include="src\Eligible.Core\MockTests\Helpers\CoveragePlanExpectedResults.cs" />
+    <Compile Include="src\Eligible.Core\MockTests\Helpers\MedicareExpectedResults.cs" />
+    <Compile Include="src\Eligible.Core\MockTests\Helpers\PayerExpectedResults.cs" />
+    <Compile Include="src\Eligible.Core\MockTests\Helpers\PayerSuccessExpectedResults.cs" />
+    <Compile Include="src\Eligible.Core\MockTests\Helpers\SearchOptionsExpectedResults.cs" />
+    <Compile Include="src\Eligible.Core\MockTests\Helpers\TestHelper.cs" />
+    <Compile Include="src\Eligible.Core\MockTests\PaymentStatusTests.cs" />
+    <Compile Include="src\Eligible.Core\MockTests\PrecertificationTests.cs" />
+    <Compile Include="src\Eligible.Core\MockTests\RealtimeClaimsTests.cs" />
+    <Compile Include="TestResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Eligible.Core\MockTests\CoverageTests.cs" />
+    <Compile Include="src\Eligible.Core\MockTests\PayersTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Eligible.NET\Eligible.Net.csproj">
+      <Project>{9607A330-9FDA-4EFD-95DF-65B2CE79A594}</Project>
+      <Name>Eligible.Net</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="ExpectedResponse\AllCustomers.json" />
+    <None Include="ExpectedResponse\AllEnrollments.json" />
+    <None Include="ExpectedResponse\ClaimAcknowledgements.json" />
+    <None Include="ExpectedResponse\ClaimMultipleAcknowledgements.json" />
+    <None Include="ExpectedResponse\ClaimPayementReports.json" />
+    <None Include="ExpectedResponse\ClaimPaymentReport.json" />
+    <None Include="ExpectedResponse\ClaimSuccess.json" />
+    <None Include="ExpectedResponse\CostEstimates.json" />
+    <None Include="ExpectedResponse\CustomerSuccess.json" />
+    <None Include="ExpectedResponse\EnrollmentById.json" />
+    <None Include="ExpectedResponse\EnrollmentSuccess.json" />
+    <None Include="ExpectedResponse\Medicare.json" />
+    <None Include="ExpectedResponse\Payer.json" />
+    <None Include="ExpectedResponse\PayersList.json" />
+    <None Include="ExpectedResponse\PayersStatus.json" />
+    <None Include="ExpectedResponse\PayersStatussesWithTransactionType.json" />
+    <None Include="ExpectedResponse\PayersWithCoverageEndPoint.json" />
+    <None Include="ExpectedResponse\PaymentStatus.json" />
+    <None Include="ExpectedResponse\ReatimeClaimResponse.json" />
+    <None Include="ExpectedResponse\SearchOptionsByPayerId.json" />
+    <None Include="ExpectedResponse\StatussesByPayer.json" />
+    <None Include="MockFiles\ClaimAcknowledgements.json" />
+    <None Include="MockFiles\ClaimFailure.json" />
+    <None Include="MockFiles\ClaimSuccess.json" />
+    <None Include="MockFiles\CostEstimate.json" />
+    <None Include="MockFiles\Coverage.json" />
+    <None Include="MockFiles\CustomerResponse.json" />
+    <None Include="MockFiles\CustomersList.json" />
+    <None Include="MockFiles\DeleteOriginalSignature.json" />
+    <None Include="MockFiles\EnrollmentList.json" />
+    <None Include="MockFiles\Medicare.json" />
+    <None Include="MockFiles\MedicareError.json" />
+    <None Include="MockFiles\MultipleAcknowledgements.json" />
+    <None Include="MockFiles\OriginalSignaturePDF.json" />
+    <None Include="MockFiles\Payer.json" />
+    <None Include="MockFiles\Payers.json" />
+    <None Include="MockFiles\PayerStatus.json" />
+    <None Include="MockFiles\PayerstatusById.json" />
+    <None Include="MockFiles\PaymentReports.json" />
+    <None Include="MockFiles\PaymentReportsPerReference.json" />
+    <None Include="MockFiles\PaymentStatus.json" />
+    <None Include="MockFiles\PreCertification.json" />
+    <None Include="MockFiles\RealtimeClaimResponse.json" />
+    <None Include="MockFiles\ReceivedPDF.json" />
+    <None Include="MockFiles\SearchOptions.json" />
+    <None Include="MockFiles\SearchOptionsPayer.json" />
+    <None Include="MockFiles\test.json" />
+    <None Include="MockFiles\UnavailableStatusses.json" />
+    <None Include="packages.config" />
+    <None Include="ExpectedResponse\CoverageSubscriber.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TestResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TestResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MockFiles\EnrollemtCreationResponse.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ExpectedResponse\PayersWithEnrollmentRequired.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ExpectedResponse\PayersWithEndpointAndEnrollment.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ExpectedResponse\SearchOptions.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ExpectedResponse\PrecertificationInquiry.json" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,22 @@
+{
+    "statuses": [
+        {
+            "payer_id": "00002",
+            "payer_name": "Test1 | Test of New Jersey| Test2 of New Jersey NY",
+            "transaction_type": "270",
+            "status": "intermittent_failures",
+            "details": "Payer is experiencing transient failures.",
+            "updated_at": "28-10-2015 16:51",
+            "message": null
+        },
+        {
+            "payer_id": "00002",
+            "payer_name": "NYC",
+            "transaction_type": "276",
+            "status": "available",
+            "details": "Payer is working fine.",
+            "updated_at": "05-06-2014 21:11",
+            "message": null
+        }
+    ]
+}
