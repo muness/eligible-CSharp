@@ -98,9 +98,6 @@ namespace EligibleService.Common
             request.AddHeader("Accept", "application/json");
             request.AddHeader("User-Agent", String.Format("Eligible {0} CSharpBindings{1}", options.ApiVersion, EligibleResources.LibraryVersion));
 
-            String[] propertyNames = {"os.name", "os.version", "os.arch",
-                    "java.version", "java.vendor", "java.vm.version",
-                    "java.vm.vendor"};
             Hashtable propertyMap = new Hashtable();
             propertyMap.Add("bindings.version", EligibleResources.LibraryVersion);
             propertyMap.Add("lang", "C#");
