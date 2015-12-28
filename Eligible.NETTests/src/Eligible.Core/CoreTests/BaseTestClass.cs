@@ -12,11 +12,8 @@ namespace EligibleService.Core.CoreTests
         {
             Eligible config = Eligible.Instance;
             string value = System.Configuration.ConfigurationManager.AppSettings["apikey"];
-
             config.ApiKey = (String.IsNullOrEmpty(value)) ? Environment.GetEnvironmentVariable("apikey") : value;
-            config.ApiVersion = "v1.5";
             config.IsTest = true;
-
         }
     }
 }

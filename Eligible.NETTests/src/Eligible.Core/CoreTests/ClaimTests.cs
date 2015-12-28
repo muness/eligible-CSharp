@@ -40,7 +40,6 @@ namespace EligibleService.Core.CoreTests
             RequestOptions options = new RequestOptions();
             options.IsTest = true;
             options.ApiKey = null;
-            options.ApiVersion = null;
             Hashtable input = JsonConvert.DeserializeObject<Hashtable>(ClaimInput);
 
             ClaimResponse actualResponse = claim.Create(input, options);
@@ -86,7 +85,6 @@ namespace EligibleService.Core.CoreTests
         {
             Eligible config = Eligible.Instance;
             config.ApiKey = "Invalid key";
-            config.ApiVersion = "v1.5";
             config.IsTest = true;
 
             ClaimResponse actualResponse = claim.Create(ClaimInput);

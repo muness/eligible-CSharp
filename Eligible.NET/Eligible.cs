@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 namespace EligibleService.Core
 {
     /// <summary>
-    /// Singleton class that sets apikey, test mode and APIversion.
+    /// Singleton class that sets apikey and test.
     /// This is mandatory for User. Otherwise will be getting issues while accessing other API bindings
     /// </summary>
 
@@ -40,6 +40,5 @@ namespace EligibleService.Core
     {
         public string ApiKey { get; set; }
         public bool? IsTest { get; set; }
-        public string ApiVersion { get; set; }
     }
 }

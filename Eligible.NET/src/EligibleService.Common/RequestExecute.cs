@@ -38,7 +38,7 @@ namespace EligibleService.Common
 
             SetHeaders(request, options);
 
-            request.Resource = "/" + options.ApiVersion + apiResource;
+            SetResource(apiResource, request);
 
             var response = client.Execute(request);
 
@@ -56,7 +56,7 @@ namespace EligibleService.Common
             request.AddParameter("application/json; charset=utf-8", json, ParameterType.RequestBody);
             SetHeaders(request, options);
 
-            request.Resource = "/" + options.ApiVersion + apiResource;
+            SetResource(apiResource, request);
 
             var response = client.Execute(request);
 
@@ -78,7 +78,7 @@ namespace EligibleService.Common
 
             SetHeaders(request, options);
 
-            request.Resource = "/" + options.ApiVersion + apiResource;
+            SetResource(apiResource, request);
 
             return client.Execute(request);
         }
@@ -89,21 +89,26 @@ namespace EligibleService.Common
 
             using (var client = new WebClient())
             {
-                client.DownloadFile(Path.Combine(EligibleResources.BaseUrl + access.ApiVersion + apiResource + "?api_key=" + access.ApiKey + "&test=" + access.IsTest), pathToDownload + npiId + ".pdf");
+                client.DownloadFile(Path.Combine(EligibleResources.BaseUrl + EligibleResources.SupportedApiVersion + apiResource + "?api_key=" + access.ApiKey + "&test=" + access.IsTest), pathToDownload + npiId + ".pdf");
             }
         }
 
         private void SetHeaders(RestRequest request, RequestOptions options)
         {
             request.AddHeader("Accept", "application/json");
-            request.AddHeader("User-Agent", String.Format("Eligible/{0} CSharpBindings/{1}", options.ApiVersion, EligibleResources.LibraryVersion));
+            request.AddHeader("User-Agent", String.Format("Eligible/{0} CSharpBindings/{1}", EligibleResources.SupportedApiVersion, EligibleResources.LibraryVersion));
 
             Hashtable propertyMap = new Hashtable();
             propertyMap.Add("bindings.version", EligibleResources.LibraryVersion);
             propertyMap.Add("lang", "C#");
             propertyMap.Add("publisher", "Eligible");
             request.AddHeader("X-Eligible-Client-User-Agent", JsonConvert.SerializeObject(propertyMap));
-            request.AddHeader("Eligible-Version", options.ApiVersion);
+            request.AddHeader("Eligible-Version", EligibleResources.SupportedApiVersion);
+        }
+
+        private static void SetResource(string apiResource, RestRequest request)
+        {
+            request.Resource = "/" + EligibleResources.SupportedApiVersion + apiResource;
         }
 
     }

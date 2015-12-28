@@ -27,7 +27,6 @@ Below lines of code stores your ApiKey, TestMode and ApiVersion once and use it 
 ```cs
 Eligible eligible = Eligible.Instance;
 eligible.ApiKey = "Api Key";
-eligible.ApiVersion = "v1.5";
 eligible.IsTest = true;
 ```
 	(OR)
@@ -35,7 +34,6 @@ create RequestOptions object and pass it to every request
 ```cs
 RequestOptions requestOptions = new RequestOptions();
 requestOptions.ApiKey = "Api Key";
-requestOptions.ApiVersion = "v1.5";
 requestOptions.IsTest = true;
 
 ClaimResponse response = claim.Create(input, requestOptions); // requestOptions is optional parameter
@@ -53,7 +51,6 @@ class Program
 	{
 		Eligible eligible = Eligible.Instance;
 		eligible.ApiKey = "Api Key";
-		eligible.ApiVersion = "v1.5";
 		eligible.IsTest = false;
 
 		Payers payers = new Payers();

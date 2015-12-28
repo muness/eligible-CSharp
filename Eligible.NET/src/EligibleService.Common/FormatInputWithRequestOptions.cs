@@ -52,13 +52,6 @@ namespace EligibleService.Common
                 if (string.IsNullOrEmpty(options.ApiKey))
                     options.ApiKey = eligible.ApiKey;
 
-                if (string.IsNullOrEmpty(options.ApiVersion))
-                {
-                    if (string.IsNullOrEmpty(eligible.ApiVersion))
-                        options.ApiVersion = EligibleResources.SupportedApiVersion;
-                    else
-                        options.ApiVersion = eligible.ApiVersion;
-                }
                 if (!options.IsTest.HasValue)
                 {
                     if (eligible.IsTest.HasValue)
@@ -72,8 +65,8 @@ namespace EligibleService.Common
                 options = new RequestOptions();
                 options.ApiKey = eligible.ApiKey;
                 options.IsTest = eligible.IsTest;
-                options.ApiVersion = eligible.ApiVersion;
             }
+
             return options;
         }
 
