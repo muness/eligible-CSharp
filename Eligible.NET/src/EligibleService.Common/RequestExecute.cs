@@ -96,7 +96,7 @@ namespace EligibleService.Common
         private void SetHeaders(RestRequest request, RequestOptions options)
         {
             request.AddHeader("Accept", "application/json");
-            request.AddHeader("User-Agent", String.Format("Eligible {0} CSharpBindings{1}", options.ApiVersion, EligibleResources.LibraryVersion));
+            request.AddHeader("User-Agent", String.Format("Eligible/{0} CSharpBindings/{1}", options.ApiVersion, EligibleResources.LibraryVersion));
 
             Hashtable propertyMap = new Hashtable();
             propertyMap.Add("bindings.version", EligibleResources.LibraryVersion);

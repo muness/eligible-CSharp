@@ -9,7 +9,7 @@ EligibleNET  for .NET provides simple access to Eligible APIs.
 #### NuGet Packages
 Eligible.NET library is available on nuget. Use the below command to get it from Nuget PackageManagerConsole.
 
-	Install-Package EligibleNET
+	Install-Package Eligible.Net
 	
 ### Documentation
 Refer to https://eligible.com/rest for full documentation on Eligible APIs, their request parameters
