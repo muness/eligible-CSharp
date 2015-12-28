@@ -6,6 +6,7 @@ using System;
 using System.Collections;
 using System.IO;
 using System.Net;
+using Newtonsoft.Json;
 
 namespace EligibleService.Common
 {
@@ -26,7 +27,7 @@ namespace EligibleService.Common
             var client = new RestClient(new Uri(EligibleResources.BaseUrl));
 
             request.AddParameter("api_key", options.ApiKey);
-            request.AddParameter("test", options.TestMode);
+            request.AddParameter("test", options.IsTest);
             if (filters != null)
             {
                 foreach (DictionaryEntry filter in filters)
@@ -34,6 +35,8 @@ namespace EligibleService.Common
                     request.AddParameter(filter.Key.ToString(), filter.Value);
                 }
             }
+
+            SetHeaders(request, options);
 
             request.Resource = "/" + options.ApiVersion + apiResource;
 
@@ -51,6 +54,8 @@ namespace EligibleService.Common
             var client = new RestClient(new Uri(EligibleResources.BaseUrl));
 
             request.AddParameter("application/json; charset=utf-8", json, ParameterType.RequestBody);
+            SetHeaders(request, options);
+
             request.Resource = "/" + options.ApiVersion + apiResource;
 
             var response = client.Execute(request);
@@ -66,10 +71,12 @@ namespace EligibleService.Common
             var client = new RestClient(new Uri(EligibleResources.BaseUrl));
 
             request.AddParameter("api_key", options.ApiKey);
-            request.AddParameter("test", options.TestMode);
+            request.AddParameter("test", options.IsTest);
 
             if (string.IsNullOrEmpty(pdfPath.Trim()))
                 request.AddParameter("file", pdfPath);
+
+            SetHeaders(request, options);
 
             request.Resource = "/" + options.ApiVersion + apiResource;
 
@@ -82,8 +89,24 @@ namespace EligibleService.Common
 
             using (var client = new WebClient())
             {
-                client.DownloadFile(Path.Combine(EligibleResources.BaseUrl + access.ApiVersion + apiResource + "?api_key=" + access.ApiKey + "&test=" + access.TestMode), pathToDownload + npiId + ".pdf");
+                client.DownloadFile(Path.Combine(EligibleResources.BaseUrl + access.ApiVersion + apiResource + "?api_key=" + access.ApiKey + "&test=" + access.IsTest), pathToDownload + npiId + ".pdf");
             }
+        }
+
+        private void SetHeaders(RestRequest request, RequestOptions options)
+        {
+            request.AddHeader("Accept", "application/json");
+            request.AddHeader("User-Agent", String.Format("Eligible {0} CSharpBindings{1}", options.ApiVersion, EligibleResources.LibraryVersion));
+
+            String[] propertyNames = {"os.name", "os.version", "os.arch",
+                    "java.version", "java.vendor", "java.vm.version",
+                    "java.vm.vendor"};
+            Hashtable propertyMap = new Hashtable();
+            propertyMap.Add("bindings.version", EligibleResources.LibraryVersion);
+            propertyMap.Add("lang", "C#");
+            propertyMap.Add("publisher", "Eligible");
+            request.AddHeader("X-Eligible-Client-User-Agent", JsonConvert.SerializeObject(propertyMap));
+            request.AddHeader("Eligible-Version", options.ApiVersion);
         }
 
     }
@@ -95,4 +118,5 @@ namespace EligibleService.Common
         IRestResponse Execute(string apiResource, RequestOptions options, Hashtable filters = null);
         IRestResponse ExecutePostPut(string apiResource, string json, RequestOptions options, Method httpMethod = Method.POST);
     }
+
 }

@@ -35,7 +35,6 @@ namespace EligibleService.Core.CoreTests
 
         [TestMethod]
         [TestCategory("Enrollment")]
-        [ExpectedException(typeof(EligibleService.Exceptions.InvalidRequestException))]
         public void EnrollmentCreationWithExistingNpiTest()
         {
             EnrollmentParams input = JsonConvert.DeserializeObject<EnrollmentParams>(EnrollmentInput);
@@ -65,7 +64,6 @@ namespace EligibleService.Core.CoreTests
 
         [TestMethod]
         [TestCategory("Enrollment")]
-        [ExpectedException(typeof(EligibleService.Exceptions.InvalidRequestException))]
         public void EnrollmentUpdateWithInvalidNpiTest()
         {
             EnrollmentParams input = JsonConvert.DeserializeObject<EnrollmentParams>(EnrollmentInput);

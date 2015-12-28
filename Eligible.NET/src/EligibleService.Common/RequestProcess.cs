@@ -15,7 +15,7 @@ namespace EligibleService.Common
     {
         public static TClassResponse ValidateAndReturnResponse<TClassResponse, TClassError>(IRestResponse response)
         {
-            string message = "Error retrieving response: " + response.StatusCode.ToString() + ": " + response.Content;
+            string message = response.StatusCode.ToString() + ": " + response.Content;
             if (response.ErrorException != null)
             {
                 throw new InvalidRequestException(message, response.ErrorException);
@@ -41,7 +41,7 @@ namespace EligibleService.Common
                     throw new EligibleException(errorClass);
                 else
                 {
-                    message = error + " " + response.Content;
+                    message = error + ". " + response.Content;
                     throw new InvalidRequestException(message, response.ErrorException);
                 }
             }
@@ -88,7 +88,7 @@ namespace EligibleService.Common
         public static TClassResponse SimpleValidateAndReturnResponse<TClassResponse>(IRestResponse response)
         {
             TClassResponse deserilizedResponse = default(TClassResponse);
-            string  message = "Error retrieving the response: " + response.StatusCode.ToString() + ":" + response.Content;
+            string  message = response.StatusCode.ToString() + ":" + response.Content;
             bool isParsed = false;
 
             if (response.ErrorException != null)
@@ -107,7 +107,7 @@ namespace EligibleService.Common
             }
             catch (Exception ex)
             {
-               message = "Error retrieving the response: " + ex.Message;
+               message = response.Content + ". " + ex.Message;
             }
 
             if (deserilizedResponse == null || !isParsed)

@@ -38,7 +38,7 @@ namespace EligibleService.Core.CoreTests
         public void ClaimCreationWithRequestOptionsTest()
         {
             RequestOptions options = new RequestOptions();
-            options.TestMode = true;
+            options.IsTest = true;
             options.ApiKey = null;
             options.ApiVersion = null;
             Hashtable input = JsonConvert.DeserializeObject<Hashtable>(ClaimInput);
@@ -64,7 +64,7 @@ namespace EligibleService.Core.CoreTests
         {
             ClaimParams input = JsonConvert.DeserializeObject<ClaimParams>(ClaimInput);
             RequestOptions options = new RequestOptions();
-            options.TestMode = true;
+            options.IsTest = true;
 
             ClaimResponse actualResponse = claim.Create(input, options);
             ClaimSuccessCheck(actualResponse.JsonResponse());
@@ -87,7 +87,7 @@ namespace EligibleService.Core.CoreTests
             Eligible config = Eligible.Instance;
             config.ApiKey = "Invalid key";
             config.ApiVersion = "v1.5";
-            config.TestMode = true;
+            config.IsTest = true;
 
             ClaimResponse actualResponse = claim.Create(ClaimInput);
         }

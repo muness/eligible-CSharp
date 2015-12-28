@@ -320,5 +320,16 @@ namespace EligibleService.Net {
                 return ResourceManager.GetString("SupportedApiVersion", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to v1.5.
+        /// </summary>
+        internal static string LibraryVersion
+        {
+            get
+            {
+                return ResourceManager.GetString("Version", resourceCulture);
+            }
+        }
     }
 }

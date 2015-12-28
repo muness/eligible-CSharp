@@ -39,7 +39,7 @@ namespace EligibleService.Core
     public class RequestOptions
     {
         public string ApiKey { get; set; }
-        public bool? TestMode { get; set; }
+        public bool? IsTest { get; set; }
         public string ApiVersion { get; set; }
     }
 }

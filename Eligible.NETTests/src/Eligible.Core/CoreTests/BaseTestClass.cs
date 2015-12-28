@@ -11,9 +11,11 @@ namespace EligibleService.Core.CoreTests
         public static void SetConfiguration()
         {
             Eligible config = Eligible.Instance;
-            config.ApiKey = "Api Key";
+            string value = System.Configuration.ConfigurationManager.AppSettings["apikey"];
+
+            config.ApiKey = (String.IsNullOrEmpty(value)) ? Environment.GetEnvironmentVariable("apikey") : value;
             config.ApiVersion = "v1.5";
-            config.TestMode = true;
+            config.IsTest = true;
 
         }
     }

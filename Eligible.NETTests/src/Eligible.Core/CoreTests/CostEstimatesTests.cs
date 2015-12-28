@@ -51,7 +51,7 @@ namespace EligibleService.Core.CoreTests
             Eligible eligible = Eligible.Instance;
             eligible.ApiKey = "invalid key";
             eligible.ApiVersion = "v1.5";
-            eligible.TestMode = true;
+            eligible.IsTest = true;
 
             CostEstimatesResponse actualResponse = costEstimates.Get(CostEstimatesParams());
         }

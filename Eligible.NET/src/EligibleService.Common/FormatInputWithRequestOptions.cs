@@ -1,4 +1,5 @@
 ﻿using EligibleService.Core;
+using EligibleService.Net;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,8 @@ namespace EligibleService.Common
         }
         private static string AddingOptionsToJson(RequestOptions options, JObject jobject)
         {
+            options = SetRequestOptionsObject(options);
+
             if ((jobject.Property("api_key") == null))
             {
                 jobject.Add("api_key", options.ApiKey);
@@ -30,11 +33,11 @@ namespace EligibleService.Common
 
             if ((jobject.Property("test") == null))
             {
-                jobject.Add("test", options.TestMode);
+                jobject.Add("test", options.IsTest);
             }
             else if (string.IsNullOrEmpty(jobject.Property("test").Value.ToString()))
             {
-                jobject.Property("test").Value = options.TestMode;
+                jobject.Property("test").Value = options.IsTest;
             }
 
             return jobject.ToString();
@@ -48,21 +51,27 @@ namespace EligibleService.Common
             {
                 if (string.IsNullOrEmpty(options.ApiKey))
                     options.ApiKey = eligible.ApiKey;
+
                 if (string.IsNullOrEmpty(options.ApiVersion))
-                    options.ApiVersion = eligible.ApiVersion;
-                if (!options.TestMode.HasValue)
                 {
-                    if (eligible.TestMode.HasValue)
-                        options.TestMode = eligible.TestMode;
+                    if (string.IsNullOrEmpty(eligible.ApiVersion))
+                        options.ApiVersion = EligibleResources.SupportedApiVersion;
                     else
-                        options.TestMode = false;
+                        options.ApiVersion = eligible.ApiVersion;
+                }
+                if (!options.IsTest.HasValue)
+                {
+                    if (eligible.IsTest.HasValue)
+                        options.IsTest = eligible.IsTest;
+                    else
+                        options.IsTest = false;
                 }
             }
             else
             {
                 options = new RequestOptions();
                 options.ApiKey = eligible.ApiKey;
-                options.TestMode = eligible.TestMode;
+                options.IsTest = eligible.IsTest;
                 options.ApiVersion = eligible.ApiVersion;
             }
             return options;

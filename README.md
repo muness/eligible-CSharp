@@ -28,7 +28,7 @@ Below lines of code stores your ApiKey, TestMode and ApiVersion once and use it 
 Eligible eligible = Eligible.Instance;
 eligible.ApiKey = "Api Key";
 eligible.ApiVersion = "v1.5";
-eligible.TestMode = true;
+eligible.IsTest = true;
 ```
 	(OR)
 create RequestOptions object and pass it to every request
@@ -36,7 +36,7 @@ create RequestOptions object and pass it to every request
 RequestOptions requestOptions = new RequestOptions();
 requestOptions.ApiKey = "Api Key";
 requestOptions.ApiVersion = "v1.5";
-requestOptions.TestMode = true;
+requestOptions.IsTest = true;
 
 ClaimResponse response = claim.Create(input, requestOptions); // requestOptions is optional parameter
 ```
@@ -44,7 +44,7 @@ We have not mentioned all the parameters required to pass along with Api calls h
 
 #### Sample Usage
 ```cs
-###using Eligible.Core;
+using Eligible.Core;
 using System;
 
 class Program
@@ -54,14 +54,14 @@ class Program
 		Eligible eligible = Eligible.Instance;
 		eligible.ApiKey = "Api Key";
 		eligible.ApiVersion = "v1.5";
-		eligible.TestMode = false;
+		eligible.IsTest = false;
 
 		Payers payers = new Payers();
 		PayersResponse payersResponse = payers.All();
 		/* 
 		RequestOptions requestOptions = new RequestOptions();
-		requestOptions.TestMode = true;
-		requestOptions.ApiVersion = "v1.6";
+		requestOptions.ApiKey = "Some other Api key"
+		requestOptions.IsTest = true;
 		PayersResponse payersResponse = payers.All(requestOptions); // requesoptions for specific request
 		*/
 		foreach(Eligible.Model.PayerResponse payer in payersResponse.Payers)
@@ -79,6 +79,11 @@ class Program
 	}
 }
 ```
+
+###Testing
+Add an Environmental Variable with name 'apikey' and save your api key to run the test cases.
+
+
 ## All EligibleApi Calls
 ### Payers
 please refer https://eligible.com/rest#payers for Payers information
