@@ -12,6 +12,7 @@ namespace EligibleService.Core
 
     public class Eligible : RequestOptions
     {
+        public string Fingerprint { get; set; }
         private static Eligible instance;
         private static readonly object syncLock = new object();
 

@@ -22,7 +22,7 @@ namespace EligibleService.Common
         /// <param name="filters">Parameters to filter the result</param>
         /// <returns>Desrialized JSON output</returns>
       
-        IRestResponse IRequestExecute.Execute(string apiResource,RequestOptions options, Hashtable filters)
+        public IRestResponse Execute(string apiResource,RequestOptions options, Hashtable filters)
         {
             ServicePointManager.ServerCertificateValidationCallback = ServerCertificateValidationCallback;
 
@@ -85,6 +85,8 @@ namespace EligibleService.Common
 
         public void ExecuteDownload(string apiResource, string npiId, string pathToDownload, RequestOptions options)
         {
+            ServicePointManager.ServerCertificateValidationCallback = ServerCertificateValidationCallback;
+
             using (var client = new WebClient())
             {
                 try
@@ -117,7 +119,9 @@ namespace EligibleService.Common
 
         public bool ServerCertificateValidationCallback(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors errors)
         {
-            const string fingerprint = "79D62E8A9D59AE687372F8E71345C76D92527FAC";
+            Eligible eligble = Eligible.Instance;
+
+            string fingerprint = (String.IsNullOrEmpty(eligble.Fingerprint)) ? System.Configuration.ConfigurationManager.AppSettings["fingerprint"] : eligble.Fingerprint;
 
             if (certificate == null || chain == null)
                 return false;
@@ -151,5 +155,6 @@ namespace EligibleService.Common
         IRestResponse Execute(string apiResource, RequestOptions options, Hashtable filters = null);
         IRestResponse ExecutePostPut(string apiResource, string json, RequestOptions options, Method httpMethod = Method.POST);
     }
+
 
 }

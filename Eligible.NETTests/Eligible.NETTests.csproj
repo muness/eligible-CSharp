@@ -93,6 +93,7 @@
     <Compile Include="src\Eligible.Core\MockTests\PaymentStatusTests.cs" />
     <Compile Include="src\Eligible.Core\MockTests\PrecertificationTests.cs" />
     <Compile Include="src\Eligible.Core\MockTests\RealtimeClaimsTests.cs" />
+    <Compile Include="src\EligibleService.Common\RequestExecuteTests.cs" />
     <Compile Include="TestResource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
