@@ -1,5 +1,4 @@
 ﻿using EligibleService.Core;
-using EligibleService.Exceptions;
 using EligibleService.Net;
 using RestSharp;
 using System;
@@ -7,6 +6,8 @@ using System.Collections;
 using System.IO;
 using System.Net;
 using Newtonsoft.Json;
+using System.Security.Cryptography.X509Certificates;
+using System.Net.Security;
 
 namespace EligibleService.Common
 {
@@ -22,7 +23,8 @@ namespace EligibleService.Common
       
         IRestResponse IRequestExecute.Execute(string apiResource,RequestOptions options, Hashtable filters)
         {
-            Eligible access = Eligible.Instance;
+            ServicePointManager.ServerCertificateValidationCallback = ServerCertificateValidationCallback;
+
             var request = new RestRequest();
             var client = new RestClient(new Uri(EligibleResources.BaseUrl));
 
@@ -40,33 +42,30 @@ namespace EligibleService.Common
 
             SetResource(apiResource, request);
 
-            var response = client.Execute(request);
-
-            //ThrowExceptions(response);
-
-            return response;
+            return client.Execute(request);
         }
 
         public IRestResponse ExecutePostPut(string apiResource, string json, RequestOptions options, Method httpMethod)
         {
+            ServicePointManager.ServerCertificateValidationCallback = ServerCertificateValidationCallback;
+
             json = FormatInputWithRequestOptions.FormatJson(json, options);
             var request = new RestRequest(httpMethod);
             var client = new RestClient(new Uri(EligibleResources.BaseUrl));
 
             request.AddParameter("application/json; charset=utf-8", json, ParameterType.RequestBody);
+            
             SetHeaders(request, options);
 
             SetResource(apiResource, request);
 
-            var response = client.Execute(request);
-
-            //ThrowExceptions(response);
-
-            return response;
+            return client.Execute(request);
         }
 
         public IRestResponse ExecutePdf(string apiResource, string pdfPath, RequestOptions options, Method httpMethod)
         {
+            ServicePointManager.ServerCertificateValidationCallback = ServerCertificateValidationCallback;
+
             var request = new RestRequest(httpMethod);
             var client = new RestClient(new Uri(EligibleResources.BaseUrl));
 
@@ -85,19 +84,16 @@ namespace EligibleService.Common
 
         public void ExecuteDownload(string apiResource, string npiId, string pathToDownload, RequestOptions options)
         {
-            Eligible access = Eligible.Instance;
-
             using (var client = new WebClient())
             {
-                client.DownloadFile(Path.Combine(EligibleResources.BaseUrl + EligibleResources.SupportedApiVersion + apiResource + "?api_key=" + access.ApiKey + "&test=" + access.IsTest), pathToDownload + npiId + ".pdf");
+                client.DownloadFile(Path.Combine(EligibleResources.BaseUrl + EligibleResources.SupportedApiVersion + apiResource + "?api_key=" + options.ApiKey + "&test=" + options.IsTest), pathToDownload + npiId + ".pdf");
             }
         }
 
         private void SetHeaders(RestRequest request, RequestOptions options)
         {
             request.AddHeader("Accept", "application/json");
-            request.AddHeader("User-Agent", String.Format("Eligible/{0} CSharpBindings/{1}", EligibleResources.SupportedApiVersion, EligibleResources.LibraryVersion));
-
+            request.AddHeader("User-Agent", String.Format("eligible.net/{0}", EligibleResources.LibraryVersion));
             Hashtable propertyMap = new Hashtable();
             propertyMap.Add("bindings.version", EligibleResources.LibraryVersion);
             propertyMap.Add("lang", "C#");
@@ -109,6 +105,33 @@ namespace EligibleService.Common
         private static void SetResource(string apiResource, RestRequest request)
         {
             request.Resource = "/" + EligibleResources.SupportedApiVersion + apiResource;
+        }
+
+        public bool ServerCertificateValidationCallback(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors errors)
+        {
+            const string fingerprint = "79D62E8A9D59AE687372F8E71345C76D92527FAC";
+
+            if (certificate == null || chain == null)
+                return false;
+
+            if (errors != SslPolicyErrors.None)
+                return false;
+
+            foreach (X509ChainStatus status in chain.ChainStatus)
+            {
+                if (status.Status != X509ChainStatusFlags.RevocationStatusUnknown &&
+                    status.Status != X509ChainStatusFlags.OfflineRevocation)
+                    break;
+
+                if (status.Status != X509ChainStatusFlags.NoError)
+                    return false;
+            }
+
+            var certFingerprint = certificate.GetCertHashString();
+            if (!fingerprint.Equals(certFingerprint, StringComparison.Ordinal))
+                return false;
+
+            return true;
         }
 
     }

@@ -4,14 +4,14 @@
     <id>Eligible.Net</id>
     <version>1.0.0</version>
     <title>Eligible.Net</title>
-    <authors>Eligble Inc</authors>
-    <owners>Eligble Inc</owners>
+    <authors>Eligible Inc</authors>
+    <owners>Eligible Inc</owners>
     <projectUrl>https://github.com/eligible/eligible-CSharp</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>C# bindings for Eligible REST APIs</description>
+    <description>C#(.net) bindings for Eligible REST APIs</description>
     <releaseNotes>First Release</releaseNotes>
     <copyright>Copyright 2015</copyright>
-    <tags>eligble insurence coverage claims</tags>
+    <tags>eligble insurence coverage claims medicare eligble.net eligble.csharp eligble.c# eligibleapi</tags>
 	<dependencies>
 	  <dependency id="RestSharp" version="105.2.3.0"/>
 	  <dependency id="Newtonsoft.Json" version="7.0.0" />
