@@ -145,7 +145,7 @@ namespace EligibleService.Core
         /// </summary>
         /// <param name="enrollmentNpiId"></param>
         /// <param name="pathToDownload"></param>
-        public string DownloadReceivedPdf(string enrollmentNpiId, string pathToDownload, RequestOptions options)
+        public string DownloadReceivedPdf(string enrollmentNpiId, string pathToDownload, RequestOptions options = null)
         {
             ExecuteObj.ExecuteDownload(Path.Combine(EligibleResources.EnrollmentNpis, enrollmentNpiId, EligibleResources.ReceivedPdf, EligibleResources.Download), EligibleResources.ReceivedPdf + "_" + enrollmentNpiId, pathToDownload, SetRequestOptionsObject(options));
             return "Request completed";

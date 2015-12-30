@@ -1,4 +1,5 @@
 ﻿using EligibleService.Core;
+using EligibleService.Exceptions;
 using EligibleService.Net;
 using RestSharp;
 using System;
@@ -86,7 +87,14 @@ namespace EligibleService.Common
         {
             using (var client = new WebClient())
             {
-                client.DownloadFile(Path.Combine(EligibleResources.BaseUrl + EligibleResources.SupportedApiVersion + apiResource + "?api_key=" + options.ApiKey + "&test=" + options.IsTest), pathToDownload + npiId + ".pdf");
+                try
+                {
+                    client.DownloadFile(Path.Combine(EligibleResources.BaseUrl + EligibleResources.SupportedApiVersion + apiResource + "?api_key=" + options.ApiKey + "&test=" + options.IsTest), pathToDownload + npiId + ".pdf");
+                }
+                catch (Exception ex)
+                {
+                    throw new InvalidRequestException(ex.Message);
+                }
             }
         }
 

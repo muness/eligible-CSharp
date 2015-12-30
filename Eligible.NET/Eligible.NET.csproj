@@ -73,7 +73,6 @@
     <Compile Include="src\EligibleService.Core\Precertification.cs" />
     <Compile Include="src\EligibleService.Core\RealtimeClaims.cs" />
     <Compile Include="src\EligibleService.Exceptions\InvalidRequestException.cs" />
-    <Compile Include="src\EligibleService.Exceptions\JsonDeserilizationException.cs" />
     <Compile Include="src\EligibleService.Model\BasicParams.cs" />
     <Compile Include="src\EligibleService.Model\ClaimReports\Actual.cs" />
     <Compile Include="src\EligibleService.Model\ClaimReports\Amount.cs" />

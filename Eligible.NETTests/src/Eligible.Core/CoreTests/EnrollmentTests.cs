@@ -120,5 +120,20 @@ namespace EligibleService.Core.CoreTests
             EnrollmentNpisResponses actualObj = JsonConvert.DeserializeObject<EnrollmentNpisResponses>(actualResponse.JsonResponse());
             TestHelper.PropertyValuesAreEquals(actualObj, expectedObj);
         }
+
+        [TestMethod()]
+        public void DownloadReceivedPdfTest()
+        {
+            string actualResponse = enrollment.DownloadReceivedPdf("123", "c:\\");
+            Assert.AreEqual("Request completed", actualResponse);
+        }
+
+        [TestMethod()]
+        [ExpectedException(typeof(EligibleService.Exceptions.InvalidRequestException))]
+        public void DownloadOrigibalSignaturePdfTest()
+        {
+            string actualResponse = enrollment.DownloadOriginalSignaturePdf("123", "c:\\");
+            Assert.AreEqual("Request completed", actualResponse);
+        }
     }
 }
