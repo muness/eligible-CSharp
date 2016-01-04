@@ -1,65 +1,65 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EligibleService.Common;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RestSharp;
 using System.Net;
 using EligibleService.Core;
-using EligibleService.Core.CoreTests;
 namespace EligibleService.Common.Tests
 {
     [TestClass()]
     public class RequestExecuteTests
     {
-        public RequestOptions options { get; set; }
         public Eligible eligible { get; set; }
+        RequestExecute execute;
 
         [TestInitialize]
         public void Setup()
         {
-            options = new RequestOptions();
-            string value = System.Configuration.ConfigurationManager.AppSettings["apikey"];
-            options.ApiKey = (String.IsNullOrEmpty(value)) ? Environment.GetEnvironmentVariable("apikey") : value;
-            options.IsTest = true;
+            eligible = Eligible.Instance;
+            execute = new RequestExecute();
         }
 
         [TestMethod()]
         public void ServerCertificateValidationCallbackTest()
         {
-            RequestExecute execute = new RequestExecute();
-
-            var response = execute.Execute("", options, null);
-            
-            Assert.AreEqual(null, response.ErrorMessage);
+            FingerprintPassTest();
         }
 
         [TestMethod()]
-        public void SettingFingerprintTHroughEligibleClassTest()
+        public void SetMatchingFingerprintTest()
         {
-            eligible = Eligible.Instance;
             eligible.Fingerprint = "79D62E8A9D59AE687372F8E71345C76D92527FAC";
+            FingerprintPassTest();
 
-            RequestExecute execute = new RequestExecute();
+        }
 
-            var response = execute.Execute("", options, null);
+        private void FingerprintPassTest()
+        {
+            var request = new RestRequest();
+            var client = new RestClient(new Uri("https://gds.eligibleapi.com/v1.5"));
 
+            ServicePointManager.ServerCertificateValidationCallback = execute.CertificateValidation;
+
+            var response = client.Execute(request);
             Assert.AreEqual(null, response.ErrorMessage);
         }
 
         [TestMethod()]
-        public void SettingFingerprintThroughAppSettingTest()
+        public void SetWrongFingerprintTest()
         {
-            eligible = Eligible.Instance;
-            eligible.Fingerprint = null;
+            eligible.Fingerprint = "wrong fingerprint";
 
-            System.Configuration.ConfigurationManager.AppSettings["fingerprint"] = "79D62E8A9D59AE687372F8E71345C76D92527FAC";
-            RequestExecute execute = new RequestExecute();
-            var response = execute.Execute("", options, null);
+            var request = new RestRequest();
+            var client = new RestClient(new Uri("https://gds.eligibleapi.com/"));
 
-            Assert.AreEqual(null, response.ErrorMessage);
+            ServicePointManager.ServerCertificateValidationCallback = execute.CertificateValidation;
+            try
+            {
+                client.Execute(request);
+            }
+            catch(Exception ex)
+            {
+                Assert.AreEqual("The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel.", ex.Message);
+            }
         }
     }
 }

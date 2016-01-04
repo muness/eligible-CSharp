@@ -9,11 +9,12 @@ using System.Net;
 using Newtonsoft.Json;
 using System.Security.Cryptography.X509Certificates;
 using System.Net.Security;
+using NLog;
 
 namespace EligibleService.Common
 {
     public class RequestExecute : IRequestExecute
-    {  
+    {
         /// <summary>
         /// Generic method to process all requests
         /// </summary>
@@ -21,10 +22,13 @@ namespace EligibleService.Common
         /// <param name="apiResource">Path to fetch data</param>
         /// <param name="filters">Parameters to filter the result</param>
         /// <returns>Desrialized JSON output</returns>
-      
-        public IRestResponse Execute(string apiResource,RequestOptions options, Hashtable filters)
+        public RequestExecute()
         {
-            ServicePointManager.ServerCertificateValidationCallback = ServerCertificateValidationCallback;
+            new Logging();
+        }
+        public IRestResponse Execute(string apiResource, RequestOptions options, Hashtable filters)
+        {
+            ServicePointManager.ServerCertificateValidationCallback = CertificateValidation;
 
             var request = new RestRequest();
             var client = new RestClient(new Uri(EligibleResources.BaseUrl));
@@ -48,14 +52,14 @@ namespace EligibleService.Common
 
         public IRestResponse ExecutePostPut(string apiResource, string json, RequestOptions options, Method httpMethod)
         {
-            ServicePointManager.ServerCertificateValidationCallback = ServerCertificateValidationCallback;
+            ServicePointManager.ServerCertificateValidationCallback = CertificateValidation;
 
             json = FormatInputWithRequestOptions.FormatJson(json, options);
             var request = new RestRequest(httpMethod);
             var client = new RestClient(new Uri(EligibleResources.BaseUrl));
 
             request.AddParameter("application/json; charset=utf-8", json, ParameterType.RequestBody);
-            
+
             SetHeaders(request, options);
 
             SetResource(apiResource, request);
@@ -65,7 +69,7 @@ namespace EligibleService.Common
 
         public IRestResponse ExecutePdf(string apiResource, string pdfPath, RequestOptions options, Method httpMethod)
         {
-            ServicePointManager.ServerCertificateValidationCallback = ServerCertificateValidationCallback;
+            ServicePointManager.ServerCertificateValidationCallback = CertificateValidation;
 
             var request = new RestRequest(httpMethod);
             var client = new RestClient(new Uri(EligibleResources.BaseUrl));
@@ -85,7 +89,7 @@ namespace EligibleService.Common
 
         public void ExecuteDownload(string apiResource, string npiId, string pathToDownload, RequestOptions options)
         {
-            ServicePointManager.ServerCertificateValidationCallback = ServerCertificateValidationCallback;
+            ServicePointManager.ServerCertificateValidationCallback = CertificateValidation;
 
             using (var client = new WebClient())
             {
@@ -117,27 +121,23 @@ namespace EligibleService.Common
             request.Resource = "/" + EligibleResources.SupportedApiVersion + apiResource;
         }
 
-        public bool ServerCertificateValidationCallback(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors errors)
+        public bool CertificateValidation(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors errors)
         {
             Eligible eligble = Eligible.Instance;
 
-            string fingerprint = (String.IsNullOrEmpty(eligble.Fingerprint)) ? System.Configuration.ConfigurationManager.AppSettings["fingerprint"] : eligble.Fingerprint;
+            if(!String.IsNullOrEmpty(eligble.Fingerprint))
+            {
+                Logger logger = LogManager.GetLogger("Fingerprint");
+                logger.Error("Modifying the certificate fingerprint is not advised. This should only be done if instructed by eligible.com support. Please update to the most current version of the eligible library for certificate fingerprint updates.");
+            }
+
+            string fingerprint = (String.IsNullOrEmpty(eligble.Fingerprint)) ? EligibleResources.Fingerprint : eligble.Fingerprint;
 
             if (certificate == null || chain == null)
                 return false;
 
             if (errors != SslPolicyErrors.None)
                 return false;
-
-            foreach (X509ChainStatus status in chain.ChainStatus)
-            {
-                if (status.Status != X509ChainStatusFlags.RevocationStatusUnknown &&
-                    status.Status != X509ChainStatusFlags.OfflineRevocation)
-                    break;
-
-                if (status.Status != X509ChainStatusFlags.NoError)
-                    return false;
-            }
 
             var certFingerprint = certificate.GetCertHashString();
             if (!fingerprint.Equals(certFingerprint, StringComparison.Ordinal))
