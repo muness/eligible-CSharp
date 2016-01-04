@@ -242,13 +242,6 @@ namespace EligibleService.Core.Tests
             payers.ExecuteObj = restClient.Object;
 
             payers.All();
-            payers.GetById("payer_id");
-            payers.All("endpoint", "enrollment");
-            payers.Statusses();
-            payers.Statusses("PayerId");
-            payers.GetPayersByStatus("available");
-            payers.SearchOptions();
-            payers.SearchOptions("Payer_id");
         }
 
         [TestMethod]
@@ -265,13 +258,6 @@ namespace EligibleService.Core.Tests
             payers.ExecuteObj = restClient.Object;
 
             payers.All();
-            payers.GetById("payer_id");
-            payers.All("endpoint", "enrollment");
-            payers.Statusses();
-            payers.Statusses("PayerId");
-            payers.GetPayersByStatus("available");
-            payers.SearchOptions();
-            payers.SearchOptions("Payer_id");
         }
 
         [TestMethod]
@@ -288,13 +274,6 @@ namespace EligibleService.Core.Tests
             payers.ExecuteObj = restClient.Object;
 
             payers.All();
-            payers.GetById("payer_id");
-            payers.All("endpoint", "enrollment");
-            payers.Statusses();
-            payers.Statusses("PayerId");
-            payers.GetPayersByStatus("available");
-            payers.SearchOptions();
-            payers.SearchOptions("Payer_id");
 
         }
       }

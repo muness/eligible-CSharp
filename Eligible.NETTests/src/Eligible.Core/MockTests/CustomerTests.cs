@@ -160,13 +160,6 @@ namespace EligibleService.Core.Tests
 
             customer.ExecuteObj = restClient.Object;
 
-            customer.GetByCustomerId("customer_id");
-            customer.Create("{json: input}");
-            customer.Update("id", "{json: input}");
-            customer.Create(param);
-            customer.Update("id", param);
-            customer.Create(paramValues);
-            customer.Update("id", paramValues);
             customer.GetAll();
 
         }
@@ -186,13 +179,6 @@ namespace EligibleService.Core.Tests
             customer.ExecuteObj = restClient.Object;
 
             customer.GetByCustomerId("customer_id");
-            customer.Create("{json: input}");
-            customer.Update("id", "{json: input}");
-            customer.Create(param);
-            customer.Update("id", param);
-            customer.Create(paramValues);
-            customer.Update("id", paramValues);
-            customer.GetAll();
 
         }
 
@@ -211,13 +197,6 @@ namespace EligibleService.Core.Tests
             customer.ExecuteObj = restClient.Object;
 
             customer.GetByCustomerId("customer_id");
-            customer.Create("{json: input}");
-            customer.Update("id", "{json: input}");
-            customer.Create(param);
-            customer.Update("id", param);
-            customer.Create(paramValues);
-            customer.Update("id", paramValues);
-            customer.GetAll();
         }
 
         [TestMethod()]

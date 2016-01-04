@@ -24,7 +24,7 @@ namespace EligibleService.Model
         public string PosLabel { get; set; }
 
         [JsonProperty("authorization_required")]
-        public string AuthorizationRequired { get; set; }
+        public bool? AuthorizationRequired { get; set; }
 
         [JsonProperty("description")]
         public string Description { get; set; }
