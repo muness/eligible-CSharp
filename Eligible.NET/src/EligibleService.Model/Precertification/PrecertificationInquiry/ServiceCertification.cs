@@ -2,7 +2,6 @@
 
 namespace EligibleService.Model.Precertification
 {
-
     public class ServiceCertification : Certification
     {
         [JsonProperty("service_start_date")]
@@ -13,7 +12,6 @@ namespace EligibleService.Model.Precertification
 
         [JsonProperty("issue_date")]
         public string IssueDate { get; set; }
-
     }
 
 }

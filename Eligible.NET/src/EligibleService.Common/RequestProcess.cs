@@ -1,19 +1,14 @@
 ﻿using EligibleService.Exceptions;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using RestSharp;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EligibleService.Common
 {
     public class RequestProcess
     {
-        public static TClassResponse ValidateAndReturnResponse<TClassResponse, TClassError>(IRestResponse response)
+        public static TClassResponse ResponseValidation<TClassResponse, TClassError>(IRestResponse response)
         {
             string message = response.StatusCode.ToString() + ": " + response.Content;
             if (response.ErrorException != null)
@@ -77,17 +72,18 @@ namespace EligibleService.Common
             }
             catch (Exception ex)
             {
-                sourceClass = sourceClassLocal;
                 parseJson = false;
                 error = ex.Message;
             }
-
-            sourceClass = sourceClassLocal;
+            finally
+            {
+                sourceClass = sourceClassLocal;
+            }
         }
 
-        public static TClassResponse SimpleValidateAndReturnResponse<TClassResponse>(IRestResponse response)
+        public static TClassResponse SimpleResponseValidation<TClassResponse>(IRestResponse response)
         {
-            TClassResponse deserilizedResponse = default(TClassResponse);
+            TClassResponse deserializedResponse = default(TClassResponse);
             string  message = response.StatusCode.ToString() + ":" + response.Content;
             bool isParsed = false;
 
@@ -102,7 +98,7 @@ namespace EligibleService.Common
 
             try
             {
-                deserilizedResponse = JsonConvert.DeserializeObject<TClassResponse>(response.Content);
+                deserializedResponse = JsonConvert.DeserializeObject<TClassResponse>(response.Content);
                 isParsed = true;
             }
             catch (Exception ex)
@@ -110,12 +106,12 @@ namespace EligibleService.Common
                message = response.Content + ". " + ex.Message;
             }
 
-            if (deserilizedResponse == null || !isParsed)
+            if (deserializedResponse == null || !isParsed)
             {
                 throw new InvalidRequestException(message, response.ErrorException);
             }
 
-            return deserilizedResponse;
+            return deserializedResponse;
         }
     }
 }

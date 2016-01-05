@@ -1,11 +1,8 @@
 ﻿using EligibleService.Common;
 using EligibleService.Exceptions;
 using EligibleService.Model;
-using EligibleService.Model.CostEstimates;
 using EligibleService.Net;
-using System;
 using System.Collections;
-using System.Runtime.InteropServices;
 
 namespace EligibleService.Core
 {
@@ -30,9 +27,9 @@ namespace EligibleService.Core
         public CostEstimatesResponse Get(Hashtable requiredParams,  RequestOptions options = null)
         {
             response = ExecuteObj.Execute(EligibleResources.CostEstimates, SetRequestOptionsObject(options), requiredParams);
-            var formatedResponse = RequestProcess.ValidateAndReturnResponse<CostEstimatesResponse, CoverageErrorDetails>(response);
-            formatedResponse.SetJsonResponse(response.Content);
-            return formatedResponse;
+            var formattedResponse = RequestProcess.ResponseValidation<CostEstimatesResponse, CoverageErrorDetails>(response);
+            formattedResponse.SetJsonResponse(response.Content);
+            return formattedResponse;
         }
     }
 }

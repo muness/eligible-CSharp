@@ -1,6 +1,5 @@
 ﻿using EligibleService.Model.Coverage;
 using Newtonsoft.Json;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace EligibleService.Model.CostEstimates

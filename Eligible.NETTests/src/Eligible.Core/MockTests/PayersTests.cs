@@ -5,16 +5,10 @@ using EligibleService.NETTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using RestSharp;
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Net;
-using System.Reflection;
-using EligibleService.Core;
 using Ploeh.AutoFixture;
-using EligibleService.Model.Payer;
 using System.Collections.ObjectModel;
 
 namespace EligibleService.Core.Tests

@@ -3,10 +3,8 @@ using System.Collections.ObjectModel;
 
 namespace EligibleService.Model.Precertification
 {
-
     public class PatientEvent
     {
-
         [JsonProperty("place_of_service")]
         public string PlaceOfService { get; set; }
 

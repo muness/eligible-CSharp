@@ -9,7 +9,6 @@ using System.Net;
 using Newtonsoft.Json;
 using System.Security.Cryptography.X509Certificates;
 using System.Net.Security;
-using NLog;
 
 namespace EligibleService.Common
 {
@@ -140,7 +139,7 @@ namespace EligibleService.Common
 
     public interface IRequestExecute
     {
-        void ExecuteDownload(string apiResource, string npiId, string pathToDownload, RequestOptions options);
+        void ExecuteDownload(string apiResource, string npi, string pathToDownload, RequestOptions options);
         IRestResponse ExecutePdf(string apiResource, string pdfPath, RequestOptions options, Method httpMethod = Method.POST);
         IRestResponse Execute(string apiResource, RequestOptions options, Hashtable filters = null);
         IRestResponse ExecutePostPut(string apiResource, string json, RequestOptions options, Method httpMethod = Method.POST);

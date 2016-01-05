@@ -1,9 +1,5 @@
 ﻿using EligibleService.Net;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using NLog;
-using RestSharp;
-using System.Runtime.InteropServices;
 
 namespace EligibleService.Core
 {

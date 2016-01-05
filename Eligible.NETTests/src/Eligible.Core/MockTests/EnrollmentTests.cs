@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EligibleService.Core;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using EligibleService.Common;
 using System.Collections;
@@ -13,8 +7,8 @@ using RestSharp;
 using EligibleService.NETTests;
 using System.Net;
 using Ploeh.AutoFixture;
-using EligibleService.Model.EnrollmentNpis;
 using EligibleService.Model;
+
 namespace EligibleService.Core.Tests
 {
     [TestClass()]

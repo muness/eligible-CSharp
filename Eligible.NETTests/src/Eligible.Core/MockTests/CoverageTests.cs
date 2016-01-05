@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EligibleService.Core;
+﻿using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using EligibleService.Common;
 using System.Collections;
-using System.IO;
 using Newtonsoft.Json;
 using RestSharp;
 using System.Net;
@@ -18,7 +12,7 @@ using Ploeh.AutoFixture;
 using EligibleService.Model.Coverage;
 using EligibleService.Model;
 using EligibleService.Exceptions;
-using EligibleService.Model.Medicare;
+
 namespace EligibleService.Core.Tests
 {
     [TestClass()]

@@ -4,7 +4,6 @@ namespace EligibleService.Model.Precertification
 {
     public class Payer
     {
-
         [JsonProperty("name")]
         public string Name { get; set; }
 
