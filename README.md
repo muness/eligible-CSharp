@@ -1,13 +1,13 @@
 #Eligible.NET
 C# Library for Eligible APIs
 ### Description
-EligibleNET  for .NET provides simple access to Eligible APIs.
+EligibleNET for .NET provides simple access to Eligible APIs.
 
 #### Requirements
 * [.NET Framework 4.5](http://www.microsoft.com/en-us/download/details.aspx?id=30653)
 
 #### NuGet Packages
-Eligible.NET library is available on nuget. Use the below command to get it from Nuget PackageManagerConsole.
+Eligible.NET library is available on NuGet. Use the below command to get it from Nuget PackageManagerConsole.
 
 	Install-Package Eligible.Net
 	
@@ -18,19 +18,19 @@ and expected response formats.
 ### Configure
 You can request an account at https://eligible.com/request-access
 
-Please include below namespace to make calls to the Eligible Api. 
+Please include the below namespaces to make calls to the Eligible API. 
 ```cs
 using EligibleService.Core; // For Query
 using EligibleService.Model; //For Response
 ```
-Below lines of code stores your ApiKey, TestMode and ApiVersion once and use it in entire application. 
+The below lines of code store your ApiKey, TestMode and ApiVersion once and use it in entire application. 
 ```cs
 Eligible eligible = Eligible.Instance;
 eligible.ApiKey = "Api Key";
 eligible.IsTest = true;
 ```
 	(OR)
-create RequestOptions object and pass it to every request
+Create a RequestOptions object and pass it to every request
 ```cs
 RequestOptions requestOptions = new RequestOptions();
 requestOptions.ApiKey = "Api Key";
@@ -38,7 +38,7 @@ requestOptions.IsTest = true;
 
 ClaimResponse response = claim.Create(input, requestOptions); // requestOptions is optional parameter
 ```
-We have not mentioned all the parameters required to pass along with Api calls here. Please check our [website](https://eligible.com/rest) for complete parameters.
+We have not mentioned all the parameters required to pass along with API calls here. Please check our [website](https://eligible.com/rest) for complete parameters.
 
 #### Sample Usage
 ```cs
@@ -78,12 +78,12 @@ class Program
 ```
 
 ###Testing
-Add an Environmental Variable with name 'apikey' and save your api key to run the test cases.
+Add an Environment Variable with name 'apikey' and save your API key to run the test cases.
 
 
 ## All EligibleApi Calls
 ### Payers
-please refer https://eligible.com/rest#payers for Payers information
+Please refer to https://eligible.com/rest#payers for Payers information
 ```cs
 Payers payers = new Payers();
 PayersResponse payersResponse = payers.All(); //List of all payers
@@ -103,10 +103,10 @@ StatusResponse payerStatusses = payers.StatussesByPayer("00002", "276"); // Get 
 ```
 
 ### Claim
-Use any of the below 3 ways to create a Claim.
+There are multiple ways to create a Claim.
 
 ###### 1. Create claim with Hash params
-please refer https://eligible.com/rest#claims_and_reports for complete param information
+Please refer to https://eligible.com/rest#claims_and_reports for complete parameter information.
 ```cs
 Claim claim = new Claim();
 
@@ -122,7 +122,7 @@ if (claimResponse.Success)
 	Console.WriteLine("Claim submitted successfully");
 
 ```
-###### 2.Create claim with our ClaimParams Class.Include using Eligible.Model.Claim;to get this work
+###### 2.Create claim with our ClaimParams Class. Include using Eligible.Model.Claim to get this to work.
 
 ```cs
 ClaimParams claimParamsObj = new ClaimParams();
@@ -140,7 +140,7 @@ claimParamsObj.Payer = new Payer()
 ClaimResponse claimResponse = claim.Create(claimParamsObj)
 
 ```
-###### 3. Create claim with json ######
+###### 3. Create claim with JSON ######
 ```cs 
 ClaimResponse claimResponse = claim.Create("{"scrub_eligibility": "false", "billing_provider": {    "tax_id": "123456789",    "tax_id_type": "EI",    "entity": "false",...})
 ```
@@ -160,7 +160,7 @@ ClaimPaymentReportsResponse multipleClaimPaymentReports = claim.GetClaimPaymentR
 ```
 
 ### Coverage
-please refer https://eligible.com/rest#coverage for full param information
+Please refer to https://eligible.com/rest#coverage for full parameter information.
 ```cs 
 Coverage coverage = new Coverage();
 Hashtable coverageParams = new Hashtable();
@@ -173,7 +173,7 @@ coverageParams.Add("member_id", "ZZZ12345556666");
 CoverageResponse coverageResponse = coverage.All(coverageHashParams); 
 ```
 ### Medicare
-please refer https://eligible.com/rest#retrieve-medicare for Medicare params information
+Please refer to https://eligible.com/rest#retrieve-medicare for full Medicare parameter information.
 ```cs
 Coverage coverage = new Coverage();
 
@@ -181,20 +181,20 @@ MedicareResponse medicare = coverage.Medicare(medicareHashParams);
 ```
 
 ### Customer 
-please refer https://eligible.com/rest#customers for customer params information
+Please refer to https://eligible.com/rest#customers for full customer parameter information.
 ```cs
 Customer customer = new Customer();
 ```
 ```cs
 // Create customer
 CustomerResponse response = customer.Create("ABC", "ABC site"); // params => ABC is company_name, ABc site is company_site
-CustomerResponse response = customer.Create("{customer: { 'name': 'XYZ company', 'site_name': 'XYZ site name' } }"); // create customer with json
+CustomerResponse response = customer.Create("{customer: { 'name': 'XYZ company', 'site_name': 'XYZ site name' } }"); // create customer with JSON
 CustomerResponse response = customer.Create(customerHashParams);
 CustomerResponse response = customer.Create(customerParams); // customerParams is an object of CustomerParams. Usage is similar to Claim creation using ClaimParams.
 
 // Update customer
 CustomerResponse response = customer.Update("customerId", "ABC", "ABC site"); // params => ABC is company_name, ABc site is company_site
-CustomerResponse response = customer.Update("customerId", "{customer: { 'name': 'XYZ company', 'site_name': 'XYZ site name' } }"); // create customer with json
+CustomerResponse response = customer.Update("customerId", "{customer: { 'name': 'XYZ company', 'site_name': 'XYZ site name' } }"); // create customer with JSON
 CustomerResponse response = customer.Update("customerId", customerHashParams);
 CustomerResponse response = customer.Update("customerId", customerParams); // customerParams is an object of CustomerParams. Usage is similar to Claim creation using ClaimParams.
 
@@ -206,7 +206,7 @@ CustomersResponse customers = customer.GetAll("3");  // parameter "3" is page nu
 ```
 
 ### Cost Estimates 
-please refer https://eligible.com/rest#cost-estimates for CostEstimates params information
+Please refer to https://eligible.com/rest#cost-estimates for full CostEstimates parameter information.
 ```cs
 CostEstimates costEstimates = new CostEstimates();
 
@@ -214,7 +214,7 @@ CostEstimatesResponse costEstimatesResponse = costEstimates.Get(costEstimatesHas
 ```
 
 ### Payment Status 
-please refer https://eligible.com/rest#payment-status for Payment Status params information
+Please refer to https://eligible.com/rest#payment-status for full Payment Status parameter information.
 ```cs
 PaymentStatus paymentStatus = new PaymentStatus();
 
@@ -222,7 +222,7 @@ PayementStatusResponse paymentStatus = paymentStatus.Get(paymentStatusHashParams
 ```
 
 ### Enrollments
-please refer https://eligible.com/rest#enrollments for Enrollments params information
+Please refer to https://eligible.com/rest#enrollments for full Enrollments parameter information.
 ```cs
 Enrollment enrollment = new Enrollment();
 ```
@@ -230,7 +230,7 @@ Enrollment enrollment = new Enrollment();
 //Create Enrollment
 EnrollmentNpisResponse enrollmentResponse = enrollment.Create(enrollmentHashParams);
 EnrollmentNpisResponse enrollmentResponse = enrollment.Create(enrollmentParams); // Use EnrollmentParams class to send required params
-EnrollmentNpisResponse enrollmentResponse = enrollment.Create(jsonParams); // Build params in json form.
+EnrollmentNpisResponse enrollmentResponse = enrollment.Create(jsonParams); // Build params in JSON form.
 
 //Update Enrollment
 EnrollmentNpisResponse enrollmentResponse = enrollment.Update("enrollment_npi_id", enrollmentHashParams);
@@ -260,7 +260,7 @@ string response = enrollment.DownloadOriginalSignaturePdf("enrollment_npi_id", "
 ```
 
 ### Precertification 
-please refer https://eligible.com/rest#precert for Precertification params information
+Please refer to https://eligible.com/rest#precert for full Precertification parameter information.
 ```cs
 Precertification precertification = new Precertification();
 PrecertificationInquiryResponse preCertifications = precertification.Inquiry(hashParams);
