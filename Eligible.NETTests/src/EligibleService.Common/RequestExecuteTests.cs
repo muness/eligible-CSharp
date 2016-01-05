@@ -19,7 +19,7 @@ namespace EligibleService.Common.Tests
         }
 
         [TestMethod()]
-        public void ServerCertificateValidationCallbackTest()
+        public void DefaultFingerprintTest()
         {
             FingerprintPassTest();
         }
@@ -60,6 +60,20 @@ namespace EligibleService.Common.Tests
             {
                 Assert.AreEqual("The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel.", ex.Message);
             }
+        }
+
+        [TestMethod()]
+        public void LogMessageWhenSetterCalledTest()
+        {
+            eligible.Fingerprint = "Modifying fingerprint";
+            Assert.AreEqual("Modifying the certificate fingerprint is not advised. This should only be done if instructed by eligible.com support. Please update to the most current version of the eligible library for certificate fingerprint updates.", Logging.GetLastMessage());
+        }
+
+        [TestMethod()]
+        public void NoLogMessageWhenSetterNotCalledTest()
+        {
+            new Logging();
+            Assert.AreEqual(string.Empty, Logging.GetLastMessage());
         }
     }
 }

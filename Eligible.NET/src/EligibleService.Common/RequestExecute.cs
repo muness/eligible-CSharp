@@ -22,10 +22,7 @@ namespace EligibleService.Common
         /// <param name="apiResource">Path to fetch data</param>
         /// <param name="filters">Parameters to filter the result</param>
         /// <returns>Desrialized JSON output</returns>
-        public RequestExecute()
-        {
-            new Logging();
-        }
+       
         public IRestResponse Execute(string apiResource, RequestOptions options, Hashtable filters)
         {
             ServicePointManager.ServerCertificateValidationCallback = CertificateValidation;
@@ -125,14 +122,7 @@ namespace EligibleService.Common
         {
             Eligible eligble = Eligible.Instance;
 
-            if(!String.IsNullOrEmpty(eligble.Fingerprint))
-            {
-                Logger logger = LogManager.GetLogger("Fingerprint");
-                logger.Error("Modifying the certificate fingerprint is not advised. This should only be done if instructed by eligible.com support. Please update to the most current version of the eligible library for certificate fingerprint updates.");
-            }
-
-            string fingerprint = (String.IsNullOrEmpty(eligble.Fingerprint)) ? EligibleResources.Fingerprint : eligble.Fingerprint;
-
+            string fingerprint = eligble.Fingerprint;
             if (certificate == null || chain == null)
                 return false;
 

@@ -11,6 +11,7 @@ namespace EligibleService.Common
 {
     public class Logging
     {
+        public static DebugTarget DebugTarget { get; set; }
         public Logging()
         {
             var config = new LoggingConfiguration();
@@ -27,7 +28,7 @@ namespace EligibleService.Common
             fileTarget.ArchiveNumbering= ArchiveNumberingMode.DateAndSequence;
             fileTarget.ArchiveDateFormat = "yyyy-MM-dd";
             fileTarget.Layout = @"${date:format=yyyy-MM-dd HH\:mm\:ss} ${logger} ${level}: ${message}";
-
+            
             var fileRule = new LoggingRule("*", LogLevel.Info, fileTarget);
             config.LoggingRules.Add(fileRule);
 
@@ -39,7 +40,18 @@ namespace EligibleService.Common
             var consoleRule = new LoggingRule("*", LogLevel.Info, consoleTarget);
             config.LoggingRules.Add(consoleRule);
 
+            DebugTarget = new DebugTarget();
+            DebugTarget.Layout = @"${message}";
+
+            var debugRule = new LoggingRule("*", LogLevel.Error, DebugTarget);
+            config.LoggingRules.Add(debugRule);
+
             LogManager.Configuration = config;
+        }
+
+        public static string GetLastMessage()
+        {
+            return DebugTarget.LastMessage;
         }
     }
 }
