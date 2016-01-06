@@ -57,7 +57,6 @@
     <Compile Include="src\EligibleService.Common\EligibleError.cs" />
     <Compile Include="src\EligibleService.Common\FormatInputWithRequestOptions.cs" />
     <Compile Include="src\EligibleService.Common\RequestProcess.cs" />
-    <Compile Include="src\EligibleService.Core\Referral.cs" />
     <Compile Include="src\EligibleService.Exceptions\ErrorsStructures\BasicError.cs" />
     <Compile Include="src\EligibleService.Exceptions\AuthenticationException.cs" />
     <Compile Include="src\EligibleService.Core\BaseCore.cs" />

@@ -31,7 +31,7 @@ namespace EligibleService.Core
         /// <returns></returns>
         public ClaimResponse Create(ClaimParams claimParams, RequestOptions options = null)
         {
-            return Create(JsonConvert.SerializeObject(claimParams), options);
+            return Create(JsonSerialize(claimParams), options);
         }
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace EligibleService.Core
         /// <returns></returns>
         public ClaimResponse Create(Hashtable claimParams, RequestOptions options = null)
         {
-            return Create(JsonConvert.SerializeObject(claimParams, Formatting.Indented), options);
+            return Create(JsonSerialize(claimParams), options);
         }
 
         /// <summary>

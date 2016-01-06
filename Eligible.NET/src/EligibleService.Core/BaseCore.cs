@@ -1,4 +1,5 @@
 ﻿using EligibleService.Common;
+using Newtonsoft.Json;
 using RestSharp;
 using RestSharp.Deserializers;
 using System.Collections;
@@ -16,6 +17,11 @@ namespace EligibleService.Core
         public BaseCore()
         {
             executeObj = new RequestExecute();
+        }
+
+        protected static string JsonSerialize(object inputParams)
+        {
+            return JsonConvert.SerializeObject(inputParams, Formatting.Indented);
         }
     }
 }

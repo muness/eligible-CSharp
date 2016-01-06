@@ -30,7 +30,7 @@ namespace EligibleService.Core
         /// <returns></returns>
         public CustomerResponse Create(Hashtable customerHashParams, RequestOptions options = null)
         {
-            return Create(JsonConvert.SerializeObject(customerHashParams, Formatting.Indented), options);
+            return Create(JsonSerialize(customerHashParams), options);
         }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace EligibleService.Core
         /// <returns></returns>
         public CustomerResponse Create(CustomerParams customerParams, RequestOptions options = null)
         {
-            return Create(JsonConvert.SerializeObject(customerParams, Formatting.Indented), options);
+            return Create(JsonSerialize(customerParams), options);
         }
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace EligibleService.Core
         public CustomerResponse Create(string companyName, string siteName, RequestOptions options = null)
         {
             CustomerParams custParams = BuildCustomerParams(companyName, siteName, options);
-            return Create(JsonConvert.SerializeObject(custParams), options);
+            return Create(JsonSerialize(custParams), options);
         }
 
         private CustomerParams BuildCustomerParams(string companyName, string siteName, RequestOptions options)
@@ -94,7 +94,7 @@ namespace EligibleService.Core
         public CustomerResponse Update(string customerId, string companyName, string siteName, RequestOptions options = null)
         {
             CustomerParams custParams = BuildCustomerParams(companyName, siteName, options);
-            return Update(customerId, JsonConvert.SerializeObject(custParams));
+            return Update(customerId, JsonSerialize(custParams));
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace EligibleService.Core
         /// <returns></returns>
         public CustomerResponse Update(string customerId, Hashtable customerParams, RequestOptions options = null)
         {
-            return Update(customerId, JsonConvert.SerializeObject(customerParams, Formatting.Indented),options);
+            return Update(customerId, JsonSerialize(customerParams), options);
         }
 
         /// <summary>
@@ -133,7 +133,7 @@ namespace EligibleService.Core
         /// <returns></returns>
         public CustomerResponse Update(string customerId, CustomerParams customerParams, RequestOptions options = null)
         {
-            return Update(customerId, JsonConvert.SerializeObject(customerParams, Formatting.Indented), options);
+            return Update(customerId, JsonSerialize(customerParams), options);
         }
 
         /// <summary>

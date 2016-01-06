@@ -79,7 +79,6 @@
     <Compile Include="src\Eligible.Core\CoreTests\EnrollmentTests.cs" />
     <Compile Include="src\Eligible.Core\CoreTests\PrecertificationTests.cs" />
     <Compile Include="src\Eligible.Core\CoreTests\RealtimeClaimsTests.cs" />
-    <Compile Include="src\Eligible.Core\CoreTests\ReferralTests.cs" />
     <Compile Include="src\Eligible.Core\MockTests\ClaimTests.cs" />
     <Compile Include="src\Eligible.Core\MockTests\CostEstimatesTests.cs" />
     <Compile Include="src\Eligible.Core\MockTests\CustomerTests.cs" />
