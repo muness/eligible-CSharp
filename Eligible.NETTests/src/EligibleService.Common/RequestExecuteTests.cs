@@ -66,7 +66,7 @@ namespace EligibleService.Common.Tests
         public void LogMessageWhenSetterCalledTest()
         {
             eligible.Fingerprint = "Modifying fingerprint";
-            Assert.AreEqual("Modifying the certificate fingerprint is not advised. This should only be done if instructed by eligible.com support. Please update to the most current version of the eligible library for certificate fingerprint updates.", Logging.GetLastMessage());
+            Assert.AreEqual("Modifying the certificate fingerprint is not advised. This should only be done if instructed by eligible.com support. Please update to the latest version of the eligible library for certificate fingerprint updates.", Logging.GetLastMessage());
         }
 
         [TestMethod()]

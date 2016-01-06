@@ -19,7 +19,7 @@ namespace EligibleService.Core
             { 
                 fingerprint = value;
                 Logger logger = LogManager.GetLogger("Fingerprint");
-                logger.Error("Modifying the certificate fingerprint is not advised. This should only be done if instructed by eligible.com support. Please update to the most current version of the eligible library for certificate fingerprint updates.");
+                logger.Error("Modifying the certificate fingerprint is not advised. This should only be done if instructed by eligible.com support. Please update to the latest version of the eligible library for certificate fingerprint updates.");
             }
         }
         private static Eligible instance;
