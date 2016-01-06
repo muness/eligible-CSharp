@@ -1,15 +1,12 @@
-﻿using EligibleService.Claim.ClaimReports;
-using EligibleService.Common;
+﻿using EligibleService.Common;
 using EligibleService.Exceptions;
 using EligibleService.Model;
 using EligibleService.Model.Claim;
 using EligibleService.Net;
 using Newtonsoft.Json;
 using RestSharp;
-using System;
 using System.Collections;
 using System.IO;
-using System.Runtime.InteropServices;
 
 namespace EligibleService.Core
 {
@@ -24,7 +21,7 @@ namespace EligibleService.Core
 
         public Claim() : base() { }
         /// <summary>
-        /// Claim submition with ClaimParam object
+        /// Claim submission with ClaimParam object
         /// https://gds.eligibleapi.com/rest#claim_and_reports_create_a_claim
         /// </summary>
         /// <param name="claimParams">Please refer Eligible REST doc for claim parameter details</param>
@@ -35,7 +32,7 @@ namespace EligibleService.Core
         }
 
         /// <summary>
-        /// Claim submition with Hashtable params
+        /// Claim submission with Hashtable params
         /// https://gds.eligibleapi.com/rest#claim_and_reports_create_a_claim
         /// </summary>
         /// <param name="claimParams">Please refer Eligible REST doc for claim parameter details</param>
@@ -46,7 +43,7 @@ namespace EligibleService.Core
         }
 
         /// <summary>
-        /// Claim submition with Json formeted string of  params
+        /// Claim submission with Json formeted string of  params
         /// https://gds.eligibleapi.com/rest#claim_and_reports_create_a_claim
         /// </summary>
         /// <param name="claimParams">Please refer Eligible REST doc for claim parameter details</param>
@@ -54,13 +51,13 @@ namespace EligibleService.Core
         public  ClaimResponse Create(string jsonParams, RequestOptions options = null)
         {
             response = ExecuteObj.ExecutePostPut(EligibleResources.PathToClaims, jsonParams, SetRequestOptionsObject(options));
-            ClaimResponse formatedResponse = RequestProcess.ValidateAndReturnResponse<ClaimResponse, ClaimErrors>(response);
-            if (formatedResponse.Success == false)
-                throw new EligibleException(formatedResponse);
+            ClaimResponse formattedResponse = RequestProcess.ResponseValidation<ClaimResponse, ClaimErrors>(response);
+            if (formattedResponse.Success == false)
+                throw new EligibleException(formattedResponse);
             else
             {
-                formatedResponse.SetJsonResponse(response.Content);
-                return formatedResponse;
+                formattedResponse.SetJsonResponse(response.Content);
+                return formattedResponse;
             }
         }
 
@@ -73,9 +70,9 @@ namespace EligibleService.Core
         public  ClaimAcknowledgementsResponse GetClaimAcknowledgements(string referenceId, RequestOptions options = null)
         {
             response = ExecuteObj.Execute(Path.Combine(EligibleResources.PathToClaims,referenceId, EligibleResources.ClaimAcknowledgementsPath), SetRequestOptionsObject(options));
-            ClaimAcknowledgementsResponse formatedResponse = RequestProcess.ValidateAndReturnResponse<ClaimAcknowledgementsResponse, EligibleError>(response);
-            formatedResponse.SetJsonResponse(response.Content);
-            return formatedResponse;
+            ClaimAcknowledgementsResponse formattedResponse = RequestProcess.ResponseValidation<ClaimAcknowledgementsResponse, EligibleError>(response);
+            formattedResponse.SetJsonResponse(response.Content);
+            return formattedResponse;
         }
 
         /// <summary>
@@ -87,9 +84,9 @@ namespace EligibleService.Core
         public  MultipleAcknowledgementsResponse GetClaimAcknowledgements(Hashtable requiredParams = null, RequestOptions options = null)
         {
             response = ExecuteObj.Execute(Path.Combine(EligibleResources.PathToClaims, EligibleResources.ClaimAcknowledgementsPath), SetRequestOptionsObject(options), requiredParams);
-            var formatedResponse = RequestProcess.ValidateAndReturnResponse<MultipleAcknowledgementsResponse, EligibleError>(response);
-            formatedResponse.SetJsonResponse(response.Content);
-            return formatedResponse;
+            var formattedResponse = RequestProcess.ResponseValidation<MultipleAcknowledgementsResponse, EligibleError>(response);
+            formattedResponse.SetJsonResponse(response.Content);
+            return formattedResponse;
         }
 
         /// <summary>
@@ -101,9 +98,9 @@ namespace EligibleService.Core
         public  ClaimPaymentReportResponse GetClaimPaymentReport(string referenceId, RequestOptions options = null)
         {
             response = GetReport(Path.Combine(EligibleResources.PathToClaims, referenceId, EligibleResources.PaymentReports), options);
-            var formatedResponse = RequestProcess.ValidateAndReturnResponse<ClaimPaymentReportResponse, ClaimErrors>(response);
-            formatedResponse.SetJsonResponse(response.Content);
-            return formatedResponse;
+            var formattedResponse = RequestProcess.ResponseValidation<ClaimPaymentReportResponse, ClaimErrors>(response);
+            formattedResponse.SetJsonResponse(response.Content);
+            return formattedResponse;
         }
 
         /// <summary>
@@ -116,9 +113,9 @@ namespace EligibleService.Core
         public  ClaimPaymentReportResponse GetClaimPaymentReport(string referenceId, string id, RequestOptions options = null)
         {
             response = GetReport(Path.Combine(EligibleResources.PathToClaims, referenceId, EligibleResources.PaymentReports, id), options);
-            var formatedResponse = RequestProcess.ValidateAndReturnResponse<ClaimPaymentReportResponse, ClaimErrors>(response);
-            formatedResponse.SetJsonResponse(response.Content);
-            return formatedResponse;
+            var formattedResponse = RequestProcess.ResponseValidation<ClaimPaymentReportResponse, ClaimErrors>(response);
+            formattedResponse.SetJsonResponse(response.Content);
+            return formattedResponse;
         }
 
         /// <summary>
@@ -129,9 +126,9 @@ namespace EligibleService.Core
         public  ClaimPaymentReportsResponse GetClaimPaymentReport(RequestOptions options = null)
         {
             response = GetReport(Path.Combine(EligibleResources.PathToClaims, EligibleResources.PaymentReports), options);
-            var formatedResponse = RequestProcess.ValidateAndReturnResponse<ClaimPaymentReportsResponse, ClaimErrors>(response);
-            formatedResponse.SetJsonResponse(response.Content);
-            return formatedResponse;
+            var formattedResponse = RequestProcess.ResponseValidation<ClaimPaymentReportsResponse, ClaimErrors>(response);
+            formattedResponse.SetJsonResponse(response.Content);
+            return formattedResponse;
         }
 
         private  IRestResponse GetReport(string path, RequestOptions options)

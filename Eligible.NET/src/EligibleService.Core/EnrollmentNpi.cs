@@ -1,13 +1,10 @@
 ﻿using EligibleService.Common;
 using EligibleService.Core.EnrollmentNpis;
 using EligibleService.Model;
-using EligibleService.Model.EnrollmentNpis;
 using Newtonsoft.Json;
 using RestSharp;
-using System;
 using System.Collections;
 using System.IO;
-using System.Runtime.InteropServices;
 using EligibleService.Net;
 
 namespace EligibleService.Core
@@ -32,9 +29,9 @@ namespace EligibleService.Core
         public EnrollmentNpisResponse Create(string jsonParams, RequestOptions options = null)
         {
             response = ExecuteObj.ExecutePostPut(EligibleResources.EnrollmentNpis, jsonParams, SetRequestOptionsObject(options));
-            var formatedResponse = RequestProcess.ValidateAndReturnResponse<EnrollmentNpisResponse, EligibleError>(response);
-            formatedResponse.SetJsonResponse(response.Content);
-            return formatedResponse;
+            var formattedResponse = RequestProcess.ResponseValidation<EnrollmentNpisResponse, EligibleError>(response);
+            formattedResponse.SetJsonResponse(response.Content);
+            return formattedResponse;
         }
 
         /// <summary>
@@ -69,9 +66,9 @@ namespace EligibleService.Core
         public EnrollmentNpisResponse Update(string enrollmentNpiId, string jsonParams, RequestOptions options = null)
         {
             response = ExecuteObj.ExecutePostPut(Path.Combine(EligibleResources.EnrollmentNpis, enrollmentNpiId), jsonParams, SetRequestOptionsObject(options), Method.PUT);
-            var formatedResponse = RequestProcess.ValidateAndReturnResponse<EnrollmentNpisResponse, EligibleError>(response);
-            formatedResponse.SetJsonResponse(response.Content);
-            return formatedResponse;
+            var formattedResponse = RequestProcess.ResponseValidation<EnrollmentNpisResponse, EligibleError>(response);
+            formattedResponse.SetJsonResponse(response.Content);
+            return formattedResponse;
         }
 
         /// <summary>
@@ -107,9 +104,9 @@ namespace EligibleService.Core
         public EnrollmentNpisResponse GetByEnrollmentNpiId(string enrollmentNpiId, RequestOptions options = null)
         {
             response = ExecuteObj.Execute(Path.Combine(EligibleResources.EnrollmentNpis, enrollmentNpiId), SetRequestOptionsObject(options));
-            var formatedResponse = RequestProcess.ValidateAndReturnResponse<EnrollmentNpisResponse, EligibleError>(response);
-            formatedResponse.SetJsonResponse(response.Content);
-            return formatedResponse;
+            var formattedResponse = RequestProcess.ResponseValidation<EnrollmentNpisResponse, EligibleError>(response);
+            formattedResponse.SetJsonResponse(response.Content);
+            return formattedResponse;
         }
 
         /// <summary>
@@ -120,9 +117,9 @@ namespace EligibleService.Core
         public EnrollmentNpisResponses GetAll( RequestOptions options = null)
         {
             response = ExecuteObj.Execute(EligibleResources.EnrollmentNpis, SetRequestOptionsObject(options));
-            var formatedResponse = RequestProcess.ValidateAndReturnResponse<EnrollmentNpisResponses, EligibleError>(response);
-            formatedResponse.SetJsonResponse(response.Content);
-            return formatedResponse;
+            var formattedResponse = RequestProcess.ResponseValidation<EnrollmentNpisResponses, EligibleError>(response);
+            formattedResponse.SetJsonResponse(response.Content);
+            return formattedResponse;
         }
 
         /// <summary>
@@ -134,9 +131,9 @@ namespace EligibleService.Core
         public ReceivedPdfResponse GetReceivedPdf(string enrollmentNpiId, RequestOptions options = null)
         {
             response = ExecuteObj.Execute(Path.Combine(EligibleResources.EnrollmentNpis, enrollmentNpiId, EligibleResources.ReceivedPdf), SetRequestOptionsObject(options));
-            var formatedResponse = RequestProcess.ValidateAndReturnResponse<ReceivedPdfResponse, EligibleError>(response);
-            formatedResponse.SetJsonResponse(response.Content);
-            return formatedResponse;
+            var formattedResponse = RequestProcess.ResponseValidation<ReceivedPdfResponse, EligibleError>(response);
+            formattedResponse.SetJsonResponse(response.Content);
+            return formattedResponse;
         }
 
         /// <summary>
@@ -154,9 +151,9 @@ namespace EligibleService.Core
         private OriginalSignaturePdfResponse PdfProcess(string enrollmentNpiId, Method httpMethod, string signaturePdfFilePath, RequestOptions options = null)
         {
             response = ExecuteObj.ExecutePdf(Path.Combine(EligibleResources.EnrollmentNpis, enrollmentNpiId, EligibleResources.OriginalSignaturePdf), signaturePdfFilePath, SetRequestOptionsObject(options), httpMethod);
-            var formatedResponse = RequestProcess.ValidateAndReturnResponse<OriginalSignaturePdfResponse, EligibleError>(response);
-            formatedResponse.SetJsonResponse(response.Content);
-            return formatedResponse;
+            var formattedResponse = RequestProcess.ResponseValidation<OriginalSignaturePdfResponse, EligibleError>(response);
+            formattedResponse.SetJsonResponse(response.Content);
+            return formattedResponse;
         }
 
         /// <summary>
@@ -203,9 +200,9 @@ namespace EligibleService.Core
         public OriginalSignaturePdfDeleteResponse DeleteOriginalSignaturePdf(string enrollmentNpiId, RequestOptions options = null)
         {
             response = ExecuteObj.ExecutePdf(Path.Combine(EligibleResources.EnrollmentNpis, enrollmentNpiId, EligibleResources.OriginalSignaturePdf), "", SetRequestOptionsObject(options), Method.DELETE);
-            var formatedResponse = RequestProcess.ValidateAndReturnResponse<OriginalSignaturePdfDeleteResponse, EligibleError>(response);
-            formatedResponse.SetJsonResponse(response.Content);
-            return formatedResponse;
+            var formattedResponse = RequestProcess.ResponseValidation<OriginalSignaturePdfDeleteResponse, EligibleError>(response);
+            formattedResponse.SetJsonResponse(response.Content);
+            return formattedResponse;
         }
 
         /// <summary>
@@ -214,10 +211,10 @@ namespace EligibleService.Core
         /// </summary>
         /// <param name="enrollmentNpiId"></param>
         /// <param name="pathToDownload"></param>
-        public string DownloadOriginalSignaturePdf(string enrollmentNpiId, string pathToDownload, RequestOptions options = null)
+        public bool DownloadOriginalSignaturePdf(string enrollmentNpiId, string pathToDownload, RequestOptions options = null)
         {
             ExecuteObj.ExecuteDownload(Path.Combine(EligibleResources.EnrollmentNpis, enrollmentNpiId, EligibleResources.OriginalSignaturePdf, EligibleResources.Download), EligibleResources.OriginalSignaturePdf + "_" + enrollmentNpiId, pathToDownload, SetRequestOptionsObject(options));
-            return "Request completed";
+            return true;
         }
     }
 }

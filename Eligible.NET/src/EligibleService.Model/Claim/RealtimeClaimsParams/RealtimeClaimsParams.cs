@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json;
 using EligibleService.Model.Claim;
 using EligibleService.Model;
 
 namespace EligibleService.Claim.RealtimeClaimParams
 {
-
     public class RealtimeClaimsParams : BasicParams
     {
-
         [JsonProperty("estimation")]
         public string Estimation { get; set; }
 

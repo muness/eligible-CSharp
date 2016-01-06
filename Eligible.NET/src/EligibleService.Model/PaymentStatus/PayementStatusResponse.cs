@@ -6,8 +6,6 @@ using System.Runtime.InteropServices;
 
 namespace EligibleService.Model
 {
-
-
     public class PayementStatusResponse : JsonResponseClass
     {
         [JsonProperty("created_at")]

@@ -1,7 +1,5 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using RestSharp;
-using System.Runtime.InteropServices;
+﻿using EligibleService.Net;
+using NLog;
 
 namespace EligibleService.Core
 {
@@ -12,10 +10,26 @@ namespace EligibleService.Core
 
     public class Eligible : RequestOptions
     {
+        private string fingerprint;
+
+        public string Fingerprint
+        {
+            get { return fingerprint; }
+            set 
+            { 
+                fingerprint = value;
+                Logger logger = LogManager.GetLogger("Fingerprint");
+                logger.Error("Modifying the certificate fingerprint is not advised. This should only be done if instructed by eligible.com support. Please update to the latest version of the eligible library for certificate fingerprint updates.");
+            }
+        }
         private static Eligible instance;
         private static readonly object syncLock = new object();
 
-        private Eligible() { }
+        private Eligible() 
+        {
+            fingerprint = EligibleResources.Fingerprint;
+            new EligibleService.Common.Logging();
+        }
         public static Eligible Instance
         {
             get

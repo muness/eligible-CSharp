@@ -331,5 +331,13 @@ namespace EligibleService.Net {
                 return ResourceManager.GetString("Version", resourceCulture);
             }
         }
+
+        internal static string Fingerprint
+        {
+            get
+            {
+                return ResourceManager.GetString("Fingerprint", resourceCulture);
+            }
+        }
     }
 }

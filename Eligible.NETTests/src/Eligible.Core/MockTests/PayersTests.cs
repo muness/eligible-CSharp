@@ -5,16 +5,10 @@ using EligibleService.NETTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using RestSharp;
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Net;
-using System.Reflection;
-using EligibleService.Core;
 using Ploeh.AutoFixture;
-using EligibleService.Model.Payer;
 using System.Collections.ObjectModel;
 
 namespace EligibleService.Core.Tests
@@ -242,13 +236,6 @@ namespace EligibleService.Core.Tests
             payers.ExecuteObj = restClient.Object;
 
             payers.All();
-            payers.GetById("payer_id");
-            payers.All("endpoint", "enrollment");
-            payers.Statusses();
-            payers.Statusses("PayerId");
-            payers.GetPayersByStatus("available");
-            payers.SearchOptions();
-            payers.SearchOptions("Payer_id");
         }
 
         [TestMethod]
@@ -265,13 +252,6 @@ namespace EligibleService.Core.Tests
             payers.ExecuteObj = restClient.Object;
 
             payers.All();
-            payers.GetById("payer_id");
-            payers.All("endpoint", "enrollment");
-            payers.Statusses();
-            payers.Statusses("PayerId");
-            payers.GetPayersByStatus("available");
-            payers.SearchOptions();
-            payers.SearchOptions("Payer_id");
         }
 
         [TestMethod]
@@ -288,13 +268,6 @@ namespace EligibleService.Core.Tests
             payers.ExecuteObj = restClient.Object;
 
             payers.All();
-            payers.GetById("payer_id");
-            payers.All("endpoint", "enrollment");
-            payers.Statusses();
-            payers.Statusses("PayerId");
-            payers.GetPayersByStatus("available");
-            payers.SearchOptions();
-            payers.SearchOptions("Payer_id");
 
         }
       }
