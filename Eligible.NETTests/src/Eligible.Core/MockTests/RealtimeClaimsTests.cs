@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EligibleService.Core;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using EligibleService.Common;
 using Moq;
 using System.Collections;
@@ -13,9 +7,8 @@ using RestSharp;
 using System.Net;
 using EligibleService.NETTests;
 using Ploeh.AutoFixture;
-using EligibleService.Model.Claim;
-using EligibleService.Claim.RealtimeClaims;
 using EligibleService.Model;
+
 namespace EligibleService.Core.Tests
 {
     [TestClass()]

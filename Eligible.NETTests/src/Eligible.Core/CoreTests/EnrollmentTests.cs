@@ -132,8 +132,8 @@ namespace EligibleService.Core.CoreTests
         [ExpectedException(typeof(EligibleService.Exceptions.InvalidRequestException))]
         public void DownloadOrigibalSignaturePdfTest()
         {
-            string actualResponse = enrollment.DownloadOriginalSignaturePdf("123", "c:\\");
-            Assert.AreEqual("Request completed", actualResponse);
+            bool actualResponse = enrollment.DownloadOriginalSignaturePdf("123", "c:\\");
+            Assert.AreEqual(true, actualResponse);
         }
     }
 }

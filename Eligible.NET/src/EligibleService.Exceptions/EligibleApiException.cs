@@ -1,10 +1,4 @@
-﻿using EligibleService.Model;
-using EligibleService.Model.Claim;
-using Newtonsoft.Json;
-using RestSharp;
-using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using System.Runtime.Serialization;
 using System.Security.Permissions;
 

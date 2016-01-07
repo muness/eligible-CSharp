@@ -1,19 +1,11 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EligibleService.Model
 {
     /// <summary>
     /// List of Payer Statusses Model
     /// </summary>
-    
-
     public class StatusResponse : JsonResponseClass
     {
         [JsonProperty("statuses")]

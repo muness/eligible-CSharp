@@ -38,6 +38,14 @@ requestOptions.IsTest = true;
 
 ClaimResponse response = claim.Create(input, requestOptions); // requestOptions is optional parameter
 ```
+### Certificate fingerprint set
+This should only be done if instructed by eligible.com support. 
+```cs
+Eligible eligible = Eligible.Instance;
+eligible.Fingerprint = "fingerprint";
+```
+Note: Please update to the latest version of the eligible library for certificate fingerprint updates.
+ 
 We have not mentioned all the parameters required to pass along with Api calls here. Please check our [website](https://eligible.com/rest) for complete parameters.
 
 #### Sample Usage

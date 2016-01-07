@@ -1,11 +1,5 @@
 ﻿using EligibleService.Core;
-using EligibleService.Net;
 using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EligibleService.Common
 {
@@ -18,6 +12,7 @@ namespace EligibleService.Common
 
             return AddingOptionsToJson(options, jobject);
         }
+
         private static string AddingOptionsToJson(RequestOptions options, JObject jobject)
         {
             options = SetRequestOptionsObject(options);

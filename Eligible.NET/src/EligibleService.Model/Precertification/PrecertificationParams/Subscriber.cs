@@ -1,5 +1,6 @@
 ﻿using EligibleService.Model;
 using Newtonsoft.Json;
+
 namespace EligibleService.Claim.Precert
 {
     public class PrecertSubscriber

@@ -207,4 +207,7 @@
   <data name="LibraryVersion" xml:space="preserve">
     <value>1.0</value>
   </data>
+  <data name="Fingerprint" xml:space="preserve">
+    <value>79D62E8A9D59AE687372F8E71345C76D92527FAC</value>
+  </data>
 </root>

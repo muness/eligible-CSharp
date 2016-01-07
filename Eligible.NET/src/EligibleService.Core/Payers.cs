@@ -1,13 +1,10 @@
 ﻿using EligibleService.Common;
 using EligibleService.Model;
-using System.Collections.Generic;
 using EligibleService.Net;
 using System.Collections;
 using System.IO;
-using EligibleService.Model.Payer;
 using System.Runtime.InteropServices;
 using System.Collections.ObjectModel;
-using System;
 
 namespace EligibleService.Core
 {
@@ -32,7 +29,7 @@ namespace EligibleService.Core
             param.Add("endpoint", endpoint);
             param.Add("enrollment_required", enrollmentRequired);
             response = ExecuteObj.Execute(EligibleResources.PathToPayers, SetRequestOptionsObject(options), param);
-            var formatResponse = RequestProcess.SimpleValidateAndReturnResponse<Collection<PayerResponse>>(response);
+            var formatResponse = RequestProcess.SimpleResponseValidation<Collection<PayerResponse>>(response);
             PayersResponse payers = new PayersResponse();
             payers.Payers = formatResponse;
             payers.SetJsonResponse(response.Content);
@@ -48,9 +45,9 @@ namespace EligibleService.Core
         public PayerResponse GetById(string payerId, RequestOptions options = null)
         {
             response = ExecuteObj.Execute(Path.Combine(EligibleResources.PathToPayerById, payerId), SetRequestOptionsObject(options));
-            var formatedResponse = RequestProcess.SimpleValidateAndReturnResponse<PayerResponse>(response);
-            formatedResponse.SetJsonResponse(response.Content);
-            return formatedResponse;
+            var formattedResponse = RequestProcess.SimpleResponseValidation<PayerResponse>(response);
+            formattedResponse.SetJsonResponse(response.Content);
+            return formattedResponse;
         }
 
         /// <summary>
@@ -62,8 +59,8 @@ namespace EligibleService.Core
         {
             response = ExecuteObj.Execute(EligibleResources.PathToPayerSearchOptions, SetRequestOptionsObject(options));
             PayersSearchOptionResponse payersSearchOptionResponse = new PayersSearchOptionResponse();
-            var formatedResponse = RequestProcess.SimpleValidateAndReturnResponse<Collection<PayerSearchOptionResponse>>(response);
-            payersSearchOptionResponse.SearchOptionsList = formatedResponse;
+            var formattedResponse = RequestProcess.SimpleResponseValidation<Collection<PayerSearchOptionResponse>>(response);
+            payersSearchOptionResponse.SearchOptionsList = formattedResponse;
             payersSearchOptionResponse.SetJsonResponse(response.Content);
             return payersSearchOptionResponse; 
         }
@@ -76,9 +73,9 @@ namespace EligibleService.Core
         public PayerSearchOptionResponse SearchOptions(string payerId, RequestOptions options = null)
         {
             response = ExecuteObj.Execute(EligibleResources.PathToPayerById + payerId + EligibleResources.SearchOptions, SetRequestOptionsObject(options));
-            var formatedResponse = RequestProcess.SimpleValidateAndReturnResponse<PayerSearchOptionResponse>(response);
-            formatedResponse.SetJsonResponse(response.Content);
-            return formatedResponse;
+            var formattedResponse = RequestProcess.SimpleResponseValidation<PayerSearchOptionResponse>(response);
+            formattedResponse.SetJsonResponse(response.Content);
+            return formattedResponse;
         }
 
         /// <summary>
@@ -92,9 +89,9 @@ namespace EligibleService.Core
             param = new Hashtable();
             param.Add("transaction_type", transactionType);
             response = ExecuteObj.Execute(EligibleResources.PathtoPayersStatus, SetRequestOptionsObject(options), param);
-            var formatedResponse = RequestProcess.SimpleValidateAndReturnResponse<StatusResponse>(response);
-            formatedResponse.SetJsonResponse(response.Content);
-            return formatedResponse;
+            var formattedResponse = RequestProcess.SimpleResponseValidation<StatusResponse>(response);
+            formattedResponse.SetJsonResponse(response.Content);
+            return formattedResponse;
         }
 
         /// <summary>
@@ -108,9 +105,9 @@ namespace EligibleService.Core
             param = new Hashtable();
             param.Add("transaction_type", transactionType);
             response = ExecuteObj.Execute(EligibleResources.PathToPayerById + payerId + EligibleResources.PayerStatus, SetRequestOptionsObject(options), param);
-            var formatedResponse = RequestProcess.SimpleValidateAndReturnResponse<StatusResponse>(response);
-            formatedResponse.SetJsonResponse(response.Content);
-            return formatedResponse;
+            var formattedResponse = RequestProcess.SimpleResponseValidation<StatusResponse>(response);
+            formattedResponse.SetJsonResponse(response.Content);
+            return formattedResponse;
         }
 
         /// <summary>
@@ -124,9 +121,9 @@ namespace EligibleService.Core
             param = new Hashtable();
             param.Add("transaction_type", transactionType);
             response = ExecuteObj.Execute(EligibleResources.PathtoPayersStatus + "/" + status, SetRequestOptionsObject(options), param);
-            var formatedResponse = RequestProcess.SimpleValidateAndReturnResponse<StatusResponse>(response);
-            formatedResponse.SetJsonResponse(response.Content);
-            return formatedResponse;
+            var formattedResponse = RequestProcess.SimpleResponseValidation<StatusResponse>(response);
+            formattedResponse.SetJsonResponse(response.Content);
+            return formattedResponse;
         }
     }
 }

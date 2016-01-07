@@ -4,10 +4,8 @@ using EligibleService.Model.Customer;
 using EligibleService.Net;
 using Newtonsoft.Json;
 using RestSharp;
-using System;
 using System.Collections;
 using System.IO;
-using System.Runtime.InteropServices;
 
 namespace EligibleService.Core
 {
@@ -53,9 +51,9 @@ namespace EligibleService.Core
         public CustomerResponse Create(string jsonParams, RequestOptions options = null)
         {
             response = ExecuteObj.ExecutePostPut(EligibleResources.PathToCustomers, jsonParams, SetRequestOptionsObject(options), Method.POST);
-            var formatedResponse =  RequestProcess.ValidateAndReturnResponse<CustomerResponse, EligibleError>(response);
-            formatedResponse.SetJsonResponse(response.Content);
-            return formatedResponse;
+            var formattedResponse =  RequestProcess.ResponseValidation<CustomerResponse, EligibleError>(response);
+            formattedResponse.SetJsonResponse(response.Content);
+            return formattedResponse;
         }
 
         /// <summary>
@@ -107,9 +105,9 @@ namespace EligibleService.Core
         public CustomerResponse Update(string customerId, string jsonParams, RequestOptions options = null)
         {
             response = ExecuteObj.ExecutePostPut(Path.Combine(EligibleResources.PathToCustomers, customerId), jsonParams, SetRequestOptionsObject(options), Method.PUT);
-            var formatedResponse = RequestProcess.ValidateAndReturnResponse<CustomerResponse, EligibleError>(response);
-            formatedResponse.SetJsonResponse(response.Content);
-            return formatedResponse;
+            var formattedResponse = RequestProcess.ResponseValidation<CustomerResponse, EligibleError>(response);
+            formattedResponse.SetJsonResponse(response.Content);
+            return formattedResponse;
         }
 
         /// <summary>
@@ -145,9 +143,9 @@ namespace EligibleService.Core
         public CustomerResponse GetByCustomerId(string customerId, RequestOptions options = null)
         {
             response = ExecuteObj.Execute(Path.Combine(EligibleResources.PathToCustomers, customerId), SetRequestOptionsObject(options));
-            var formatedResponse = RequestProcess.ValidateAndReturnResponse<CustomerResponse, EligibleError>(response);
-            formatedResponse.SetJsonResponse(response.Content);
-            return formatedResponse;
+            var formattedResponse = RequestProcess.ResponseValidation<CustomerResponse, EligibleError>(response);
+            formattedResponse.SetJsonResponse(response.Content);
+            return formattedResponse;
         }
 
         /// <summary>
@@ -161,9 +159,9 @@ namespace EligibleService.Core
             param = new Hashtable();
             param.Add("page", page);
             response = ExecuteObj.Execute(Path.Combine(EligibleResources.PathToCustomers), SetRequestOptionsObject(options), param);
-            var formatedResponse = RequestProcess.ValidateAndReturnResponse<CustomersResponse, EligibleError>(response);
-            formatedResponse.SetJsonResponse(response.Content);
-            return formatedResponse;
+            var formattedResponse = RequestProcess.ResponseValidation<CustomersResponse, EligibleError>(response);
+            formattedResponse.SetJsonResponse(response.Content);
+            return formattedResponse;
         }
     }
 }

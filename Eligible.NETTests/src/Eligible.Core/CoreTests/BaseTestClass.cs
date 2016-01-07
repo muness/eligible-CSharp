@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using EligibleService.NETTests;
+using System;
 
 namespace EligibleService.Core.CoreTests
 {
@@ -11,7 +8,7 @@ namespace EligibleService.Core.CoreTests
         public static void SetConfiguration()
         {
             Eligible config = Eligible.Instance;
-            string value = System.Configuration.ConfigurationManager.AppSettings["apikey"];
+            string value = TestResource.apikey;
             config.ApiKey = (String.IsNullOrEmpty(value)) ? Environment.GetEnvironmentVariable("apikey") : value;
             config.IsTest = true;
         }

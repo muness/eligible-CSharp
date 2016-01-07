@@ -3,10 +3,8 @@ using System.Collections.ObjectModel;
 
 namespace EligibleService.Model.Precertification
 {
-
     public class Service
     {
-
         [JsonProperty("procedure_code")]
         public string ProcedureCode { get; set; }
 
