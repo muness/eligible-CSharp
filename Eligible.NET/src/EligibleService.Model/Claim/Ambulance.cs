@@ -13,7 +13,6 @@ namespace EligibleService.Model.Claim
 
         [JsonProperty("transport_info")]
         public TransportInfo TransportInfo { get; set; }
-
     }
 
     public class TransportInfo
@@ -36,5 +35,4 @@ namespace EligibleService.Model.Claim
         [JsonProperty("condition_codes")]
         public Collection<string> ConditionCodes { get; set; }  
     }
-
 }

@@ -11,13 +11,8 @@ namespace EligibleService.Core
     /// </summary>
     public class Coverage : BaseCore
     {
-        public IRequestExecute ExecuteObj
-        {
-            get { return executeObj; }
-            set { executeObj = value; }
-        }
+        public Coverage() : base() { }
 
-        public Coverage() : base(){}
         /// <summary>
         /// Get all Coverages
         /// https://gds.eligibleapi.com/v1.5/coverage/all

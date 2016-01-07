@@ -15,6 +15,5 @@ namespace EligibleService.Model.Claim
 
         [JsonProperty("contract_id")]
         public string ContractId { get; set; }
-
     }
 }

@@ -15,6 +15,7 @@ namespace EligibleService.Exceptions
         [JsonProperty("errors")]
         public Collection<ClaimError> Errors { get; set; }
     }
+
     public class ClaimError : BasicError
     {
         [JsonProperty("expected_value")]

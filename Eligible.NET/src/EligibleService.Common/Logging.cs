@@ -6,7 +6,6 @@ namespace EligibleService.Common
 {
     public class Logging
     {
-        public static DebugTarget DebugTarget { get; set; }
         public Logging()
         {
             var config = new LoggingConfiguration();
@@ -14,13 +13,13 @@ namespace EligibleService.Common
             var fileTarget = new FileTarget();
             config.AddTarget("file", fileTarget);
             fileTarget.FileName = "${basedir}/Logs/EligibleLog.log";
-            fileTarget.ArchiveEvery= FileArchivePeriod.Day;
+            fileTarget.ArchiveEvery = FileArchivePeriod.Day;
             fileTarget.MaxArchiveFiles = 10;
             fileTarget.Footer = "${newline}";
             fileTarget.ConcurrentWrites = true;
             fileTarget.KeepFileOpen = false;
             fileTarget.ArchiveFileName = "${basedir}/Logs/Archives/EligibleLog.{#}.log";
-            fileTarget.ArchiveNumbering= ArchiveNumberingMode.DateAndSequence;
+            fileTarget.ArchiveNumbering = ArchiveNumberingMode.DateAndSequence;
             fileTarget.ArchiveDateFormat = "yyyy-MM-dd";
             fileTarget.Layout = @"${date:format=yyyy-MM-dd HH\:mm\:ss} ${logger} ${level}: ${message}";
             
@@ -43,6 +42,8 @@ namespace EligibleService.Common
 
             LogManager.Configuration = config;
         }
+
+        public static DebugTarget DebugTarget { get; set; }
 
         public static string GetLastMessage()
         {

@@ -21,6 +21,7 @@ namespace EligibleService.Model.Claim
         /// </summary>
         [JsonProperty("responsibility_sequence")]
         public string ResponsibilitySequence { get; set; }
+
         /// <summary>
         /// Required To Create a Claim.
         /// </summary>

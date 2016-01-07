@@ -10,13 +10,8 @@ namespace EligibleService.Core
 {
     public class Payers : BaseCore
     {
-        public IRequestExecute ExecuteObj
-        {
-            get { return executeObj; }
-            set { executeObj = value; }
-        }
-
-        public Payers() : base(){}
+        public Payers() : base() 
+        { }
 
         /// <summary>
         /// Get all the payers
@@ -37,11 +32,11 @@ namespace EligibleService.Core
         }
 
         /// <summary>
-        ///Get Player By ID. It's used to view a particular payer Ex: Payers.GetById("000010");
+        /// Get Player By ID. It's used to view a particular payer Ex: Payers.GetById("000010");
         /// API: GET https://gds.eligibleapi.com/v1.5/payers/:payer_id
         /// </summary>
         /// <param name="payerId"></param>
-        /// <returns>EligibleService.Model.Payer</returns>
+        /// <returns>single payer information</returns>
         public PayerResponse GetById(string payerId, RequestOptions options = null)
         {
             response = ExecuteObj.Execute(Path.Combine(EligibleResources.PathToPayerById, payerId), SetRequestOptionsObject(options));
@@ -69,7 +64,7 @@ namespace EligibleService.Core
         /// It returns the seach options for payer.
         /// https://gds.eligibleapi.com/v1.5/payers/00001/search_options
         /// </summary>
-        /// <returns>EligibleService.Model.PayerSearchOption</returns>
+        /// <returns>single payer search options</returns>
         public PayerSearchOptionResponse SearchOptions(string payerId, RequestOptions options = null)
         {
             response = ExecuteObj.Execute(EligibleResources.PathToPayerById + payerId + EligibleResources.SearchOptions, SetRequestOptionsObject(options));
@@ -84,7 +79,7 @@ namespace EligibleService.Core
         /// </summary>
         /// <param name="RequestParams">Ex: transaction_type=270</param>
         /// <returns></returns>
-        public StatusResponse Statusses([Optional, DefaultParameterValue("270")]string transactionType,RequestOptions options = null)
+        public StatusResponse Statusses([Optional, DefaultParameterValue("270")]string transactionType, RequestOptions options = null)
         {
             param = new Hashtable();
             param.Add("transaction_type", transactionType);

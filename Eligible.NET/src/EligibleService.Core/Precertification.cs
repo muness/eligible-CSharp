@@ -10,24 +10,17 @@ namespace EligibleService.Core
 {
     public class Precertification : BaseCore
     {
-        public PrecertParams JsonObj { get; set; }
-
-
-        public IRequestExecute ExecuteObj
-        {
-            get { return executeObj; }
-            set { executeObj = value; }
-        }
+        public Precertification() : base() { }
 
         /// <summary>
         /// Precertification Inquiry
-        ///https://gds.eligibleapi.com/rest#precert
+        /// https://gds.eligibleapi.com/rest#precert
         /// </summary>
         /// <param name="requiredParams"></param>
         /// <returns></returns>
         public PrecertificationInquiryResponse Inquiry(Hashtable requiredParams, RequestOptions options = null)
         {
-            response = ExecuteObj.Execute(Path.Combine(EligibleResources.Precert, EligibleResources.Inquiry),SetRequestOptionsObject(options), requiredParams);
+            response = ExecuteObj.Execute(Path.Combine(EligibleResources.Precert, EligibleResources.Inquiry), SetRequestOptionsObject(options), requiredParams);
             var formattedResponse = RequestProcess.ResponseValidation<PrecertificationInquiryResponse, CoverageErrorDetails>(response);
             formattedResponse.SetJsonResponse(response.Content);
             return formattedResponse;

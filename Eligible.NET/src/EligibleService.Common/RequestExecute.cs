@@ -12,19 +12,29 @@ using System.Net.Security;
 
 namespace EligibleService.Common
 {
+    public interface IRequestExecute
+    {
+        void ExecuteDownload(string apiResource, string npi, string pathToDownload, RequestOptions options);
+        
+        IRestResponse ExecutePdf(string apiResource, string pdfPath, RequestOptions options, Method httpMethod = Method.POST);
+        
+        IRestResponse Execute(string apiResource, RequestOptions options, Hashtable filters = null);
+        
+        IRestResponse ExecutePostPut(string apiResource, string json, RequestOptions options, Method httpMethod = Method.POST);
+    }
+
     public class RequestExecute : IRequestExecute
     {
-        /// <summary>
-        /// Generic method to process all requests
-        /// </summary>
-        /// <typeparam name="T">JsonDecript Model</typeparam>
-        /// <param name="apiResource">Path to fetch data</param>
-        /// <param name="filters">Parameters to filter the result</param>
-        /// <returns>Desrialized JSON output</returns>
-       
+       /// <summary>
+       /// Generic method to process all requests
+       /// </summary>
+       /// <param name="apiResource">/Coverage/all</param>
+       /// <param name="options">request options</param>
+       /// <param name="filters"></param>
+       /// <returns></returns>
         public IRestResponse Execute(string apiResource, RequestOptions options, Hashtable filters)
         {
-            ServicePointManager.ServerCertificateValidationCallback = CertificateValidation;
+            ServicePointManager.ServerCertificateValidationCallback = this.CertificateValidation;
 
             var request = new RestRequest();
             var client = new RestClient(new Uri(EligibleResources.BaseUrl));
@@ -39,7 +49,7 @@ namespace EligibleService.Common
                 }
             }
 
-            SetHeaders(request, options);
+            this.SetHeaders(request, options);
 
             SetResource(apiResource, request);
 
@@ -48,7 +58,7 @@ namespace EligibleService.Common
 
         public IRestResponse ExecutePostPut(string apiResource, string json, RequestOptions options, Method httpMethod)
         {
-            ServicePointManager.ServerCertificateValidationCallback = CertificateValidation;
+            ServicePointManager.ServerCertificateValidationCallback = this.CertificateValidation;
 
             json = FormatInputWithRequestOptions.FormatJson(json, options);
             var request = new RestRequest(httpMethod);
@@ -56,7 +66,7 @@ namespace EligibleService.Common
 
             request.AddParameter("application/json; charset=utf-8", json, ParameterType.RequestBody);
 
-            SetHeaders(request, options);
+            this.SetHeaders(request, options);
 
             SetResource(apiResource, request);
 
@@ -65,7 +75,7 @@ namespace EligibleService.Common
 
         public IRestResponse ExecutePdf(string apiResource, string pdfPath, RequestOptions options, Method httpMethod)
         {
-            ServicePointManager.ServerCertificateValidationCallback = CertificateValidation;
+            ServicePointManager.ServerCertificateValidationCallback = this.CertificateValidation;
 
             var request = new RestRequest(httpMethod);
             var client = new RestClient(new Uri(EligibleResources.BaseUrl));
@@ -76,7 +86,7 @@ namespace EligibleService.Common
             if (string.IsNullOrEmpty(pdfPath.Trim()))
                 request.AddParameter("file", pdfPath);
 
-            SetHeaders(request, options);
+            this.SetHeaders(request, options);
 
             SetResource(apiResource, request);
 
@@ -85,7 +95,7 @@ namespace EligibleService.Common
 
         public void ExecuteDownload(string apiResource, string npiId, string pathToDownload, RequestOptions options)
         {
-            ServicePointManager.ServerCertificateValidationCallback = CertificateValidation;
+            ServicePointManager.ServerCertificateValidationCallback = this.CertificateValidation;
 
             using (var client = new WebClient())
             {
@@ -98,23 +108,6 @@ namespace EligibleService.Common
                     throw new InvalidRequestException(ex.Message);
                 }
             }
-        }
-
-        private void SetHeaders(RestRequest request, RequestOptions options)
-        {
-            request.AddHeader("Accept", "application/json");
-            request.AddHeader("User-Agent", String.Format("eligible.net/{0}", EligibleResources.LibraryVersion));
-            Hashtable propertyMap = new Hashtable();
-            propertyMap.Add("bindings.version", EligibleResources.LibraryVersion);
-            propertyMap.Add("lang", "C#");
-            propertyMap.Add("publisher", "Eligible");
-            request.AddHeader("X-Eligible-Client-User-Agent", JsonConvert.SerializeObject(propertyMap));
-            request.AddHeader("Eligible-Version", EligibleResources.SupportedApiVersion);
-        }
-
-        private static void SetResource(string apiResource, RestRequest request)
-        {
-            request.Resource = "/" + EligibleResources.SupportedApiVersion + apiResource;
         }
 
         public bool CertificateValidation(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors errors)
@@ -135,15 +128,21 @@ namespace EligibleService.Common
             return true;
         }
 
+        private void SetHeaders(RestRequest request, RequestOptions options)
+        {
+            request.AddHeader("Accept", "application/json");
+            request.AddHeader("User-Agent", string.Format("eligible.net/{0}", EligibleResources.LibraryVersion));
+            Hashtable propertyMap = new Hashtable();
+            propertyMap.Add("bindings.version", EligibleResources.LibraryVersion);
+            propertyMap.Add("lang", "C#");
+            propertyMap.Add("publisher", "Eligible");
+            request.AddHeader("X-Eligible-Client-User-Agent", JsonConvert.SerializeObject(propertyMap));
+            request.AddHeader("Eligible-Version", EligibleResources.SupportedApiVersion);
+        }
+
+        private static void SetResource(string apiResource, RestRequest request)
+        {
+            request.Resource = "/" + EligibleResources.SupportedApiVersion + apiResource;
+        }
     }
-
-    public interface IRequestExecute
-    {
-        void ExecuteDownload(string apiResource, string npi, string pathToDownload, RequestOptions options);
-        IRestResponse ExecutePdf(string apiResource, string pdfPath, RequestOptions options, Method httpMethod = Method.POST);
-        IRestResponse Execute(string apiResource, RequestOptions options, Hashtable filters = null);
-        IRestResponse ExecutePostPut(string apiResource, string json, RequestOptions options, Method httpMethod = Method.POST);
-    }
-
-
 }

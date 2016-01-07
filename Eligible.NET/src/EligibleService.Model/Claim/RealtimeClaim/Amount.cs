@@ -7,5 +7,4 @@ namespace EligibleService.Claim.RealtimeClaims
         [JsonProperty("patient_responsibility")]
         public int PatientResponsibility { get; set; }
     }
-
 }

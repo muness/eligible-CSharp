@@ -7,14 +7,22 @@ namespace EligibleService.Core
 {
     public class BaseCore : FormatInputWithRequestOptions
     {
-        protected IRequestExecute executeObj;
-        protected IRestResponse response { get; set; }
-        protected Hashtable param { get; set; }
-
         public BaseCore()
         {
-            executeObj = new RequestExecute();
+            this.executeObj = new RequestExecute();
         }
+
+        private IRequestExecute executeObj;
+
+        public IRequestExecute ExecuteObj
+        {
+            get { return this.executeObj; }
+            set { this.executeObj = value; }
+        }
+
+        protected IRestResponse response { get; set; }
+
+        protected Hashtable param { get; set; }
 
         protected static string JsonSerialize(object inputParams)
         {
