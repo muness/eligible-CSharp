@@ -210,4 +210,7 @@
   <data name="Fingerprint" xml:space="preserve">
     <value>79D62E8A9D59AE687372F8E71345C76D92527FAC</value>
   </data>
+  <data name="SecondaryFingerprint" xml:space="preserve">
+    <value>4B2C6888EDE79D0EE47339DC6FAB5A6D0DC3CB0E</value>
+  </data>
 </root>

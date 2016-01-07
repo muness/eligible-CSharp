@@ -339,5 +339,16 @@ namespace EligibleService.Net {
                 return ResourceManager.GetString("Fingerprint", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to 4B2C6888EDE79D0EE47339DC6FAB5A6D0DC3CB0E.
+        /// </summary>
+        internal static string SecondaryFingerprint
+        {
+            get
+            {
+                return ResourceManager.GetString("SecondaryFingerprint", resourceCulture);
+            }
+        }
     }
 }

@@ -46,20 +46,16 @@ namespace EligibleService.Common.Tests
         [TestMethod()]
         public void SetWrongFingerprintTest()
         {
+            eligible.Fingerprints = new System.Collections.ArrayList();
             eligible.Fingerprint = "wrong fingerprint";
 
             var request = new RestRequest();
             var client = new RestClient(new Uri("https://gds.eligibleapi.com/"));
 
             ServicePointManager.ServerCertificateValidationCallback = execute.CertificateValidation;
-            try
-            {
-                client.Execute(request);
-            }
-            catch(Exception ex)
-            {
-                Assert.AreEqual("The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel.", ex.Message);
-            }
+            
+            var response = client.Execute(request);
+            Assert.AreEqual("The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel.", response.ErrorMessage);
         }
 
         [TestMethod()]
