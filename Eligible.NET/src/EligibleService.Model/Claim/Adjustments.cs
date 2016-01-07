@@ -13,6 +13,5 @@ namespace EligibleService.Model.Claim
 
         [JsonProperty("quantity")]
         public Collection<string> Quantity { get; set; }
-
     }
 }

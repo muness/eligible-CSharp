@@ -22,5 +22,4 @@ namespace EligibleService.Claim.RealtimeClaims
         [JsonProperty("quantity")]
         public int Quantity { get; set; }
     }
-
 }

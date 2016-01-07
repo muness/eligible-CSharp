@@ -107,8 +107,6 @@ namespace EligibleService.Model.Claim
         public AttendingProvider OperatingPhysician { get; set; }
 
         [JsonProperty("other_operating_physician")]
-        public AttendingProvider OtherOperatingPhysician { get; set; }
-
-        
+        public AttendingProvider OtherOperatingPhysician { get; set; } 
     }
 }

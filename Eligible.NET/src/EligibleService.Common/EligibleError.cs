@@ -5,7 +5,9 @@ namespace EligibleService.Common
     public class EligibleError
     {
         public string Type { get; set; }
+
         public string Content { get; set; }
+
         public byte[] Details { get; set; }
 
     }

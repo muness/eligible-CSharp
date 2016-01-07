@@ -3,7 +3,6 @@ using System.Collections.ObjectModel;
 
 namespace EligibleService.Model
 {
-
     public class ClaimAcknowledgementsResponse : AcknowledgementCommonProperties
     {
         [JsonProperty("acknowledgements")]
@@ -17,9 +16,7 @@ namespace EligibleService.Model
 
         [JsonProperty("status")]
         public string Status { get; set; }
-
     }
-
 
     public class AcknowledgementCommonProperties : JsonResponseClass
     {
@@ -35,6 +32,7 @@ namespace EligibleService.Model
         [JsonProperty("total")]
         public int? Total { get; set; }
     }
+
     public class Acknowledgement
     {
         [JsonProperty("effective_date")]
@@ -50,13 +48,11 @@ namespace EligibleService.Model
         public Collection<EligibleService.Exceptions.ClaimError> Errors { get; set; }
     }
 
-
     public class MultipleAcknowledgementsResponse : AcknowledgementCommonProperties
     {
         [JsonProperty("acknowledgements")]
         public Collection<MultipleAcknowledgementFormat> Acknowledgements { get; set; }
     }
-
 
     public class MultipleAcknowledgementFormat
     {
@@ -75,7 +71,6 @@ namespace EligibleService.Model
         [JsonProperty("codes")]
         public AcknowledgeCodes Codes { get; set; }
     }
-
 
     public class AcknowledgeCodes
     {

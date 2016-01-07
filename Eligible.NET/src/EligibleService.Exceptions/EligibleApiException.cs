@@ -5,19 +5,20 @@ using System.Security.Permissions;
 namespace EligibleService.Exceptions
 {
     /// <summary>
-    /// Eligible Exception calss to handle exceptions from 400 to 500. 
-    /// If content has standard Eligible structure(refere Rest doc) then we will throw all those details using this EligibleApiException class.
+    /// Eligible Exception class to handle exceptions from 400 to 500. 
+    /// If content has standard Eligible structure(refer Rest doc) then we will throw all those details using this EligibleApiException class.
     /// </summary>
     [Serializable]
     public class EligibleException : Exception
     {
-        
         public dynamic EligibleError { get; set; }
-        public EligibleException() : base()
-        {}
-        public EligibleException(String message)
+
+        public EligibleException() : base() { }
+
+        public EligibleException(string message)
             : base(message)
         { }
+
         public EligibleException(object response)
             : base()
         {
@@ -28,9 +29,9 @@ namespace EligibleService.Exceptions
             : base(message, inner)
         { }
 
-        protected EligibleException(SerializationInfo info, StreamingContext context) 
-            : base(info, context)
-        {}
+        protected EligibleException(SerializationInfo info, StreamingContext context)
+            : base(info, context) 
+        { }
 
         [SecurityPermissionAttribute(SecurityAction.Demand, SerializationFormatter = true)]
         public override void GetObjectData(SerializationInfo info, StreamingContext context)
@@ -39,8 +40,8 @@ namespace EligibleService.Exceptions
             {
                 throw new ArgumentNullException("info");
             }
+
             base.GetObjectData(info, context);
         }
-
     }
 }

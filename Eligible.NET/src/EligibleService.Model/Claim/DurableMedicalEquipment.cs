@@ -25,7 +25,6 @@ namespace EligibleService.Model.Claim
 
         [JsonProperty("certificate")]
         public Certificate Certificate { get; set; }
-
     }
 
     public class Certificate
@@ -47,6 +46,5 @@ namespace EligibleService.Model.Claim
 
         [JsonProperty("condition_indicators")]
         public Collection<string> ConditionIndicators { get; set; }
-
     }
 }

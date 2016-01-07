@@ -9,13 +9,8 @@ namespace EligibleService.Core
 {
     public class PaymentStatus : BaseCore
     {
-        public IRequestExecute ExecuteObj
-        {
-            get { return executeObj; }
-            set { executeObj = value; }
-        }
-
         public PaymentStatus() : base() { }
+
         /// <summary>
         /// Get Payment Status for claims
         /// https://gds.eligibleapi.com/rest#retrieve-payment-status
@@ -25,10 +20,9 @@ namespace EligibleService.Core
         public PayementStatusResponse Get(Hashtable requiredParams, RequestOptions options = null)
         {
             IRestResponse response = ExecuteObj.Execute(EligibleResources.PaymentStatus, SetRequestOptionsObject(options), requiredParams);
-            var fomatedResponse =  RequestProcess.ResponseValidation<PayementStatusResponse, CoverageErrorDetails>(response);
+            var fomatedResponse = RequestProcess.ResponseValidation<PayementStatusResponse, CoverageErrorDetails>(response);
             fomatedResponse.SetJsonResponse(response.Content);
             return fomatedResponse;
         }
-
     }
 }

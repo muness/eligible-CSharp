@@ -15,7 +15,6 @@ namespace EligibleService.Model.Claim
         /// Required for creating a Claim.
         /// type of tax id of provider. Possible values are EI(employer's identification number) or SY(SSN) and default value is set as EI. ex: "tax_id_type": "EI"
         /// </summary>
-        /// 
         [JsonProperty("tax_id_type")]
         public string TaxIdType { get; set; }
 

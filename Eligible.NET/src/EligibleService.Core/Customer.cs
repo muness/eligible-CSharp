@@ -11,15 +11,8 @@ namespace EligibleService.Core
 {
     public class Customer : BaseCore
     {
-        public CustomerParams JsonObj { get; set; }
-
-        public IRequestExecute ExecuteObj
-        {
-            get { return executeObj; }
-            set { executeObj = value; }
-        }
-
         public Customer() : base() { }
+
         /// <summary>
         /// It's a POST request to create Customer
         /// https://gds.eligibleapi.com/rest#create_customers
@@ -28,7 +21,7 @@ namespace EligibleService.Core
         /// <returns></returns>
         public CustomerResponse Create(Hashtable customerHashParams, RequestOptions options = null)
         {
-            return Create(JsonSerialize(customerHashParams), options);
+            return this.Create(JsonSerialize(customerHashParams), options);
         }
 
         /// <summary>
@@ -39,7 +32,7 @@ namespace EligibleService.Core
         /// <returns></returns>
         public CustomerResponse Create(CustomerParams customerParams, RequestOptions options = null)
         {
-            return Create(JsonSerialize(customerParams), options);
+            return this.Create(JsonSerialize(customerParams), options);
         }
 
         /// <summary>
@@ -51,7 +44,7 @@ namespace EligibleService.Core
         public CustomerResponse Create(string jsonParams, RequestOptions options = null)
         {
             response = ExecuteObj.ExecutePostPut(EligibleResources.PathToCustomers, jsonParams, SetRequestOptionsObject(options), Method.POST);
-            var formattedResponse =  RequestProcess.ResponseValidation<CustomerResponse, EligibleError>(response);
+            var formattedResponse = RequestProcess.ResponseValidation<CustomerResponse, EligibleError>(response);
             formattedResponse.SetJsonResponse(response.Content);
             return formattedResponse;
         }
@@ -65,20 +58,8 @@ namespace EligibleService.Core
         /// <returns></returns>
         public CustomerResponse Create(string companyName, string siteName, RequestOptions options = null)
         {
-            CustomerParams custParams = BuildCustomerParams(companyName, siteName, options);
-            return Create(JsonSerialize(custParams), options);
-        }
-
-        private CustomerParams BuildCustomerParams(string companyName, string siteName, RequestOptions options)
-        {
-            CustomerParams custParams = new CustomerParams();
-            options = SetRequestOptionsObject(options);
-            custParams.Customer = new CustomerTag()
-            {
-                Name = companyName,
-                SiteName = siteName
-            };
-            return custParams;
+            CustomerParams custParams = this.BuildCustomerParams(companyName, siteName, options);
+            return this.Create(JsonSerialize(custParams), options);
         }
 
         /// <summary>
@@ -91,8 +72,8 @@ namespace EligibleService.Core
         /// <returns></returns>
         public CustomerResponse Update(string customerId, string companyName, string siteName, RequestOptions options = null)
         {
-            CustomerParams custParams = BuildCustomerParams(companyName, siteName, options);
-            return Update(customerId, JsonSerialize(custParams));
+            CustomerParams custParams = this.BuildCustomerParams(companyName, siteName, options);
+            return this.Update(customerId, JsonSerialize(custParams));
         }
 
         /// <summary>
@@ -119,7 +100,7 @@ namespace EligibleService.Core
         /// <returns></returns>
         public CustomerResponse Update(string customerId, Hashtable customerParams, RequestOptions options = null)
         {
-            return Update(customerId, JsonSerialize(customerParams), options);
+            return this.Update(customerId, JsonSerialize(customerParams), options);
         }
 
         /// <summary>
@@ -131,7 +112,7 @@ namespace EligibleService.Core
         /// <returns></returns>
         public CustomerResponse Update(string customerId, CustomerParams customerParams, RequestOptions options = null)
         {
-            return Update(customerId, JsonSerialize(customerParams), options);
+            return this.Update(customerId, JsonSerialize(customerParams), options);
         }
 
         /// <summary>
@@ -162,6 +143,18 @@ namespace EligibleService.Core
             var formattedResponse = RequestProcess.ResponseValidation<CustomersResponse, EligibleError>(response);
             formattedResponse.SetJsonResponse(response.Content);
             return formattedResponse;
+        }
+
+        private CustomerParams BuildCustomerParams(string companyName, string siteName, RequestOptions options)
+        {
+            CustomerParams custParams = new CustomerParams();
+            options = SetRequestOptionsObject(options);
+            custParams.Customer = new CustomerTag()
+            {
+                Name = companyName,
+                SiteName = siteName
+            };
+            return custParams;
         }
     }
 }

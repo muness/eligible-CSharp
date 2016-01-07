@@ -6,24 +6,16 @@ using System.Collections;
 
 namespace EligibleService.Core
 {
-
     public class CostEstimates : BaseCore
     {
-
-        public IRequestExecute ExecuteObj
-        {
-            get { return executeObj; }
-            set { executeObj = value; }
-        }
-
         public CostEstimates() : base() { }
+
         /// <summary>
         /// Cost Estimates
         /// https://gds.eligibleapi.com/rest#cost-estimates
         /// </summary>
         /// <param name="requiredParams">Check document for required params</param>
         /// <returns>Cost estimation</returns>
-
         public CostEstimatesResponse Get(Hashtable requiredParams,  RequestOptions options = null)
         {
             response = ExecuteObj.Execute(EligibleResources.CostEstimates, SetRequestOptionsObject(options), requiredParams);

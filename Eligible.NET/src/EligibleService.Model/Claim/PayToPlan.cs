@@ -18,7 +18,5 @@ namespace EligibleService.Model.Claim
 
         [JsonProperty("address")]
         public Address Address { get; set; }
-
-
     }
 }

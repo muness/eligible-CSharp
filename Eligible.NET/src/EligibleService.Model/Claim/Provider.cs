@@ -14,7 +14,6 @@ namespace EligibleService.Model.Claim
         public string SecondaryId { get; set; }
 
         [JsonProperty("phone_number")]
-        public string PhoneNumber { get; set; }
-        
+        public string PhoneNumber { get; set; }    
     }
 }

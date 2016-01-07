@@ -17,5 +17,4 @@ namespace EligibleService.Claim.RealtimeClaims
         [JsonProperty("details")]
         public Collection<Detail> Details { get; set; }
     }
-
 }
