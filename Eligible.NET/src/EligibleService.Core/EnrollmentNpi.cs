@@ -42,7 +42,7 @@ namespace EligibleService.Core
         /// <returns></returns>
         public EnrollmentNpisResponse Create(Hashtable enrollmentHashParams, RequestOptions options = null)
         {
-            return Create(JsonConvert.SerializeObject(enrollmentHashParams), options);
+            return Create(JsonSerialize(enrollmentHashParams), options);
         }
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace EligibleService.Core
         /// <returns></returns>
         public EnrollmentNpisResponse Create(EnrollmentParams enrollmentParams, RequestOptions options = null)
         {
-            return Create(JsonConvert.SerializeObject(enrollmentParams), options);
+            return Create(JsonSerialize(enrollmentParams), options);
         }
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace EligibleService.Core
         /// <returns></returns>
         public EnrollmentNpisResponse Update(string enrollmentNpiId, Hashtable enrollmentParams, RequestOptions options = null)
         {
-            return Update(enrollmentNpiId, JsonConvert.SerializeObject(enrollmentParams, Formatting.Indented), options);
+            return Update(enrollmentNpiId, JsonSerialize(enrollmentParams), options);
         }
 
         /// <summary>
