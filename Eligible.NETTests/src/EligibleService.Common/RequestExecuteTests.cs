@@ -29,9 +29,7 @@ namespace EligibleService.Common.Tests
         [TestMethod()]
         public void SetMatchingFingerprintTest()
         {
-            eligible.Fingerprints = new ArrayList(){ "79D62E8A9D59AE687372F8E71345C76D92527FAC" };
-
-            eligible.Fingerprints.Add("fsdfs");
+            eligible.AddFingerprint("79D62E8A9D59AE687372F8E71345C76D92527FAC");
             FingerprintPassTest();
 
         }
@@ -50,7 +48,7 @@ namespace EligibleService.Common.Tests
         [TestMethod()]
         public void SetWrongFingerprintTest()
         {
-            eligible.Fingerprints = new ArrayList() { "wrong fingerprint" };
+            eligible.AddFingerprint("wrong fingerprint");
 
 
             var request = new RestRequest();
@@ -65,7 +63,7 @@ namespace EligibleService.Common.Tests
         [TestMethod()]
         public void LogMessageWhenSetterCalledTest()
         {
-            eligible.Fingerprints = new ArrayList() { "Modifying fingerprint" };
+            eligible.AddFingerprint("Modifying fingerprint");
             Assert.AreEqual("Modifying the certificate fingerprint is not advised. This should only be done if instructed by eligible.com support. Please update to the latest version of the eligible library for certificate fingerprint updates.", Logging.GetLastMessage());
          }
 

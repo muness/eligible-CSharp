@@ -114,7 +114,7 @@ namespace EligibleService.Common
         {
             Eligible eligble = Eligible.Instance;
 
-            ArrayList fingerprint = eligble.Fingerprints;
+            ArrayList fingerprint = eligble.Fingerprints();
 
             if (certificate == null || chain == null)
                 return false;

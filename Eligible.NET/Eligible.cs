@@ -44,18 +44,17 @@ namespace EligibleService.Core
 
         private ArrayList fingerprints;
 
-        public ArrayList Fingerprints 
+        public ArrayList Fingerprints()
         {
-            get
-            {
-                return this.fingerprints;
-            }
-            set
-            {
-                this.fingerprints = value;
-                Logger logger = LogManager.GetLogger("Fingerprint");
-                logger.Error("Modifying the certificate fingerprint is not advised. This should only be done if instructed by eligible.com support. Please update to the latest version of the eligible library for certificate fingerprint updates.");
-            }
+            return this.fingerprints;
+        }
+
+        public void AddFingerprint(string fingerprint)
+        {
+            this.fingerprints.Add(fingerprint);
+
+            Logger logger = LogManager.GetLogger("Fingerprint");
+            logger.Error("Modifying the certificate fingerprint is not advised. This should only be done if instructed by eligible.com support. Please update to the latest version of the eligible library for certificate fingerprint updates.");
         }
     }
 

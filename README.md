@@ -42,7 +42,7 @@ ClaimResponse response = claim.Create(input, requestOptions); // requestOptions 
 This should only be done if instructed by eligible.com support. 
 ```cs
 Eligible eligible = Eligible.Instance;
-eligible.Fingerprints = new ArrayList() { "fingerprint" };
+eligible.AddFingerprint("fingerprint");
 ```
 Note: Please update to the latest version of the eligible library for certificate fingerprint updates.
  
@@ -86,7 +86,7 @@ class Program
 ```
 
 ###Testing
-Add an Environmental Variable with name 'apikey' and save your api key to run the test cases.
+Add your apikey to Environmental Variable with name 'apikey' or set apikey in TestResource file to run the test cases.
 
 
 ## All EligibleApi Calls
