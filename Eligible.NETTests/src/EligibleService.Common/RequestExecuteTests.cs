@@ -3,6 +3,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RestSharp;
 using System.Net;
 using EligibleService.Core;
+using System.Collections;
+
 namespace EligibleService.Common.Tests
 {
     [TestClass()]
@@ -27,7 +29,7 @@ namespace EligibleService.Common.Tests
         [TestMethod()]
         public void SetMatchingFingerprintTest()
         {
-            eligible.Fingerprint = "79D62E8A9D59AE687372F8E71345C76D92527FAC";
+            eligible.AddFingerprint("79D62E8A9D59AE687372F8E71345C76D92527FAC");
             FingerprintPassTest();
 
         }
@@ -46,28 +48,24 @@ namespace EligibleService.Common.Tests
         [TestMethod()]
         public void SetWrongFingerprintTest()
         {
-            eligible.Fingerprint = "wrong fingerprint";
+            eligible.AddFingerprint("wrong fingerprint");
+
 
             var request = new RestRequest();
             var client = new RestClient(new Uri("https://gds.eligibleapi.com/"));
 
             ServicePointManager.ServerCertificateValidationCallback = execute.CertificateValidation;
-            try
-            {
-                client.Execute(request);
-            }
-            catch(Exception ex)
-            {
-                Assert.AreEqual("The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel.", ex.Message);
-            }
+            
+            var response = client.Execute(request);
+            Assert.AreEqual("The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel.", response.ErrorMessage);
         }
 
         [TestMethod()]
         public void LogMessageWhenSetterCalledTest()
         {
-            eligible.Fingerprint = "Modifying fingerprint";
+            eligible.AddFingerprint("Modifying fingerprint");
             Assert.AreEqual("Modifying the certificate fingerprint is not advised. This should only be done if instructed by eligible.com support. Please update to the latest version of the eligible library for certificate fingerprint updates.", Logging.GetLastMessage());
-        }
+         }
 
         [TestMethod()]
         public void NoLogMessageWhenSetterNotCalledTest()

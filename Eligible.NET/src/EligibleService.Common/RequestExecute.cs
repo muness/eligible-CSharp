@@ -114,7 +114,8 @@ namespace EligibleService.Common
         {
             Eligible eligble = Eligible.Instance;
 
-            string fingerprint = eligble.Fingerprint;
+            ArrayList fingerprint = eligble.Fingerprints();
+
             if (certificate == null || chain == null)
                 return false;
 
@@ -122,7 +123,8 @@ namespace EligibleService.Common
                 return false;
 
             var certFingerprint = certificate.GetCertHashString();
-            if (!fingerprint.Equals(certFingerprint, StringComparison.Ordinal))
+
+            if (!fingerprint.Contains(certFingerprint))
                 return false;
 
             return true;

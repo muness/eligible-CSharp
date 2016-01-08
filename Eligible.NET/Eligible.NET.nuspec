@@ -8,13 +8,13 @@
     <owners>Eligible Inc</owners>
     <projectUrl>https://github.com/eligible/eligible-CSharp</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>C#(.net) bindings for Eligible REST APIs</description>
+    <description>CSharp bindings for Eligible REST APIs</description>
     <releaseNotes>First Release</releaseNotes>
-    <copyright>Copyright 2015</copyright>
+    <copyright>Copyright ©  2016</copyright>
     <tags>eligble insurence coverage claims medicare eligble.net eligble.csharp eligble.c# eligibleapi</tags>
 	<dependencies>
 	  <dependency id="RestSharp" version="105.2.3.0"/>
-	  <dependency id="Newtonsoft.Json" version="7.0.0" />
+	  <dependency id="Newtonsoft.Json" version="8.0.0.0" />
 	</dependencies>
   </metadata>
 </package>
