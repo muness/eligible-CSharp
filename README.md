@@ -42,7 +42,7 @@ ClaimResponse response = claim.Create(input, requestOptions); // requestOptions 
 This should only be done if instructed by eligible.com support. 
 ```cs
 Eligible eligible = Eligible.Instance;
-eligible.Fingerprint = "fingerprint";
+eligible.Fingerprints = new ArrayList() { "fingerprint" };
 ```
 Note: Please update to the latest version of the eligible library for certificate fingerprint updates.
  

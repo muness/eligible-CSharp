@@ -12,9 +12,9 @@ namespace EligibleService.Core
     {
         private Eligible()
         {
-            this.Fingerprints = new ArrayList();
-            this.Fingerprints.Add(EligibleResources.Fingerprint.Trim());
-            this.Fingerprints.Add(EligibleResources.SecondaryFingerprint.Trim());
+            this.fingerprints = new ArrayList();
+            this.fingerprints.Add(EligibleResources.Fingerprint.Trim());
+            this.fingerprints.Add(EligibleResources.SecondaryFingerprint.Trim());
 
             new EligibleService.Common.Logging();
         }
@@ -42,13 +42,20 @@ namespace EligibleService.Core
             }
         }
 
-        public ArrayList Fingerprints { get; set; }
+        private ArrayList fingerprints;
 
-        public void SetFingerprint(string fingerprint)
+        public ArrayList Fingerprints 
         {
-            this.Fingerprints.Add(fingerprint);
-            Logger logger = LogManager.GetLogger("Fingerprint");
-            logger.Error("Modifying the certificate fingerprint is not advised. This should only be done if instructed by eligible.com support. Please update to the latest version of the eligible library for certificate fingerprint updates.");
+            get
+            {
+                return this.fingerprints;
+            }
+            set
+            {
+                this.fingerprints = value;
+                Logger logger = LogManager.GetLogger("Fingerprint");
+                logger.Error("Modifying the certificate fingerprint is not advised. This should only be done if instructed by eligible.com support. Please update to the latest version of the eligible library for certificate fingerprint updates.");
+            }
         }
     }
 

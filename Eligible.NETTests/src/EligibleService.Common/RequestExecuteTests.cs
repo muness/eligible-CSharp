@@ -3,6 +3,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RestSharp;
 using System.Net;
 using EligibleService.Core;
+using System.Collections;
+
 namespace EligibleService.Common.Tests
 {
     [TestClass()]
@@ -27,7 +29,9 @@ namespace EligibleService.Common.Tests
         [TestMethod()]
         public void SetMatchingFingerprintTest()
         {
-            eligible.SetFingerprint("79D62E8A9D59AE687372F8E71345C76D92527FAC");
+            eligible.Fingerprints = new ArrayList(){ "79D62E8A9D59AE687372F8E71345C76D92527FAC" };
+
+            eligible.Fingerprints.Add("fsdfs");
             FingerprintPassTest();
 
         }
@@ -46,8 +50,8 @@ namespace EligibleService.Common.Tests
         [TestMethod()]
         public void SetWrongFingerprintTest()
         {
-            eligible.Fingerprints = new System.Collections.ArrayList();
-            eligible.SetFingerprint("wrong fingerprint");
+            eligible.Fingerprints = new ArrayList() { "wrong fingerprint" };
+
 
             var request = new RestRequest();
             var client = new RestClient(new Uri("https://gds.eligibleapi.com/"));
@@ -61,9 +65,9 @@ namespace EligibleService.Common.Tests
         [TestMethod()]
         public void LogMessageWhenSetterCalledTest()
         {
-            eligible.SetFingerprint("Modifying fingerprint");
+            eligible.Fingerprints = new ArrayList() { "Modifying fingerprint" };
             Assert.AreEqual("Modifying the certificate fingerprint is not advised. This should only be done if instructed by eligible.com support. Please update to the latest version of the eligible library for certificate fingerprint updates.", Logging.GetLastMessage());
-        }
+         }
 
         [TestMethod()]
         public void NoLogMessageWhenSetterNotCalledTest()
