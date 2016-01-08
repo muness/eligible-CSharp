@@ -1,9 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EligibleService.Model.Claim
 {
@@ -23,7 +18,5 @@ namespace EligibleService.Model.Claim
 
         [JsonProperty("address")]
         public Address Address { get; set; }
-
-
     }
 }

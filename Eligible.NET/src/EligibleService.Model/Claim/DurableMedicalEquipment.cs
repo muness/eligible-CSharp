@@ -1,10 +1,5 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EligibleService.Model.Claim
 {
@@ -30,7 +25,6 @@ namespace EligibleService.Model.Claim
 
         [JsonProperty("certificate")]
         public Certificate Certificate { get; set; }
-
     }
 
     public class Certificate
@@ -52,6 +46,5 @@ namespace EligibleService.Model.Claim
 
         [JsonProperty("condition_indicators")]
         public Collection<string> ConditionIndicators { get; set; }
-
     }
 }

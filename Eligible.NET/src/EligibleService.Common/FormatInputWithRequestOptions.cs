@@ -1,11 +1,5 @@
 ﻿using EligibleService.Core;
-using EligibleService.Net;
 using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EligibleService.Common
 {
@@ -17,30 +11,6 @@ namespace EligibleService.Common
             Eligible eligible = Eligible.Instance;
 
             return AddingOptionsToJson(options, jobject);
-        }
-        private static string AddingOptionsToJson(RequestOptions options, JObject jobject)
-        {
-            options = SetRequestOptionsObject(options);
-
-            if ((jobject.Property("api_key") == null))
-            {
-                jobject.Add("api_key", options.ApiKey);
-            }
-            else if (string.IsNullOrEmpty(jobject.Property("api_key").Value.ToString()))
-            {
-                jobject.Property("api_key").Value = options.ApiKey;
-            }
-
-            if ((jobject.Property("test") == null))
-            {
-                jobject.Add("test", options.IsTest);
-            }
-            else if (string.IsNullOrEmpty(jobject.Property("test").Value.ToString()))
-            {
-                jobject.Property("test").Value = options.IsTest;
-            }
-
-            return jobject.ToString();
         }
 
         public static RequestOptions SetRequestOptionsObject(RequestOptions options)
@@ -70,5 +40,29 @@ namespace EligibleService.Common
             return options;
         }
 
+        private static string AddingOptionsToJson(RequestOptions options, JObject jobject)
+        {
+            options = SetRequestOptionsObject(options);
+
+            if (jobject.Property("api_key") == null)
+            {
+                jobject.Add("api_key", options.ApiKey);
+            }
+            else if (string.IsNullOrEmpty(jobject.Property("api_key").Value.ToString()))
+            {
+                jobject.Property("api_key").Value = options.ApiKey;
+            }
+
+            if (jobject.Property("test") == null)
+            {
+                jobject.Add("test", options.IsTest);
+            }
+            else if (string.IsNullOrEmpty(jobject.Property("test").Value.ToString()))
+            {
+                jobject.Property("test").Value = options.IsTest;
+            }
+
+            return jobject.ToString();
+        }
     }
 }

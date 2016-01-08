@@ -1,27 +1,22 @@
 ﻿using EligibleService.Common;
 using RestSharp;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.Security.Permissions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EligibleService.Exceptions
 {
     [Serializable]
     public class InvalidRequestException : Exception
     {
+        public InvalidRequestException() : base() { }
+
         public EligibleError EligibleError { get; set; }
 
-        public InvalidRequestException() : base()
-        {}
         public InvalidRequestException(string message) : base(message)
         {
             EligibleError = new EligibleError();
             EligibleError.Content = message;
-            
         }
 
         public InvalidRequestException(string message, Exception innerException)
@@ -29,8 +24,8 @@ namespace EligibleService.Exceptions
         {
             EligibleError = new EligibleError();
             EligibleError.Content = message;
-
         }
+
         public InvalidRequestException(string message, IRestResponse response, Exception inner)
             : base(message, inner)
         {
@@ -55,6 +50,4 @@ namespace EligibleService.Exceptions
             base.GetObjectData(info, context);
         }
     }
-
-    
 }

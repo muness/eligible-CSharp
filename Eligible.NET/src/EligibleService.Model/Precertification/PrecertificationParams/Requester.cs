@@ -1,10 +1,10 @@
 ﻿using EligibleService.Model;
 using Newtonsoft.Json;
+
 namespace EligibleService.Claim.Precert
 {
     public class Requester
     {
-
         [JsonProperty("organization_name")]
         public string OrganizationName { get; set; }
 

@@ -3,10 +3,8 @@ using Newtonsoft.Json;
 
 namespace EligibleService.Claim.Precert
 {
-
     public class PrecertDependent
     {
-
         [JsonProperty("last_name")]
         public string LastName { get; set; }
 

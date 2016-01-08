@@ -1,15 +1,11 @@
 ﻿using EligibleService.Model.Precertification;
 using Newtonsoft.Json;
-using System;
 using System.Collections.ObjectModel;
-using System.Runtime.InteropServices;
 
 namespace EligibleService.Model
 {
-
     public class PrecertificationInquiryResponse : JsonResponseClass
     {
-
         [JsonProperty("created_at")]
         public string CreatedAt { get; set; }
 

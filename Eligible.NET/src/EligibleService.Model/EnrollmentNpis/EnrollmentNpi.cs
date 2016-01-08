@@ -6,7 +6,6 @@ namespace EligibleService.Model.EnrollmentNpis
 {
     public class EnrollmentNpi
     {
-
         [JsonProperty("address")]
         public string Address { get; set; }
 

@@ -35,5 +35,4 @@ namespace EligibleService.Claim.RealtimeClaims
         [JsonProperty("service_lines")]
         public Collection<ServiceLine> ServiceLines { get; set; }
     }
-
 }

@@ -1,27 +1,17 @@
 ﻿using EligibleService.Common;
 using EligibleService.Core.EnrollmentNpis;
 using EligibleService.Model;
-using EligibleService.Model.EnrollmentNpis;
 using Newtonsoft.Json;
 using RestSharp;
-using System;
 using System.Collections;
 using System.IO;
-using System.Runtime.InteropServices;
 using EligibleService.Net;
 
 namespace EligibleService.Core
 {
     public class Enrollment : BaseCore
     {
-        public EnrollmentParams JsonObj { get; set; }
-        public IRequestExecute ExecuteObj
-        {
-            get { return executeObj; }
-            set { executeObj = value; }
-        }
-
-        public Enrollment() : base(){}
+        public Enrollment() : base() { }
 
         /// <summary>
         /// Create Enrollment. It's a POST request and the parameters should be in JSON format in the body.
@@ -32,9 +22,9 @@ namespace EligibleService.Core
         public EnrollmentNpisResponse Create(string jsonParams, RequestOptions options = null)
         {
             response = ExecuteObj.ExecutePostPut(EligibleResources.EnrollmentNpis, jsonParams, SetRequestOptionsObject(options));
-            var formatedResponse = RequestProcess.ValidateAndReturnResponse<EnrollmentNpisResponse, EligibleError>(response);
-            formatedResponse.SetJsonResponse(response.Content);
-            return formatedResponse;
+            var formattedResponse = RequestProcess.ResponseValidation<EnrollmentNpisResponse, EligibleError>(response);
+            formattedResponse.SetJsonResponse(response.Content);
+            return formattedResponse;
         }
 
         /// <summary>
@@ -45,18 +35,18 @@ namespace EligibleService.Core
         /// <returns></returns>
         public EnrollmentNpisResponse Create(Hashtable enrollmentHashParams, RequestOptions options = null)
         {
-            return Create(JsonConvert.SerializeObject(enrollmentHashParams), options);
+            return this.Create(JsonSerialize(enrollmentHashParams), options);
         }
 
         /// <summary>
         /// Create Enrollment. It's a POST request and the parameters should be in JSON format in the body.
         /// https://gds.eligibleapi.com/rest#create-enrollment
         /// </summary>
-        /// <param name="enrollmentParams">object contains required paramss in EnrollmentParams class format</param>
+        /// <param name="enrollmentParams">object contains required params in EnrollmentParams class format</param>
         /// <returns></returns>
         public EnrollmentNpisResponse Create(EnrollmentParams enrollmentParams, RequestOptions options = null)
         {
-            return Create(JsonConvert.SerializeObject(enrollmentParams), options);
+            return this.Create(JsonSerialize(enrollmentParams), options);
         }
 
         /// <summary>
@@ -69,9 +59,9 @@ namespace EligibleService.Core
         public EnrollmentNpisResponse Update(string enrollmentNpiId, string jsonParams, RequestOptions options = null)
         {
             response = ExecuteObj.ExecutePostPut(Path.Combine(EligibleResources.EnrollmentNpis, enrollmentNpiId), jsonParams, SetRequestOptionsObject(options), Method.PUT);
-            var formatedResponse = RequestProcess.ValidateAndReturnResponse<EnrollmentNpisResponse, EligibleError>(response);
-            formatedResponse.SetJsonResponse(response.Content);
-            return formatedResponse;
+            var formattedResponse = RequestProcess.ResponseValidation<EnrollmentNpisResponse, EligibleError>(response);
+            formattedResponse.SetJsonResponse(response.Content);
+            return formattedResponse;
         }
 
         /// <summary>
@@ -83,7 +73,7 @@ namespace EligibleService.Core
         /// <returns></returns>
         public EnrollmentNpisResponse Update(string enrollmentNpiId, Hashtable enrollmentParams, RequestOptions options = null)
         {
-            return Update(enrollmentNpiId, JsonConvert.SerializeObject(enrollmentParams, Formatting.Indented), options);
+            return Update(enrollmentNpiId, JsonSerialize(enrollmentParams), options);
         }
 
         /// <summary>
@@ -107,9 +97,9 @@ namespace EligibleService.Core
         public EnrollmentNpisResponse GetByEnrollmentNpiId(string enrollmentNpiId, RequestOptions options = null)
         {
             response = ExecuteObj.Execute(Path.Combine(EligibleResources.EnrollmentNpis, enrollmentNpiId), SetRequestOptionsObject(options));
-            var formatedResponse = RequestProcess.ValidateAndReturnResponse<EnrollmentNpisResponse, EligibleError>(response);
-            formatedResponse.SetJsonResponse(response.Content);
-            return formatedResponse;
+            var formattedResponse = RequestProcess.ResponseValidation<EnrollmentNpisResponse, EligibleError>(response);
+            formattedResponse.SetJsonResponse(response.Content);
+            return formattedResponse;
         }
 
         /// <summary>
@@ -117,12 +107,12 @@ namespace EligibleService.Core
         /// https://gds.eligibleapi.com/rest#list-enrollment
         /// </summary>
         /// <returns></returns>
-        public EnrollmentNpisResponses GetAll( RequestOptions options = null)
+        public EnrollmentNpisResponses GetAll(RequestOptions options = null)
         {
             response = ExecuteObj.Execute(EligibleResources.EnrollmentNpis, SetRequestOptionsObject(options));
-            var formatedResponse = RequestProcess.ValidateAndReturnResponse<EnrollmentNpisResponses, EligibleError>(response);
-            formatedResponse.SetJsonResponse(response.Content);
-            return formatedResponse;
+            var formattedResponse = RequestProcess.ResponseValidation<EnrollmentNpisResponses, EligibleError>(response);
+            formattedResponse.SetJsonResponse(response.Content);
+            return formattedResponse;
         }
 
         /// <summary>
@@ -134,9 +124,9 @@ namespace EligibleService.Core
         public ReceivedPdfResponse GetReceivedPdf(string enrollmentNpiId, RequestOptions options = null)
         {
             response = ExecuteObj.Execute(Path.Combine(EligibleResources.EnrollmentNpis, enrollmentNpiId, EligibleResources.ReceivedPdf), SetRequestOptionsObject(options));
-            var formatedResponse = RequestProcess.ValidateAndReturnResponse<ReceivedPdfResponse, EligibleError>(response);
-            formatedResponse.SetJsonResponse(response.Content);
-            return formatedResponse;
+            var formattedResponse = RequestProcess.ResponseValidation<ReceivedPdfResponse, EligibleError>(response);
+            formattedResponse.SetJsonResponse(response.Content);
+            return formattedResponse;
         }
 
         /// <summary>
@@ -149,14 +139,6 @@ namespace EligibleService.Core
         {
             ExecuteObj.ExecuteDownload(Path.Combine(EligibleResources.EnrollmentNpis, enrollmentNpiId, EligibleResources.ReceivedPdf, EligibleResources.Download), EligibleResources.ReceivedPdf + "_" + enrollmentNpiId, pathToDownload, SetRequestOptionsObject(options));
             return "Request completed";
-        }
-
-        private OriginalSignaturePdfResponse PdfProcess(string enrollmentNpiId, Method httpMethod, string signaturePdfFilePath, RequestOptions options = null)
-        {
-            response = ExecuteObj.ExecutePdf(Path.Combine(EligibleResources.EnrollmentNpis, enrollmentNpiId, EligibleResources.OriginalSignaturePdf), signaturePdfFilePath, SetRequestOptionsObject(options), httpMethod);
-            var formatedResponse = RequestProcess.ValidateAndReturnResponse<OriginalSignaturePdfResponse, EligibleError>(response);
-            formatedResponse.SetJsonResponse(response.Content);
-            return formatedResponse;
         }
 
         /// <summary>
@@ -191,7 +173,7 @@ namespace EligibleService.Core
         /// <returns></returns>
         public OriginalSignaturePdfResponse GetOriginalSignaturePdf(string enrollmentNpiId, RequestOptions options = null)
         {
-            return PdfProcess(enrollmentNpiId, Method.GET, "", options);
+            return PdfProcess(enrollmentNpiId, Method.GET, string.Empty, options);
         }
 
         /// <summary>
@@ -202,10 +184,10 @@ namespace EligibleService.Core
         /// <returns></returns>
         public OriginalSignaturePdfDeleteResponse DeleteOriginalSignaturePdf(string enrollmentNpiId, RequestOptions options = null)
         {
-            response = ExecuteObj.ExecutePdf(Path.Combine(EligibleResources.EnrollmentNpis, enrollmentNpiId, EligibleResources.OriginalSignaturePdf), "", SetRequestOptionsObject(options), Method.DELETE);
-            var formatedResponse = RequestProcess.ValidateAndReturnResponse<OriginalSignaturePdfDeleteResponse, EligibleError>(response);
-            formatedResponse.SetJsonResponse(response.Content);
-            return formatedResponse;
+            response = ExecuteObj.ExecutePdf(Path.Combine(EligibleResources.EnrollmentNpis, enrollmentNpiId, EligibleResources.OriginalSignaturePdf), string.Empty, SetRequestOptionsObject(options), Method.DELETE);
+            var formattedResponse = RequestProcess.ResponseValidation<OriginalSignaturePdfDeleteResponse, EligibleError>(response);
+            formattedResponse.SetJsonResponse(response.Content);
+            return formattedResponse;
         }
 
         /// <summary>
@@ -214,10 +196,18 @@ namespace EligibleService.Core
         /// </summary>
         /// <param name="enrollmentNpiId"></param>
         /// <param name="pathToDownload"></param>
-        public string DownloadOriginalSignaturePdf(string enrollmentNpiId, string pathToDownload, RequestOptions options = null)
+        public bool DownloadOriginalSignaturePdf(string enrollmentNpiId, string pathToDownload, RequestOptions options = null)
         {
             ExecuteObj.ExecuteDownload(Path.Combine(EligibleResources.EnrollmentNpis, enrollmentNpiId, EligibleResources.OriginalSignaturePdf, EligibleResources.Download), EligibleResources.OriginalSignaturePdf + "_" + enrollmentNpiId, pathToDownload, SetRequestOptionsObject(options));
-            return "Request completed";
+            return true;
+        }
+
+        private OriginalSignaturePdfResponse PdfProcess(string enrollmentNpiId, Method httpMethod, string signaturePdfFilePath, RequestOptions options = null)
+        {
+            response = ExecuteObj.ExecutePdf(Path.Combine(EligibleResources.EnrollmentNpis, enrollmentNpiId, EligibleResources.OriginalSignaturePdf), signaturePdfFilePath, SetRequestOptionsObject(options), httpMethod);
+            var formattedResponse = RequestProcess.ResponseValidation<OriginalSignaturePdfResponse, EligibleError>(response);
+            formattedResponse.SetJsonResponse(response.Content);
+            return formattedResponse;
         }
     }
 }

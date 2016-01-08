@@ -1,22 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EligibleService.Core;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using EligibleService.Common;
 using System.Collections;
-using EligibleService.Model.Claim;
 using RestSharp;
 using System.Net;
 using EligibleService.NETTests;
 using Ploeh.AutoFixture;
-using EligibleService.Model.CostEstimates;
 using EligibleService.Exceptions;
 using EligibleService.Model;
 using Newtonsoft.Json;
+
 namespace EligibleService.Core.Tests
 {
     [TestClass()]

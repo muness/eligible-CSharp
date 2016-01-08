@@ -1,5 +1,4 @@
-﻿using EligibleService.Model.Claim;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System.Collections.ObjectModel;
 
 namespace EligibleService.Model

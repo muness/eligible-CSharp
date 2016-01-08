@@ -2,10 +2,8 @@
 
 namespace EligibleService.Model.Precertification
 {
-
     public class Dependent
     {
-
         [JsonProperty("first_name")]
         public string FirstName { get; set; }
 

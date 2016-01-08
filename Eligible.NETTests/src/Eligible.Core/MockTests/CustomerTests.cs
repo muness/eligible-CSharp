@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EligibleService.Core;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using EligibleService.Common;
 using System.Collections;
@@ -14,6 +8,7 @@ using System.Net;
 using EligibleService.NETTests;
 using Ploeh.AutoFixture;
 using EligibleService.Model;
+
 namespace EligibleService.Core.Tests
 {
     [TestClass()]
@@ -160,13 +155,6 @@ namespace EligibleService.Core.Tests
 
             customer.ExecuteObj = restClient.Object;
 
-            customer.GetByCustomerId("customer_id");
-            customer.Create("{json: input}");
-            customer.Update("id", "{json: input}");
-            customer.Create(param);
-            customer.Update("id", param);
-            customer.Create(paramValues);
-            customer.Update("id", paramValues);
             customer.GetAll();
 
         }
@@ -186,13 +174,6 @@ namespace EligibleService.Core.Tests
             customer.ExecuteObj = restClient.Object;
 
             customer.GetByCustomerId("customer_id");
-            customer.Create("{json: input}");
-            customer.Update("id", "{json: input}");
-            customer.Create(param);
-            customer.Update("id", param);
-            customer.Create(paramValues);
-            customer.Update("id", paramValues);
-            customer.GetAll();
 
         }
 
@@ -211,13 +192,6 @@ namespace EligibleService.Core.Tests
             customer.ExecuteObj = restClient.Object;
 
             customer.GetByCustomerId("customer_id");
-            customer.Create("{json: input}");
-            customer.Update("id", "{json: input}");
-            customer.Create(param);
-            customer.Update("id", param);
-            customer.Create(paramValues);
-            customer.Update("id", paramValues);
-            customer.GetAll();
         }
 
         [TestMethod()]

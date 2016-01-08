@@ -1,15 +1,12 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Runtime.InteropServices;
 
 namespace EligibleService.Model
 {
     /// <summary>
     /// Claim response model after submitting claim
     /// </summary>
-
     public class ClaimResponse : JsonResponseClass
     {
         [JsonProperty("success")]
@@ -23,6 +20,5 @@ namespace EligibleService.Model
 
         [JsonProperty("errors")]
         public Collection<EligibleService.Exceptions.ClaimError> Errors { get; set; }
-
     }
 }

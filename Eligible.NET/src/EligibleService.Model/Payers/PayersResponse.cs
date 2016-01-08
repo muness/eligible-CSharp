@@ -1,9 +1,7 @@
 ﻿using EligibleService.Model.Payer;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Runtime.InteropServices;
 
 namespace EligibleService.Model
 {

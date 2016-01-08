@@ -1,10 +1,5 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EligibleService.Model.Claim
 {
@@ -53,21 +48,21 @@ namespace EligibleService.Model.Claim
         public string TotalCharge { get; set; }
 
         /// <summary>
-        /// Optional For Clreating a Claim.
+        /// Optional For Creating a Claim.
         /// Required when patient has made payment specifically toward this claim. ex: "patient_amount_paid": 24
         /// </summary>
         [JsonProperty("patient_amount_paid")]
         public string PatientAmountPaid { get; set; }
 
         /// <summary>
-        /// Required For Clreating a Claim.
+        /// Required For Creating a Claim.
         /// Provider certifies that the statements on the reverse apply to this bill and are made a part thereof. Possible values are "Y" (yes) or "N"(no) and default value is "N".
         /// </summary>
         [JsonProperty("provider_signature_on_file")]
         public string ProviderSignatureOnFile { get; set; }
 
         /// <summary>
-        /// Required For Clreating a Claim.
+        /// Required For Creating a Claim.
         /// Diagnosis codes. ex: "diagnosis_codes": ["309.24","390.0"]
         /// </summary>
         [JsonProperty("diagnosis_codes")]
@@ -208,7 +203,6 @@ namespace EligibleService.Model.Claim
 
         [JsonProperty("service_facility")]
         public ServiceFacility ServiceFacility { get; set; }
-
 
         [JsonProperty("supplemental_information")]
         public SupplementalInformation SupplementalInformation { get; set; }

@@ -1,12 +1,8 @@
 ﻿using EligibleService.Common;
 using RestSharp;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.Security.Permissions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EligibleService.Exceptions
 {
@@ -15,13 +11,12 @@ namespace EligibleService.Exceptions
     {
         public EligibleError EligibleError { get; set; }
 
-        public AuthenticationException(): base()
-        {}
-        public AuthenticationException(String message)
-            : base(message)
-        { }
-        public AuthenticationException(String message, Exception exception): base(message, exception)
-        {}
+        public AuthenticationException() : base() { }
+
+        public AuthenticationException(string message) : base(message) { }
+
+        public AuthenticationException(string message, Exception exception) : base(message, exception) { }
+
         public AuthenticationException(string message, IRestResponse response, Exception inner)
             : base(message, inner)
         {

@@ -1,10 +1,5 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EligibleService.Model.Claim
 {
@@ -18,7 +13,6 @@ namespace EligibleService.Model.Claim
 
         [JsonProperty("transport_info")]
         public TransportInfo TransportInfo { get; set; }
-
     }
 
     public class TransportInfo
@@ -41,5 +35,4 @@ namespace EligibleService.Model.Claim
         [JsonProperty("condition_codes")]
         public Collection<string> ConditionCodes { get; set; }  
     }
-
 }

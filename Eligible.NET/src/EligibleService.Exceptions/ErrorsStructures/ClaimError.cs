@@ -1,10 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EligibleService.Exceptions
 {
@@ -19,6 +15,7 @@ namespace EligibleService.Exceptions
         [JsonProperty("errors")]
         public Collection<ClaimError> Errors { get; set; }
     }
+
     public class ClaimError : BasicError
     {
         [JsonProperty("expected_value")]

@@ -1,10 +1,7 @@
 ﻿using EligibleService.Common;
 using System.Collections;
 using EligibleService.Net;
-using EligibleService.Model.Coverage;
 using EligibleService.Exceptions;
-using System.Runtime.InteropServices;
-using System;
 using EligibleService.Model;
 
 namespace EligibleService.Core
@@ -14,13 +11,8 @@ namespace EligibleService.Core
     /// </summary>
     public class Coverage : BaseCore
     {
-        public IRequestExecute ExecuteObj
-        {
-            get { return executeObj; }
-            set { executeObj = value; }
-        }
+        public Coverage() : base() { }
 
-        public Coverage() : base(){}
         /// <summary>
         /// Get all Coverages
         /// https://gds.eligibleapi.com/v1.5/coverage/all
@@ -30,7 +22,7 @@ namespace EligibleService.Core
         public CoverageResponse All(Hashtable requiredParams, RequestOptions options = null)
         {
             response = ExecuteObj.Execute(EligibleResources.PathToAllCoverages, SetRequestOptionsObject(options), requiredParams);
-            var fomatedResponse = RequestProcess.ValidateAndReturnResponse<CoverageResponse, CoverageErrorDetails>(response);
+            var fomatedResponse = RequestProcess.ResponseValidation<CoverageResponse, CoverageErrorDetails>(response);
             fomatedResponse.SetJsonResponse(response.Content);
             return fomatedResponse;
         }
@@ -44,9 +36,9 @@ namespace EligibleService.Core
         public MedicareResponse Medicare(Hashtable requiredParams, RequestOptions options = null)
         {
             response = ExecuteObj.Execute(EligibleResources.PathToMedicare, SetRequestOptionsObject(options), requiredParams);
-            var formatedResponse = RequestProcess.ValidateAndReturnResponse<MedicareResponse, CoverageErrorDetails>(response);
-            formatedResponse.SetJsonResponse(response.Content);
-            return formatedResponse;
+            var formattedResponse = RequestProcess.ResponseValidation<MedicareResponse, CoverageErrorDetails>(response);
+            formattedResponse.SetJsonResponse(response.Content);
+            return formattedResponse;
         }
     }
 }

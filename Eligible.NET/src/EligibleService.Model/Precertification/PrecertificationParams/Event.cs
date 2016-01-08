@@ -3,10 +3,8 @@ using System.Collections.ObjectModel;
 
 namespace EligibleService.Claim.Precert
 {
-
     public class Event
     {
-
         [JsonProperty("service_type_code")]
         public string ServiceTypeCode { get; set; }
 
