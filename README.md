@@ -1,300 +1,220 @@
-#Eligible.NET
-C# Library for Eligible APIs
-### Description
-EligibleNET for .NET provides simple access to Eligible APIs.
+Eligible.NET
+===================
+C# bindings for Eligible APIs (https://eligible.com). 
+
+#### Documentation
+Eligible is built for developers needing HIPAA compliant connectivity to health insurance companies.
+> **Important:** You can request an account at https://eligible.com/request-access
+
+Refer to https://eligible.com/rest for full documentation on Eligible APIs, their request parameters and expected response formats.
 
 #### Requirements
 * [.NET Framework 4.5](http://www.microsoft.com/en-us/download/details.aspx?id=30653)
 
-#### NuGet Packages
-Eligible.NET library is available on NuGet. Use the below command to get it from Nuget PackageManagerConsole.
+### NuGet Packages
+Eligible.NET library is available on NuGet. Use the below command to get it from NuGet PackageManagerConsole.
 
-	Install-Package Eligible.Net
-	
-### Documentation
-Refer to https://eligible.com/rest for full documentation on Eligible APIs, their request parameters
-and expected response formats.
-	
-### Configure
-You can request an account at https://eligible.com/request-access
+	Install-Package Eligible.NET
 
+### Usage
 Please include the below namespaces to make calls to the Eligible API. 
 ```cs
 using EligibleService.Core; // For Query
 using EligibleService.Model; //For Response
 ```
-The below lines of code store your ApiKey, TestMode and ApiVersion once and use it in entire application. 
+-  Set ApiKey and TestMode using Eligible class - global setting
+	```cs
+	Eligible eligible = Eligible.Instance;
+	eligible.ApiKey = "Api Key";
+	eligible.IsTest = true;
+	```
+	[Sample code](#Samplecode)
+	
+- Create a RequestOptions object and pass it to every request
+	```cs
+	RequestOptions requestOptions = new RequestOptions();
+	requestOptions.ApiKey = "Api Key";
+	requestOptions.IsTest = true;
+	```
+	[RequestOptionsExample](#RequestOptionsExample)
+	
+#### Samplecode
 ```cs
-Eligible eligible = Eligible.Instance;
-eligible.ApiKey = "Api Key";
-eligible.IsTest = true;
-```
-	(OR)
-Create a RequestOptions object and pass it to every request
-```cs
-RequestOptions requestOptions = new RequestOptions();
-requestOptions.ApiKey = "Api Key";
-requestOptions.IsTest = true;
-
-ClaimResponse response = claim.Create(input, requestOptions); // requestOptions is optional parameter
-```
-### Certificate fingerprint set
-This should only be done if instructed by eligible.com support. 
-```cs
-Eligible eligible = Eligible.Instance;
-eligible.AddFingerprint("fingerprint");
-```
-Note: Please update to the latest version of the eligible library for certificate fingerprint updates.
- 
-We have not mentioned all the parameters required to pass along with API calls here. Please check our [website](https://eligible.com/rest) for complete parameters.
-
-#### Sample Usage
-```cs
-using Eligible.Core;
+using EligibleService.Core;
+using EligibleService.Model;
 using System;
 
 class Program
 {
-	static void Main(string[] args)
-	{
-		Eligible eligible = Eligible.Instance;
-		eligible.ApiKey = "Api Key";
-		eligible.IsTest = false;
+    static void Main(string[] args)
+    {
+        Eligible eligible = Eligible.Instance;
+        eligible.ApiKey = "API Key";
+        eligible.IsTest = false;
 
-		Payers payers = new Payers();
-		PayersResponse payersResponse = payers.All();
-		/* 
-		RequestOptions requestOptions = new RequestOptions();
-		requestOptions.ApiKey = "Some other Api key"
-		requestOptions.IsTest = true;
-		PayersResponse payersResponse = payers.All(requestOptions); // requesoptions for specific request
-		*/
-		foreach(Eligible.Model.PayerResponse payer in payersResponse.Payers)
-		{
-			foreach(string PayerName in payer.Names)
-			{
-				Console.WriteLine(PayerName);
-			}
-			Console.WriteLine(payer.CreatedAt);
-			Console.WriteLine(payer.PayerId);
-		}
-		
-		//JsonResponse can get from the output of method call.
-		Console.WriteLine(payersResponse.JsonResponse()); // will return json response
-	}
+        Payers payers = new Payers();
+        PayersResponse payersResponse = payers.All();
+
+        foreach (PayerResponse payer in payersResponse.Payers)
+        {
+            foreach (string PayerName in payer.Names)
+            {
+                Console.WriteLine(PayerName);
+            }
+            Console.WriteLine(payer.CreatedAt);
+            Console.WriteLine(payer.PayerId);
+        }
+        
+        Console.WriteLine(payersResponse.JsonResponse()); // will return json response
+    }
 }
 ```
+#### RequestOptionsExample
+```cs
+using EligibleService.Core;
+using System;
 
-###Testing
-Add your apikey to Environmental Variable with name 'apikey' or set apikey in TestResource file to run the test cases.
+class Program
+{
+    static void Main(string[] args)
+    {
+        RequestOptions requestOptions = new RequestOptions();
+        requestOptions.ApiKey = "API Key";
+        requestOptions.IsTest = true;
 
-## All EligibleApi Calls
-### Payers
-Please refer to https://eligible.com/rest#payers for Payers information
+        Payers payers = new Payers();
+        var payerResponse = payers.GetById("payer_id", requestOptions);
+
+        Console.WriteLine(payerResponse.JsonResponse());
+    }
+}
+```
+[Payers](#Payers)
+  * [Retrieve all payers](#Retrieve-all-payers)
+  * [Retrieve single payer](#Retrieve-single-payer)
+  * [Retrieve all payers search options](#Retrieve-all-payers-search-options)
+  * [Retrieve payers statuses](#Retrieve-payers-statuses)
+  * [Retrieve specific statuses](#Retrieve-specific-statuses)
+  * [Retrieve payer statuses](#Retrieve-payer-statuses)
+#### Retrieve all payers
 ```cs
 Payers payers = new Payers();
-PayersResponse payersResponse = payers.All(); //List of all payers
-PayersResponse payersResponse = payers.All("payment reports", true); // params => endpoint = "payment reports", enrollment_required = "true"
 
-PayerResponse payerResponse = payers.GetById("10101"); // Get single payer with payer_id
-
-PayersSearchOptionResponse payersSearchOptions = payers.SearchOptions(); 
-payersSearchOptionResponse.SearchOptionsList; // Get all payers search options
-
-PayerSearchOptionResponse payerSearchOptions = payers.SearchOptions("10101"); // Get SearchOptions for single payer
-
-StatusResponse payersStatusses = payers.Statusses("276"); // 276 is transaction_type, default value is 270
-StatusResponse payersStatusses = payers.GetPayersByStatus("available", "276"); //Get payers by their status(ex: unavailable, available...)
-
-StatusResponse payerStatusses = payers.StatussesByPayer("00002", "276"); // Get single payer Statusses
+PayersResponse payersResponse = payers.All();
+PayersResponse payersResponse = payers.All("payment reports",  "true");
 ```
-
-### Claim
-There are multiple ways to create a Claim.
-
-###### 1. Create claim with Hash params
-Please refer to https://eligible.com/rest#claims_and_reports for complete parameter information.
+Retrieve payers with RequestOptions
 ```cs
-Claim claim = new Claim();
-
-Hashtable claimHashParams = new Hashtable();
-claimHashParams.Add("billing_provider", billingProvider);
-claimHashParams.Add("payer", payer);
-claimHashParams.Add("subscriber", suscriber);
-claimHashParams.Add("dependent", dependent);
-claimHashParams.Add("claim", claimm);
-
-ClaimResponse claimResponse = claim.Create(claimHashParams);
-if (claimResponse.Success)
-	Console.WriteLine("Claim submitted successfully");
-
+var payersResponse = payers.All("payment reports",  "true", requestOptionsObj);
 ```
-###### 2.Create claim with our ClaimParams Class. Include using Eligible.Model.Claim to get this to work.
-
+Json Response
 ```cs
-ClaimParams claimParamsObj = new ClaimParams();
-claimParamsObj.ScrubEligibility = false;
-claimParamsObj.BillingProvider = bp;
-claimParamsObj.Payer = new Payer()
-{
-    Id = "60054",
-    Name = "Aetna",
-    Address = new Eligible.Model.Address()
-	{
-		.	.	.
-		.	.	.
-}
-ClaimResponse claimResponse = claim.Create(claimParamsObj)
-
+string jsonResponse = payersResponse.JsonResponse();
 ```
-###### 3. Create claim with JSON ######
-```cs 
-ClaimResponse claimResponse = claim.Create("{"scrub_eligibility": "false", "billing_provider": {    "tax_id": "123456789",    "tax_id_type": "EI",    "entity": "false",...})
-```
-##### Other methods in Claim
+#### Retrieve single payer
 ```cs
-// Acknowledgements
-ClaimAcknowledgementsResponse claimAcknowledgements = claim.GetClaimAcknowledgements("referenceId"); // Params => 01001100 is reference_id.
+Payers payers = new Payers();
 
-MultipleAcknowledgementsResponse multipleClaimAcknowledgements = claim.GetClaimAcknowledgements(claimAckHashParams); // params => claimAckParam is a Hash of params. Check our document for list of params.
-
-// Claim payment reports
-ClaimPaymentReportResponse claimPaymentReport = claim.GetClaimPaymentReport("referenceId"); Params => BDA85HY09IJ is reference_id
-
-ClaimPaymentReportResponse specificClaimPaymentReport = claim.GetClaimPaymentReport("BDA85HY09IJ", "ABX45DGER44"); // Params => BDA85HY09IJ is reference_id and ABX45DGER44 is Id. 
-
-ClaimPaymentReportsResponse multipleClaimPaymentReports = claim.GetClaimPaymentReport();
+PayerResponse payerResponse = payers.GetById("payer_id");
 ```
-
-### Coverage
-Please refer to https://eligible.com/rest#coverage for full parameter information.
-```cs 
-Coverage coverage = new Coverage();
-Hashtable coverageParams = new Hashtable();
-coverageParams.Add("payer_id", "00030");
-coverageParams.Add("provider_first_name", "John");
-coverageParams.Add("provider_npi", "0123456789");
-coverageParams.Add("member_id", "ZZZ12345556666");
-// some params skipped. 
-
-CoverageResponse coverageResponse = coverage.All(coverageHashParams); 
-```
-### Medicare
-Please refer to https://eligible.com/rest#retrieve-medicare for full Medicare parameter information.
+Retrieve payers with RequestOptions
 ```cs
-Coverage coverage = new Coverage();
-
-MedicareResponse medicare = coverage.Medicare(medicareHashParams);
+var payerResponse = payers.GetById("62308", requestOptionsObj);
 ```
-
-### Customer 
-Please refer to https://eligible.com/rest#customers for full customer parameter information.
+Json Response
 ```cs
-Customer customer = new Customer();
+string jsonResponse = payerResponse.JsonResponse();
 ```
+#### Retrieve all payers search options
 ```cs
-// Create customer
-CustomerResponse response = customer.Create("ABC", "ABC site"); // params => ABC is company_name, ABc site is company_site
-CustomerResponse response = customer.Create("{customer: { 'name': 'XYZ company', 'site_name': 'XYZ site name' } }"); // create customer with JSON
-CustomerResponse response = customer.Create(customerHashParams);
-CustomerResponse response = customer.Create(customerParams); // customerParams is an object of CustomerParams. Usage is similar to Claim creation using ClaimParams.
+Payers payers = new Payers();
 
-// Update customer
-CustomerResponse response = customer.Update("customerId", "ABC", "ABC site"); // params => ABC is company_name, ABc site is company_site
-CustomerResponse response = customer.Update("customerId", "{customer: { 'name': 'XYZ company', 'site_name': 'XYZ site name' } }"); // create customer with JSON
-CustomerResponse response = customer.Update("customerId", customerHashParams);
-CustomerResponse response = customer.Update("customerId", customerParams); // customerParams is an object of CustomerParams. Usage is similar to Claim creation using ClaimParams.
-
-// Retrieve Customer
-CustomerResponse response = customer.GetByCustomerId("customerId");
-
-CustomersResponse customers = customer.GetAll(); //List of all customers. 
-CustomersResponse customers = customer.GetAll("3");  // parameter "3" is page number and it is optional
+PayersSearchOptionResponse payersSearchOptions = payers.SearchOptions();
 ```
-
-### Cost Estimates 
-Please refer to https://eligible.com/rest#cost-estimates for full CostEstimates parameter information.
+Retrieve payers with RequestOptions
 ```cs
-CostEstimates costEstimates = new CostEstimates();
+var payersSearchOptions = payers.SearchOptions(requestOptionsObj);
 
-CostEstimatesResponse costEstimatesResponse = costEstimates.Get(costEstimatesHashParams); 
 ```
-
-### Payment Status 
-Please refer to https://eligible.com/rest#payment-status for full Payment Status parameter information.
+Json Response
 ```cs
-PaymentStatus paymentStatus = new PaymentStatus();
-
-PayementStatusResponse paymentStatus = paymentStatus.Get(paymentStatusHashParams);
+string jsonResponse = payersSearchOptions.JsonResponse();
 ```
 
-### Enrollments
-Please refer to https://eligible.com/rest#enrollments for full Enrollments parameter information.
+#### Retrieve all payers search options
 ```cs
-Enrollment enrollment = new Enrollment();
+Payers payers = new Payers();
+
+PayersSearchOptionResponse payersSearchOptions = payers.SearchOptions();
 ```
+Retrieve payers with RequestOptions
 ```cs
-//Create Enrollment
-EnrollmentNpisResponse enrollmentResponse = enrollment.Create(enrollmentHashParams);
-EnrollmentNpisResponse enrollmentResponse = enrollment.Create(enrollmentParams); // Use EnrollmentParams class to send required params
-EnrollmentNpisResponse enrollmentResponse = enrollment.Create(jsonParams); // Build params in JSON form.
-
-//Update Enrollment
-EnrollmentNpisResponse enrollmentResponse = enrollment.Update("enrollment_npi_id", enrollmentHashParams);
-EnrollmentNpisResponse enrollmentResponse = enrollment.Update("enrollment_npi_id", enrollmentParams);
-EnrollmentNpisResponse enrollmentResponse = enrollment.Update("enrollment_npi_id", jsonParams);
-
-//Retrieve Enrollment
-EnrollmentNpisResponse enrollmentResponse = enrollment.GetByEnrollmentNpiId("enrollment_npi_id");
-
-
-EnrollmentNpisResponses enrollments = enrollment.GetAll();
-
-//Received PDF
-ReceivedPdfResponse recievedPdf = enrollment.GetReceivedPdf("enrollment_npi_id");
-
-string response = enrollment.DownloadReceivedPdf("enrollment_npi_id", "location to download the pdf(ex: C:\\pdfs\\");
-
-//Original Signature PDF
-OriginalSignaturePdfResponse response = enrollment.CreateOriginalSignaturePdf("enrollment_npi_id", "signature pdf to upload. ex : C:\\PDF\\received_pdf_123.pdf");
-OriginalSignaturePdfResponse response = enrollment.UpdateOriginalSignaturePdf("enrollment_npi_id", "Updated signature pdf path to upload. ex : C:\\PDF\\received_pdf_123.pdf");
-OriginalSignaturePdfResponse response = enrollment.GetOriginalSignaturePdf("123");
-
-OriginalSignaturePdfDeleteResponse deleteSignaturePdf = enrollment.DeleteOriginalSignaturePdf("123");
-
-string response = enrollment.DownloadOriginalSignaturePdf("enrollment_npi_id", "location to download the pdf(ex: C:\\pdfs\\");
+var payersSearchOptions = payers.SearchOptions(requestOptionsObj);
 
 ```
-
-### Precertification 
-Please refer to https://eligible.com/rest#precert for full Precertification parameter information.
+Json Response
 ```cs
-Precertification precertification = new Precertification();
-PrecertificationInquiryResponse preCertifications = precertification.Inquiry(hashParams);
+string jsonResponse = payersSearchOptions.JsonResponse();
+```
+#### Retrieve single payer search options
+```cs
+Payers payers = new Payers();
+
+PayerSearchOptionResponse payerSearchOptions = payers.SearchOptions("payer_id");
+```
+Retrieve payers with RequestOptions
+```cs
+var payerSearchOptions = payers.SearchOptions("payer_id", requestOptionsObj);
+
+```
+Json Response
+```cs
+string jsonResponse = payerSearchOptions.JsonResponse();
+```
+#### Retrieve payers statuses 
+```cs
+Payers payers = new Payers();
+
+StatusResponse payersStatusses = payers.Statusses("276"); // 276 is transaction_type and it is optional param
+```
+Retrieve payers with RequestOptions
+```cs
+var payersStatusses = payers.Statusses("276", requestOptionsObj);
+
+```
+Json Response
+```cs
+string jsonResponse = payersStatusses.JsonResponse()
 ```
 
-###Exception Handling###
-Namespace to Include: Eligible.Exceptions
+#### Retrieve specific statuses
+```cs
+Payers payers = new Payers();
 
-	1) AuthenticationException
-	2) InvalidRequestException
-	3) EligibleException
-	
-```cs	
-try
-{
-	var payers = Coverage.Medicare(param);
-}
-catch(Eligible.Exceptions.EligibleException ex)
-{
-	var erro = ex.EligibleError;
-}
-catch(Eligible.Exceptions.AuthenticationException ex)
-{
-	var erro = ex.Message;
-}
-catch(Eligible.Exceptions.InvalidRequestException ex)
-{
-	var erro = ex.Message;
-}
+StatusResponse payersStatusses = payers.GetPayersByStatus("available", "276");
+```
+Retrieve payers with RequestOptions
+```cs
+var payersStatusses = payers.GetPayersByStatus("available", "276", requestOptionsObj);
+
+```
+Json Response
+```cs
+string jsonResponse = payersStatusses.JsonResponse()
+```
+
+#### Retrieve payer statuses
+```cs
+Payers payers = new Payers();
+
+StatusResponse payerStatusses = payers.StatussesByPayer("payer_id", "276");
+```
+Retrieve payers with RequestOptions
+```cs
+var payerStatusses = payers.StatussesByPayer("payer_id", "276", requestOptionsObj);
+
+```
+Json Response
+```cs
+string jsonResponse = payerStatusses.JsonResponse()
 ```
