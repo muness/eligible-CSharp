@@ -28,7 +28,7 @@ using EligibleService.Model; //For Response
 	eligible.ApiKey = "Api Key";
 	eligible.IsTest = true;
 	```
-	[Sample code](#Samplecode)
+	[Sample code](#sample-code)
 	
 - Create a RequestOptions object and pass it to every request
 	```cs
@@ -36,9 +36,9 @@ using EligibleService.Model; //For Response
 	requestOptions.ApiKey = "Api Key";
 	requestOptions.IsTest = true;
 	```
-	[RequestOptionsExample](#RequestOptionsExample)
+	[RequestOptionsExample](#request-options-example)
 	
-#### Samplecode
+#### Sample code
 ```cs
 using EligibleService.Core;
 using EligibleService.Model;
@@ -69,7 +69,7 @@ class Program
     }
 }
 ```
-#### RequestOptionsExample
+#### Request Options Example
 ```cs
 using EligibleService.Core;
 using System;
@@ -89,14 +89,16 @@ class Program
     }
 }
 ```
-[Payers](#Payers)
-  * [Retrieve all payers](#Retrieve-all-payers)
-  * [Retrieve single payer](#Retrieve-single-payer)
-  * [Retrieve all payers search options](#Retrieve-all-payers-search-options)
-  * [Retrieve payers statuses](#Retrieve-payers-statuses)
-  * [Retrieve specific statuses](#Retrieve-specific-statuses)
-  * [Retrieve payer statuses](#Retrieve-payer-statuses)
-#### Retrieve all payers
+* [Payers](#Payers)
+	* [Retrieve all payers](#retrieve-all-payers)
+	* [Retrieve single payer](#retrieve-single-payer)
+	* [Retrieve all payers search options](#retrieve-all-payers-search-options)
+	* [Retrieve payers statuses](#retrieve-payers-statuses)
+	* [Retrieve specific statuses](#retrieve-specific-statuses)
+	* [Retrieve payer statuses](#retrieve-payer-statuses)
+	
+## Payers 
+### Retrieve all payers
 ```cs
 Payers payers = new Payers();
 
@@ -111,7 +113,7 @@ Json Response
 ```cs
 string jsonResponse = payersResponse.JsonResponse();
 ```
-#### Retrieve single payer
+### Retrieve single payer
 ```cs
 Payers payers = new Payers();
 
@@ -125,7 +127,7 @@ Json Response
 ```cs
 string jsonResponse = payerResponse.JsonResponse();
 ```
-#### Retrieve all payers search options
+### Retrieve all payers search options
 ```cs
 Payers payers = new Payers();
 
@@ -141,7 +143,7 @@ Json Response
 string jsonResponse = payersSearchOptions.JsonResponse();
 ```
 
-#### Retrieve all payers search options
+### Retrieve all payers search options
 ```cs
 Payers payers = new Payers();
 
@@ -156,7 +158,7 @@ Json Response
 ```cs
 string jsonResponse = payersSearchOptions.JsonResponse();
 ```
-#### Retrieve single payer search options
+### Retrieve single payer search options
 ```cs
 Payers payers = new Payers();
 
@@ -171,7 +173,7 @@ Json Response
 ```cs
 string jsonResponse = payerSearchOptions.JsonResponse();
 ```
-#### Retrieve payers statuses 
+### Retrieve payers statuses 
 ```cs
 Payers payers = new Payers();
 
@@ -187,7 +189,7 @@ Json Response
 string jsonResponse = payersStatusses.JsonResponse()
 ```
 
-#### Retrieve specific statuses
+### Retrieve specific statuses
 ```cs
 Payers payers = new Payers();
 
@@ -203,7 +205,7 @@ Json Response
 string jsonResponse = payersStatusses.JsonResponse()
 ```
 
-#### Retrieve payer statuses
+### Retrieve payer statuses
 ```cs
 Payers payers = new Payers();
 
