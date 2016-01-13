@@ -89,13 +89,26 @@ class Program
     }
 }
 ```
-* [Payers](#Payers)
+* [Payers](#payers)
 	* [Retrieve all payers](#retrieve-all-payers)
 	* [Retrieve single payer](#retrieve-single-payer)
 	* [Retrieve all payers search options](#retrieve-all-payers-search-options)
 	* [Retrieve payers statuses](#retrieve-payers-statuses)
 	* [Retrieve specific statuses](#retrieve-specific-statuses)
 	* [Retrieve payer statuses](#retrieve-payer-statuses)
+* [Claim](#claim)
+ * [Submit claim](#claim)
+	* [Hash params](#submit-with-hash-params)
+	* [ClaimParams Class Object](#submit-with-claimparams-class-object)
+	* [JSON input](#submit-with-json)
+ * [Retrieve Claim Acknowledgements](#claim-acknowledgements) 
+	*  [Acknowledgements with ReferenceID](#claim-acknowledgements)
+	*  [Multiple Acknowledgements](#multiple-acknowledgements)
+ * [Payment Reports](#payment-reports)
+	* [Single Payment Report](#retrieve-single-claim-payment-report)
+	* [Specific Payment Report](#retrieve-specific-claim-payment-report)
+	* [Multiple Payment Report](#retrieve-multiple-claim-payment-report)
+
 	
 ## Payers 
 ### Retrieve all payers
@@ -219,4 +232,150 @@ var payerStatusses = payers.StatussesByPayer("payer_id", "276", requestOptionsOb
 Json Response
 ```cs
 string jsonResponse = payerStatusses.JsonResponse()
+```
+## Claim
+
+### Submit with hash params
+```cs
+Claim claim = new Claim();
+
+Hashtable claimHashParams = new Hashtable();
+claimHashParams.Add("billing_provider", billingProviderHash);
+claimHashParams.Add("payer", payer);
+claimHashParams.Add("subscriber", suscriberHash);
+claimHashParams.Add("dependent", dependentHash);
+claimHashParams.Add("claim", claimmDetailsHash);
+
+ClaimResponse claimResponse = claim.Create(claimHashParams);
+```
+Submit claim with RequestOptions
+```cs
+var claimResponse = claim.Create(claimHashParams, requestOptionsObj);
+```
+Json Response
+```cs
+string jsonResponse = claimResponse.JsonResponse();
+```
+
+### Submit with ClaimParams Class Object
+```cs
+Claim claim = new Claim();
+
+ClaimParams claimParamsObj = new ClaimParams();
+claimParamsObj.ScrubEligibility = false;
+claimParamsObj.BillingProvider = bp;
+claimParamsObj.Payer = new Payer()
+{
+    Id = "60054",
+    Name = "Aetna",
+    Address = new Eligible.Model.Address(){}
+	// checkout our rest doc or ClaimParams model for complete params list
+	
+}
+ClaimResponse claimResponse = claim.Create(claimParamsObj)
+```
+Submit claim with RequestOptions
+```cs
+var claimResponse = claim.Create(claimParamsObj, requestOptionsObj);
+```
+Json Response
+```cs
+string jsonResponse = claimResponse.JsonResponse();
+
+```
+
+### Submit with JSON
+```cs
+Claim claim = new Claim();
+
+ClaimResponse claimResponse = claim.Create("{"scrub_eligibility": "false", "billing_provider": {    "tax_id": "123456789",    "tax_id_type": "EI",    "entity": "false",...})
+```
+Submit claim with RequestOptions
+```cs
+var claimResponse = claim.Create(jsonInput, requestOptionsObj);
+```
+Json Response
+```cs
+string jsonResponse = claimResponse.JsonResponse();
+```
+
+### Claim Acknowledgements
+```cs
+Claim claim = new Claim();
+
+ClaimAcknowledgementsResponse claimAcknowledgements = claim.GetClaimAcknowledgements("referenceId"); 
+```
+Retrieve Acknowledgements with  with RequestOptions
+```cs
+var claimAcknowledgements = claim.GetClaimAcknowledgements("referenceId", requestOptionsObj); 
+```
+Json Response
+```cs
+string jsonResponse = claimAcknowledgements.JsonResponse();
+```
+
+### Multiple Acknowledgements
+```cs
+Claim claim = new Claim();
+
+Hashtable claimAckHashParams = new Hashtable();
+            claimAckHashParams.Add("internal_id", "12345");
+            claimAckHashParams.Add("submission_status", "accepted");
+            claimAckHashParams.Add("claim_submitted_date", "2014-02-15");
+            
+MultipleAcknowledgementsResponse multipleClaimAcknowledgements = claim.GetClaimAcknowledgements(claimAckHashParams);
+```
+Retrieve Acknowledgements with  with RequestOptions
+```cs
+var multipleClaimAcknowledgements = claim.GetClaimAcknowledgements(claimAckHashParams, requestOptionsObj);
+```
+Json Response
+```cs
+string jsonResponse = multipleClaimAcknowledgements.JsonResponse();
+```
+
+### Payment Reports
+### Retrieve Single Claim Payment Report
+```cs
+Claim claim = new Claim();
+
+ClaimPaymentReportResponse claimPaymentReport = claim.GetClaimPaymentReport("referenceId");
+```
+Payment Reports with RequestOptions
+```cs
+var claimPaymentReport = claim.GetClaimPaymentReport("referenceId", requestOptionsObj);
+```
+Json Response
+```cs
+string jsonResponse = claimPaymentReport.JsonResponse();
+```
+
+### Retrieve Specific Claim Payment Report
+```cs
+Claim claim = new Claim();
+
+ClaimPaymentReportResponse specificClaimPaymentReport = claim.GetClaimPaymentReport("BDA85HY09IJ", "ABX45DGER44");
+```
+Payment Reports with RequestOptions
+```cs
+var specificClaimPaymentReport = claim.GetClaimPaymentReport("BDA85HY09IJ", "ABX45DGER44", requestOptionsObj);
+```
+Json Response
+```cs
+string jsonResponse = specificClaimPaymentReport.JsonResponse();
+```
+
+### Retrieve Multiple Claim Payment Report
+```cs
+Claim claim = new Claim();
+
+ClaimPaymentReportsResponse multipleClaimPaymentReports = claim.GetClaimPaymentReport();
+```
+Payment Reports with RequestOptions
+```cs
+var multipleClaimPaymentReports = claim.GetClaimPaymentReport(requestOptionsObj);
+```
+Json Response
+```cs
+string jsonResponse = multipleClaimPaymentReports.JsonResponse();
 ```
