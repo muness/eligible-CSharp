@@ -110,7 +110,15 @@ class Program
 	* [Multiple Payment Report](#retrieve-multiple-claim-payment-report)
 * [Coverage](#coverage)
 * [Medicare](#medicare)
-
+* [Customer](#customer)
+	* [Create Customer](#create-customer)
+	* [Update Customer](#update-customer)
+	* [Get Customer Info](#retrieve-customer-info)
+		* [Retrieve Single Customer](#retrieve-single-customer)
+		* [Retrieve All Customers](#retrieve-all-customers)
+		* [Retrieve All Customers with Page Number](#retrieve-all-customers-with-page-number)
+* [Cost Estimates](#cost-estimates)
+* [Payment Status](#payment-status)
 	
 ## Payers 
 ### Retrieve all payers
@@ -421,5 +429,259 @@ var medicareResponse = coverage.Medicare(medicareHashParams, requestOptionsObj);
 Json Response
 ```cs
 string jsonResponse = medicareResponse.JsonResponse();
+```
+
+## Customer
+### Create Customer
+```cs
+Customer customer = new Customer();
+
+CustomerResponse response = customer.Create("ABC", "ABC site"); // params => ABC is company_name, ABc site is company_site
+
+// JSON input
+var response = customer.Create("{customer: { 'name': 'XYZ company', 'site_name': 'XYZ site name' } }");
+
+// params as hashtable
+var response = customer.Create(customerHashParams);
+
+// CustomerParams object
+var response = customer.Create(customerParams);
+```
+Customer creation with RequestOptions
+```cs
+var response = customer.Create(customerParams, requestOptionsObj);
+```
+Json Response
+```cs
+string jsonResponse = response.JsonResponse();
+```
+
+### Update Customer
+```cs
+Customer customer = new Customer();
+
+CustomerResponse response = customer.Update("customerId", "ABC", "ABC site"); // params => ABC is company_name, ABc site is company_site
+
+// JSON input
+var response = customer.Update("customerId", "{customer: { 'name': 'XYZ company', 'site_name': 'XYZ site name' } }"); // create customer with JSON
+
+// params as hashtable
+var response = customer.Update("customerId", customerHashParams);
+
+// CustomerParams object
+var response = customer.Update("customerId", customerParams);
+```
+Customer creation with RequestOptions
+```cs
+var response = customer.Update(customerParams, requestOptionsObj);
+```
+Json Response
+```cs
+string jsonResponse = response.JsonResponse();
+```
+### Retrieve Customer Info
+#### Retrieve Single Customer
+```cs
+Customer customer = new Customer();
+
+CustomerResponse response = customer.GetByCustomerId("customerId");
+```
+Get customer with RequestOptions
+```cs
+CustomerResponse response = customer.GetByCustomerId("customerId", requestOptionsObj);
+```
+Json Response
+```cs
+string jsonResponse = response.JsonResponse();
+```
+#### Retrieve All Customers
+```cs
+Customer customer = new Customer();
+
+CustomersResponse customers = customer.GetAll(); 
+```
+Get all customer with RequestOptions
+```cs
+var customers = customer.GetAll(string.Empty, requestOptionsObj); 
+```
+Json Response
+```cs
+string jsonResponse = customers.JsonResponse();
+```
+#### Retrieve All Customers with Page Number
+```cs
+Customer customer = new Customer();
+
+CustomersResponse customers = customer.GetAll("3"); 
+```
+Get all customer with RequestOptions
+```cs
+var customers = customer.GetAll("3", requestOptionsObj)
+```
+Json Response
+```cs
+string jsonResponse = customers.JsonResponse();
+```
+
+## Cost Estimates
+```cs
+CostEstimates costEstimates = new CostEstimates();
+
+Hashtable param = new Hashtable();
+param.Add("provider_price", "1500.50");
+param.Add("network", "IN");
+param.Add("payer_id", "00001");
+param.Add("provider_last_name", "Doe");
+param.Add("provider_first_name", "John");
+param.Add("provider_npi", "0123456789");
+param.Add("member_id", "AETNAS8398");
+param.Add("member_first_name", "IDA");
+param.Add("member_last_name", "FRANKLIN");
+param.Add("member_dob", "1701-12-12");
+param.Add("service_type", "1");
+
+CostEstimatesResponse costEstimatesResponse = costEstimates.Get(param); 
+```
+Cost Estimates with RequestOptions
+```cs
+var costEstimatesResponse = costEstimates.Get(param, requestOptionsObj); 
+```
+Json Response
+```cs
+string jsonResponse = costEstimatesResponse.JsonResponse();
+```
+## Payment Status
+```cs
+PaymentStatus paymentStatus = new PaymentStatus();
+
+Hashtable param = new Hashtable();
+param.Add("provider_npi", "0123456789");
+param.Add("provider_tax_id", "111223333");
+param.Add("payer_id", "00001");
+param.Add("provider_last_name", "Doe");
+param.Add("provider_first_name", "John");
+param.Add("member_id", "ZZZ445554301");
+param.Add("member_first_name", "IDA");
+param.Add("member_last_name", "FRANKLIN");
+param.Add("member_dob", "1701-12-12");
+param.Add("service_type", "1");
+param.Add("payer_control_number", "123123123");
+param.Add("charge_amount", "125.00");
+param.Add("start_date", "2010-06-15");
+param.Add("end_date", "2010-06-15");
+param.Add("trace_number", "BHUYTOK98IK");
+
+var paymentStatusResponse = paymentStatus.Get(param);
+```
+Payment status with RequestOptions
+```cs
+var paymentStatusResponse = paymentStatus.Get(param, requestOptionsObj);
+```
+Json Response
+```cs
+string jsonResponse = paymentStatusResponse.JsonResponse();
+```
+
+### Create Enrollment
+```cs
+Enrollment enrollment = new Enrollment();
+
+string enrollmentInput = "{'enrollment_npi': { 'payer_id': '00074', 'endpoint': 'coverage', 'effective_date': '2012-12-24', 'facility_name': 'Quality', 'provider_name': 'Jane Austen', 'tax_id': '12345678', 'address': '125 Snow Shoe Road', 'city': 'Sacramento', 'state': 'CA', 'zip': '94107', 'ptan': '54321', 'medicaid_id': '22222', 'npi': '1234567890', 'authorized_signer': { 'title': 'title', 'first_name': 'Lorem', 'last_name': 'Ipsum', 'contact_number': '1478963250', 'email': 'provider@eligibleapi.com', 'signature': { 'coordinates': [{ 'lx': 47, 'ly': 9, 'mx': 47, 'my': 8 }, { 'lx': 46, 'ly': 8, 'mx': 47, 'my': 9 }] } } } }";
+
+EnrollmentNpisResponse enrollmentResponse = enrollment.Create(enrollmentInput); 
+
+var enrollmentResponse = enrollment.Create(enrollmentHashParams);
+
+var enrollmentResponse = enrollment.Create(enrollmentParams); // Use EnrollmentParams class to send required params
+```
+Enrollment create with RequestOptions
+```cs
+var enrollmentResponse = enrollment.Create(enrollmentInput, requestOptionsObj); 
+```
+Json Response
+```cs
+string jsonResponse = enrollmentResponse.JsonResponse();
+```
+> Examples:  Check [Enrollment tests](https://github.com/eligible/eligible-CSharp/blob/master/Eligible.NETTests/src/Eligible.Core/CoreTests/EnrollmentTests.cs) for more examples
+
+
+### Update Enrollment
+```cs
+Enrollment enrollment = new Enrollment();
+
+EnrollmentNpisResponse enrollmentResponse = enrollment.Update("enrollment_npi_id", jsonParams); //check create for jsonParams input
+
+var enrollmentResponse = enrollment.Update("enrollment_npi_id", enrollmentHashParams);
+
+var enrollmentResponse = enrollment.Update("enrollment_npi_id", enrollmentParamsObj); // Use EnrollmentParams class to send required params
+```
+Enrollment update with RequestOptions
+```cs
+var enrollmentResponse = enrollment.Update("enrollment_npi_id",  enrollmentParamsObj, requestOptionsObj); 
+```
+Json Response
+```cs
+string jsonResponse = enrollmentResponse.JsonResponse();
+```
+> Examples:  Check [Enrollment tests](https://github.com/eligible/eligible-CSharp/blob/master/Eligible.NETTests/src/Eligible.Core/CoreTests/EnrollmentTests.cs) for more examples
+
+### Retrieve Enrollment
+#### Retrieve single Enrollment
+```cs
+Enrollment enrollment = new Enrollment();
+
+EnrollmentNpisResponse enrollmentResponse = enrollment.GetByEnrollmentNpiId("enrollment_npi_id");
+```
+Get Enrollment with RequestOptions
+```cs
+var enrollmentResponse = enrollment.GetByEnrollmentNpiId("enrollment_npi_id", requestOptionsObj); 
+```
+Json Response
+```cs
+string jsonResponse = enrollmentResponse.JsonResponse();
+```
+> Examples:  Check [Enrollment tests](https://github.com/eligible/eligible-CSharp/blob/master/Eligible.NETTests/src/Eligible.Core/CoreTests/EnrollmentTests.cs) for more examples
+
+#### Retrieve All Enrollments
+```cs
+Enrollment enrollment = new Enrollment();
+
+EnrollmentNpisResponses enrollments = enrollment.GetAll();
+```
+Get Enrollments with RequestOptions
+```cs
+var enrollmentResponse = enrollment.GetAll(requestOptionsObj); 
+```
+Json Response
+```cs
+string jsonResponse = enrollmentResponse.JsonResponse();
+```
+> Examples:  Check [Enrollment tests](https://github.com/eligible/eligible-CSharp/blob/master/Eligible.NETTests/src/Eligible.Core/CoreTests/EnrollmentTests.cs) for more examples
+
+### Received PDF
+#### Retrieve received pdf
+```cs
+Enrollment enrollment = new Enrollment();
+
+ReceivedPdfResponse recievedPdf = enrollment.GetReceivedPdf("enrollment_npi_id");
+```
+Get Enrollment with RequestOptions
+```cs
+var recievedPdf = enrollment.GetReceivedPdf("enrollment_npi_id", requestOptionsObj);
+```
+Json Response
+```cs
+string jsonResponse = recievedPdf.JsonResponse();
+```
+
+#### Download received pdf
+```cs
+Enrollment enrollment = new Enrollment();
+
+var response = enrollment.DownloadReceivedPdf("enrollment_npi_id", "location to download the pdf(ex: C:\\pdfs\\");
+```
+Get Enrollments with RequestOptions
+```cs
+var response = enrollment.DownloadReceivedPdf("enrollment_npi_id", "C:\\pdfs\\", requestOptionsObj); 
 ```
 
