@@ -108,6 +108,8 @@ class Program
 	* [Single Payment Report](#retrieve-single-claim-payment-report)
 	* [Specific Payment Report](#retrieve-specific-claim-payment-report)
 	* [Multiple Payment Report](#retrieve-multiple-claim-payment-report)
+* [Coverage](#coverage)
+* [Medicare](#medicare)
 
 	
 ## Payers 
@@ -379,3 +381,45 @@ Json Response
 ```cs
 string jsonResponse = multipleClaimPaymentReports.JsonResponse();
 ```
+
+## Coverage
+```cs
+Coverage coverage = new Coverage();
+
+Hashtable coverageHashParams = new Hashtable();
+coverageHashParams.Add("payer_id", "00001");
+coverageHashParams.Add("provider_last_name", "Doe");
+coverageHashParams.Add("provider_first_name", "John");
+coverageHashParams.Add("provider_npi", "0123456789");
+coverageHashParams.Add("member_id", "AETNAS8398");
+coverageHashParams.Add("member_first_name", "IDA");
+coverageHashParams.Add("member_last_name", "FRANKLIN");
+coverageHashParams.Add("member_dob", "1701-12-12");
+coverageHashParams.Add("service_type", "30");
+
+CoverageResponse coverageResponse = coverage.All(coverageHashParams);
+```
+Coverage with RequestOptions
+```cs
+var coverageResponse = coverage.All(coverageHashParams, requestOptionsObj);
+```
+Json Response
+```cs
+string jsonResponse = coverageResponse.JsonResponse();
+```
+
+## Medicare 
+```cs
+Coverage coverage = new Coverage();
+
+MedicareResponse medicareResponse = coverage.Medicare(medicareHashParams);
+```
+Medicare with RequestOptions
+```cs
+var medicareResponse = coverage.Medicare(medicareHashParams, requestOptionsObj);
+```
+Json Response
+```cs
+string jsonResponse = medicareResponse.JsonResponse();
+```
+
