@@ -71,6 +71,7 @@ Eligible.NET library is available on NuGet. Use the below command to get it from
 * [Precertification](#precertification)
 * [Exception Handling](#exception-handling)
 * [Testing](#testing)
+* [Support Forums](#support-forums)
 
 
 ## Usage
@@ -899,3 +900,5 @@ catch (InvalidRequestException ex)
 ## Testing
 Add your apikey to Environmental Variable with name 'apikey' or set apikey in TestResource file to run the test cases.
 
+## Support Forums
+If you find an issue with in the client library we would appricate you send mail to support@eligible.com or adding an issue in the [Issue tracker](https://github.com/eligible/eligible-CSharp/issues)
