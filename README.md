@@ -3,7 +3,7 @@ Eligible.NET
 C# bindings for Eligible APIs (https://eligible.com)
 
 #### Documentation
-Eligible is built for developers needing HIPAA compliant connectivity to health insurance companies.
+Eligible is built for HIPAA compliant connectivity to health insurance companies.
 > **Important:** You can request an account at https://eligible.com/request-access
 
 Refer to https://eligible.com/rest for full documentation on Eligible APIs, their request parameters and expected response formats.
@@ -12,7 +12,7 @@ Refer to https://eligible.com/rest for full documentation on Eligible APIs, thei
 * [.NET Framework 4.5](http://www.microsoft.com/en-us/download/details.aspx?id=30653)
 
 ### NuGet Packages
-Eligible.NET library is available on NuGet. Use the below command to get it from NuGet PackageManagerConsole.
+Eligible.NET library is available on NuGet.
 
 	Install-Package Eligible.NET
 	
@@ -901,4 +901,4 @@ catch (InvalidRequestException ex)
 Add your apikey to Environmental Variable with name 'apikey' or set apikey in TestResource file to run the test cases.
 
 ## Support Forums
-If you find an issue with in the client library we would appricate you send mail to support@eligible.com or adding an issue in the [Issue tracker](https://github.com/eligible/eligible-CSharp/issues)
+If you find an issue with in the client library we would appricate you Send an email to support@eligible.com or add an issue in the [Issue tracker](https://github.com/eligible/eligible-CSharp/issues) for bug reports.
