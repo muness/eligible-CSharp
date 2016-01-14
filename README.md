@@ -1,6 +1,6 @@
 Eligible.NET
 ===================
-C# bindings for Eligible APIs (https://eligible.com). 
+C# bindings for Eligible APIs (https://eligible.com)
 
 #### Documentation
 Eligible is built for developers needing HIPAA compliant connectivity to health insurance companies.
@@ -15,14 +15,71 @@ Refer to https://eligible.com/rest for full documentation on Eligible APIs, thei
 Eligible.NET library is available on NuGet. Use the below command to get it from NuGet PackageManagerConsole.
 
 	Install-Package Eligible.NET
+	
+* [Usage](#usage)
+* [Payers](#payers)
+	* [Retrieve all payers](#retrieve-all-payers)
+	* [Retrieve single payer](#retrieve-single-payer)
+	* [Retrieve all payers search options](#retrieve-all-payers-search-options)
+	* [Retrieve payers statuses](#retrieve-payers-statuses)
+	* [Retrieve specific statuses](#retrieve-specific-statuses)
+	* [Retrieve payer statuses](#retrieve-payer-statuses)
+* [Claim](#claim)
+ * [Submit claim](#claim)
+	* [Hash params](#submit-with-hash-params)
+	* [ClaimParams Class Object](#submit-with-claimparams-class-object)
+	* [JSON input](#submit-with-json)
+ * [Retrieve Claim Acknowledgements](#claim-acknowledgements) 
+	*  [Acknowledgements with ReferenceID](#claim-acknowledgements)
+	*  [Multiple Acknowledgements](#multiple-acknowledgements)
+ * [Payment Reports](#payment-reports)
+	* [Single Payment Report](#retrieve-single-claim-payment-report)
+	* [Specific Payment Report](#retrieve-specific-claim-payment-report)
+	* [Multiple Payment Report](#retrieve-multiple-claim-payment-report)
+* [Coverage](#coverage)
+* [Medicare](#medicare)
+* [Customer](#customer)
+	* [Create Customer](#create-customer)
+	* [Update Customer](#update-customer)
+	* [Get Customer Info](#retrieve-customer-info)
+		* [Retrieve Single Customer](#retrieve-single-customer)
+		* [Retrieve All Customers](#retrieve-all-customers)
+		* [Retrieve All Customers with Page Number](#retrieve-all-customers-with-page-number)
+* [Cost Estimates](#cost-estimates)
+* [Payment Status](#payment-status)
+* [Enrollments](#enrollments)
+	* [Create Enrollment](#create-enrollment)
+		* [Create with JSON](#create-enrollment-with-json)
+		* [Create with Hashtable](#create-enrollment-with-hashtable)
+		* [Create with EnrollmentParams object](#create-enrollment-with-enrollmentparams-object)
+	* [Update Enrollment](#update-enrollment)
+		* [Update with JSON](#update-enrollment-with-json)
+		* [Update with Hashtable](#update-enrollment-with-hastable)
+		* [Update with EnrollmentParams object](#update-enrollment-with-enrollmentparams-object)
+	* [Retrieve Enrollment](#retrieve-enrollment)
+		* [Single Enrollment](#retrieve-single-enrollment)
+		* [Enrollment List](#retrieve-all-enrollments)
+	* [Received PDF](#received-pdf)
+		* [Retrieve received pdf](#retrieve-received-pdf)
+		* [Download received pdf](#download-received-pdf)
+	* [Original Signature PDF](#original-signature-pdf)
+		* [Create](#create-original-signature-pdf)
+		* [Update](#update-original-signature-pdf)
+		* [Retrieve](#retrieve-original-signature-pdf)
+		* [Delete](#delete-original-signature-pdf)
+		* [Download](#download-original-signature-pdf)
+* [Precertification](#precertification)
+* [Exception Handling](#exception-handling)
+* [Testing](#testing)
 
-### Usage
+
+## Usage
 Please include the below namespaces to make calls to the Eligible API. 
 ```cs
 using EligibleService.Core; // For Query
 using EligibleService.Model; //For Response
 ```
--  Set ApiKey and TestMode using Eligible class - global setting
+-  Set ApiKey and Test mode using Eligible class - global setting
 	```cs
 	Eligible eligible = Eligible.Instance;
 	eligible.ApiKey = "Api Key";
@@ -89,37 +146,7 @@ class Program
     }
 }
 ```
-* [Payers](#payers)
-	* [Retrieve all payers](#retrieve-all-payers)
-	* [Retrieve single payer](#retrieve-single-payer)
-	* [Retrieve all payers search options](#retrieve-all-payers-search-options)
-	* [Retrieve payers statuses](#retrieve-payers-statuses)
-	* [Retrieve specific statuses](#retrieve-specific-statuses)
-	* [Retrieve payer statuses](#retrieve-payer-statuses)
-* [Claim](#claim)
- * [Submit claim](#claim)
-	* [Hash params](#submit-with-hash-params)
-	* [ClaimParams Class Object](#submit-with-claimparams-class-object)
-	* [JSON input](#submit-with-json)
- * [Retrieve Claim Acknowledgements](#claim-acknowledgements) 
-	*  [Acknowledgements with ReferenceID](#claim-acknowledgements)
-	*  [Multiple Acknowledgements](#multiple-acknowledgements)
- * [Payment Reports](#payment-reports)
-	* [Single Payment Report](#retrieve-single-claim-payment-report)
-	* [Specific Payment Report](#retrieve-specific-claim-payment-report)
-	* [Multiple Payment Report](#retrieve-multiple-claim-payment-report)
-* [Coverage](#coverage)
-* [Medicare](#medicare)
-* [Customer](#customer)
-	* [Create Customer](#create-customer)
-	* [Update Customer](#update-customer)
-	* [Get Customer Info](#retrieve-customer-info)
-		* [Retrieve Single Customer](#retrieve-single-customer)
-		* [Retrieve All Customers](#retrieve-all-customers)
-		* [Retrieve All Customers with Page Number](#retrieve-all-customers-with-page-number)
-* [Cost Estimates](#cost-estimates)
-* [Payment Status](#payment-status)
-	
+
 ## Payers 
 ### Retrieve all payers
 ```cs
@@ -471,7 +498,7 @@ var response = customer.Update("customerId", customerHashParams);
 // CustomerParams object
 var response = customer.Update("customerId", customerParams);
 ```
-Customer creation with RequestOptions
+Update Customer with RequestOptions
 ```cs
 var response = customer.Update(customerParams, requestOptionsObj);
 ```
@@ -500,7 +527,7 @@ Customer customer = new Customer();
 
 CustomersResponse customers = customer.GetAll(); 
 ```
-Get all customer with RequestOptions
+Get all customers with RequestOptions
 ```cs
 var customers = customer.GetAll(string.Empty, requestOptionsObj); 
 ```
@@ -514,7 +541,7 @@ Customer customer = new Customer();
 
 CustomersResponse customers = customer.GetAll("3"); 
 ```
-Get all customer with RequestOptions
+Get all customers with RequestOptions
 ```cs
 var customers = customer.GetAll("3", requestOptionsObj)
 ```
@@ -542,7 +569,7 @@ param.Add("service_type", "1");
 
 CostEstimatesResponse costEstimatesResponse = costEstimates.Get(param); 
 ```
-Cost Estimates with RequestOptions
+Cost estimates with RequestOptions
 ```cs
 var costEstimatesResponse = costEstimates.Get(param, requestOptionsObj); 
 ```
@@ -582,19 +609,17 @@ Json Response
 string jsonResponse = paymentStatusResponse.JsonResponse();
 ```
 
+## Enrollments
 ### Create Enrollment
+#### Create Enrollment with JSON
 ```cs
 Enrollment enrollment = new Enrollment();
 
 string enrollmentInput = "{'enrollment_npi': { 'payer_id': '00074', 'endpoint': 'coverage', 'effective_date': '2012-12-24', 'facility_name': 'Quality', 'provider_name': 'Jane Austen', 'tax_id': '12345678', 'address': '125 Snow Shoe Road', 'city': 'Sacramento', 'state': 'CA', 'zip': '94107', 'ptan': '54321', 'medicaid_id': '22222', 'npi': '1234567890', 'authorized_signer': { 'title': 'title', 'first_name': 'Lorem', 'last_name': 'Ipsum', 'contact_number': '1478963250', 'email': 'provider@eligibleapi.com', 'signature': { 'coordinates': [{ 'lx': 47, 'ly': 9, 'mx': 47, 'my': 8 }, { 'lx': 46, 'ly': 8, 'mx': 47, 'my': 9 }] } } } }";
 
 EnrollmentNpisResponse enrollmentResponse = enrollment.Create(enrollmentInput); 
-
-var enrollmentResponse = enrollment.Create(enrollmentHashParams);
-
-var enrollmentResponse = enrollment.Create(enrollmentParams); // Use EnrollmentParams class to send required params
 ```
-Enrollment create with RequestOptions
+Create enrollment with RequestOptions
 ```cs
 var enrollmentResponse = enrollment.Create(enrollmentInput, requestOptionsObj); 
 ```
@@ -602,18 +627,72 @@ Json Response
 ```cs
 string jsonResponse = enrollmentResponse.JsonResponse();
 ```
+#### Create Enrollment with Hashtable
+```cs
+Enrollment enrollment = new Enrollment();
+var enrollmentResponse = enrollment.Create(enrollmentHashParams); // Check out our test cases for reference.
+```
+Create Enrollment with RequestOptions
+```cs
+var enrollmentResponse = enrollment.Create(enrollmentHashParams, requestOptionsObj); 
+```
+Json Response
+```cs
+string jsonResponse = enrollmentResponse.JsonResponse();
+```
+
+#### Create Enrollment with EnrollmentParams object
+Enrollment enrollment = new Enrollment();
+var enrollmentResponse = enrollment.Create(enrollmentParamsObj); // Check out our test cases for reference.
+```
+Create Enrollment with RequestOptions
+```cs
+var enrollmentResponse = enrollment.Create(enrollmentParamsObj, requestOptionsObj); 
+```
+Json Response
+```cs
+string jsonResponse = enrollmentResponse.JsonResponse();
+```
+
 > Examples:  Check [Enrollment tests](https://github.com/eligible/eligible-CSharp/blob/master/Eligible.NETTests/src/Eligible.Core/CoreTests/EnrollmentTests.cs) for more examples
 
 
 ### Update Enrollment
+#### Update Enrollment with JSON
 ```cs
 Enrollment enrollment = new Enrollment();
 
 EnrollmentNpisResponse enrollmentResponse = enrollment.Update("enrollment_npi_id", jsonParams); //check create for jsonParams input
+```
+Enrollment update with RequestOptions
+```cs
+var enrollmentResponse = enrollment.Update("enrollment_npi_id",  jsonParams, requestOptionsObj); 
+```
+Json Response
+```cs
+string jsonResponse = enrollmentResponse.JsonResponse();
+```
 
-var enrollmentResponse = enrollment.Update("enrollment_npi_id", enrollmentHashParams);
+#### Update Enrollment With Hastable
+```cs
+Enrollment enrollment = new Enrollment();
 
-var enrollmentResponse = enrollment.Update("enrollment_npi_id", enrollmentParamsObj); // Use EnrollmentParams class to send required params
+EnrollmentNpisResponse enrollmentResponse = enrollment.Update("enrollment_npi_id", enrollmentHashParams); //check create for jsonParams input
+```
+Enrollment update with RequestOptions
+```cs
+var enrollmentResponse = enrollment.Update("enrollment_npi_id",  enrollmentHashParams, requestOptionsObj); 
+```
+Json Response
+```cs
+string jsonResponse = enrollmentResponse.JsonResponse();
+```
+
+#### Update Enrollment With EnrollmentParams Object
+```cs
+Enrollment enrollment = new Enrollment();
+
+EnrollmentNpisResponse enrollmentResponse = enrollment.Update("enrollment_npi_id", enrollmentParamsObj); //check create for jsonParams input
 ```
 Enrollment update with RequestOptions
 ```cs
@@ -623,6 +702,7 @@ Json Response
 ```cs
 string jsonResponse = enrollmentResponse.JsonResponse();
 ```
+
 > Examples:  Check [Enrollment tests](https://github.com/eligible/eligible-CSharp/blob/master/Eligible.NETTests/src/Eligible.Core/CoreTests/EnrollmentTests.cs) for more examples
 
 ### Retrieve Enrollment
@@ -632,7 +712,7 @@ Enrollment enrollment = new Enrollment();
 
 EnrollmentNpisResponse enrollmentResponse = enrollment.GetByEnrollmentNpiId("enrollment_npi_id");
 ```
-Get Enrollment with RequestOptions
+Get enrollment with RequestOptions
 ```cs
 var enrollmentResponse = enrollment.GetByEnrollmentNpiId("enrollment_npi_id", requestOptionsObj); 
 ```
@@ -648,7 +728,7 @@ Enrollment enrollment = new Enrollment();
 
 EnrollmentNpisResponses enrollments = enrollment.GetAll();
 ```
-Get Enrollments with RequestOptions
+Get enrollments with RequestOptions
 ```cs
 var enrollmentResponse = enrollment.GetAll(requestOptionsObj); 
 ```
@@ -665,7 +745,7 @@ Enrollment enrollment = new Enrollment();
 
 ReceivedPdfResponse recievedPdf = enrollment.GetReceivedPdf("enrollment_npi_id");
 ```
-Get Enrollment with RequestOptions
+Get received pdf with RequestOptions
 ```cs
 var recievedPdf = enrollment.GetReceivedPdf("enrollment_npi_id", requestOptionsObj);
 ```
@@ -680,8 +760,142 @@ Enrollment enrollment = new Enrollment();
 
 var response = enrollment.DownloadReceivedPdf("enrollment_npi_id", "location to download the pdf(ex: C:\\pdfs\\");
 ```
-Get Enrollments with RequestOptions
+Download with RequestOptions
 ```cs
 var response = enrollment.DownloadReceivedPdf("enrollment_npi_id", "C:\\pdfs\\", requestOptionsObj); 
 ```
+
+### Original Signature PDF
+#### Create original signature PDF
+```cs
+Enrollment enrollment = new Enrollment();
+
+OriginalSignaturePdfResponse response = enrollment.CreateOriginalSignaturePdf("enrollment_npi_id", "signature pdf to upload - C:\\PDF\\received_pdf_123.pdf");
+```
+Create original signature PDF with RequestOptions
+```cs
+var response = enrollment.CreateOriginalSignaturePdf("enrollment_npi_id", "C:\\PDF\\received_pdf_123.pdf", requestOptionsObj);
+```
+Json Response
+```cs
+string jsonResponse = response.JsonResponse();
+```
+
+#### Update original signature PDF
+```cs
+Enrollment enrollment = new Enrollment();
+
+OriginalSignaturePdfResponse response = enrollment.UpdateOriginalSignaturePdf("enrollment_npi_id", "signature pdf to upload - C:\\PDF\\received_pdf_123.pdf");
+```
+Update original signature PDF with RequestOptions
+```cs
+var response = enrollment.UpdateOriginalSignaturePdf("enrollment_npi_id", "C:\\PDF\\updated_received_pdf_123.pdf", requestOptionsObj);
+```
+Json Response
+```cs
+string jsonResponse = response.JsonResponse();
+```
+
+#### Retrieve original signature PDF
+```cs
+Enrollment enrollment = new Enrollment();
+
+OriginalSignaturePdfResponse response = enrollment.GetOriginalSignaturePdf("123");
+```
+Retrieve original signature PDF with RequestOptions
+```cs
+var response = enrollment.GetOriginalSignaturePdf("123", requestOptionsObj);
+```
+Json Response
+```cs
+string jsonResponse = response.JsonResponse();
+```
+
+#### Delete original signature PDF
+```cs
+Enrollment enrollment = new Enrollment();
+
+OriginalSignaturePdfResponse response = enrollment.DeleteOriginalSignaturePdf("123");
+```
+Delete original signature PDF with RequestOptions
+```cs
+var response = enrollment.DeleteOriginalSignaturePdf("123", requestOptionsObj);
+```
+Json Response
+```cs
+string jsonResponse = response.JsonResponse();
+```
+
+#### Download original signature PDF
+```cs
+Enrollment enrollment = new Enrollment();
+
+var response = enrollment.DownloadOriginalSignaturePdf("enrollment_npi_id", "location to download the pdf(ex: C:\\pdfs\\");
+```
+Download original signature PDF with RequestOptions
+```cs
+var response = enrollment.DownloadOriginalSignaturePdf("enrollment_npi_id", "location to download the pdf(ex: C:\\pdfs\\", requestOptionsObj);
+```
+
+## Precertification 
+```cs
+Precertification precertification = new Precertification();
+
+Hashtable param = new Hashtable();
+param.Add("payer_id", "00001");
+param.Add("payer_name", "Aetna");
+param.Add("provider_type", "attending");
+param.Add("provider_last_name", "Doe");
+param.Add("provider_first_name", "John");
+param.Add("provider_npi", "0123456789");
+param.Add("provider_phone_number", "1234567890");
+param.Add("provider_taxonomy_code", "291U00000X");
+param.Add("member_id", "AETNAS8398");
+param.Add("member_first_name", "IDA");
+param.Add("member_last_name", "FRANKLIN");
+param.Add("member_dob", "1701-12-12");
+
+PrecertificationInquiryResponse preCertifications = precertification.Inquiry(param);
+```
+
+Precertification inquiry with RequestOptions
+```cs
+PrecertificationInquiryResponse preCertifications = precertification.Inquiry(param, requestOptionsObj);
+```
+
+## Exception Handling
+
+Namespace to Include
+```cs
+	using EligibleService.Exceptions;
+```
+
+Eligible.Net throws following three types of exceptions.
+	
+	1) AuthenticationException
+	2) InvalidRequestException
+	3) EligibleException
+
+##### Exception example
+```cs
+try
+{
+   var medicareResonse = Coverage.Medicare(param);
+}
+catch (EligibleException ex)
+{
+   var eligibleError = ex.EligibleError;
+}
+catch (AuthenticationException ex)
+{
+   error = ex.Message;
+}
+catch (InvalidRequestException ex)
+{
+   error = ex.Message;
+}
+```
+
+## Testing
+Add your apikey to Environmental Variable with name 'apikey' or set apikey in TestResource file to run the test cases.
 
