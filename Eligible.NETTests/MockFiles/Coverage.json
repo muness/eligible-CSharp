@@ -57,7 +57,7 @@
                "insurance_type":"PS",
                "insurance_type_label":"Point of Service (POS)",
                "primary_care":true,
-               "restricted":null,
+               "restricted": false,
                "contact_details":[  
 
                ],

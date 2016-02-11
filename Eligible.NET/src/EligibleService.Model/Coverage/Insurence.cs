@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 
 namespace EligibleService.Model.Coverage
 {
-    public class Insurence
+    public class Insurance
     {
         [JsonProperty("name")]
         public string Name { get; set; }

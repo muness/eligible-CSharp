@@ -24,7 +24,7 @@ namespace EligibleService.Model
         public Demographics Demographics { get; set; }
 
         [JsonProperty("insurance")]
-        public Insurence Insurance { get; set; }
+        public Insurance Insurance { get; set; }
 
         [JsonProperty("plan")]
         public Plan Plan { get; set; }

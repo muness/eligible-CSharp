@@ -1,5 +1,6 @@
 ﻿using EligibleService.Exceptions;
 using Newtonsoft.Json;
+using NLog;
 using RestSharp;
 using System;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace EligibleService.Common
             
             if (response.ErrorException != null)
             {
+                LogError<IRestResponse>(response);
                 throw new InvalidRequestException(message, response.ErrorException);
             }
 
@@ -23,6 +25,7 @@ namespace EligibleService.Common
 
             if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
             {
+                LogError<IRestResponse>(response);
                 throw new AuthenticationException(response.Content, response, response.ErrorException);
             }
             else
@@ -34,13 +37,21 @@ namespace EligibleService.Common
             {
                 TClassError errorClass;
                 parseJson = false;
-                error = string.Empty;
-                TryParseJson(response, out errorClass, out parseJson, out error);
+                string eligibleError = string.Empty;
+                TryParseJson(response, out errorClass, out parseJson, out eligibleError);
+
+                if (error != string.Empty)
+                    eligibleError = eligibleError + ", " + error;
+
                 if (parseJson)
-                    throw new EligibleException(errorClass);
+                {
+                    LogError<IRestResponse>(response);
+                    throw new EligibleException(eligibleError, errorClass);
+                }
                 else
                 {
-                    message = error + ". " + response.Content;
+                    LogError<IRestResponse>(response);
+                    message = eligibleError + response.Content;
                     throw new InvalidRequestException(message, response.ErrorException);
                 }
             }
@@ -56,10 +67,12 @@ namespace EligibleService.Common
 
             if (response.ErrorException != null)
             {
+                LogError<IRestResponse>(response);
                 throw new InvalidRequestException(message, response.ErrorException);
             }
             else if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
             {
+                LogError<IRestResponse>(response);
                 throw new AuthenticationException(response.Content, response, response.ErrorException);
             }
 
@@ -71,10 +84,12 @@ namespace EligibleService.Common
             catch (Exception ex)
             {
                message = response.Content + ". " + ex.Message;
+               LogError<Exception>(ex);     
             }
 
             if (deserializedResponse == null || !isParsed)
             {
+                LogError<string>(message);
                 throw new InvalidRequestException(message, response.ErrorException);
             }
 
@@ -110,11 +125,18 @@ namespace EligibleService.Common
             {
                 parseJson = false;
                 error = ex.Message;
+                LogError<Exception>(ex);
             }
             finally
             {
                 sourceClass = sourceClassLocal;
             }
+        }
+        
+        private static void LogError<dynamic>(dynamic error)
+        {
+            Logger logger = LogManager.GetLogger("");
+            logger.Error<dynamic>(error);
         }
     }
 }

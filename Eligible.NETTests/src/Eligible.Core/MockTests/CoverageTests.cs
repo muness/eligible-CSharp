@@ -210,7 +210,7 @@ namespace EligibleService.Core.Tests
             Assert.AreEqual("PS", physician.InsuranceType);
             Assert.AreEqual("Point of Service (POS)", physician.InsuranceTypeLabel);
             Assert.AreEqual(true, physician.PrimaryCare);
-            Assert.IsNull(physician.Restricted);
+            Assert.AreEqual(false, physician.Restricted);
             Assert.AreEqual(0, physician.ContactDetails.Count());
             Assert.AreEqual(0, physician.Dates.Count());
             Assert.AreEqual("PCP SELECTION NOT REQUIRED", physician.Comments[0]);

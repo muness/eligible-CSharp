@@ -9,6 +9,7 @@ using System.Net;
 using Newtonsoft.Json;
 using System.Security.Cryptography.X509Certificates;
 using System.Net.Security;
+using NLog;
 
 namespace EligibleService.Common
 {
