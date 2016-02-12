@@ -46,8 +46,9 @@ namespace EligibleService.Core
         {
             response = ExecuteObj.ExecutePostPut(EligibleResources.PathToClaims, jsonParams, SetRequestOptionsObject(options));
             ClaimResponse formattedResponse = RequestProcess.ResponseValidation<ClaimResponse, ClaimErrors>(response);
+            
             if (formattedResponse.Success == false)
-                throw new EligibleException(formattedResponse);
+                throw new EligibleException("Claim creation failed. Please check EligibleError for more details", formattedResponse);
             else
             {
                 formattedResponse.SetJsonResponse(response.Content);

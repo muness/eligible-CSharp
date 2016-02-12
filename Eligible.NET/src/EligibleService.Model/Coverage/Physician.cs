@@ -22,7 +22,7 @@ namespace EligibleService.Model.Coverage
         public bool PrimaryCare { get; set; }
 
         [JsonProperty("restricted")]
-        public string Restricted { get; set; }
+        public bool? Restricted { get; set; }
 
         [JsonProperty("contact_details")]
         public Collection<ContactDetail> ContactDetails { get; set; }

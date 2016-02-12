@@ -19,8 +19,8 @@ namespace EligibleService.Exceptions
             : base(message)
         { }
 
-        public EligibleException(object response)
-            : base()
+        public EligibleException(string message, object response)
+            : base(message)
         {
            this.EligibleError = response;
         }

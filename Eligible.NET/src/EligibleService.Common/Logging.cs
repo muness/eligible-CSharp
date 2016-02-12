@@ -21,8 +21,8 @@ namespace EligibleService.Common
             fileTarget.ArchiveFileName = "${basedir}/Logs/Archives/EligibleLog.{#}.log";
             fileTarget.ArchiveNumbering = ArchiveNumberingMode.DateAndSequence;
             fileTarget.ArchiveDateFormat = "yyyy-MM-dd";
-            fileTarget.Layout = @"${date:format=yyyy-MM-dd HH\:mm\:ss} ${logger} ${level}: ${message}";
-            
+            fileTarget.Layout = @"${date:format=yyyy-MM-dd HH\:mm\:ss} ${logger} ${level}: ${message} ${newline}";
+
             var fileRule = new LoggingRule("*", LogLevel.Info, fileTarget);
             config.LoggingRules.Add(fileRule);
 
