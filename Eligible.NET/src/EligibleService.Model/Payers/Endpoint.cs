@@ -27,7 +27,7 @@ namespace EligibleService.Model.Payer
         /// using Enrollments endpoint to perform the transaction.
         /// </summary>
         [JsonProperty("enrollment_required")]
-        public bool EnrollmentRequired { get; set; }
+        public bool? EnrollmentRequired { get; set; }
 
         /// <summary>
         /// average_enrollment_process_time for Endopoint

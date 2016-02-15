@@ -34,6 +34,25 @@ namespace EligibleService.Core.Tests.Helpers
         {
             Exclusions exclusion = new Exclusions();
             exclusion.Noncovered = new Collection<NonCovered>();
+
+            NonCovered nonCovered = new NonCovered();
+            nonCovered.AuthorizationRequired = null;
+            nonCovered.Type = "86";
+            nonCovered.TypeLabel = "Emergency Services";
+            nonCovered.TimePeriod = null;
+            nonCovered.TimePeriodLabel = null;
+            nonCovered.Level = "Test Only";
+            nonCovered.Network = "IN";
+            nonCovered.Pos = null;
+            nonCovered.PosLabel = null;
+            Collection<string> comments = new Collection<string>();
+            comments.Add("test comment");
+            nonCovered.Comments = comments;
+            exclusion.Noncovered.Add(nonCovered);
+
+            nonCovered.AuthorizationRequired = true;
+            exclusion.Noncovered.Add(nonCovered);
+
             exclusion.PreexistingCondition = GetPreExistingCondition();
             return exclusion;
         }

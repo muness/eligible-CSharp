@@ -33,7 +33,7 @@ namespace EligibleService.Claim.ClaimReports
         public Collection<RenderingProviderId> RenderingProviderIds { get; set; }
 
         [JsonProperty("allowed_amount")]
-        public double AllowedAmount { get; set; }
+        public double? AllowedAmount { get; set; }
 
         [JsonProperty("additional_ids")]
         public Collection<Detail> AdditionalIds { get; set; }

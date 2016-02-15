@@ -16,6 +16,6 @@ namespace EligibleService.Model.Medicare
         [JsonProperty("mco_bill_option_label")]
         public string McoBillOptionLabel { get; set; }
         [JsonProperty("locked")]
-        public bool Locked { get; set; }
+        public bool? Locked { get; set; }
     }
 }

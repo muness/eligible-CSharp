@@ -19,7 +19,7 @@ namespace EligibleService.Model.Coverage
         public string InsuranceTypeLabel { get; set; }
 
         [JsonProperty("primary_care")]
-        public bool PrimaryCare { get; set; }
+        public bool? PrimaryCare { get; set; }
 
         [JsonProperty("restricted")]
         public bool? Restricted { get; set; }

@@ -11,7 +11,7 @@ namespace EligibleService.Model
         public string Id { get; set; }
 
         [JsonProperty("created_at")]
-        public DateTime CreatedAt { get; set; }
+        public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("status_code")]
         public string StatusCode { get; set; }

@@ -17,9 +17,9 @@ namespace EligibleService.Claim.RealtimeClaims
         public string ReasonLabel { get; set; }
 
         [JsonProperty("amount")]
-        public int Amount { get; set; }
+        public int? Amount { get; set; }
 
         [JsonProperty("quantity")]
-        public int Quantity { get; set; }
+        public int? Quantity { get; set; }
     }
 }

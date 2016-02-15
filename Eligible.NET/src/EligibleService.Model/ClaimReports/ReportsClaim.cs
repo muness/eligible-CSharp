@@ -57,7 +57,7 @@ namespace EligibleService.Claim.ClaimReports
         public Collection<string> MoaCodes { get; set; }
 
         [JsonProperty("allowed_amount")]
-        public double AllowedAmount { get; set; }
+        public double? AllowedAmount { get; set; }
 
         [JsonProperty("contacts")]
         public Collection<Contact> Contacts { get; set; }

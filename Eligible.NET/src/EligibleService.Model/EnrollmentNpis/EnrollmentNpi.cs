@@ -22,7 +22,7 @@ namespace EligibleService.Model.EnrollmentNpis
         public string FacilityName { get; set; }
 
         [JsonProperty("id")]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         [JsonProperty("npi")]
         public string Npi { get; set; }

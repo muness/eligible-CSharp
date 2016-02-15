@@ -12,7 +12,7 @@ namespace EligibleService.Claim.Medicaid
         public string EligibilityCodeLabel { get; set; }
 
         [JsonProperty("primary_care")]
-        public bool PrimaryCare { get; set; }
+        public bool? PrimaryCare { get; set; }
 
         [JsonProperty("contact_details")]
         public Collection<ContactDetail> ContactDetails { get; set; }

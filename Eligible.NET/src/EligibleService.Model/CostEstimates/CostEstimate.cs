@@ -11,10 +11,10 @@ namespace EligibleService.Model.CostEstimates
         public CostEstimateAlternatives CostEstimateAlternatives { get; set; }
 
         [JsonProperty("cost_estimate")]
-        public double CostEstimate { get; set; }
+        public double? CostEstimate { get; set; }
 
         [JsonProperty("provider_price")]
-        public double ProviderPrice { get; set; }
+        public double? ProviderPrice { get; set; }
     }
 
 }
