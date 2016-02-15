@@ -17,7 +17,7 @@ namespace EligibleService.Model.Medicare
         public string PlanType { get; set; }
 
         [JsonProperty("active")]
-        public bool Active { get; set; }
+        public bool? Active { get; set; }
 
         [JsonProperty("next_eligible_date")]
         public EligibleDate NextEligibleDate { get; set; }

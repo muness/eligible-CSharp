@@ -18,7 +18,7 @@ namespace EligibleService.Model.Claim
         /// Optional parameter
         /// </summary>
         [JsonProperty("scrub_eligibility")]
-        public bool ScrubEligibility { get; set; }
+        public bool? ScrubEligibility { get; set; }
 
         /// <summary>
         /// Required to create Claim
@@ -30,7 +30,7 @@ namespace EligibleService.Model.Claim
         /// Optional parameter
         /// </summary>
         [JsonProperty("test")]
-        public bool Test { get; set; }
+        public bool? Test { get; set; }
         
         /// <summary>
         /// Identifies an organizational entity or an individual requesting payment for services.

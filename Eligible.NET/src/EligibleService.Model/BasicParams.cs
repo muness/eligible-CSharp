@@ -8,6 +8,6 @@ namespace EligibleService.Model
         public string ApiKey { get; set; }
 
         [JsonProperty("test")]
-        public bool Test { get; set; }
+        public bool? Test { get; set; }
     }
 }

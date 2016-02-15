@@ -9,7 +9,7 @@ namespace EligibleService.Model.Medicare
     public class BasicDetails
     {
         [JsonProperty("active")]
-        public bool Active { get; set; }
+        public bool? Active { get; set; }
 
         [JsonProperty("payer_name")]
         public string PayerName { get; set; }

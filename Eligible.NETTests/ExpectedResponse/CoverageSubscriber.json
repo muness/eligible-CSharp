@@ -62,7 +62,33 @@
 		}],
 		"comments": [],
 		"exclusions": {
-			"noncovered": [],
+			"noncovered": [{
+				"type": "86",
+				"type_label": "Emergency Services",
+				"time_period": null,
+				"time_period_label": null,
+				"level": "Employee Only",
+				"network": "IN",
+				"pos": null,
+				"pos_label": null,
+				"authorization_required": null,
+				"contact_details": [],
+				"dates": [],
+				"comments": ["test comment"]
+			}, {
+				"type": "86",
+				"type_label": "Emergency Services",
+				"time_period": null,
+				"time_period_label": null,
+				"level": "Employee Only",
+				"network": "IN",
+				"pos": null,
+				"pos_label": null,
+				"authorization_required": true,
+				"contact_details": [],
+				"dates": [],
+				"comments": ["test comment"]
+			}],
 			"pre_existing_condition": {
 				"waiting_period": []
 			}

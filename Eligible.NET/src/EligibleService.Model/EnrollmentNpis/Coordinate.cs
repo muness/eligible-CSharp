@@ -5,16 +5,16 @@ namespace EligibleService.Model.EnrollmentNpis
     public class Coordinate
     {
         [JsonProperty("lx")]
-        public int LX { get; set; }
+        public int? LX { get; set; }
 
         [JsonProperty("ly")]
-        public int LY { get; set; }
+        public int? LY { get; set; }
 
         [JsonProperty("mx")]
-        public int MX { get; set; }
+        public int? MX { get; set; }
 
         [JsonProperty("my")]
-        public int MY { get; set; }
+        public int? MY { get; set; }
     }
 
 }

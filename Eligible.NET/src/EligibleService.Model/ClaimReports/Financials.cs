@@ -14,10 +14,10 @@ namespace EligibleService.Claim.ClaimReports
         public string TotalPaymentAmount { get; set; }
 
         [JsonProperty("credit")]
-        public bool Credit { get; set; }
+        public bool? Credit { get; set; }
 
         [JsonProperty("debit")]
-        public bool Debit { get; set; }
+        public bool? Debit { get; set; }
 
         [JsonProperty("payment_method_code")]
         public string PaymentMethodCode { get; set; }

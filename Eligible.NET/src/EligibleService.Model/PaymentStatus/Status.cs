@@ -6,7 +6,7 @@ namespace EligibleService.Model.PaymentStatus
     public class Status
     {
         [JsonProperty("paid")]
-        public bool Paid { get; set; }
+        public bool? Paid { get; set; }
 
         [JsonProperty("adjudication_status")]
         public string AdjudicationStatus { get; set; }

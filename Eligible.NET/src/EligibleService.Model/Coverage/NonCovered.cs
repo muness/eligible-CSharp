@@ -31,7 +31,7 @@ namespace EligibleService.Model.Coverage
         public string PosLabel { get; set; }
 
         [JsonProperty("authorization_required")]
-        public bool AuthorizationRequired { get; set; }
+        public bool? AuthorizationRequired { get; set; }
 
         [JsonProperty("contact_details")]
         public Collection<ContactDetail> ContactDetails { get; set; }
