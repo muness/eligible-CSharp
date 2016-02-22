@@ -143,7 +143,7 @@ namespace EligibleService.Common
         {
             JsonSerializerSettings JSSettings = new JsonSerializerSettings()
             {
-                MissingMemberHandling = MissingMemberHandling.Ignore,
+                MissingMemberHandling = MissingMemberHandling.Ignore
             };
 
             return JSSettings;

@@ -2,7 +2,7 @@
 
 namespace EligibleService.Model.CostEstimates
 {
-    public class StopLoss
+    public class StopLoss : PaymentBase
     {
         [JsonProperty("amount")]
         public string Amount { get; set; }

@@ -7,16 +7,16 @@ namespace EligibleService.Model.CostEstimates
     public class CostEstimateEquation
     {
         [JsonProperty("deductible")]
-        public Collection<Collection<FinancialFlow>> Deductible { get; set; }
+        public Collection<Coinsurance> Deductible { get; set; }
 
         [JsonProperty("coinsurance")]
-        public Collection<FinancialFlowsPercents> Coinsurance { get; set; }
+        public Collection<Coinsurance> Coinsurance { get; set; }
 
         [JsonProperty("copayment")]
-        public Collection<FinancialFlowsAmounts> Copayment { get; set; }
+        public Collection<Copayment> Copayment { get; set; }
 
         [JsonProperty("stop_loss")]
-        public Collection<Financial> StopLoss { get; set; }
+        public Collection<StopLoss> StopLoss { get; set; }
     }
 
 }
