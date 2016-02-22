@@ -5,7 +5,7 @@ namespace EligibleService.Claim.RealtimeClaimParams
     public class RenderingProvider
     {
         [JsonProperty("entity")]
-        public string Entity { get; set; }
+        public bool? Entity { get; set; }
 
         [JsonProperty("organization_name")]
         public string OrganizationName { get; set; }

@@ -39,9 +39,9 @@ namespace EligibleService.Model.Claim
         public string AdjustmentGroupCode { get; set; }
 
         [JsonProperty("adjustments")]
-        public Adjustments Adjustments { get; set; }
+        public Collection<Adjustments> Adjustments { get; set; }
 
         [JsonProperty("outpatient_adjuducation_information")]
-        public Collection<OutpatientAdjuducationInformation> OutpatientAdjuducationInformation { get; set; }
+        public OutpatientAdjuducationInformation OutpatientAdjuducationInformation { get; set; }
     }
 }

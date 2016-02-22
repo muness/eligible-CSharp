@@ -17,6 +17,9 @@ namespace EligibleService.Model.Claim
 
     public class TransportInfo
     {
+        [JsonProperty("number_of_patients")]
+        public int? NumberOfPatients { get; set; }
+
         [JsonProperty("weight")]
         public string Weight { get; set; }
 

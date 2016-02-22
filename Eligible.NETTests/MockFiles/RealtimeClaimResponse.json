@@ -96,8 +96,8 @@
         "denied"
       ],
       "amount": {
-        "billed": 480,
-        "paid": 0,
+        "billed": 480.0,
+        "paid": 1.0,
         "patient_responsibility": 480
       },
       "service_lines": [
@@ -113,8 +113,8 @@
             "paid": 0
           },
           "quantity": {
-            "billed": 0,
-            "paid": 0
+            "billed": 1.0,
+            "paid": 1.0
           },
           "adjustments": [
             {
@@ -135,12 +135,12 @@
           "service_start": "2004-12-10",
           "service_end": "2004-12-10",
           "amount": {
-            "billed": 240,
-            "paid": 0
+            "billed": 240.0,
+            "paid": 1.0
           },
           "quantity": {
-            "billed": 0,
-            "paid": 0
+            "billed": 1.0,
+            "paid": 1.0
           },
           "adjustments": [
             {

@@ -520,9 +520,7 @@
                 ]
             },
             "cost_estimate_alternatives": {
-                "deductible": [
-                    []
-                ],
+                "deductible": [],
                 "coinsurance": [
                     {
                         "percent": "20",
@@ -646,9 +644,7 @@
                 ]
             },
             "cost_estimate_alternatives": {
-                "deductible": [
-                    []
-                ],
+                "deductible": [],
                 "coinsurance": [
                     {
                         "percent": "20",
@@ -772,9 +768,7 @@
                 ]
             },
             "cost_estimate_alternatives": {
-                "deductible": [
-                    []
-                ],
+                "deductible": [],
                 "coinsurance": [
                     {
                         "percent": "20",
@@ -898,9 +892,7 @@
                 ]
             },
             "cost_estimate_alternatives": {
-                "deductible": [
-                    []
-                ],
+                "deductible": [],
                 "coinsurance": [
                     {
                         "percent": "20",
@@ -1025,8 +1017,22 @@
             },
             "cost_estimate_alternatives": {
                 "deductible": [
-                    []
-                ],
+				{
+					amount: "0",
+					level: "INDIVIDUAL",
+					insurance_type: null,
+					insurance_type_label: null,
+					pos: null,
+					pos_label: null,
+					authorization_required: null,
+					description: null,
+					quantity_code: null,
+					quantity_label: null,
+					quantity: null,
+					contact_details: [ ],
+					dates: [ ],
+					comments: [ ]
+				}],
                 "coinsurance": [
                     {
                         "percent": "20",

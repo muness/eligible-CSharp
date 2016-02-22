@@ -122,8 +122,8 @@
 			"drg_code": "",
 			"drg_quantity": "",
 			"amount": {
-				"billed": 70,
-				"paid": 70,
+				"billed": 70.0,
+				"paid": 70.0,
 				"patient_responsibility": 0,
 				"total_coverage": null,
 				"prompt_payment_discount": null,

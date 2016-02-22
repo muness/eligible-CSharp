@@ -1,6 +1,7 @@
 ﻿{
     "created_at": "1234-12-123",
     "eligible_id": "31WIGBD4WSB88",
+	"known_issues": [],
     "payer": {
         "name": "UNITEDHEALTHCARE",
         "id": "87726",
@@ -50,7 +51,7 @@
                     "finalized_date": "2014-06-30",
                     "remittance_date": "2014-07-02",
                     "amount": {
-                        "billed": 500,
+                        "billed": 500.0,
                         "paid": 162.7
                     },
                     "trace_number": "PG43515500"
@@ -63,7 +64,7 @@
                     "procedure_qualifier_code": "HC",
                     "procedure_qualifier_label": "Health Care Financing Administration Common Procedural Coding System (HCPCS) Codes. HCFA coding scheme to group procedure(s) performed on an outpatient basis for payment to hospital under Medicare; primarily used for ambulatory surgical and other diagnostic departments",
                     "amount": {
-                        "billed": 200,
+                        "billed": 200.0,
                         "paid": 75.57
                     },
                     "quantity": "1",
@@ -88,7 +89,7 @@
                     "procedure_qualifier_code": "HC",
                     "procedure_qualifier_label": "Health Care Financing Administration Common Procedural Coding System (HCPCS) Codes. HCFA coding scheme to group procedure(s) performed on an outpatient basis for payment to hospital under Medicare; primarily used for ambulatory surgical and other diagnostic departments",
                     "amount": {
-                        "billed": 150,
+                        "billed": 150.0,
                         "paid": 28.25
                     },
                     "quantity": "1",
@@ -113,7 +114,7 @@
                     "procedure_qualifier_code": "HC",
                     "procedure_qualifier_label": "Health Care Financing Administration Common Procedural Coding System (HCPCS) Codes. HCFA coding scheme to group procedure(s) performed on an outpatient basis for payment to hospital under Medicare; primarily used for ambulatory surgical and other diagnostic departments",
                     "amount": {
-                        "billed": 150,
+                        "billed": 150.0,
                         "paid": 58.88
                     },
                     "quantity": "1",

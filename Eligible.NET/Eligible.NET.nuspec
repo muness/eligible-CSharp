@@ -9,7 +9,7 @@
     <projectUrl>https://github.com/eligible/eligible-CSharp</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>CSharp bindings for Eligible REST APIs</description>
-    <releaseNotes>First Release</releaseNotes>
+    <releaseNotes>Corrected issue of NULL property value parsing</releaseNotes>
     <copyright>Copyright ©  2016</copyright>
     <tags>eligble insurence coverage claims medicare eligble.net eligble.csharp eligble.c# eligibleapi</tags>
 	<dependencies>

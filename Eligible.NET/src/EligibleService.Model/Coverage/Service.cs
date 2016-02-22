@@ -21,7 +21,7 @@ namespace EligibleService.Model.Coverage
         public FinancialFlowsList Facility { get; set; }
 
         [JsonProperty("coverage_basis")]
-        public Collection<string> CoverageBasis { get; set; }
+        public Collection<CoverageBasis> CoverageBasis { get; set; }
 
         [JsonProperty("financial_flowsList")]
         public FinancialFlowsList FinancialFlowsList { get; set; }

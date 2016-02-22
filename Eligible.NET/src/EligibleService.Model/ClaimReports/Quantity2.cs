@@ -5,10 +5,10 @@ namespace EligibleService.Claim.ClaimReports
     public class Quantity2
     {
         [JsonProperty("billed")]
-        public int? Billed { get; set; }
+        public double? Billed { get; set; }
 
         [JsonProperty("paid")]
-        public int? Paid { get; set; }
+        public double? Paid { get; set; }
 
         [JsonProperty("federal")]
         public FederalQuantity Federal { get; set; }

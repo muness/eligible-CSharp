@@ -31,7 +31,7 @@ namespace EligibleService.Model.Claim
         public string CliaNumber { get; set; }
 
         [JsonProperty("emergency")]
-        public string Emergency { get; set; }
+        public bool? Emergency { get; set; }
 
         [JsonProperty("sales_tax_amount")]
         public string SalesTaxAmount { get; set; }
@@ -74,14 +74,14 @@ namespace EligibleService.Model.Claim
         /// list of modifiers applicable for the service. ex: "procedure_modifiers": ["25"]
         /// </summary>
         [JsonProperty("procedure_modifiers")]
-        public Collection<String> ProcedureModifiers { get; set; }
+        public Collection<string> ProcedureModifiers { get; set; }
         
         /// <summary>
         /// Required for creating a claim.
         /// Index of diagnosis code in diagnosis_codes(claim) which are applicable for this service. It starts from 1 to length of diagnosis_codes. ex: "diagnosis_code_pointers": ["1"]
         /// </summary>
         [JsonProperty("diagnosis_code_pointers")]
-        public Collection<String> DiagnosisCodePointers { get; set; }
+        public Collection<string> DiagnosisCodePointers { get; set; }
 
         /// <summary>
         /// Required for creating a claim. 

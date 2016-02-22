@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using EligibleService.Model.Coverage;
+using Newtonsoft.Json;
 using System.Collections.ObjectModel;
 
 namespace EligibleService.Model.CostEstimates
@@ -6,7 +7,7 @@ namespace EligibleService.Model.CostEstimates
     public class CostEstimateEquation
     {
         [JsonProperty("deductible")]
-        public Collection<EligibleService.Model.Coverage.FinancialFlow> Deductible { get; set; }
+        public Collection<Coinsurance> Deductible { get; set; }
 
         [JsonProperty("coinsurance")]
         public Collection<Coinsurance> Coinsurance { get; set; }

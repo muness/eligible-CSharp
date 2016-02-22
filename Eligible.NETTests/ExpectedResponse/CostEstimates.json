@@ -39,7 +39,10 @@
 		"type": "30",
 		"coverage_status": "1",
 		"coverage_status_label": "Active Coverage",
-		"coverage_basis": [],
+		"coverage_basis": [{ 
+			 "_": null, 
+			 "comments": [] 
+		}],
 		"plan_number": null,
 		"plan_name": "HSA2.0/Preferred",
 		"plan_type": "PR",

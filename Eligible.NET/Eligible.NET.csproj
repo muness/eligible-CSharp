@@ -107,7 +107,7 @@
     <Compile Include="src\EligibleService.Model\Claim\Ambulance.cs" />
     <Compile Include="src\EligibleService.Model\Claim\AttendingProvider.cs" />
     <Compile Include="src\EligibleService.Model\Claim\BillingProvider.cs" />
-    <Compile Include="src\EligibleService.Model\Claim\Claim.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\ClaimParams.cs" />
     <Compile Include="src\EligibleService.Model\Claim\ClaimAcknowledgements.cs" />
     <Compile Include="src\EligibleService.Model\Claim\ClaimResponse.cs" />
     <Compile Include="src\EligibleService.Model\Claim\ClaimClass.cs" />
@@ -166,6 +166,7 @@
     <Compile Include="src\EligibleService.Model\Coverage\BenefitDetails.cs" />
     <Compile Include="src\EligibleService.Model\Contact.cs" />
     <Compile Include="src\EligibleService.Model\Coverage\ContactDetail.cs" />
+    <Compile Include="src\EligibleService.Model\Coverage\CoverageBasis.cs" />
     <Compile Include="src\EligibleService.Model\Coverage\CoverageResponse.cs" />
     <Compile Include="src\EligibleService.Model\Coverage\Demographic.cs" />
     <Compile Include="src\EligibleService.Model\Coverage\Dependent.cs" />

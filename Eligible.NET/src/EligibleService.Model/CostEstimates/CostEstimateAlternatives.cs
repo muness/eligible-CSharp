@@ -7,7 +7,7 @@ namespace EligibleService.Model.CostEstimates
     public class CostEstimateAlternatives
     {
         [JsonProperty("deductible")]
-        public Collection<Collection<FinancialFlow>> Deductible { get; set; }
+        public Collection<Coinsurance> Deductible { get; set; }
 
         [JsonProperty("coinsurance")]
         public Collection<Coinsurance> Coinsurance { get; set; }

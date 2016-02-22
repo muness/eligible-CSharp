@@ -9,13 +9,13 @@ namespace EligibleService.Model
     public class PayementStatusResponse : JsonResponseClass
     {
         [JsonProperty("created_at")]
-        public string CreatedAt { get; set; }
+        public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("eligible_id")]
         public string EligibleId { get; set; }
 
         [JsonProperty("known_issues")]
-        public string KnownIssues { get; set; }
+        public Collection<string> KnownIssues { get; set; }
 
         [JsonProperty("payer")]
         public PayementPayer Payer { get; set; }

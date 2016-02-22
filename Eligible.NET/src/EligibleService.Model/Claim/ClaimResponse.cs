@@ -10,7 +10,7 @@ namespace EligibleService.Model
     public class ClaimResponse : JsonResponseClass
     {
         [JsonProperty("success")]
-        public bool? Success { get; set; }
+        public string Success { get; set; }
 
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }

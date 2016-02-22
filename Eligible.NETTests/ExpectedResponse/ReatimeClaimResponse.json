@@ -107,8 +107,8 @@
 			"drg_code": "",
 			"drg_quantity": "",
 			"amount": {
-				"billed": 70,
-				"paid": 70,
+				"billed": 70.0,
+				"paid": 70.0,
 				"patient_responsibility": 0,
 				"total_coverage": null,
 				"prompt_payment_discount": null,
@@ -172,8 +172,8 @@
 				"service_start": "2004-12-08",
 				"service_end": "2004-12-08",
 				"amount": {
-					"billed": 140,
-					"paid": 70,
+					"billed": 140.0,
+					"paid": 70.0,
 					"total_coverage": null,
 					"deduction": null,
 					"tax": null,
@@ -187,8 +187,8 @@
 					}
 				},
 				"quantity": {
-					"billed": 0,
-					"paid": 1,
+					"billed": 1.0,
+					"paid": 1.0,
 					"federal": {
 						"category_1": null,
 						"category_2": null,
@@ -223,8 +223,8 @@
 				"service_start": "2004-12-10",
 				"service_end": "2004-12-10",
 				"amount": {
-					"billed": 70,
-					"paid": 70,
+					"billed": 70.0,
+					"paid": 70.0,
 					"total_coverage": null,
 					"deduction": null,
 					"tax": null,
@@ -238,8 +238,8 @@
 					}
 				},
 				"quantity": {
-					"billed": 0,
-					"paid": 1,
+					"billed": 1.0,
+					"paid": 1.0,
 					"federal": {
 						"category_1": null,
 						"category_2": null,

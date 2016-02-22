@@ -18,13 +18,13 @@ namespace EligibleService.Claim.RealtimeClaims
         public string FilingIndicatorLabel { get; set; }
 
         [JsonProperty("place_of_service")]
-        public object PlaceOfService { get; set; }
+        public string PlaceOfService { get; set; }
 
         [JsonProperty("frequency")]
-        public object Frequency { get; set; }
+        public string Frequency { get; set; }
 
         [JsonProperty("responsibility_sequence")]
-        public object ResponsibilitySequence { get; set; }
+        public string ResponsibilitySequence { get; set; }
 
         [JsonProperty("status")]
         public Collection<string> Status { get; set; }
