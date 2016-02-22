@@ -5,10 +5,10 @@ namespace EligibleService.Claim.RealtimeClaims
     public class Quantity
     {
         [JsonProperty("billed")]
-        public int? Billed { get; set; }
+        public double? Billed { get; set; }
 
         [JsonProperty("paid")]
-        public int? Paid { get; set; }
+        public double? Paid { get; set; }
     }
 
 }

@@ -44,6 +44,6 @@ namespace EligibleService.Model
         public Collection<Dates> Dates { get; set; }
 
         [JsonProperty("comments")]
-        public Collection<String> Comments { get; set; }
+        public Collection<string> Comments { get; set; }
     }
 }

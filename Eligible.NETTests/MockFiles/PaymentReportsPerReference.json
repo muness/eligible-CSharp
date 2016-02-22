@@ -148,8 +148,8 @@
         "drg_code": "",
         "drg_quantity": "",
         "amount": {
-            "billed": 70,
-            "paid": 70,
+            "billed": 70.0,
+            "paid": 70.0,
             "patient_responsibility": 0,
             "total_coverage": null,
             "prompt_payment_discount": null,
@@ -232,8 +232,8 @@
                 "service_start": "2013-02-13",
                 "service_end": "2013-02-13",
                 "amount": {
-                    "billed": 70,
-                    "paid": 70,
+                    "billed": 70.0,
+                    "paid": 70.0,
                     "total_coverage": null,
                     "deduction": null,
                     "tax": null,

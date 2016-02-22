@@ -9,16 +9,16 @@ namespace EligibleService.Model.Claim
         public string ProcedureCode { get; set; }
 
         [JsonProperty("length_of_medical_necessity")]
-        public string LengthOfMedicalNecessity { get; set; }
+        public int? LengthOfMedicalNecessity { get; set; }
 
         [JsonProperty("rental_price")]
-        public string RentalPrice { get; set; }
+        public int? RentalPrice { get; set; }
 
         [JsonProperty("purchase_price")]
-        public string PurchasePrice { get; set; }
+        public int? PurchasePrice { get; set; }
 
         [JsonProperty("frequency_code")]
-        public string FrequencyCode { get; set; }
+        public int? FrequencyCode { get; set; }
 
         [JsonProperty("begin_therapy_date")]
         public string BeginTherapyDate { get; set; }
@@ -42,7 +42,7 @@ namespace EligibleService.Model.Claim
         public string Type { get; set; }
 
         [JsonProperty("duration")]
-        public string Duration { get; set; }
+        public int? Duration { get; set; }
 
         [JsonProperty("condition_indicators")]
         public Collection<string> ConditionIndicators { get; set; }

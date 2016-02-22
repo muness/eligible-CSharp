@@ -10,13 +10,13 @@ namespace EligibleService.Model.CostEstimates
         public Collection<Collection<FinancialFlow>> Deductible { get; set; }
 
         [JsonProperty("coinsurance")]
-        public Collection<Coinsurance> Coinsurance { get; set; }
+        public Collection<FinancialFlowsPercents> Coinsurance { get; set; }
 
         [JsonProperty("copayment")]
-        public Collection<Copayment> Copayment { get; set; }
+        public Collection<FinancialFlowsAmounts> Copayment { get; set; }
 
         [JsonProperty("stop_loss")]
-        public Collection<StopLoss> StopLoss { get; set; }
+        public Collection<Financial> StopLoss { get; set; }
     }
 
 }

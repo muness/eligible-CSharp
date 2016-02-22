@@ -15,7 +15,7 @@ namespace EligibleService.Model
         public string EligibleId { get; set; }
 
         [JsonProperty("known_issues")]
-        public string KnownIssues { get; set; }
+        public Collection<string> KnownIssues { get; set; }
 
         [JsonProperty("payer")]
         public PayementPayer Payer { get; set; }

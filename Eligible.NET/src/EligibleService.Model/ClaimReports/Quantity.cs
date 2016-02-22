@@ -30,19 +30,19 @@ namespace EligibleService.Claim.ClaimReports
     {
 
         [JsonProperty("category_1")]
-        public double? Category1 { get; set; }
+        public int? Category1 { get; set; }
 
         [JsonProperty("category_2")]
-        public double? Category2 { get; set; }
+        public int? Category2 { get; set; }
 
         [JsonProperty("category_3")]
-        public double? Category3 { get; set; }
+        public int? Category3 { get; set; }
 
         [JsonProperty("category_4")]
-        public double? Category4 { get; set; }
+        public int? Category4 { get; set; }
 
         [JsonProperty("category_5")]
-        public double? Category5 { get; set; }
+        public int? Category5 { get; set; }
     }
 
 }

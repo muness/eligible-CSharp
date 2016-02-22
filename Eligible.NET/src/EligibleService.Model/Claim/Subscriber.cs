@@ -44,7 +44,7 @@ namespace EligibleService.Model.Claim
         public string Ssn { get; set; }
 
         [JsonProperty("pregnant")]
-        public string Pregnant { get; set; }
+        public bool? Pregnant { get; set; }
 
         [JsonProperty("relationship")]
         public string Relationship { get; set; }

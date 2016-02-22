@@ -23,7 +23,7 @@ namespace EligibleService.Model.Claim
         /// if billing provider is an organizational entity or not. Possible values are true or false, and default value is false. ex: "entity": true
         /// </summary>
         [JsonProperty("entity")]
-        public string Entity { get; set; }
+        public bool? Entity { get; set; }
 
         /// <summary>
         /// Required depends on situation

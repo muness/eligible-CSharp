@@ -12,7 +12,7 @@ namespace EligibleService.Common
         public static TClassResponse ResponseValidation<TClassResponse, TClassError>(IRestResponse response)
         {
             string message = response.StatusCode.ToString() + ": " + response.Content;
-            
+
             if (response.ErrorException != null)
             {
                 LogError<IRestResponse>(response);
@@ -58,7 +58,7 @@ namespace EligibleService.Common
 
             return sourceClass;
         }
-        
+
         public static TClassResponse SimpleResponseValidation<TClassResponse>(IRestResponse response)
         {
             TClassResponse deserializedResponse = default(TClassResponse);
@@ -83,8 +83,8 @@ namespace EligibleService.Common
             }
             catch (Exception ex)
             {
-               message = response.Content + ". " + ex.Message;
-               LogError<Exception>(ex);     
+                message = response.Content + ". " + ex.Message;
+                LogError<Exception>(ex);
             }
 
             if (deserializedResponse == null || !isParsed)
@@ -104,7 +104,7 @@ namespace EligibleService.Common
             error = string.Empty;
             try
             {
-                sourceClassLocal = JsonConvert.DeserializeObject<TClass>(response.Content);
+                sourceClassLocal = JsonConvert.DeserializeObject<TClass>(response.Content, GetJsonSerializerSettingsObject());
                 if (sourceClassLocal != null)
                 {
                     int count = sourceClassLocal.GetType().GetProperties()
@@ -132,11 +132,21 @@ namespace EligibleService.Common
                 sourceClass = sourceClassLocal;
             }
         }
-        
+
         private static void LogError<dynamic>(dynamic error)
         {
             Logger logger = LogManager.GetLogger("");
             logger.Error<dynamic>(error);
+        }
+
+        private static JsonSerializerSettings GetJsonSerializerSettingsObject()
+        {
+            JsonSerializerSettings JSSettings = new JsonSerializerSettings()
+            {
+                MissingMemberHandling = MissingMemberHandling.Ignore,
+            };
+
+            return JSSettings;
         }
     }
 }

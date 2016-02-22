@@ -85,16 +85,16 @@ namespace EligibleService.Model.Claim
         public string ServiceStart { get; set; }
 
         [JsonProperty("related_to_employment")]
-        public string RelatedToEmployment { get; set; }
+        public bool? RelatedToEmployment { get; set; }
 
         [JsonProperty("auto_accident")]
-        public string AutoAccident { get; set; }
+        public bool? AutoAccident { get; set; }
 
         [JsonProperty("auto_accident_state")]
         public string AutoAccidentState { get; set; }
 
         [JsonProperty("other_accident")]
-        public string OtherAccident { get; set; }
+        public bool? OtherAccident { get; set; }
 
         [JsonProperty("locally_required_data")]
         public string LocallyRequiredData { get; set; }
@@ -103,7 +103,7 @@ namespace EligibleService.Model.Claim
         public string PlaceOfService { get; set; }
 
         [JsonProperty("other_health_benefit_plan")]
-        public string OtherHealthBenefitPlan { get; set; }
+        public bool? OtherHealthBenefitPlan { get; set; }
 
         [JsonProperty("date_of_onset_current_illness")]
         public string DateOfOnsetCurrentIllness { get; set; }
@@ -166,7 +166,7 @@ namespace EligibleService.Model.Claim
         public string Note { get; set; }
 
         [JsonProperty("resubmission")]
-        public string Resubmission { get; set; }
+        public bool? Resubmission { get; set; }
 
         [JsonProperty("payer_control_number")]
         public string PayerControlNumber { get; set; }
@@ -184,10 +184,10 @@ namespace EligibleService.Model.Claim
         public string CliaNumber { get; set; }
 
         [JsonProperty("homebound_indicator")]
-        public string HomeboundIndicator { get; set; }
+        public bool? HomeboundIndicator { get; set; }
 
         [JsonProperty("epsdt_referral_given")]
-        public string EpsdtReferralGiven { get; set; }
+        public bool? EpsdtReferralGiven { get; set; }
 
         [JsonProperty("epsdt_referral_condition")]
         public string EpsdtReferralCondition { get; set; }

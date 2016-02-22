@@ -8,6 +8,6 @@ namespace EligibleService.Model.Claim
         public string Code { get; set; }
 
         [JsonProperty("amount")]
-        public string Smount { get; set; }
+        public string Amount { get; set; }
     }
 }

@@ -107,7 +107,7 @@
     <Compile Include="src\EligibleService.Model\Claim\Ambulance.cs" />
     <Compile Include="src\EligibleService.Model\Claim\AttendingProvider.cs" />
     <Compile Include="src\EligibleService.Model\Claim\BillingProvider.cs" />
-    <Compile Include="src\EligibleService.Model\Claim\Claim.cs" />
+    <Compile Include="src\EligibleService.Model\Claim\ClaimParams.cs" />
     <Compile Include="src\EligibleService.Model\Claim\ClaimAcknowledgements.cs" />
     <Compile Include="src\EligibleService.Model\Claim\ClaimResponse.cs" />
     <Compile Include="src\EligibleService.Model\Claim\ClaimClass.cs" />

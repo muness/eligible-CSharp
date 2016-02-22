@@ -17,9 +17,9 @@ namespace EligibleService.Claim.ClaimReports
         public string ReasonLabel { get; set; }
 
         [JsonProperty("amount")]
-        public string Amount { get; set; }
+        public double? Amount { get; set; }
 
         [JsonProperty("quantity")]
-        public string Quantity { get; set; }
+        public double? Quantity { get; set; }
     }
 }
