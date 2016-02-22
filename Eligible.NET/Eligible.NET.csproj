@@ -166,6 +166,7 @@
     <Compile Include="src\EligibleService.Model\Coverage\BenefitDetails.cs" />
     <Compile Include="src\EligibleService.Model\Contact.cs" />
     <Compile Include="src\EligibleService.Model\Coverage\ContactDetail.cs" />
+    <Compile Include="src\EligibleService.Model\Coverage\CoverageBasis.cs" />
     <Compile Include="src\EligibleService.Model\Coverage\CoverageResponse.cs" />
     <Compile Include="src\EligibleService.Model\Coverage\Demographic.cs" />
     <Compile Include="src\EligibleService.Model\Coverage\Dependent.cs" />

@@ -14,7 +14,7 @@ namespace EligibleService.Core.Tests.Helpers
                 Type = "1",
                 CoverageStatus = "1",
                 CoverageStatusLabel = "Active Coverage",
-                CoverageBasis = new Collection<string>(),
+                CoverageBasis = new Collection<CoverageBasis>(),
                 PlanNumber = "1234567",
                 PlanName = "Test",
                 PlanType = "PS",
