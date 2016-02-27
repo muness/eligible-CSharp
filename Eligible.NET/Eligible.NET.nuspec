@@ -2,14 +2,14 @@
 <package >
   <metadata>
     <id>Eligible.Net</id>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <title>Eligible.Net</title>
     <authors>Eligible Inc</authors>
     <owners>Eligible Inc</owners>
     <projectUrl>https://github.com/eligible/eligible-CSharp</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>CSharp bindings for Eligible REST APIs</description>
-    <releaseNotes>Corrected issue of NULL property value parsing</releaseNotes>
+    <releaseNotes>Sync up with live response</releaseNotes>
     <copyright>Copyright ©  2016</copyright>
     <tags>eligble insurence coverage claims medicare eligble.net eligble.csharp eligble.c# eligibleapi</tags>
 	<dependencies>

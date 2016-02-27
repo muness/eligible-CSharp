@@ -47,15 +47,15 @@ namespace EligibleService.Core.CoreTests
             ClaimSuccessCheck(actualResponse.JsonResponse());
         }
 
-        [TestMethod]
-        [TestCategory("Claim")]
-        [ExpectedException(typeof(EligibleService.Exceptions.EligibleException))]
-        public void ClaimCreationWithHasParamEligibleExceptionTest()
-        {
-            Hashtable input = new Hashtable();
+        //[TestMethod]
+        //[TestCategory("Claim")]
+        //[ExpectedException(typeof(EligibleService.Exceptions.EligibleException))]
+        //public void ClaimCreationWithHasParamEligibleExceptionTest()
+        //{
+        //    Hashtable input = new Hashtable();
 
-            ClaimResponse actualResponse = claim.Create(input);
-        }
+        //    ClaimResponse actualResponse = claim.Create(input);
+        //}
 
         [TestMethod]
         [TestCategory("Claim")]
