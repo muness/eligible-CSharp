@@ -20,19 +20,19 @@ namespace EligibleService.Core.CoreTests
             BaseTestClass.SetConfiguration();
         }
 
-        [TestMethod]
-        [TestCategory("PaymentStatus")]
-        public void CostEstimatesTest()
-        {
-            PayementStatusResponse actualResponse = paymentStatus.Get(PaymentStatusParams());
+        //[TestMethod]
+        //[TestCategory("PaymentStatus")]
+        //public void CostEstimatesTest()
+        //{
+        //    PayementStatusResponse actualResponse = paymentStatus.Get(PaymentStatusParams());
 
-            string expectedResponse = TestHelper.GetJson(TestResource.ExpectedResponse + "paymentStatus.json");
-            TestHelper.CompareProperties(expectedResponse, actualResponse.JsonResponse());
+        //    string expectedResponse = TestHelper.GetJson(TestResource.ExpectedResponse + "paymentStatus.json");
+        //    TestHelper.CompareProperties(expectedResponse, actualResponse.JsonResponse());
 
-            PayementStatusResponse expectedObj = JsonConvert.DeserializeObject<PayementStatusResponse>(expectedResponse);
-            PayementStatusResponse actualObj = JsonConvert.DeserializeObject<PayementStatusResponse>(actualResponse.JsonResponse());
-            TestHelper.PropertyValuesAreEquals(actualObj, expectedObj);
-        }
+        //    PayementStatusResponse expectedObj = JsonConvert.DeserializeObject<PayementStatusResponse>(expectedResponse);
+        //    PayementStatusResponse actualObj = JsonConvert.DeserializeObject<PayementStatusResponse>(actualResponse.JsonResponse());
+        //    TestHelper.PropertyValuesAreEquals(actualObj, expectedObj);
+        //}
 
         [TestMethod]
         [TestCategory("PaymentStatus")]

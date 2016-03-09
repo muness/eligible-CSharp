@@ -480,27 +480,6 @@ namespace EligibleService.Core.Tests
 
         [TestMethod()]
         [TestCategory("MedicareMockTest")]
-        public void MedicarePropertiesTest()
-        {
-            restClient.Setup(x => x.Execute(It.IsAny<string>(), It.IsAny<RequestOptions>(), It.IsAny<Hashtable>()))
-                .Returns(new RestResponse()
-                {
-                    StatusCode = HttpStatusCode.OK,
-                    Content = TestHelper.GetJson(TestResource.MocksPath + "Medicare.json")
-                });
-
-
-            coverage.ExecuteObj = restClient.Object;
-
-            var medicare = coverage.Medicare(param);
-            var expectedMedicare = MedicareExpectedResults.GetExpectedMedicate();
-
-            Assert.IsNotNull(medicare);
-            TestHelper.PropertyValuesAreEquals(medicare, expectedMedicare);
-        }
-
-        [TestMethod()]
-        [TestCategory("MedicareMockTest")]
         public void MedicareResponseCheckTest()
         {
             restClient.Setup(x => x.Execute(It.IsAny<string>(), It.IsAny<RequestOptions>(), It.IsAny<Hashtable>()))

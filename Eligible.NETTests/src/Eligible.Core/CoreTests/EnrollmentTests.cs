@@ -21,8 +21,16 @@ namespace EligibleService.Core.CoreTests
         {
             enrollment = new Enrollment();
             BaseTestClass.SetConfiguration();
-            EnrollmentInput = "{'enrollment_npi': { 'payer_id': '00074', 'endpoint': 'coverage', 'effective_date': '2012-12-24', 'facility_name': 'Quality', 'provider_name': 'Jane Austen', 'tax_id': '12345678', 'address': '125 Snow Shoe Road', 'city': 'Sacramento', 'state': 'CA', 'zip': '94107', 'ptan': '54321', 'medicaid_id': '22222', 'npi': '1234567890', 'authorized_signer': { 'title': 'title', 'first_name': 'Lorem', 'last_name': 'Ipsum', 'contact_number': '1478963250', 'email': 'provider@eligibleapi.com', 'signature': { 'coordinates': [{ 'lx': 47, 'ly': 9, 'mx': 47, 'my': 8 }, { 'lx': 46, 'ly': 8, 'mx': 47, 'my': 9 }] } } } }";
+            EnrollmentInput = @"{'enrollment_npi': { 'payer_id': 'NYMCR', 'endpoint': 'professional claims', 'effective_date': '2012-12-24',
+	                                                 'facility_name': 'Quality', 'provider_name': 'Jane Austen', 'tax_id': '12345678',
+	                                                 'address': '125 Snow Shoe Road', 'city': 'Sacramento', 'state': 'CA', 'zip': '94107',
+                                                     'ptan': '54321', 'medicaid_id': '22222', 'npi': '1234567890', 'authorized_signer': {
+                                                     'title': 'title', 'first_name': 'Lorem', 'last_name': 'Ipsum',
+                                                     'contact_number': '1478963250', 'email': 'provider@eligibleapi.com', 'signature': {
+                                                     'coordinates': [{ 'lx': 47, 'ly': 9, 'mx': 47, 'my': 8 }, 
+                                                     { 'lx': 46, 'ly': 8, 'mx': 47, 'my': 9 }]}}}}";
         }
+
         [TestMethod]
         [TestCategory("Enrollment")]
         public void EnrollmentCreationWithHashParam()
@@ -129,7 +137,6 @@ namespace EligibleService.Core.CoreTests
         }
 
         [TestMethod()]
-        [ExpectedException(typeof(EligibleService.Exceptions.InvalidRequestException))]
         public void DownloadOrigibalSignaturePdfTest()
         {
             bool actualResponse = enrollment.DownloadOriginalSignaturePdf("123", "c:\\");

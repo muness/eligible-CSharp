@@ -115,12 +115,31 @@ namespace EligibleService.Core.Tests.Helpers
             });
             #endregion
 
+            BasicDetails basicDetails = new BasicDetails()
+            {
+                Active = true,
+                PayerName = "ORGNAME",
+                PolicyNumber = "POLICYNUMBER",
+                EffectiveDate = "2011-06-01",
+                TerminationDate = "2012-06-01",
+                Contacts = contacts,
+                Address = new Address()
+                {
+                    StreetLine1 = "ADDRESSLINE1",
+                    StreetLine2 = "ADDRESSLINE2",
+                    City = "CITY",
+                    State = "ST",
+                    Zip = "ZIPCODE"
+                },
+            };
+
             return new MedicareResponse()
             {
                 CreatedAt = Convert.ToDateTime("2013-07-17T18:11:01Z"),
                 EligibleId = "87RU2GTQ882ILC",
                 LastName = "LNAME",
                 FirstName = "FNAME",
+                MiddleName = "J",
                 MemberId = "123456789A",
                 GroupId = "070607801700001",
                 GroupName = "SOME GROUP COMPANIES",
@@ -148,7 +167,7 @@ namespace EligibleService.Core.Tests.Helpers
                     MD = "Medicare Part D (Prescription drugs)",
                     PR = "Primary insurance (Medicare Secondary, Other Insurance is Primary)"
                 },
-                PlanDetails = new PlanDetails(){
+                PlanDetails = new PlanDetails() {
                     MA = new HospitalAndProfessionalDetails()
                     {
                         Active = true,
@@ -210,23 +229,7 @@ namespace EligibleService.Core.Tests.Helpers
                             Zip = "123456"
                         },
                     },
-                    PR = new BasicDetails()
-                    {
-                        Active = true,
-                        PayerName = "ORGNAME",
-                        PolicyNumber = "POLICYNUMBER",
-                        EffectiveDate = "2011-06-01",
-                        TerminationDate = "2012-06-01",
-                        Contacts = contacts,
-                        Address = new Address()
-                        {
-                            StreetLine1 = "ADDRESSLINE1",
-                            StreetLine2 = "ADDRESSLINE2",
-                            City = "CITY",
-                            State = "ST",
-                            Zip = "ZIPCODE"
-                        },
-                    }
+                    PR = new Collection<BasicDetails>() { basicDetails }
                 },
                 RequestedServiceTypes = medicareServices,
                 RequestedProcedureCodes = procedureCodes
