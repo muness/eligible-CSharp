@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.Collections.ObjectModel;
 
 namespace EligibleService.Model.Medicare
 {
@@ -20,6 +21,6 @@ namespace EligibleService.Model.Medicare
         public BasicDetails MD { get; set; }
 
         [JsonProperty("PR")]
-        public BasicDetails PR { get; set; }
+        public Collection<BasicDetails> PR { get; set; }
     }
 }

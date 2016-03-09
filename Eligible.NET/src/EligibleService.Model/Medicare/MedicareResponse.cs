@@ -19,11 +19,20 @@ namespace EligibleService.Model
         [JsonProperty("eligible_id")]
         public string EligibleId { get; set; }
 
+        [JsonProperty("known_issues")]
+        public Collection<string> KnownIssues { get; set; }
+
+        [JsonProperty("date_of_death")]
+        public string DateOfDeath { get; set; }
+
         [JsonProperty("last_name")]
         public string LastName { get; set; }
 
         [JsonProperty("first_name")]
         public string FirstName { get; set; }
+
+        [JsonProperty("middle_name")]
+        public string MiddleName { get; set; }
 
         [JsonProperty("member_id")]
         public string MemberId { get; set; }
@@ -69,5 +78,11 @@ namespace EligibleService.Model
 
         [JsonProperty("requested_procedure_codes")]
         public Collection<ProcedureCodes> RequestedProcedureCodes { get; set; }
+
+        [JsonProperty("history")]
+        public History History { get; set; }
+
+        [JsonProperty("search_options")]
+        public SearchOptions SearchOptions { get; set; }
     }
 }

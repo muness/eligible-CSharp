@@ -197,6 +197,7 @@
     <Compile Include="src\EligibleService.Model\EnrollmentNpis\Signature.cs" />
     <Compile Include="src\EligibleService.Exceptions\ErrorsStructures\CoverageError.cs" />
     <Compile Include="src\EligibleService.Model\JsonResponse.cs" />
+    <Compile Include="src\EligibleService.Model\Medicare\History.cs" />
     <Compile Include="src\EligibleService.Model\Medicare\MedicareResponse.cs" />
     <Compile Include="src\EligibleService.Model\Medicare\BasicDetails.cs" />
     <Compile Include="src\EligibleService.Model\Medicare\DatesPeriod.cs" />
@@ -209,6 +210,7 @@
     <Compile Include="src\EligibleService.Model\Medicare\PlanType.cs" />
     <Compile Include="src\EligibleService.Model\Medicare\ProcedureCodes.cs" />
     <Compile Include="src\EligibleService.Model\Coverage\NonCovered.cs" />
+    <Compile Include="src\EligibleService.Model\Medicare\SearchOptions.cs" />
     <Compile Include="src\EligibleService.Model\Mediciad\ContactDetail.cs" />
     <Compile Include="src\EligibleService.Model\Mediciad\ManagedCare.cs" />
     <Compile Include="src\EligibleService.Model\Mediciad\Medicaid.cs" />

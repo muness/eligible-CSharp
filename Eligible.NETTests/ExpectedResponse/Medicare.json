@@ -1,12 +1,15 @@
 ﻿{
     "created_at": "2013-07-17T18:11:01Z",
     "eligible_id": "UJ11WL1J0IU4A",
+    "known_issues": [],
     "last_name": "LNAME",
     "first_name": "FNAME",
+    "middle_name": "J",
     "member_id": "123456789A",
     "group_id": "070607801700001",
     "group_name": "SOME GROUP COMPANIES",
     "dob": "1940-04-01",
+    "date_of_death":null,
     "gender": "F",
     "address": {
         "street_line_1": "ADDRESSLINE1",
@@ -16,12 +19,16 @@
         "zip": "920543314"
     },
     "payer_name": "CMS",
-    "payer_id": null,
+    "payer_id": "ELIG_SNDBX",
     "plan_number": "0706078",
     "eligibilty_dates": {
-        "start": "2012-02-01",
-        "end": "2013-03-31"
+      "start": "2012-02-01",
+      "end": "2013-03-31"
     },
+    "eligibility_dates": {
+		  "start": null,
+		  "end": null
+	  },
     "inactivity_dates": {
         "start": "2012-03-01",
         "end": "2012-05-03"
@@ -107,30 +114,32 @@
                 "zip": "123456"
             }
         },
-        "PR": {
-            "active": true,
-            "payer_name": "ORGNAME",
-            "policy_number": "POLICYNUMBER",
-            "effective_date": "2011-06-01",
-            "termination_date": "2012-06-01",
-            "contacts": [
-                {
-                    "contact_type": "telephone",
-                    "contact_value": "AAABBBCCCC"
-                },
-                {
-                    "contact_type": "url",
-                    "contact_value": "www.website.com"
-                }
-            ],
-            "address": {
-                "street_line_1": "ADDRESSLINE1",
-                "street_line_2": "ADDRESSLINE2",
-                "city": "CITY",
-                "state": "ST",
-                "zip": "ZIPCODE"
+        "PR": [
+        {
+          "active": true,
+          "payer_name": "ORGNAME",
+          "policy_number": "POLICYNUMBER",
+          "effective_date": "2011-06-01",
+          "termination_date": "2012-06-01",
+          "contacts": [
+            {
+              "contact_type": "telephone",
+              "contact_value": "AAABBBCCCC"
+            },
+            {
+              "contact_type": "url",
+              "contact_value": "www.website.com"
             }
+          ],
+          "address": {
+            "street_line_1": "ADDRESSLINE1",
+            "street_line_2": "ADDRESSLINE2",
+            "city": "CITY",
+            "state": "ST",
+            "zip": "ZIPCODE"
+          }
         }
+      ]
     },
     "requested_service_types": [
         {
@@ -187,20 +196,30 @@
         }
     ],
     "requested_procedure_codes": [
-        {
-            "procedure_code": "G0106",
-            "procedure_label": "Colorectal Cancer Screening (COLO)",
-            "plan_type": "MB",
-            "active": true,
-            "deductible": 0.0,
-            "deductible_remaining": null,
-            "coinsurance_percent": 20,
-            "copayment": null,
-            "info_valid_till": "2013-12-31",
-            "next_eligible_date": {
-                "professional": "2012-07-01",
-                "technical": "2012-06-01"
-            }
+      {
+        "procedure_code": "G0106",
+        "procedure_label": "Colorectal Cancer Screening (COLO)",
+        "plan_type": "MB",
+        "active": true,
+        "deductible": 0.0,
+        "deductible_remaining": null,
+        "coinsurance_percent": 20,
+        "copayment": null,
+        "info_valid_till": "2013-12-31",
+        "next_eligible_date": {
+          "professional": "2012-07-01",
+          "technical": "2012-06-01"
         }
-    ]
+      }
+    ],
+    "history": {
+		  "plan_details": {
+			  "MA": [],
+			  "MB": [],
+			  "MC": [],
+			  "MD": [],
+			  "PR": []
+		  },
+		  "requested_service_types": []
+	  }
 }
