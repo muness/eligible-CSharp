@@ -54,7 +54,7 @@ namespace EligibleService.Core.Tests
                 .Returns(new RestResponse()
                 {
                     StatusCode = HttpStatusCode.OK,
-                    Content = TestHelper.GetJson(TestResource.MocksPath + "MedicareError.json")
+                    Content = TestHelper.GetJson(TestResource.MocksPath + "ClaimFailure.json")
                 });
 
 
@@ -66,7 +66,7 @@ namespace EligibleService.Core.Tests
             catch(EligibleException ex)
             {
                 Fixture fixture = new Fixture();
-                var sut = fixture.Create<CoverageErrorDetails>();
+                var sut = fixture.Create<EligibleGenericError>();
 
                 TestHelper.PropertiesAreEqual(sut, JsonConvert.SerializeObject(ex.EligibleError));
             }
@@ -81,7 +81,7 @@ namespace EligibleService.Core.Tests
                 .Returns(new RestResponse()
                 {
                     StatusCode = HttpStatusCode.BadRequest,
-                    Content = TestHelper.GetJson(TestResource.MocksPath + "MedicareError.json")
+                    Content = TestHelper.GetJson(TestResource.MocksPath + "ClaimFailure.json")
                 });
 
 

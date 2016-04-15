@@ -21,10 +21,12 @@ namespace EligibleService.Core.CoreTests
         {
             enrollment = new Enrollment();
             BaseTestClass.SetConfiguration();
+            Random rnd = new Random();
+            string rand = rnd.Next(1000000000, 1999999999).ToString();
             EnrollmentInput = @"{'enrollment_npi': { 'payer_id': 'NYMCR', 'endpoint': 'professional claims', 'effective_date': '2012-12-24',
 	                                                 'facility_name': 'Quality', 'provider_name': 'Jane Austen', 'tax_id': '12345678',
 	                                                 'address': '125 Snow Shoe Road', 'city': 'Sacramento', 'state': 'CA', 'zip': '94107',
-                                                     'ptan': '54321', 'medicaid_id': '22222', 'npi': '1234567890', 'authorized_signer': {
+                                                     'ptan': '54321', 'medicaid_id': '22222'," + "'npi':" + rand + @", 'authorized_signer': {
                                                      'title': 'title', 'first_name': 'Lorem', 'last_name': 'Ipsum',
                                                      'contact_number': '1478963250', 'email': 'provider@eligibleapi.com', 'signature': {
                                                      'coordinates': [{ 'lx': 47, 'ly': 9, 'mx': 47, 'my': 8 }, 
@@ -43,48 +45,9 @@ namespace EligibleService.Core.CoreTests
 
         [TestMethod]
         [TestCategory("Enrollment")]
-        public void EnrollmentCreationWithExistingNpiTest()
-        {
-            EnrollmentParams input = JsonConvert.DeserializeObject<EnrollmentParams>(EnrollmentInput);
-            EnrollmentNpisResponse actualResponse = enrollment.Create(input);
-
-            EnrollmentCreationSuccessCheck(actualResponse.JsonResponse());
-        }
-
-        [TestMethod]
-        [TestCategory("Enrollment")]
         public void EnrollmentCreationWithJsonParams()
         {
             EnrollmentNpisResponse actualResponse = enrollment.Create(EnrollmentInput);
-
-            EnrollmentCreationSuccessCheck(actualResponse.JsonResponse());
-        }
-
-        [TestMethod]
-        [TestCategory("Enrollment")]
-        public void EnrollmentUpdateWithHashParamTest()
-        {
-            Hashtable input = JsonConvert.DeserializeObject<Hashtable>(EnrollmentInput);
-            EnrollmentNpisResponse actualResponse = enrollment.Update("123", input);
-
-            EnrollmentCreationSuccessCheck(actualResponse.JsonResponse());
-        }
-
-        [TestMethod]
-        [TestCategory("Enrollment")]
-        public void EnrollmentUpdateWithInvalidNpiTest()
-        {
-            EnrollmentParams input = JsonConvert.DeserializeObject<EnrollmentParams>(EnrollmentInput);
-            EnrollmentNpisResponse actualResponse = enrollment.Update("123", input);
-
-            EnrollmentCreationSuccessCheck(actualResponse.JsonResponse());
-        }
-
-        [TestMethod]
-        [TestCategory("Enrollment")]
-        public void EnrollmentUpdateWithJsonParams()
-        {
-            EnrollmentNpisResponse actualResponse = enrollment.Update("123", EnrollmentInput);
 
             EnrollmentCreationSuccessCheck(actualResponse.JsonResponse());
         }
@@ -104,7 +67,7 @@ namespace EligibleService.Core.CoreTests
         [TestCategory("Enrollment")]
         public void GetEnrollmentByIdTest()
         {
-            EnrollmentNpisResponse actualResponse = enrollment.GetByEnrollmentNpiId("123");
+            EnrollmentNpisResponse actualResponse = enrollment.GetByEnrollmentNpiId("557604291");
             string expectedResponse = TestHelper.GetJson(TestResource.ExpectedResponse + "EnrollmentById.json");
 
             TestHelper.CompareProperties(expectedResponse, actualResponse.JsonResponse());
@@ -127,20 +90,6 @@ namespace EligibleService.Core.CoreTests
             EnrollmentNpisResponses expectedObj = JsonConvert.DeserializeObject<EnrollmentNpisResponses>(expectedResponse);
             EnrollmentNpisResponses actualObj = JsonConvert.DeserializeObject<EnrollmentNpisResponses>(actualResponse.JsonResponse());
             TestHelper.PropertyValuesAreEquals(actualObj, expectedObj);
-        }
-
-        [TestMethod()]
-        public void DownloadReceivedPdfTest()
-        {
-            string actualResponse = enrollment.DownloadReceivedPdf("123", "c:\\");
-            Assert.AreEqual("Request completed", actualResponse);
-        }
-
-        [TestMethod()]
-        public void DownloadOrigibalSignaturePdfTest()
-        {
-            bool actualResponse = enrollment.DownloadOriginalSignaturePdf("123", "c:\\");
-            Assert.AreEqual(true, actualResponse);
         }
     }
 }

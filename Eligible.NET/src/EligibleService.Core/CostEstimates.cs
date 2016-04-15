@@ -19,7 +19,7 @@ namespace EligibleService.Core
         public CostEstimatesResponse Get(Hashtable requiredParams,  RequestOptions options = null)
         {
             response = ExecuteObj.Execute(EligibleResources.CostEstimates, SetRequestOptionsObject(options), requiredParams);
-            var formattedResponse = RequestProcess.ResponseValidation<CostEstimatesResponse, CoverageErrorDetails>(response);
+            var formattedResponse = RequestProcess.ResponseValidation<CostEstimatesResponse, EligibleGenericError>(response);
             formattedResponse.SetJsonResponse(response.Content);
             return formattedResponse;
         }

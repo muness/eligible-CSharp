@@ -10,7 +10,7 @@ namespace EligibleService.Model
     public class ClaimResponse : JsonResponseClass
     {
         [JsonProperty("success")]
-        public string Success { get; set; }
+        public bool? Success { get; set; }
 
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
@@ -19,6 +19,6 @@ namespace EligibleService.Model
         public string ReferenceId { get; set; }
 
         [JsonProperty("errors")]
-        public Collection<EligibleService.Exceptions.ClaimError> Errors { get; set; }
+        public Collection<EligibleService.Exceptions.GenericError> Errors { get; set; }
     }
 }

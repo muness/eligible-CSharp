@@ -45,9 +45,9 @@ namespace EligibleService.Core
         public ClaimResponse Create(string jsonParams, RequestOptions options = null)
         {
             response = ExecuteObj.ExecutePostPut(EligibleResources.PathToClaims, jsonParams, SetRequestOptionsObject(options));
-            ClaimResponse formattedResponse = RequestProcess.ResponseValidation<ClaimResponse, ClaimErrors>(response);
+            ClaimResponse formattedResponse = RequestProcess.ResponseValidation<ClaimResponse, EligibleGenericError>(response);
             
-            if (formattedResponse.Success == "false")
+            if (formattedResponse.Success == false)
                 throw new EligibleException("Claim creation failed. Please check EligibleError for more details", formattedResponse);
             else
             {
@@ -93,7 +93,7 @@ namespace EligibleService.Core
         public ClaimPaymentReportResponse GetClaimPaymentReport(string referenceId, RequestOptions options = null)
         {
             response = this.GetReport(Path.Combine(EligibleResources.PathToClaims, referenceId, EligibleResources.PaymentReports), options);
-            var formattedResponse = RequestProcess.ResponseValidation<ClaimPaymentReportResponse, ClaimErrors>(response);
+            var formattedResponse = RequestProcess.ResponseValidation<ClaimPaymentReportResponse, EligibleGenericError>(response);
             formattedResponse.SetJsonResponse(response.Content);
             return formattedResponse;
         }
@@ -108,7 +108,7 @@ namespace EligibleService.Core
         public ClaimPaymentReportResponse GetClaimPaymentReport(string referenceId, string id, RequestOptions options = null)
         {
             response = this.GetReport(Path.Combine(EligibleResources.PathToClaims, referenceId, EligibleResources.PaymentReports, id), options);
-            var formattedResponse = RequestProcess.ResponseValidation<ClaimPaymentReportResponse, ClaimErrors>(response);
+            var formattedResponse = RequestProcess.ResponseValidation<ClaimPaymentReportResponse, EligibleGenericError>(response);
             formattedResponse.SetJsonResponse(response.Content);
             return formattedResponse;
         }
@@ -121,7 +121,7 @@ namespace EligibleService.Core
         public ClaimPaymentReportsResponse GetClaimPaymentReport(RequestOptions options = null)
         {
             response = this.GetReport(Path.Combine(EligibleResources.PathToClaims, EligibleResources.PaymentReports), options);
-            var formattedResponse = RequestProcess.ResponseValidation<ClaimPaymentReportsResponse, ClaimErrors>(response);
+            var formattedResponse = RequestProcess.ResponseValidation<ClaimPaymentReportsResponse, EligibleGenericError>(response);
             formattedResponse.SetJsonResponse(response.Content);
             return formattedResponse;
         }

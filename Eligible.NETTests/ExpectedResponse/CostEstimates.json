@@ -1,6 +1,6 @@
 ﻿{
-	"created_at": "2016-02-27T09:50:59-05:00",
-	"eligible_id": "UQN7KVMTZUB2K",
+	"created_at": "2016-04-15T13:29:05Z",
+	"eligible_id": "UTSI8NXZLZHV4",
 	"known_issues": [],
 	"demographics": {
 		"subscriber": {
@@ -311,10 +311,7 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": [],
-						"copayment": true,
-						"coinsurance": true,
-						"deductible": true
+						"comments": []
 					}, {
 						"amount": "6000",
 						"level": "FAMILY",
@@ -329,7 +326,10 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": []
+						"comments": [],
+						"copayment": true,
+						"coinsurance": true,
+						"deductible": true
 					}],
 					"out_network": [{
 						"amount": "7250",
@@ -896,8 +896,8 @@
 	"cost_estimates": [{
 		"cost_estimate_equation": {
 			"deductible": [{
-				"amount": "1000",
-				"level": "INDIVIDUAL",
+				"amount": "3000",
+				"level": "FAMILY",
 				"insurance_type": null,
 				"insurance_type_label": null,
 				"pos": null,
@@ -914,8 +914,8 @@
 			"coinsurance": [],
 			"copayment": [],
 			"stop_loss": [{
-				"amount": "2500",
-				"level": "INDIVIDUAL",
+				"amount": "6000",
+				"level": "FAMILY",
 				"insurance_type": null,
 				"insurance_type_label": null,
 				"pos": null,
@@ -935,8 +935,8 @@
 		},
 		"cost_estimate_alternatives": {
 			"deductible": [{
-				"amount": "1000",
-				"level": "INDIVIDUAL",
+				"amount": "3000",
+				"level": "FAMILY",
 				"insurance_type": null,
 				"insurance_type_label": null,
 				"pos": null,
@@ -953,8 +953,8 @@
 			"coinsurance": [],
 			"copayment": [],
 			"stop_loss": [{
-				"amount": "2500",
-				"level": "INDIVIDUAL",
+				"amount": "6000",
+				"level": "FAMILY",
 				"insurance_type": null,
 				"insurance_type_label": null,
 				"pos": null,
@@ -972,7 +972,8 @@
 				"deductible": true
 			}]
 		},
-		"cost_estimate": 1000.0,
-		"provider_price": 1500.5
-	}]
+		"provider_price": 1500.5,
+		"cost_estimate": 1500.5
+	}],
+	"success": true
 }
