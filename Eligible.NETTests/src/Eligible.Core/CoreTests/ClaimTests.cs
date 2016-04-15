@@ -142,9 +142,9 @@ namespace EligibleService.Core.CoreTests
         public void ClaimPayementReportTest()
         {
 
-            ClaimPaymentReportResponse actualResponse = claim.GetClaimPaymentReport("BDA85HY09IJ");
+            ClaimPaymentReportResponse actualResponse = claim.GetClaimPaymentReport("8IZ9JZI2FUEDCS");
 
-            string expectedResponse = TestHelper.GetJson(TestResource.ExpectedResponse + "ClaimPaymentReport.json");
+            string expectedResponse = TestHelper.GetJson(TestResource.ExpectedResponse + "ClaimPayementReports.json");
 
             TestHelper.CompareProperties(expectedResponse, actualResponse.JsonResponse());
 
@@ -158,7 +158,7 @@ namespace EligibleService.Core.CoreTests
         public void ClaimSpecificPayementReportTest()
         {
 
-            ClaimPaymentReportResponse actualResponse = claim.GetClaimPaymentReport("BDA85HY09IJ", "ABX45DGER44");
+            ClaimPaymentReportResponse actualResponse = claim.GetClaimPaymentReport("8IZ9JZI2FUEDCS", "UP4OCS4PUY455");
 
             string expectedResponse = TestHelper.GetJson(TestResource.ExpectedResponse + "ClaimPaymentReport.json");
 
@@ -176,7 +176,7 @@ namespace EligibleService.Core.CoreTests
 
             ClaimPaymentReportsResponse actualResponse = claim.GetClaimPaymentReport();
 
-            string expectedResponse = TestHelper.GetJson(TestResource.ExpectedResponse + "ClaimPayementReports.json");
+            string expectedResponse = TestHelper.GetJson(TestResource.ExpectedResponse + "PaymentReports.json");
 
             TestHelper.CompareProperties(expectedResponse, actualResponse.JsonResponse());
 

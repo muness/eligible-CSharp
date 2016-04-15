@@ -5,7 +5,7 @@ namespace EligibleService.Claim.ClaimReports
     public class Amount : BaseAmount
     {
         [JsonProperty("patient_responsibility")]
-        public int? PatientResponsibility { get; set; }
+        public double? PatientResponsibility { get; set; }
 
         [JsonProperty("prompt_payment_discount")]
         public double? PromptPaymentDiscount { get; set; }

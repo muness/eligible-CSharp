@@ -111,7 +111,7 @@
     <Compile Include="src\EligibleService.Model\Claim\ClaimAcknowledgements.cs" />
     <Compile Include="src\EligibleService.Model\Claim\ClaimResponse.cs" />
     <Compile Include="src\EligibleService.Model\Claim\ClaimClass.cs" />
-    <Compile Include="src\EligibleService.Exceptions\ErrorsStructures\ClaimError.cs" />
+    <Compile Include="src\EligibleService.Exceptions\ErrorsStructures\EligibleGenericError.cs" />
     <Compile Include="src\EligibleService.Model\Claim\Cob.cs" />
     <Compile Include="src\EligibleService.Model\Claim\ContractInformation.cs" />
     <Compile Include="src\EligibleService.Model\Claim\Dependent.cs" />

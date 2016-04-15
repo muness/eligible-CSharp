@@ -126,6 +126,7 @@
     <None Include="ExpectedResponse\PayersStatus.json" />
     <None Include="ExpectedResponse\PayersStatussesWithTransactionType.json" />
     <None Include="ExpectedResponse\PayersWithCoverageEndPoint.json" />
+    <None Include="ExpectedResponse\PaymentReports.json" />
     <None Include="ExpectedResponse\PaymentStatus.json" />
     <None Include="ExpectedResponse\ReatimeClaimResponse.json" />
     <None Include="ExpectedResponse\SearchOptionsByPayerId.json" />

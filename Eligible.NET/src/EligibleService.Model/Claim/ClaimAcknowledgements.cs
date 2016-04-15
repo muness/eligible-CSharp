@@ -45,7 +45,7 @@ namespace EligibleService.Model
         public string Message { get; set; }
 
         [JsonProperty("errors")]
-        public Collection<EligibleService.Exceptions.ClaimError> Errors { get; set; }
+        public Collection<EligibleService.Exceptions.GenericError> Errors { get; set; }
     }
 
     public class MultipleAcknowledgementsResponse : AcknowledgementCommonProperties
