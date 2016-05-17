@@ -61,7 +61,7 @@ namespace EligibleService.Core.Tests.Helpers
         {
             return new PreexistingCondition()
             {
-                WaitingPeriod = new Collection<string>()
+                WaitingPeriod = new Collection<WaitingPeriod>()
             };
         }
 
