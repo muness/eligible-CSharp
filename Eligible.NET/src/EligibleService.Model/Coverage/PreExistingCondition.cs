@@ -33,7 +33,7 @@ namespace EligibleService.Model.Coverage
         /// "certification", "service","policy_effective", "policy_expiration", "date_of_last_update", "status"
         /// </summary>
         public Period Period { get; set; }
-        public string PeriodRefers { get; set; }
+        public string PeriodType { get; set; }
         [JsonExtensionData]
         private IDictionary<string, JToken> _additionalData;
 
@@ -55,7 +55,7 @@ namespace EligibleService.Model.Coverage
                 if (payer_key.Contains(dateLabel))
                 {
                     key = dateLabel;
-                    PeriodRefers = key;
+                    PeriodType = key;
                 }
             }
             Period = JsonConvert.DeserializeObject<Period>(_additionalData[key].ToString());
