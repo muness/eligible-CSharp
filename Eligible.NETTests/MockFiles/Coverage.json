@@ -129,8 +129,13 @@
 				"comments": ["test comment"]
 			}],
          "pre_existing_condition":{  
-            "waiting_period":[  
-
+            "waiting_period": [
+              {
+                 "": {
+                  "date": null,
+                  "comments": [ "PRE-EXISTING IS WAIVED" ]
+                }
+              }
             ]
          }
       },
