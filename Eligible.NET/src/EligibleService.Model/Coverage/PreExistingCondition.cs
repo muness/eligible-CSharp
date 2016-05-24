@@ -23,7 +23,7 @@ namespace EligibleService.Model.Coverage
 
     public class WaitingPeriod
     {
-        public Period period { get; set; }
+        public Period Period { get; set; }
         [JsonExtensionData]
         private IDictionary<string, JToken> _additionalData;
         List<string> dateLabels = new List<string>(
@@ -44,7 +44,7 @@ namespace EligibleService.Model.Coverage
                 if (payer_key.Contains(dateLabel))
                     key = dateLabel;
             }
-            period = JsonConvert.DeserializeObject<Period>(_additionalData[key].ToString());
+            Period = JsonConvert.DeserializeObject<Period>(_additionalData[key].ToString());
         }
 
         public WaitingPeriod()
