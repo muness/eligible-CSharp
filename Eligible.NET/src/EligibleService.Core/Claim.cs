@@ -49,13 +49,11 @@ namespace EligibleService.Core
             
             if (formattedResponse.Success == false)
             {
-                ResetIsEligibleRequest(false);
                 throw new EligibleException("Claim creation failed. Please check EligibleError for more details", formattedResponse);
             }
             else
             {
                 formattedResponse.SetJsonResponse(response.Content);
-                ResetIsEligibleRequest(false);
                 return formattedResponse;
             }
         }
@@ -71,7 +69,6 @@ namespace EligibleService.Core
             response = ExecuteObj.Execute(Path.Combine(EligibleResources.PathToClaims, referenceId, EligibleResources.ClaimAcknowledgementsPath), SetRequestOptionsObject(options));
             ClaimAcknowledgementsResponse formattedResponse = RequestProcess.ResponseValidation<ClaimAcknowledgementsResponse, EligibleError>(response);
             formattedResponse.SetJsonResponse(response.Content);
-            ResetIsEligibleRequest(false);
             return formattedResponse;
         }
 
@@ -86,7 +83,6 @@ namespace EligibleService.Core
             response = ExecuteObj.Execute(Path.Combine(EligibleResources.PathToClaims, EligibleResources.ClaimAcknowledgementsPath), SetRequestOptionsObject(options), requiredParams);
             var formattedResponse = RequestProcess.ResponseValidation<MultipleAcknowledgementsResponse, EligibleError>(response);
             formattedResponse.SetJsonResponse(response.Content);
-            ResetIsEligibleRequest(false);
             return formattedResponse;
         }
 
@@ -101,7 +97,6 @@ namespace EligibleService.Core
             response = this.GetReport(Path.Combine(EligibleResources.PathToClaims, referenceId, EligibleResources.PaymentReports), options);
             var formattedResponse = RequestProcess.ResponseValidation<ClaimPaymentReportResponse, EligibleGenericError>(response);
             formattedResponse.SetJsonResponse(response.Content);
-            ResetIsEligibleRequest(false);
             return formattedResponse;
         }
 
@@ -117,7 +112,6 @@ namespace EligibleService.Core
             response = this.GetReport(Path.Combine(EligibleResources.PathToClaims, referenceId, EligibleResources.PaymentReports, id), options);
             var formattedResponse = RequestProcess.ResponseValidation<ClaimPaymentReportResponse, EligibleGenericError>(response);
             formattedResponse.SetJsonResponse(response.Content);
-            ResetIsEligibleRequest(false);
             return formattedResponse;
         }
 
@@ -131,7 +125,6 @@ namespace EligibleService.Core
             response = this.GetReport(Path.Combine(EligibleResources.PathToClaims, EligibleResources.PaymentReports), options);
             var formattedResponse = RequestProcess.ResponseValidation<ClaimPaymentReportsResponse, EligibleGenericError>(response);
             formattedResponse.SetJsonResponse(response.Content);
-            ResetIsEligibleRequest(false);
             return formattedResponse;
         }
 

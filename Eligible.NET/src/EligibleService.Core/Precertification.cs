@@ -23,7 +23,6 @@ namespace EligibleService.Core
             response = ExecuteObj.Execute(Path.Combine(EligibleResources.Precert, EligibleResources.Inquiry), SetRequestOptionsObject(options), requiredParams);
             var formattedResponse = RequestProcess.ResponseValidation<PrecertificationInquiryResponse, CoverageErrorDetails>(response);
             formattedResponse.SetJsonResponse(response.Content);
-            ResetIsEligibleRequest(false);
             return formattedResponse;
         }
 

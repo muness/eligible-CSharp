@@ -21,7 +21,6 @@ namespace EligibleService.Core
             response = ExecuteObj.Execute(EligibleResources.CostEstimates, SetRequestOptionsObject(options), requiredParams);
             var formattedResponse = RequestProcess.ResponseValidation<CostEstimatesResponse, EligibleGenericError>(response);
             formattedResponse.SetJsonResponse(response.Content);
-            ResetIsEligibleRequest(false);
             return formattedResponse;
         }
     }

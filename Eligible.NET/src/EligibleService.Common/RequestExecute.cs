@@ -123,7 +123,7 @@ namespace EligibleService.Common
             if (errors != SslPolicyErrors.None)
                 return false;
 
-            if (!eligble.IsEligibleRequest)
+            if (!certificate.Subject.Contains(EligibleResources.WhiteListedDomain.Trim()))
                 return true;
 
             return fingerprint.Contains(certificate.GetCertHashString());

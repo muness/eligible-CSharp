@@ -23,7 +23,6 @@ namespace EligibleService.Core
             response = ExecuteObj.ExecutePostPut(Path.Combine(EligibleResources.PathToClaims, EligibleResources.Realtime), jsonParams, SetRequestOptionsObject(options));
             var formattedResponse = RequestProcess.ResponseValidation<RealtimeClaimsResponse, RealtimeClaimError>(response);
             formattedResponse.SetJsonResponse(response.Content);
-            ResetIsEligibleRequest(false);
             return formattedResponse;
         }
     }

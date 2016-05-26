@@ -28,7 +28,6 @@ namespace EligibleService.Core
             PayersResponse payers = new PayersResponse();
             payers.Payers = formatResponse;
             payers.SetJsonResponse(response.Content);
-            ResetIsEligibleRequest(false);
             return payers;
         }
 
@@ -43,7 +42,6 @@ namespace EligibleService.Core
             response = ExecuteObj.Execute(Path.Combine(EligibleResources.PathToPayerById, payerId), SetRequestOptionsObject(options));
             var formattedResponse = RequestProcess.SimpleResponseValidation<PayerResponse>(response);
             formattedResponse.SetJsonResponse(response.Content);
-            ResetIsEligibleRequest(false);
             return formattedResponse;
         }
 
@@ -59,7 +57,6 @@ namespace EligibleService.Core
             var formattedResponse = RequestProcess.SimpleResponseValidation<Collection<PayerSearchOptionResponse>>(response);
             payersSearchOptionResponse.SearchOptionsList = formattedResponse;
             payersSearchOptionResponse.SetJsonResponse(response.Content);
-            ResetIsEligibleRequest(false);
             return payersSearchOptionResponse; 
         }
 
@@ -73,7 +70,6 @@ namespace EligibleService.Core
             response = ExecuteObj.Execute(EligibleResources.PathToPayerById + payerId + EligibleResources.SearchOptions, SetRequestOptionsObject(options));
             var formattedResponse = RequestProcess.SimpleResponseValidation<PayerSearchOptionResponse>(response);
             formattedResponse.SetJsonResponse(response.Content);
-            ResetIsEligibleRequest(false);
             return formattedResponse;
         }
 
@@ -90,7 +86,6 @@ namespace EligibleService.Core
             response = ExecuteObj.Execute(EligibleResources.PathtoPayersStatus, SetRequestOptionsObject(options), param);
             var formattedResponse = RequestProcess.SimpleResponseValidation<StatusResponse>(response);
             formattedResponse.SetJsonResponse(response.Content);
-            ResetIsEligibleRequest(false);
             return formattedResponse;
         }
 
@@ -107,7 +102,6 @@ namespace EligibleService.Core
             response = ExecuteObj.Execute(EligibleResources.PathToPayerById + payerId + EligibleResources.PayerStatus, SetRequestOptionsObject(options), param);
             var formattedResponse = RequestProcess.SimpleResponseValidation<StatusResponse>(response);
             formattedResponse.SetJsonResponse(response.Content);
-            ResetIsEligibleRequest(false);
             return formattedResponse;
         }
 
@@ -124,7 +118,6 @@ namespace EligibleService.Core
             response = ExecuteObj.Execute(EligibleResources.PathtoPayersStatus + "/" + status, SetRequestOptionsObject(options), param);
             var formattedResponse = RequestProcess.SimpleResponseValidation<StatusResponse>(response);
             formattedResponse.SetJsonResponse(response.Content);
-            ResetIsEligibleRequest(false);
             return formattedResponse;
         }
     }

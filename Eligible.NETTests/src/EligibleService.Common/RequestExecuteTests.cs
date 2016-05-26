@@ -5,6 +5,7 @@ using System.Net;
 using EligibleService.Core;
 using System.Collections;
 using System.Threading.Tasks;
+using Moq;
 
 namespace EligibleService.Common.Tests
 {
@@ -47,25 +48,9 @@ namespace EligibleService.Common.Tests
         }
 
         [TestMethod()]
-        public void SetWrongFingerprintTest()
-        {
-            eligible.AddFingerprint("wrong fingerprint");
-            eligible.IsEligibleRequest = true;
-
-            var request = new RestRequest();
-            var client = new RestClient(new Uri("https://gds.eligibleapi.com/"));
-
-            ServicePointManager.ServerCertificateValidationCallback = execute.CertificateValidation;
-            
-            var response = client.Execute(request);
-            Assert.AreEqual("The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel.", response.ErrorMessage);
-        }
-
-        [TestMethod()]
-        public void NonEligibleApiCallCertPinningFailTest()
+        public void NonEligibleApiCallCertPinningTest()
         {
             var request = new RestRequest();
-            eligible.IsEligibleRequest = true;
 
             Parallel.Invoke
             (
@@ -80,36 +65,6 @@ namespace EligibleService.Common.Tests
                 },
                 () =>
                 {
-                    request = new RestRequest();
-                    var client = new RestClient(new Uri("https://api.github.com/"));
-                    ServicePointManager.ServerCertificateValidationCallback = execute.CertificateValidation;
-                    var response = client.Execute(request);
-                    Assert.AreEqual("The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel.", response.ErrorMessage);
-                }
-            );
-
-        }
-
-        [TestMethod()]
-        public void NonEligibleApiCallCertPinningPassTest()
-        {
-            var request = new RestRequest();
-            eligible.IsEligibleRequest = true;
-
-            Parallel.Invoke
-            (
-                () =>
-                {
-
-                    var client = new RestClient(new Uri("https://gds.eligibleapi.com/v1.5"));
-                    ServicePointManager.ServerCertificateValidationCallback = execute.CertificateValidation;
-                    var response = client.Execute(request);
-                    Assert.AreEqual(null, response.ErrorMessage);
-
-                },
-                () =>
-                {
-                    eligible.IsEligibleRequest = false;
                     request = new RestRequest();
                     var client = new RestClient(new Uri("https://api.github.com/"));
                     ServicePointManager.ServerCertificateValidationCallback = execute.CertificateValidation;

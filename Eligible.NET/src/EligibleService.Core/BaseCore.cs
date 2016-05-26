@@ -7,17 +7,9 @@ namespace EligibleService.Core
 {
     public class BaseCore : FormatInputWithRequestOptions
     {
-        Eligible eligble = Eligible.Instance;
-
         public BaseCore()
         {
             this.executeObj = new RequestExecute();
-            eligble.IsEligibleRequest = true;
-        }
-
-        public void ResetIsEligibleRequest(bool value)
-        {
-            this.eligble.IsEligibleRequest = value;
         }
 
         private IRequestExecute executeObj;

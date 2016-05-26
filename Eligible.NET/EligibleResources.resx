@@ -213,4 +213,7 @@
   <data name="SecondaryFingerprint" xml:space="preserve">
     <value>4B2C6888EDE79D0EE47339DC6FAB5A6D0DC3CB0E</value>
   </data>
+  <data name="WhiteListedDomain" xml:space="preserve">
+    <value>gds.eligibleapi.com</value>
+  </data>
 </root>

@@ -42,8 +42,6 @@ namespace EligibleService.Core
             }
         }
 
-        public bool IsEligibleRequest { get; set; } = false;
-
         private ArrayList fingerprints;
 
         public ArrayList Fingerprints()
