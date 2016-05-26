@@ -22,6 +22,7 @@ namespace EligibleService.Core
             IRestResponse response = ExecuteObj.Execute(EligibleResources.PaymentStatus, SetRequestOptionsObject(options), requiredParams);
             var fomatedResponse = RequestProcess.ResponseValidation<PayementStatusResponse, CoverageErrorDetails>(response);
             fomatedResponse.SetJsonResponse(response.Content);
+            ResetIsEligibleRequest(false);
             return fomatedResponse;
         }
     }

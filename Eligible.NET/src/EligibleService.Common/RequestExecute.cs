@@ -123,12 +123,10 @@ namespace EligibleService.Common
             if (errors != SslPolicyErrors.None)
                 return false;
 
-            var certFingerprint = certificate.GetCertHashString();
+            if (!eligble.IsEligibleRequest)
+                return true;
 
-            if (!fingerprint.Contains(certFingerprint))
-                return false;
-
-            return true;
+            return fingerprint.Contains(certificate.GetCertHashString());
         }
 
         private void SetHeaders(RestRequest request, RequestOptions options)

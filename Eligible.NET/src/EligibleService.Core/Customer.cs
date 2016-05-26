@@ -46,6 +46,7 @@ namespace EligibleService.Core
             response = ExecuteObj.ExecutePostPut(EligibleResources.PathToCustomers, jsonParams, SetRequestOptionsObject(options), Method.POST);
             var formattedResponse = RequestProcess.ResponseValidation<CustomerResponse, EligibleError>(response);
             formattedResponse.SetJsonResponse(response.Content);
+            ResetIsEligibleRequest(false);
             return formattedResponse;
         }
 
@@ -88,6 +89,7 @@ namespace EligibleService.Core
             response = ExecuteObj.ExecutePostPut(Path.Combine(EligibleResources.PathToCustomers, customerId), jsonParams, SetRequestOptionsObject(options), Method.PUT);
             var formattedResponse = RequestProcess.ResponseValidation<CustomerResponse, EligibleError>(response);
             formattedResponse.SetJsonResponse(response.Content);
+            ResetIsEligibleRequest(false);
             return formattedResponse;
         }
 
@@ -126,6 +128,7 @@ namespace EligibleService.Core
             response = ExecuteObj.Execute(Path.Combine(EligibleResources.PathToCustomers, customerId), SetRequestOptionsObject(options));
             var formattedResponse = RequestProcess.ResponseValidation<CustomerResponse, EligibleError>(response);
             formattedResponse.SetJsonResponse(response.Content);
+            ResetIsEligibleRequest(false);
             return formattedResponse;
         }
 
@@ -142,6 +145,7 @@ namespace EligibleService.Core
             response = ExecuteObj.Execute(Path.Combine(EligibleResources.PathToCustomers), SetRequestOptionsObject(options), param);
             var formattedResponse = RequestProcess.ResponseValidation<CustomersResponse, EligibleError>(response);
             formattedResponse.SetJsonResponse(response.Content);
+            ResetIsEligibleRequest(false);
             return formattedResponse;
         }
 

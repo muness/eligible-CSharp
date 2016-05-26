@@ -24,6 +24,7 @@ namespace EligibleService.Core
             response = ExecuteObj.Execute(EligibleResources.PathToAllCoverages, SetRequestOptionsObject(options), requiredParams);
             var fomatedResponse = RequestProcess.ResponseValidation<CoverageResponse, CoverageErrorDetails>(response);
             fomatedResponse.SetJsonResponse(response.Content);
+            ResetIsEligibleRequest(false);
             return fomatedResponse;
         }
 
@@ -38,6 +39,7 @@ namespace EligibleService.Core
             response = ExecuteObj.Execute(EligibleResources.PathToMedicare, SetRequestOptionsObject(options), requiredParams);
             var formattedResponse = RequestProcess.ResponseValidation<MedicareResponse, CoverageErrorDetails>(response);
             formattedResponse.SetJsonResponse(response.Content);
+            ResetIsEligibleRequest(false);
             return formattedResponse;
         }
     }
