@@ -114,7 +114,6 @@ namespace EligibleService.Common
         public bool CertificateValidation(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors errors)
         {
             Eligible eligble = Eligible.Instance;
-
             ArrayList fingerprint = eligble.Fingerprints();
 
             if (certificate == null || chain == null)
@@ -123,10 +122,10 @@ namespace EligibleService.Common
             if (errors != SslPolicyErrors.None)
                 return false;
 
-            if (!certificate.Subject.Contains(EligibleResources.WhiteListedDomain.Trim()))
+            if (certificate.Subject.Contains(EligibleResources.WhiteListedDomain.Trim()))
+                return fingerprint.Contains(certificate.GetCertHashString());
+            else
                 return true;
-
-            return fingerprint.Contains(certificate.GetCertHashString());
         }
 
         private void SetHeaders(RestRequest request, RequestOptions options)
