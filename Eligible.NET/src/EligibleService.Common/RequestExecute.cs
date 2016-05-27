@@ -122,7 +122,14 @@ namespace EligibleService.Common
             if (errors != SslPolicyErrors.None)
                 return false;
 
-            if (certificate.Subject.Contains(EligibleResources.WhiteListedDomain.Trim()))
+            bool is_white_listed_domain = false;
+            foreach(string domain in eligble.WhiteListedDomains)
+            {
+                if (certificate.Subject.Contains(domain))
+                    is_white_listed_domain = true;
+            }
+
+            if (is_white_listed_domain)
                 return fingerprint.Contains(certificate.GetCertHashString());
             else
                 return true;

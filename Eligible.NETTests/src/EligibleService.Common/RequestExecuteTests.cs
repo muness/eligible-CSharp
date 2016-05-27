@@ -48,6 +48,21 @@ namespace EligibleService.Common.Tests
         }
 
         [TestMethod()]
+        public void SetWrongFingerprintTest()
+        {
+            Eligible eligible = Eligible.Instance;
+            eligible.WhiteListedDomains.Add("eligible.com");
+
+            var request = new RestRequest();
+            var client = new RestClient(new Uri("https://gds.eligibleapi.com"));
+
+            ServicePointManager.ServerCertificateValidationCallback = execute.CertificateValidation;
+            
+            var response = client.Execute(request);
+            Assert.AreEqual("The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel.", response.ErrorMessage);
+        }
+
+        [TestMethod()]
         public void NonEligibleApiCallCertPinningTest()
         {
             var request = new RestRequest();
