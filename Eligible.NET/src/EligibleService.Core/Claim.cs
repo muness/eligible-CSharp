@@ -48,7 +48,9 @@ namespace EligibleService.Core
             ClaimResponse formattedResponse = RequestProcess.ResponseValidation<ClaimResponse, EligibleGenericError>(response);
             
             if (formattedResponse.Success == false)
+            {
                 throw new EligibleException("Claim creation failed. Please check EligibleError for more details", formattedResponse);
+            }
             else
             {
                 formattedResponse.SetJsonResponse(response.Content);

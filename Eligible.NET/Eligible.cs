@@ -15,6 +15,8 @@ namespace EligibleService.Core
             this.fingerprints = new ArrayList();
             this.fingerprints.Add(EligibleResources.Fingerprint.Trim());
             this.fingerprints.Add(EligibleResources.SecondaryFingerprint.Trim());
+            this.WhiteListedDomains = new ArrayList();
+            this.WhiteListedDomains.Add(EligibleResources.WhiteListedDomain.Trim());
 
             new EligibleService.Common.Logging();
         }
@@ -56,6 +58,8 @@ namespace EligibleService.Core
             Logger logger = LogManager.GetLogger("Fingerprint");
             logger.Error("Modifying the certificate fingerprint is not advised. This should only be done if instructed by eligible.com support. Please update to the latest version of the eligible library for certificate fingerprint updates.");
         }
+
+        public ArrayList WhiteListedDomains { get; set; }
     }
 
     public class RequestOptions

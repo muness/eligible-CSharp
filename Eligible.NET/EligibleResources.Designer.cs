@@ -350,5 +350,16 @@ namespace EligibleService.Net {
                 return ResourceManager.GetString("SecondaryFingerprint", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to gds.eligibleapi.com, eligible.com.
+        /// </summary>
+        internal static string WhiteListedDomain
+        {
+            get
+            {
+                return ResourceManager.GetString("WhiteListedDomain", resourceCulture);
+            }
+        }
     }
 }
