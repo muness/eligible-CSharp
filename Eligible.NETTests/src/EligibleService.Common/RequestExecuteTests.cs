@@ -50,7 +50,6 @@ namespace EligibleService.Common.Tests
         [TestMethod()]
         public void SetWrongFingerprintTest()
         {
-            Eligible eligible = Eligible.Instance;
             eligible.WhiteListedDomains.Add("eligible.com");
 
             var request = new RestRequest();
