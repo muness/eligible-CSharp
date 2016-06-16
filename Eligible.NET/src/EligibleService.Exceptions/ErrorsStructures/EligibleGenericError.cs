@@ -6,6 +6,9 @@ namespace EligibleService.Exceptions
 {
     public class EligibleGenericError
     {
+        [JsonProperty("eligible_id")]
+        public string EligibleId { get; set; }
+
         [JsonProperty("success")]
         public bool? Success { get; set; }
 

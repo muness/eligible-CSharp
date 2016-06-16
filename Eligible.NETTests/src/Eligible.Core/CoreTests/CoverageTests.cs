@@ -39,7 +39,7 @@ namespace EligibleService.Core.CoreTests
         public void RetrieveCoverageForDependentTest()
         {
             CoverageResponse response = coverage.All(GetCoverageDependentParams());
-            string expectedResponse = TestHelper.GetJson(TestResource.ExpectedResponse + "CoverageSubscriber.json");
+            string expectedResponse = TestHelper.GetJson(TestResource.ExpectedResponse + "CoverageDependent.json");
             TestHelper.CompareProperties(expectedResponse, response.JsonResponse());
 
             CoverageResponse expectedObj = JsonConvert.DeserializeObject<CoverageResponse>(expectedResponse);
@@ -67,7 +67,7 @@ namespace EligibleService.Core.CoreTests
             param.Add("provider_last_name", "Doe");
             param.Add("provider_first_name", "John");
             param.Add("provider_npi", "0123456789");
-            param.Add("member_id", "AETNAS8398");
+            param.Add("member_id", "cost_estimates_001");
             param.Add("member_first_name", "IDA");
             param.Add("member_last_name", "FRANKLIN");
             param.Add("member_dob", "1701-12-12");
@@ -82,7 +82,7 @@ namespace EligibleService.Core.CoreTests
             param.Add("provider_last_name", "Doe");
             param.Add("provider_first_name", "John");
             param.Add("provider_npi", "0123456789");
-            param.Add("member_id", "AETNAS8398");
+            param.Add("member_id", "cost_estimates_001");
             param.Add("member_first_name", "IDA");
             param.Add("member_last_name", "FRANKLIN");
             param.Add("member_dob", "1701-12-12");
