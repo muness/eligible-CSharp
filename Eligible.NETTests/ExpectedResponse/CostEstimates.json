@@ -1,6 +1,6 @@
 ﻿{
-	"created_at": "2016-04-15T13:29:05Z",
-	"eligible_id": "UTSI8NXZLZHV4",
+	"created_at": "2016-06-16T19:51:13Z",
+	"eligible_id": "8LESHCRK18IAHX",
 	"known_issues": [],
 	"demographics": {
 		"subscriber": {
@@ -9,80 +9,30 @@
 			"middle_name": "J",
 			"member_id": "1234567890",
 			"group_id": "123123123",
-			"group_name": "LOCKHEED MARTIN CORPORATION",
-			"dob": null,
-			"gender": null,
-			"address": {
-				"street_line_1": null,
-				"street_line_2": null,
-				"city": null,
-				"state": null,
-				"zip": null
-			}
-		},
-		"dependent": {
-			"last_name": "FRANKLIN",
-			"first_name": "BENJAMIN",
-			"middle_name": null,
-			"member_id": null,
-			"group_id": null,
 			"group_name": null,
 			"dob": "1967-09-09",
 			"gender": "F",
-			"relationship": "Spouse",
-			"relationship_code": "01",
 			"address": {
 				"street_line_1": "1842 Union Street",
 				"street_line_2": null,
 				"city": "San Francisco",
-				"state": "NY",
+				"state": "TX",
 				"zip": "94123"
 			}
-		}
+		},
+		"dependent": {}
 	},
 	"insurance": {
 		"name": "Sandbox",
 		"id": "ELIG_SNDBX",
 		"payer_type": "PR",
 		"payer_type_label": "Payer",
-		"contacts": [],
+		"contacts": [{
+			"contact_type": "telephone",
+			"contact_value": "8006762583"
+		}],
 		"service_providers": {
 			"physicians": [{
-				"eligibility_code": "L",
-				"eligibility_code_label": "Primary Care Provider",
-				"insurance_type": "PS",
-				"insurance_type_label": "Point of Service (POS)",
-				"primary_care": true,
-				"restricted": false,
-				"contact_details": [],
-				"dates": [],
-				"comments": ["PCP SELECTION NOT REQUIRED"]
-			}, {
-				"eligibility_code": "W",
-				"eligibility_code_label": "Other Source of Data",
-				"insurance_type": null,
-				"insurance_type_label": null,
-				"primary_care": false,
-				"restricted": false,
-				"contact_details": [{
-					"entity_code": "PR",
-					"entity_code_label": "Payer",
-					"last_name": "FRANKLIN",
-					"first_name": null,
-					"identification_type": null,
-					"identification_code": null,
-					"contacts": [],
-					"address": {
-						"street_line_1": "1842 Union Street",
-						"street_line_2": null,
-						"city": "El Paso",
-						"state": "TX",
-						"zip": "79998"
-					}
-				}],
-				"dates": [],
-				"comments": []
-			}, {
 				"eligibility_code": "R",
 				"eligibility_code_label": "Other or Additional Payor",
 				"insurance_type": null,
@@ -90,8 +40,8 @@
 				"primary_care": false,
 				"restricted": false,
 				"contact_details": [{
-					"entity_code": "SEP",
-					"entity_code_label": "Secondary Payer",
+					"entity_code": "PRP",
+					"entity_code_label": "Primary Payer",
 					"last_name": "FRANKLIN",
 					"first_name": null,
 					"identification_type": "Member Identification Number",
@@ -105,11 +55,36 @@
 						"zip": null
 					}
 				}],
-				"dates": [{
-					"date_type": "coordination_of_benefits",
-					"date_value": "2015-03-01"
-				}],
+				"dates": [],
 				"comments": []
+			}, {
+				"eligibility_code": "CB",
+				"eligibility_code_label": "Coverage Basis",
+				"insurance_type": null,
+				"insurance_type_label": null,
+				"primary_care": false,
+				"restricted": false,
+				"contact_details": [{
+					"entity_code": "X3",
+					"entity_code_label": "Utilization Management Organization",
+					"last_name": "FRANKLIN",
+					"first_name": null,
+					"identification_type": null,
+					"identification_code": null,
+					"contacts": [{
+						"contact_type": "telephone",
+						"contact_value": "8553398558"
+					}],
+					"address": {
+						"street_line_1": null,
+						"street_line_2": null,
+						"city": null,
+						"state": null,
+						"zip": null
+					}
+				}],
+				"dates": [],
+				"comments": ["PRECERTIFICATION REQUIRED FOR RESIDENTIAL TREATMENT FACILITIES", "PRECERTIFICATION REQUIRED FOR PARTIAL HOSPITALIZATION", "PRECERTIFICATION REQUIRED FOR INTENSIVE OUTPATIENT CARE", "PRECERTIFICATION REQUIRED FOR BEHAVIORAL HEALTH ADMISSIONS"]
 			}]
 		}
 	},
@@ -117,25 +92,44 @@
 		"type": "30",
 		"coverage_status": "1",
 		"coverage_status_label": "Active Coverage",
-		"coverage_basis": [],
-		"plan_number": "123123123",
-		"plan_name": "AHF Aexcel Plus Choice POS II",
-		"plan_type": "PS",
-		"plan_type_label": "Point of Service (POS)",
-		"group_name": "LOCKHEED MARTIN CORPORATION",
+		"coverage_basis": [{
+			"_": null,
+			"comments": ["THIS GROUP COMPLIES WITH HEALTHCARE REFORM PREVENTIVE BENEFITS AND PROVIDES COVERAGE FOR MANDATED PREVENTIVE BENEFITS.", "IN NETWORK- BENEFITS FOR PREVENTIVE SERVICES ARE PROVIDED AT 100% OF THE ALLOWED AMOUNT NOT SUBJECT TO THE BENEFIT PERIOD DEDUCTIBLE OR OFFICE VISIT COPAY."]
+		}, {
+			"individual_": null,
+			"comments": ["PRECERTIFICATION REQUIRED FOR RESIDENTIAL TREATMENT FACILITIES", "PRECERTIFICATION REQUIRED FOR PARTIAL HOSPITALIZATION", "PRECERTIFICATION REQUIRED FOR INTENSIVE OUTPATIENT CARE", "PRECERTIFICATION REQUIRED FOR BEHAVIORAL HEALTH ADMISSIONS"]
+		}, {
+			"_": null,
+			"comments": ["AN ELIGIBLE PROVIDER INCLUDES ANY HEALTHCARE PROVIDER WHEN LICENSED AND ACTING WITHIN THE SCOPE OF THAT LICENSE OR CERTIFICATON AT THE TIME AND PLACE YOU ARE TREATED OR RECEIVE SERVICES."]
+		}],
+		"plan_number": null,
+		"plan_name": "PREFERRED CARE",
+		"plan_type": "PR",
+		"plan_type_label": "Preferred Provider Organization (PPO)",
+		"group_name": null,
 		"dates": [{
 			"date_type": "plan_begin",
-			"date_value": "2010-01-01"
+			"date_value": "2014-01-01"
 		}, {
-			"date_type": "service",
-			"date_value": "2016-01-07"
-		}, {
-			"date_type": "eligibility_begin",
-			"date_value": "2010-01-01"
+			"date_type": "plan_end",
+			"date_value": "9999-12-31"
 		}],
 		"comments": [],
 		"exclusions": {
-			"noncovered": [],
+			"noncovered": [{
+				"type": "AL",
+				"type_label": "Optometry Vision",
+				"time_period": null,
+				"time_period_label": null,
+				"level": "INDIVIDUAL",
+				"network": "IN",
+				"pos": null,
+				"pos_label": null,
+				"authorization_required": null,
+				"contact_details": [],
+				"dates": [],
+				"comments": ["FACILITY AND PHYSICIAN BENEFIT"]
+			}],
 			"pre_existing_condition": {
 				"waiting_period": []
 			}
@@ -144,161 +138,7 @@
 			"deductible": {
 				"remainings": {
 					"in_network": [{
-						"amount": "3000",
-						"level": "FAMILY",
-						"insurance_type": null,
-						"insurance_type_label": null,
-						"pos": null,
-						"pos_label": null,
-						"authorization_required": null,
-						"description": null,
-						"quantity_code": null,
-						"quantity_label": null,
-						"quantity": null,
-						"contact_details": [],
-						"dates": [],
-						"comments": ["Med Dent"]
-					}, {
-						"amount": "1000",
-						"level": "INDIVIDUAL",
-						"insurance_type": null,
-						"insurance_type_label": null,
-						"pos": null,
-						"pos_label": null,
-						"authorization_required": null,
-						"description": null,
-						"quantity_code": null,
-						"quantity_label": null,
-						"quantity": null,
-						"contact_details": [],
-						"dates": [],
-						"comments": ["Med Dent"]
-					}],
-					"out_network": [{
-						"amount": "6750",
-						"level": "FAMILY",
-						"insurance_type": null,
-						"insurance_type_label": null,
-						"pos": null,
-						"pos_label": null,
-						"authorization_required": null,
-						"description": null,
-						"quantity_code": null,
-						"quantity_label": null,
-						"quantity": null,
-						"contact_details": [],
-						"dates": [],
-						"comments": ["Med Dent"]
-					}, {
-						"amount": "2250",
-						"level": "INDIVIDUAL",
-						"insurance_type": null,
-						"insurance_type_label": null,
-						"pos": null,
-						"pos_label": null,
-						"authorization_required": null,
-						"description": null,
-						"quantity_code": null,
-						"quantity_label": null,
-						"quantity": null,
-						"contact_details": [],
-						"dates": [],
-						"comments": ["Med Dent"]
-					}]
-				},
-				"spent": {
-					"in_network": [],
-					"out_network": []
-				},
-				"totals": {
-					"in_network": [{
-						"amount": "3000",
-						"time_period": "23",
-						"time_period_label": "calendar_year",
-						"level": "FAMILY",
-						"insurance_type": null,
-						"insurance_type_label": null,
-						"pos": null,
-						"pos_label": null,
-						"authorization_required": null,
-						"description": null,
-						"quantity_code": null,
-						"quantity_label": null,
-						"quantity": null,
-						"contact_details": [],
-						"dates": [{
-							"date_type": "plan_begin",
-							"date_value": "2016-01-01"
-						}],
-						"comments": ["Med Dent,MAXIMUM and STANDARD SAVINGS,Aexcel Designated Providers, Aexcel Non-Designated Providers and All Other In-Network Providers,DED INCLUDED IN OOP,Chiropractor Visit or Evaluation,Lab Performed by Chiropractor,Xray by Chiropractor", "Manipulation by Chiropractor,Occupational Therapy by Chiropractor,Physical Therapy by Chiropractor,Outpatient Medical Ancillary,Ambulatory Medical Ancillary,Medical Ancillary,Semi Private Room and Board,Intensive Care Room and Board,Emergency use of Emergency Room", "Outpatient Surgery Facility,Non Emergency use of Emergency Room,Emergency Room Physician,GYN Visit,Specialist Visit or Evaluation,Primary Care Visit or Evaluation,Xray and Lab by a Primary Care Physician,Xray and Lab by a Specialist,Outpatient Xray and Lab"]
-					}, {
-						"amount": "1000",
-						"time_period": "23",
-						"time_period_label": "calendar_year",
-						"level": "INDIVIDUAL",
-						"insurance_type": null,
-						"insurance_type_label": null,
-						"pos": null,
-						"pos_label": null,
-						"authorization_required": null,
-						"description": null,
-						"quantity_code": null,
-						"quantity_label": null,
-						"quantity": null,
-						"contact_details": [],
-						"dates": [{
-							"date_type": "plan_begin",
-							"date_value": "2016-01-01"
-						}],
-						"comments": ["Med Dent,MAXIMUM and STANDARD SAVINGS,Aexcel Designated Providers, Aexcel Non-Designated Providers and All Other In-Network Providers,DED INCLUDED IN OOP,Chiropractor Visit or Evaluation,Lab Performed by Chiropractor,Xray by Chiropractor", "Manipulation by Chiropractor,Occupational Therapy by Chiropractor,Physical Therapy by Chiropractor,Outpatient Medical Ancillary,Ambulatory Medical Ancillary,Medical Ancillary,Semi Private Room and Board,Intensive Care Room and Board,Emergency use of Emergency Room", "Outpatient Surgery Facility,Non Emergency use of Emergency Room,Emergency Room Physician,GYN Visit,Specialist Visit or Evaluation,Primary Care Visit or Evaluation,Xray and Lab by a Primary Care Physician,Xray and Lab by a Specialist,Outpatient Xray and Lab"]
-					}],
-					"out_network": [{
-						"amount": "6750",
-						"time_period": "23",
-						"time_period_label": "calendar_year",
-						"level": "FAMILY",
-						"insurance_type": null,
-						"insurance_type_label": null,
-						"pos": null,
-						"pos_label": null,
-						"authorization_required": null,
-						"description": null,
-						"quantity_code": null,
-						"quantity_label": null,
-						"quantity": null,
-						"contact_details": [],
-						"dates": [{
-							"date_type": "plan_begin",
-							"date_value": "2016-01-01"
-						}],
-						"comments": ["Med Dent,DED INCLUDED IN OOP,Chiropractor Visit or Evaluation,Lab Performed by Chiropractor,Xray by Chiropractor,Manipulation by Chiropractor,Occupational Therapy by Chiropractor,Physical Therapy by Chiropractor,Medical Ancillary,Semi Private Room and Board", "Intensive Care Room and Board,Emergency use of Emergency Room,Outpatient Surgery Facility,Non Emergency use of Emergency Room,Emergency Room Physician,GYN Visit,Specialist Visit or Evaluation,Primary Care Visit or Evaluation", "Xray and Lab by a Primary Care Physician,Xray and Lab by a Specialist,Outpatient Xray and Lab"]
-					}, {
-						"amount": "2250",
-						"time_period": "23",
-						"time_period_label": "calendar_year",
-						"level": "INDIVIDUAL",
-						"insurance_type": null,
-						"insurance_type_label": null,
-						"pos": null,
-						"pos_label": null,
-						"authorization_required": null,
-						"description": null,
-						"quantity_code": null,
-						"quantity_label": null,
-						"quantity": null,
-						"contact_details": [],
-						"dates": [{
-							"date_type": "plan_begin",
-							"date_value": "2016-01-01"
-						}],
-						"comments": ["Med Dent,DED INCLUDED IN OOP,Chiropractor Visit or Evaluation,Lab Performed by Chiropractor,Xray by Chiropractor,Manipulation by Chiropractor,Occupational Therapy by Chiropractor,Physical Therapy by Chiropractor,Medical Ancillary,Semi Private Room and Board", "Intensive Care Room and Board,Emergency use of Emergency Room,Outpatient Surgery Facility,Non Emergency use of Emergency Room,Emergency Room Physician,GYN Visit,Specialist Visit or Evaluation,Primary Care Visit or Evaluation", "Xray and Lab by a Primary Care Physician,Xray and Lab by a Specialist,Outpatient Xray and Lab"]
-					}]
-				}
-			},
-			"stop_loss": {
-				"remainings": {
-					"in_network": [{
-						"amount": "2500",
+						"amount": "531.08",
 						"level": "INDIVIDUAL",
 						"insurance_type": null,
 						"insurance_type_label": null,
@@ -313,8 +153,147 @@
 						"dates": [],
 						"comments": []
 					}, {
-						"amount": "6000",
+						"amount": "2531.08",
 						"level": "FAMILY",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": null,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [],
+						"comments": []
+					}],
+					"out_network": [{
+						"amount": "1531.08",
+						"level": "INDIVIDUAL",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": null,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [],
+						"comments": []
+					}, {
+						"amount": "5531.08",
+						"level": "FAMILY",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": null,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [],
+						"comments": []
+					}]
+				},
+				"spent": {
+					"in_network": [],
+					"out_network": []
+				},
+				"totals": {
+					"in_network": [{
+						"amount": "1000",
+						"time_period": "23",
+						"time_period_label": "calendar_year",
+						"level": "INDIVIDUAL",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": null,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [{
+							"date_type": "benefit_begin",
+							"date_value": "2016-01-01"
+						}],
+						"comments": ["AGGREGATE, 0 PEOPLE MUST MEET INDIVIDUAL BEFORE COMPUTING AGGREGATE", "COMPREHENSIVE"]
+					}, {
+						"amount": "3000",
+						"time_period": "23",
+						"time_period_label": "calendar_year",
+						"level": "FAMILY",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": null,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [{
+							"date_type": "benefit_begin",
+							"date_value": "2016-01-01"
+						}],
+						"comments": ["AGGREGATE, 0 PEOPLE MUST MEET INDIVIDUAL BEFORE COMPUTING AGGREGATE", "COMPREHENSIVE"]
+					}],
+					"out_network": [{
+						"amount": "2000",
+						"time_period": "23",
+						"time_period_label": "calendar_year",
+						"level": "INDIVIDUAL",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": null,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [{
+							"date_type": "benefit_begin",
+							"date_value": "2016-01-01"
+						}],
+						"comments": ["AGGREGATE, 0 PEOPLE MUST MEET INDIVIDUAL BEFORE COMPUTING AGGREGATE", "COMPREHENSIVE"]
+					}, {
+						"amount": "6000",
+						"time_period": "23",
+						"time_period_label": "calendar_year",
+						"level": "FAMILY",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": null,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [{
+							"date_type": "benefit_begin",
+							"date_value": "2016-01-01"
+						}],
+						"comments": ["AGGREGATE, 0 PEOPLE MUST MEET INDIVIDUAL BEFORE COMPUTING AGGREGATE", "COMPREHENSIVE"]
+					}]
+				}
+			},
+			"stop_loss": {
+				"remainings": {
+					"in_network": [{
+						"amount": "5352.53",
+						"level": "INDIVIDUAL",
 						"insurance_type": null,
 						"insurance_type_label": null,
 						"pos": null,
@@ -330,9 +309,24 @@
 						"copayment": true,
 						"coinsurance": true,
 						"deductible": true
+					}, {
+						"amount": "11352.53",
+						"level": "FAMILY",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": null,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [],
+						"comments": []
 					}],
 					"out_network": [{
-						"amount": "7250",
+						"amount": "11352.53",
 						"level": "INDIVIDUAL",
 						"insurance_type": null,
 						"insurance_type_label": null,
@@ -347,7 +341,7 @@
 						"dates": [],
 						"comments": []
 					}, {
-						"amount": "16750",
+						"amount": "23352.53",
 						"level": "FAMILY",
 						"insurance_type": null,
 						"insurance_type_label": null,
@@ -369,9 +363,9 @@
 				},
 				"totals": {
 					"in_network": [{
-						"amount": "2500",
-						"time_period": null,
-						"time_period_label": null,
+						"amount": "6000",
+						"time_period": "23",
+						"time_period_label": "calendar_year",
 						"level": "INDIVIDUAL",
 						"insurance_type": null,
 						"insurance_type_label": null,
@@ -384,11 +378,11 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["MAXIMUM and STANDARD SAVINGS,Aexcel Designated Providers, Aexcel Non-Designated Providers and All Other In-Network Providers"]
+						"comments": ["AGGREGATE, 0 PEOPLE MUST MEET INDIVIDUAL BEFORE COMPUTING AGGREGATE"]
 					}, {
-						"amount": "6000",
-						"time_period": null,
-						"time_period_label": null,
+						"amount": "12000",
+						"time_period": "23",
+						"time_period_label": "calendar_year",
 						"level": "FAMILY",
 						"insurance_type": null,
 						"insurance_type_label": null,
@@ -401,12 +395,12 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["MAXIMUM and STANDARD SAVINGS,Aexcel Designated Providers, Aexcel Non-Designated Providers and All Other In-Network Providers"]
+						"comments": ["AGGREGATE, 0 PEOPLE MUST MEET INDIVIDUAL BEFORE COMPUTING AGGREGATE"]
 					}],
 					"out_network": [{
-						"amount": "7250",
-						"time_period": null,
-						"time_period_label": null,
+						"amount": "12000",
+						"time_period": "23",
+						"time_period_label": "calendar_year",
 						"level": "INDIVIDUAL",
 						"insurance_type": null,
 						"insurance_type_label": null,
@@ -419,11 +413,11 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": []
+						"comments": ["AGGREGATE, 0 PEOPLE MUST MEET INDIVIDUAL BEFORE COMPUTING AGGREGATE"]
 					}, {
-						"amount": "16750",
-						"time_period": null,
-						"time_period_label": null,
+						"amount": "24000",
+						"time_period": "23",
+						"time_period_label": "calendar_year",
 						"level": "FAMILY",
 						"insurance_type": null,
 						"insurance_type_label": null,
@@ -436,7 +430,7 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": []
+						"comments": ["AGGREGATE, 0 PEOPLE MUST MEET INDIVIDUAL BEFORE COMPUTING AGGREGATE"]
 					}]
 				}
 			},
@@ -487,131 +481,11 @@
 				}
 			},
 			"limitations": {
-				"amounts": [{
-					"amount": "0",
-					"time_period": null,
-					"time_period_label": null,
-					"level": "FAMILY",
-					"network": "IN",
-					"insurance_type": null,
-					"insurance_type_label": null,
-					"pos": null,
-					"pos_label": null,
-					"authorization_required": null,
-					"description": null,
-					"quantity_code": null,
-					"quantity_label": null,
-					"quantity": null,
-					"contact_details": [],
-					"dates": [],
-					"comments": ["HEALTH FUND BEGIN AMT"]
-				}, {
-					"amount": "0",
-					"time_period": "29",
-					"time_period_label": "remaining",
-					"level": "FAMILY",
-					"network": "IN",
-					"insurance_type": null,
-					"insurance_type_label": null,
-					"pos": null,
-					"pos_label": null,
-					"authorization_required": null,
-					"description": null,
-					"quantity_code": null,
-					"quantity_label": null,
-					"quantity": null,
-					"contact_details": [],
-					"dates": [],
-					"comments": ["HEALTH FUND EXHAUSTED"]
-				}, {
-					"amount": null,
-					"time_period": null,
-					"time_period_label": null,
-					"level": "FAMILY",
-					"network": "IN",
-					"insurance_type": null,
-					"insurance_type_label": null,
-					"pos": null,
-					"pos_label": null,
-					"authorization_required": null,
-					"description": null,
-					"quantity_code": null,
-					"quantity_label": null,
-					"quantity": null,
-					"contact_details": [],
-					"dates": [],
-					"comments": ["Plan Requires PreCert"]
-				}, {
-					"amount": null,
-					"time_period": null,
-					"time_period_label": null,
-					"level": "FAMILY",
-					"network": "IN",
-					"insurance_type": null,
-					"insurance_type_label": null,
-					"pos": null,
-					"pos_label": null,
-					"authorization_required": null,
-					"description": null,
-					"quantity_code": null,
-					"quantity_label": null,
-					"quantity": null,
-					"contact_details": [],
-					"dates": [],
-					"comments": ["Self Funded"]
-				}, {
-					"amount": null,
-					"time_period": "32",
-					"time_period_label": "lifetime",
-					"level": "FAMILY",
-					"network": "IN",
-					"insurance_type": null,
-					"insurance_type_label": null,
-					"pos": null,
-					"pos_label": null,
-					"authorization_required": null,
-					"description": null,
-					"quantity_code": null,
-					"quantity_label": null,
-					"quantity": null,
-					"contact_details": [],
-					"dates": [],
-					"comments": ["Unlimited Lifetime Benefits"]
-				}]
+				"amounts": []
 			},
-			"disclaimer": [],
+			"disclaimer": ["UNLESS OTHERWISE REQUIRED BY STATE LAW, THIS NOTICE IS NOT A GUARANTEE OF PAYMENT. BENEFITS ARE SUBJECT TO ALL CONTRACT LIMITS AND THE MEMBER'S STATUS ON THE DATE OF SERVICE. ACCUMULATED AMOUNTS SUCH AS DEDUCTIBLE MAY CHANGE AS ADDITIONAL CLAIMS ARE PROCESSED."],
 			"other_sources": {
-				"amounts": [{
-					"amount": null,
-					"time_period": null,
-					"time_period_label": null,
-					"level": "INDIVIDUAL",
-					"network": "IN",
-					"insurance_type": null,
-					"insurance_type_label": null,
-					"pos": null,
-					"pos_label": null,
-					"authorization_required": null,
-					"description": null,
-					"contact_details": [{
-						"entity_code": "PR",
-						"entity_code_label": "Payer",
-						"last_name": "FRANKLIN",
-						"first_name": null,
-						"identification_type": null,
-						"identification_code": null,
-						"contacts": [],
-						"address": {
-							"street_line_1": "1842 Union Street",
-							"street_line_2": null,
-							"city": "El Paso",
-							"state": "TX",
-							"zip": "79998"
-						}
-					}],
-					"dates": [],
-					"comments": []
-				}]
+				"amounts": []
 			}
 		},
 		"benefit_details": {
@@ -630,11 +504,11 @@
 			"insurance_type_label": null,
 			"coverage_description": null,
 			"reference": [],
-			"payer_type": "SEP",
-			"payer_type_label": "Secondary Payer",
+			"payer_type": "PRP",
+			"payer_type_label": "Primary Payer",
 			"contact_details": [{
-				"entity_code": "SEP",
-				"entity_code_label": "Secondary Payer",
+				"entity_code": "PRP",
+				"entity_code_label": "Primary Payer",
 				"last_name": "FRANKLIN",
 				"first_name": null,
 				"identification_type": "Member Identification Number",
@@ -648,10 +522,7 @@
 					"zip": null
 				}
 			}],
-			"dates": [{
-				"date_type": "coordination_of_benefits",
-				"date_value": "2015-03-01"
-			}],
+			"dates": [],
 			"comments": [],
 			"service_type_codes": []
 		}]
@@ -668,21 +539,7 @@
 		"noncovered": [],
 		"benefit_details": {
 			"benefit_description": {
-				"amounts": [{
-					"amount": null,
-					"time_period": null,
-					"time_period_label": null,
-					"level": "FAMILY",
-					"network": "IN",
-					"insurance_type": null,
-					"insurance_type_label": null,
-					"pos": null,
-					"pos_label": null,
-					"authorization_required": null,
-					"contact_details": [],
-					"dates": [],
-					"comments": ["HEALTH FUND"]
-				}]
+				"amounts": []
 			},
 			"managed_care": {
 				"amounts": []
@@ -767,25 +624,7 @@
 				}
 			},
 			"limitations": {
-				"amounts": [{
-					"amount": null,
-					"time_period": null,
-					"time_period_label": null,
-					"level": "FAMILY",
-					"network": "IN",
-					"insurance_type": null,
-					"insurance_type_label": null,
-					"pos": null,
-					"pos_label": null,
-					"authorization_required": null,
-					"description": null,
-					"quantity_code": null,
-					"quantity_label": null,
-					"quantity": null,
-					"contact_details": [],
-					"dates": [],
-					"comments": ["Plan includes NAP"]
-				}]
+				"amounts": []
 			},
 			"disclaimer": [],
 			"other_sources": {
@@ -894,10 +733,12 @@
 		"coverage_status_label": "Generic inquiry provided no information for this service type. Retry by including service_type=DM for an explicit inquiry for this service type."
 	}],
 	"cost_estimates": [{
+		"provider_price": 1500.5,
+		"cost_estimate": 531.08,
 		"cost_estimate_equation": {
 			"deductible": [{
-				"amount": "3000",
-				"level": "FAMILY",
+				"amount": "531.08",
+				"level": "INDIVIDUAL",
 				"insurance_type": null,
 				"insurance_type_label": null,
 				"pos": null,
@@ -909,13 +750,13 @@
 				"quantity": null,
 				"contact_details": [],
 				"dates": [],
-				"comments": ["Med Dent"]
+				"comments": []
 			}],
 			"coinsurance": [],
 			"copayment": [],
 			"stop_loss": [{
-				"amount": "6000",
-				"level": "FAMILY",
+				"amount": "5352.53",
+				"level": "INDIVIDUAL",
 				"insurance_type": null,
 				"insurance_type_label": null,
 				"pos": null,
@@ -931,11 +772,17 @@
 				"copayment": true,
 				"coinsurance": true,
 				"deductible": true
-			}]
+			}],
+			"applied_amounts": {
+				"deductible": {
+					"amount": 531.08,
+					"limited_by_stop_loss": true
+				}
+			}
 		},
 		"cost_estimate_alternatives": {
 			"deductible": [{
-				"amount": "3000",
+				"amount": "2531.08",
 				"level": "FAMILY",
 				"insurance_type": null,
 				"insurance_type_label": null,
@@ -948,13 +795,43 @@
 				"quantity": null,
 				"contact_details": [],
 				"dates": [],
-				"comments": ["Med Dent"]
+				"comments": []
+			}, {
+				"amount": "531.08",
+				"level": "INDIVIDUAL",
+				"insurance_type": null,
+				"insurance_type_label": null,
+				"pos": null,
+				"pos_label": null,
+				"authorization_required": null,
+				"description": null,
+				"quantity_code": null,
+				"quantity_label": null,
+				"quantity": null,
+				"contact_details": [],
+				"dates": [],
+				"comments": []
 			}],
 			"coinsurance": [],
 			"copayment": [],
 			"stop_loss": [{
-				"amount": "6000",
+				"amount": "11352.53",
 				"level": "FAMILY",
+				"insurance_type": null,
+				"insurance_type_label": null,
+				"pos": null,
+				"pos_label": null,
+				"authorization_required": null,
+				"description": null,
+				"quantity_code": null,
+				"quantity_label": null,
+				"quantity": null,
+				"contact_details": [],
+				"dates": [],
+				"comments": []
+			}, {
+				"amount": "5352.53",
+				"level": "INDIVIDUAL",
 				"insurance_type": null,
 				"insurance_type_label": null,
 				"pos": null,
@@ -972,8 +849,13 @@
 				"deductible": true
 			}]
 		},
-		"provider_price": 1500.5,
-		"cost_estimate": 1500.5
+		"network": "IN"
+	}],
+	"warnings": [{
+		"code": "additional_policy",
+		"message": "additional policy found",
+		"param": null,
+		"expected_value": null
 	}],
 	"success": true
 }

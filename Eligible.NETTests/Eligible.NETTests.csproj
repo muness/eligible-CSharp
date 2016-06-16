@@ -117,6 +117,7 @@
     <None Include="ExpectedResponse\ClaimPaymentReport.json" />
     <None Include="ExpectedResponse\ClaimSuccess.json" />
     <None Include="ExpectedResponse\CostEstimates.json" />
+    <None Include="ExpectedResponse\CoverageDependent.json" />
     <None Include="ExpectedResponse\CustomerSuccess.json" />
     <None Include="ExpectedResponse\EnrollmentById.json" />
     <None Include="ExpectedResponse\EnrollmentSuccess.json" />
