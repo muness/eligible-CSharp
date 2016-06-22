@@ -24,4 +24,10 @@ namespace EligibleService.Exceptions
         [JsonProperty("expected_value")]
         public string ExpectedValue { get; set; }
     }
+
+    public class CostEstimateError : EligibleGenericError
+    {
+        [JsonProperty("warnings")]
+        public Collection<Exceptions.GenericError> Warnings { get; set; }
+    }
 }

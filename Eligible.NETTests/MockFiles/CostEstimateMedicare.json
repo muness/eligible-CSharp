@@ -1,6 +1,6 @@
-{
-	"created_at": "2016-06-22T04:28:44Z",
-	"eligible_id": "33F8BSE2EDG44",
+﻿{
+	"created_at": "2016-06-21T19:26:31Z",
+	"eligible_id": "UY7F8OFDIKL0K",
 	"known_issues": [],
 	"date_of_death": null,
 	"last_name": "FRANKLIN",
@@ -123,20 +123,111 @@
 		}]
 	}],
 	"requested_procedure_codes": [],
-  "history": {
-    "plan_details": {
-      "MA": [ ],
-      "MB": [ ],
-      "MC": [ ],
-      "MD": [ ],
-      "PR": [ ]
-    },
-    "requested_service_types": [ ]
-  },
-  "search_options": {
-    "used": false,
-    "parameters": null,
-    "combinations": 0
-  },
-  "success": true
+	"history": {
+		"plan_details": {
+			"MA": [],
+			"MB": [],
+			"MC": [],
+			"MD": [],
+			"PR": []
+		},
+		"requested_service_types": []
+	},
+	"cost_estimates": [{
+		"provider_price": 6800.0,
+		"cost_estimate": 0.0,
+		"cost_estimate_equation": {
+			"deductible": [{
+				"type": "67",
+				"type_label": "Smoking Cessation",
+				"plan_type": "MB",
+				"active": true,
+				"start_date": "1995-02-01",
+				"end_date": null,
+				"deductible": 0.0,
+				"deductible_remaining": null,
+				"coinsurance_percent": 0,
+				"copayment": null,
+				"info_valid_till": "2016-12-31",
+				"visits": [{
+					"base": 8,
+					"remaining": 8,
+					"next_eligible_date": null
+				}]
+			}],
+			"coinsurance": [{
+				"type": "67",
+				"type_label": "Smoking Cessation",
+				"plan_type": "MB",
+				"active": true,
+				"start_date": "1995-02-01",
+				"end_date": null,
+				"deductible": 0.0,
+				"deductible_remaining": null,
+				"coinsurance_percent": 0,
+				"copayment": null,
+				"info_valid_till": "2016-12-31",
+				"visits": [{
+					"base": 8,
+					"remaining": 8,
+					"next_eligible_date": null
+				}]
+			}],
+			"copayment": [],
+			"stop_loss": [],
+			"applied_amounts": {
+				"deductible": {
+					"amount": 0.0,
+					"limited_by_stop_loss": false
+				},
+				"coinsurance": {
+					"percent": 0.0,
+					"applied_to": 6800.0,
+					"amount": 0.0,
+					"limited_by_stop_loss": false
+				}
+			}
+		},
+		"cost_estimate_alternatives": {
+			"deductible": [{
+				"type": "67",
+				"type_label": "Smoking Cessation",
+				"plan_type": "MB",
+				"active": true,
+				"start_date": "1995-02-01",
+				"end_date": null,
+				"deductible": 0.0,
+				"deductible_remaining": null,
+				"coinsurance_percent": 0,
+				"copayment": null,
+				"info_valid_till": "2016-12-31",
+				"visits": [{
+					"base": 8,
+					"remaining": 8,
+					"next_eligible_date": null
+				}]
+			}],
+			"coinsurance": [{
+				"type": "67",
+				"type_label": "Smoking Cessation",
+				"plan_type": "MB",
+				"active": true,
+				"start_date": "1995-02-01",
+				"end_date": null,
+				"deductible": 0.0,
+				"deductible_remaining": null,
+				"coinsurance_percent": 0,
+				"copayment": null,
+				"info_valid_till": "2016-12-31",
+				"visits": [{
+					"base": 8,
+					"remaining": 8,
+					"next_eligible_date": null
+				}]
+			}],
+			"copayment": [],
+			"stop_loss": []
+		}
+	}],
+	"success": true
 }

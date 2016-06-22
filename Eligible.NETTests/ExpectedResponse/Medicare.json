@@ -1,16 +1,16 @@
 ﻿{
-	"created_at": "2016-06-16T20:00:25Z",
-	"eligible_id": "8LESMSGECN3Z3E",
+	"created_at": "2016-06-22T04:28:44Z",
+	"eligible_id": "33F8BSE2EDG44",
 	"known_issues": [],
 	"date_of_death": null,
 	"last_name": "FRANKLIN",
 	"first_name": "BENJAMIN",
 	"middle_name": "J",
 	"member_id": "1234567890",
-	"group_id": "123123123",
+	"group_id": null,
 	"group_name": null,
 	"dob": "1967-09-09",
-	"gender": "F",
+	"gender": "M",
 	"address": {
 		"street_line_1": "1842 Union Street",
 		"street_line_2": null,
@@ -18,16 +18,16 @@
 		"state": "TX",
 		"zip": "94123"
 	},
-	"payer_name": "BLUECROSS BLUESHIELD TX",
+	"payer_name": "CMS",
 	"payer_id": "ELIG_SNDBX",
 	"plan_number": "",
 	"eligibilty_dates": {
-		"start": "2014-01-01",
-		"end": "9999-12-31"
+		"start": "2016-04-27",
+		"end": null
 	},
 	"eligibility_dates": {
-		"start": "2014-01-01",
-		"end": "9999-12-31"
+		"start": "2016-04-27",
+		"end": null
 	},
 	"inactivity_dates": {
 		"start": null,
@@ -42,22 +42,22 @@
 	},
 	"plan_details": {
 		"MA": {
-			"active": false,
-			"start_date": null,
+			"active": true,
+			"start_date": "1995-02-01",
 			"end_date": null,
-			"deductible": null,
-			"deductible_remaining": null,
+			"deductible": 1288.0,
+			"deductible_remaining": 1288.0,
 			"coinsurance_percent": null,
 			"copayment": null,
 			"info_valid_till": "2016-12-31"
 		},
 		"MB": {
-			"active": false,
-			"start_date": null,
+			"active": true,
+			"start_date": "1995-02-01",
 			"end_date": null,
-			"deductible": null,
-			"deductible_remaining": null,
-			"coinsurance_percent": null,
+			"deductible": 166.0,
+			"deductible_remaining": 0.0,
+			"coinsurance_percent": 20,
 			"copayment": null,
 			"info_valid_till": "2016-12-31"
 		},
@@ -82,23 +82,46 @@
 			}
 		},
 		"MD": {
-			"active": false,
-			"payer_name": null,
-			"policy_number": null,
-			"effective_date": null,
+			"active": true,
+			"payer_name": "FRANKLIN",
+			"policy_number": "123123123",
+			"effective_date": "2006-01-01",
 			"termination_date": null,
-			"contacts": null,
+			"contacts": [{
+				"contact_type": "telephone",
+				"contact_value": "8778423210"
+			}, {
+				"contact_type": "url",
+				"contact_value": "www.AARPMedicareRx.com"
+			}],
 			"address": {
-				"street_line_1": null,
+				"street_line_1": "1842 Union Street",
 				"street_line_2": null,
-				"city": null,
-				"state": null,
-				"zip": null
+				"city": "San Francisco",
+				"state": "CT",
+				"zip": "94123"
 			}
 		},
 		"PR": []
 	},
-	"requested_service_types": [],
+	"requested_service_types": [{
+		"type": "67",
+		"type_label": "Smoking Cessation",
+		"plan_type": "MB",
+		"active": true,
+		"start_date": "1995-02-01",
+		"end_date": null,
+		"deductible": 0.0,
+		"deductible_remaining": null,
+		"coinsurance_percent": 0,
+		"copayment": null,
+		"info_valid_till": "2016-12-31",
+		"visits": [{
+			"base": 8,
+			"remaining": 8,
+			"next_eligible_date": null
+		}]
+	}],
 	"requested_procedure_codes": [],
 	"history": {
 		"plan_details": {
