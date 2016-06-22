@@ -46,7 +46,7 @@ Eligible.NET library is available on NuGet.
 		* [Retrieve All Customers](#retrieve-all-customers)
 		* [Retrieve All Customers with Page Number](#retrieve-all-customers-with-page-number)
 * [Cost Estimates](#cost-estimates)
-* [Cost Estimates](#cost-estimates-medicare)
+* [Cost Estimates Medicare](#cost-estimates-medicare)
 * [Payment Status](#payment-status)
 * [Enrollments](#enrollments)
 	* [Create Enrollment](#create-enrollment)
@@ -594,12 +594,13 @@ param.Add("member_id", "cost_medicare_001");
 param.Add("member_first_name", "IDA");
 param.Add("member_last_name", "FRANKLIN");
 param.Add("member_dob", "1701-12-12");
+param.Add("service_type", "67");
 
-CostEstimateMedicareResponse costEstimatesResponse = costEstimates.Medicare(param); 
+CostEstimateMedicareResponse costEstimatesResponse = costEstimates.Medicare(param);
 ```
 Cost Estimates Medicare with RequestOptions
 ```cs
-var costEstimatesResponse = costEstimates.Medicare(param, requestOptionsObj); 
+var costEstimatesResponse = costEstimates.Medicare(param, requestOptionsObj);
 ```
 Json Response
 ```cs

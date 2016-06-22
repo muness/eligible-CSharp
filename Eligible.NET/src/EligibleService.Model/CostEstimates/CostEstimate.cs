@@ -18,6 +18,5 @@ namespace EligibleService.Model.CostEstimates
 
         [JsonProperty("network")]
         public string Network { get; set; }
-
     }
 }
