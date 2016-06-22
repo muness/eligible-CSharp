@@ -35,6 +35,70 @@ namespace EligibleService.Core.CoreTests
 
         [TestMethod]
         [TestCategory("CostEstimate")]
+        public void CostEstimatesDependentTest()
+        {
+            Hashtable costestimateParamas = CostEstimatesParams();
+            costestimateParamas["member_id"] = "cost_estimates_002";
+            costestimateParamas["service_type"] = "48";
+            CostEstimatesResponse actualResponse = costEstimates.Get(costestimateParamas);
+
+            string expectedResponse = TestHelper.GetJson(TestResource.ExpectedResponse + "CostEstimateDependent.json");
+            TestHelper.CompareProperties(expectedResponse, actualResponse.JsonResponse());
+
+            CostEstimatesResponse expectedObj = JsonConvert.DeserializeObject<CostEstimatesResponse>(expectedResponse);
+            CostEstimatesResponse actualObj = JsonConvert.DeserializeObject<CostEstimatesResponse>(actualResponse.JsonResponse());
+            TestHelper.PropertyValuesAreEquals(actualObj, expectedObj);
+        }
+
+        [TestMethod]
+        [TestCategory("CostEstimate")]
+        public void CostEstimatesMultipleSTCTest()
+        {
+            Hashtable costestimateParamas = CostEstimatesParams();
+            costestimateParamas["member_id"] = "cost_estimates_004";
+            costestimateParamas["service_type"] = "4,5,98";
+            CostEstimatesResponse actualResponse = costEstimates.Get(costestimateParamas);
+
+            string expectedResponse = TestHelper.GetJson(TestResource.ExpectedResponse + "CostEstimatesMultipleSTC.json");
+            TestHelper.CompareProperties(expectedResponse, actualResponse.JsonResponse());
+
+            CostEstimatesResponse expectedObj = JsonConvert.DeserializeObject<CostEstimatesResponse>(expectedResponse);
+            CostEstimatesResponse actualObj = JsonConvert.DeserializeObject<CostEstimatesResponse>(actualResponse.JsonResponse());
+            TestHelper.PropertyValuesAreEquals(actualObj, expectedObj);
+        }
+
+        [TestMethod]
+        [TestCategory("CostEstimate")]
+        public void CostEstimatesMultipleCoinsuranceTest()
+        {
+            Hashtable costestimateParamas = CostEstimatesParams();
+            costestimateParamas["member_id"] = "cost_estimates_005";
+            costestimateParamas["service_type"] = "48,98";
+            CostEstimatesResponse actualResponse = costEstimates.Get(costestimateParamas);
+
+            string expectedResponse = TestHelper.GetJson(TestResource.ExpectedResponse + "CostEstimatesMultipleCoinsurance.json");
+            TestHelper.CompareProperties(expectedResponse, actualResponse.JsonResponse());
+
+            CostEstimatesResponse expectedObj = JsonConvert.DeserializeObject<CostEstimatesResponse>(expectedResponse);
+            CostEstimatesResponse actualObj = JsonConvert.DeserializeObject<CostEstimatesResponse>(actualResponse.JsonResponse());
+            TestHelper.PropertyValuesAreEquals(actualObj, expectedObj);
+        }
+
+        [TestMethod]
+        [TestCategory("CostEstimate")]
+        public void CostEstimatesAuthorizationRequiredWarningTest()
+        {
+            Hashtable costestimateParamas = CostEstimatesParams();
+            costestimateParamas["member_id"] = "cost_estimates_007";
+            costestimateParamas["service_type"] = "51";
+            CostEstimatesResponse actualResponse = costEstimates.Get(costestimateParamas);
+
+            Assert.AreEqual("authorization_required", actualResponse.Warnings[0].Code);
+            Assert.AreEqual("authorization required", actualResponse.Warnings[0].Message);
+        }
+
+        [TestMethod]
+        [TestCategory("CostEstimate")]
         [ExpectedException(typeof(EligibleService.Exceptions.EligibleException))]
         public void CostEstimatesEligibleExceptionTest()
         {
@@ -68,7 +132,7 @@ namespace EligibleService.Core.CoreTests
             param.Add("member_first_name", "IDA");
             param.Add("member_last_name", "FRANKLIN");
             param.Add("member_dob", "1701-12-12");
-            param.Add("service_type", "1");
+            param.Add("service_type", "98");
 
             return param;
         }

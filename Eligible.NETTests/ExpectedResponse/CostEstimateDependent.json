@@ -1,0 +1,908 @@
+﻿{
+	"created_at": "2016-06-22T13:09:17Z",
+	"eligible_id": "8LIJO9WS55EZFY",
+	"known_issues": [],
+	"demographics": {
+		"subscriber": {
+			"last_name": "FRANKLIN",
+			"first_name": "BENJAMIN",
+			"middle_name": null,
+			"member_id": "1234567890",
+			"group_id": "123123123",
+			"group_name": "FIDELITY NATIONAL FINANCIAL  INC.",
+			"dob": "1967-09-09",
+			"gender": "F",
+			"address": {
+				"street_line_1": "1842 Union Street",
+				"street_line_2": null,
+				"city": "San Francisco",
+				"state": "FL",
+				"zip": "94123"
+			}
+		},
+		"dependent": {}
+	},
+	"insurance": {
+		"name": "Sandbox",
+		"id": "ELIG_SNDBX",
+		"payer_type": "PR",
+		"payer_type_label": "Payer",
+		"contacts": [],
+		"service_providers": {
+			"physicians": [{
+				"eligibility_code": "L",
+				"eligibility_code_label": "Primary Care Provider",
+				"insurance_type": "PS",
+				"insurance_type_label": "Point of Service (POS)",
+				"primary_care": true,
+				"restricted": false,
+				"contact_details": [],
+				"dates": [],
+				"comments": ["PCP SELECTION NOT REQUIRED"]
+			}, {
+				"eligibility_code": "W",
+				"eligibility_code_label": "Other Source of Data",
+				"insurance_type": null,
+				"insurance_type_label": null,
+				"primary_care": false,
+				"restricted": false,
+				"contact_details": [{
+					"entity_code": "PR",
+					"entity_code_label": "Payer",
+					"last_name": "FRANKLIN",
+					"first_name": null,
+					"identification_type": null,
+					"identification_code": null,
+					"contacts": [],
+					"address": {
+						"street_line_1": "1842 Union Street",
+						"street_line_2": null,
+						"city": "San Francisco",
+						"state": "KY",
+						"zip": "94123"
+					}
+				}],
+				"dates": [],
+				"comments": []
+			}]
+		}
+	},
+	"plan": {
+		"type": "30",
+		"coverage_status": "1",
+		"coverage_status_label": "Active Coverage",
+		"coverage_basis": [],
+		"plan_number": "123123123",
+		"plan_name": "HSA Aetna Choice POS II",
+		"plan_type": "PS",
+		"plan_type_label": "Point of Service (POS)",
+		"group_name": "FIDELITY NATIONAL FINANCIAL  INC.",
+		"dates": [{
+			"date_type": "plan_begin",
+			"date_value": "2016-01-01"
+		}, {
+			"date_type": "service",
+			"date_value": "2016-02-27"
+		}, {
+			"date_type": "eligibility_begin",
+			"date_value": "2010-01-01"
+		}],
+		"comments": [],
+		"exclusions": {
+			"noncovered": [],
+			"pre_existing_condition": {
+				"waiting_period": []
+			}
+		},
+		"financials": {
+			"deductible": {
+				"remainings": {
+					"in_network": [{
+						"amount": "4999.99",
+						"level": "FAMILY",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": null,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [],
+						"comments": ["Med Dent"]
+					}],
+					"out_network": [{
+						"amount": "11199.99",
+						"level": "FAMILY",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": null,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [],
+						"comments": ["Med Dent"]
+					}]
+				},
+				"spent": {
+					"in_network": [],
+					"out_network": []
+				},
+				"totals": {
+					"in_network": [{
+						"amount": "5000",
+						"time_period": "23",
+						"time_period_label": "calendar_year",
+						"level": "FAMILY",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": null,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [],
+						"comments": ["Med Dent,In-Network Providers,DED INCLUDED IN OOP,Chiropractor Visit or Evaluation,Lab Performed by Chiropractor,Xray by Chiropractor,Manipulation by Chiropractor,Occupational Therapy by Chiropractor,Physical Therapy by Chiropractor,Emergency use of Emergency Room", "Outpatient Medical Ancillary,Ambulatory Medical Ancillary,Medical Ancillary,Semi Private Room and Board,Intensive Care Room and Board,Outpatient Surgery Facility,Non Emergency use of Emergency Room,Emergency Room Physician,Urgent Care", "Non Urgent Services at an Urgent Care Facility,GYN Visit,Specialist Visit or Evaluation,Primary Care Visit or Evaluation"]
+					}],
+					"out_network": [{
+						"amount": "11200",
+						"time_period": "23",
+						"time_period_label": "calendar_year",
+						"level": "FAMILY",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": null,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [],
+						"comments": ["Med Dent,DED INCLUDED IN OOP,Chiropractor Visit or Evaluation,Lab Performed by Chiropractor,Xray by Chiropractor,Manipulation by Chiropractor,Occupational Therapy by Chiropractor,Physical Therapy by Chiropractor,Chiropractor Visit or Evaluation in Office", "Lab Performed by Chiropractor in Office,Xray by Chiropractor in Office,Manipulation by Chiropractor in Office,Occupational Therapy by Chiropractor in Office,Physical Therapy by Chiropractor in Office,Emergency use of Emergency Room,Outpatient Medical Ancillary", "Ambulatory Medical Ancillary,Medical Ancillary,Semi Private Room and Board,Intensive Care Room and Board,Inpatient Medical Ancillary,Non Emergency use of Emergency Room,Emergency Room Physician,Urgent Care,Non Urgent Services at an Urgent Care Facility,GYN Visit", "Specialist Visit or Evaluation,Primary Care Visit or Evaluation,GYN Visit when Performed in an Office,Specialist Visit or Evaluation when Performed in an Office,Primary Care Visit or Evaluation in Office"]
+					}]
+				}
+			},
+			"stop_loss": {
+				"remainings": {
+					"in_network": [{
+						"amount": "6850",
+						"level": "INDIVIDUAL",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": null,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [],
+						"comments": [],
+						"copayment": true,
+						"coinsurance": true,
+						"deductible": true
+					}, {
+						"amount": "9999.99",
+						"level": "FAMILY",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": null,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [],
+						"comments": []
+					}],
+					"out_network": [{
+						"amount": "21999.99",
+						"level": "FAMILY",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": null,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [],
+						"comments": []
+					}]
+				},
+				"spent": {
+					"in_network": [],
+					"out_network": []
+				},
+				"totals": {
+					"in_network": [{
+						"amount": "6850",
+						"time_period": null,
+						"time_period_label": null,
+						"level": "INDIVIDUAL",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": null,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [],
+						"comments": ["In-Network Providers"]
+					}, {
+						"amount": "10000",
+						"time_period": null,
+						"time_period_label": null,
+						"level": "FAMILY",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": null,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [],
+						"comments": ["In-Network Providers"]
+					}],
+					"out_network": [{
+						"amount": "22000",
+						"time_period": null,
+						"time_period_label": null,
+						"level": "FAMILY",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": null,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [],
+						"comments": []
+					}]
+				}
+			},
+			"coinsurance": {
+				"percents": {
+					"in_network": [],
+					"out_network": []
+				}
+			},
+			"copayment": {
+				"amounts": {
+					"in_network": [],
+					"out_network": []
+				}
+			},
+			"cost_containment": {
+				"remainings": {
+					"in_network": [],
+					"out_network": []
+				},
+				"spent": {
+					"in_network": [],
+					"out_network": []
+				},
+				"totals": {
+					"in_network": [],
+					"out_network": []
+				}
+			},
+			"spend_down": {
+				"remainings": {
+					"in_network": [],
+					"out_network": []
+				},
+				"spent": {
+					"in_network": [],
+					"out_network": []
+				},
+				"totals": {
+					"in_network": [],
+					"out_network": []
+				}
+			},
+			"reserve": {
+				"remainings": {
+					"in_network": [],
+					"out_network": []
+				}
+			},
+			"limitations": {
+				"amounts": [{
+					"amount": null,
+					"time_period": null,
+					"time_period_label": null,
+					"level": "Employee and Children",
+					"network": "IN",
+					"insurance_type": null,
+					"insurance_type_label": null,
+					"pos": null,
+					"pos_label": null,
+					"authorization_required": null,
+					"description": null,
+					"quantity_code": null,
+					"quantity_label": null,
+					"quantity": null,
+					"contact_details": [],
+					"dates": [],
+					"comments": ["Plan Requires PreCert"]
+				}, {
+					"amount": null,
+					"time_period": null,
+					"time_period_label": null,
+					"level": "Employee and Children",
+					"network": "IN",
+					"insurance_type": null,
+					"insurance_type_label": null,
+					"pos": null,
+					"pos_label": null,
+					"authorization_required": null,
+					"description": null,
+					"quantity_code": null,
+					"quantity_label": null,
+					"quantity": null,
+					"contact_details": [],
+					"dates": [],
+					"comments": ["NET ID 4401", "Self Funded"]
+				}, {
+					"amount": null,
+					"time_period": "32",
+					"time_period_label": "lifetime",
+					"level": "Employee and Children",
+					"network": "IN",
+					"insurance_type": null,
+					"insurance_type_label": null,
+					"pos": null,
+					"pos_label": null,
+					"authorization_required": null,
+					"description": null,
+					"quantity_code": null,
+					"quantity_label": null,
+					"quantity": null,
+					"contact_details": [],
+					"dates": [],
+					"comments": ["Unlimited Lifetime Benefits"]
+				}]
+			},
+			"disclaimer": [],
+			"other_sources": {
+				"amounts": [{
+					"amount": null,
+					"time_period": null,
+					"time_period_label": null,
+					"level": "INDIVIDUAL",
+					"network": "IN",
+					"insurance_type": null,
+					"insurance_type_label": null,
+					"pos": null,
+					"pos_label": null,
+					"authorization_required": null,
+					"description": null,
+					"contact_details": [{
+						"entity_code": "PR",
+						"entity_code_label": "Payer",
+						"last_name": "FRANKLIN",
+						"first_name": null,
+						"identification_type": null,
+						"identification_code": null,
+						"contacts": [],
+						"address": {
+							"street_line_1": "1842 Union Street",
+							"street_line_2": null,
+							"city": "San Francisco",
+							"state": "KY",
+							"zip": "94123"
+						}
+					}],
+					"dates": [],
+					"comments": []
+				}]
+			}
+		},
+		"benefit_details": {
+			"benefit_description": {
+				"amounts": []
+			},
+			"managed_care": {
+				"amounts": []
+			},
+			"unlimited": {
+				"amounts": []
+			}
+		},
+		"additional_insurance_policies": []
+	},
+	"services": [{
+		"type": "48",
+		"type_label": "Hospital - Inpatient",
+		"coverage_status": "1",
+		"coverage_status_label": "Active Coverage",
+		"coverage_basis": [],
+		"facility": {
+			"amounts": []
+		},
+		"noncovered": [],
+		"benefit_details": {
+			"benefit_description": {
+				"amounts": []
+			},
+			"managed_care": {
+				"amounts": []
+			},
+			"unlimited": {
+				"amounts": []
+			}
+		},
+		"financials": {
+			"deductible": {
+				"remainings": {
+					"in_network": [],
+					"out_network": []
+				},
+				"spent": {
+					"in_network": [],
+					"out_network": []
+				},
+				"totals": {
+					"in_network": [],
+					"out_network": []
+				}
+			},
+			"stop_loss": {
+				"remainings": {
+					"in_network": [],
+					"out_network": []
+				},
+				"spent": {
+					"in_network": [],
+					"out_network": []
+				},
+				"totals": {
+					"in_network": [],
+					"out_network": []
+				}
+			},
+			"coinsurance": {
+				"percents": {
+					"in_network": [{
+						"percent": "20",
+						"time_period": null,
+						"time_period_label": null,
+						"level": "Employee and Children",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": true,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [],
+						"comments": ["In-Network Providers", "Medical Ancillary,COINS APPLIES TO OUT OF POCKET", "Semi Private Room and Board,COINS APPLIES TO OUT OF POCKET", "Intensive Care Room and Board,COINS APPLIES TO OUT OF POCKET"]
+					}],
+					"out_network": [{
+						"percent": "50",
+						"time_period": null,
+						"time_period_label": null,
+						"level": "Employee and Children",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": true,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [],
+						"comments": ["Medical Ancillary,COINS APPLIES TO OUT OF POCKET", "Semi Private Room and Board,COINS APPLIES TO OUT OF POCKET", "Intensive Care Room and Board,COINS APPLIES TO OUT OF POCKET", "Inpatient Medical Ancillary,COINS APPLIES TO OUT OF POCKET"]
+					}]
+				}
+			},
+			"copayment": {
+				"amounts": {
+					"in_network": [{
+						"amount": "0",
+						"time_period": null,
+						"time_period_label": null,
+						"level": "Employee and Children",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": true,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [],
+						"comments": ["Medical Ancillary"]
+					}, {
+						"amount": "0",
+						"time_period": null,
+						"time_period_label": null,
+						"level": "Employee and Children",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": true,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [],
+						"comments": ["Semi Private Room and Board", "Intensive Care Room and Board"]
+					}],
+					"out_network": [{
+						"amount": "0",
+						"time_period": null,
+						"time_period_label": null,
+						"level": "Employee and Children",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": true,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [],
+						"comments": ["Medical Ancillary"]
+					}, {
+						"amount": "0",
+						"time_period": null,
+						"time_period_label": null,
+						"level": "Employee and Children",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": true,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [],
+						"comments": ["Semi Private Room and Board", "Intensive Care Room and Board"]
+					}, {
+						"amount": "0",
+						"time_period": null,
+						"time_period_label": null,
+						"level": "Employee and Children",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": true,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [],
+						"comments": ["Inpatient Medical Ancillary"]
+					}]
+				}
+			},
+			"cost_containment": {
+				"remainings": {
+					"in_network": [],
+					"out_network": []
+				},
+				"spent": {
+					"in_network": [],
+					"out_network": []
+				},
+				"totals": {
+					"in_network": [],
+					"out_network": []
+				}
+			},
+			"spend_down": {
+				"remainings": {
+					"in_network": [],
+					"out_network": []
+				},
+				"spent": {
+					"in_network": [],
+					"out_network": []
+				},
+				"totals": {
+					"in_network": [],
+					"out_network": []
+				}
+			},
+			"reserve": {
+				"remainings": {
+					"in_network": [],
+					"out_network": []
+				}
+			},
+			"limitations": {
+				"amounts": [{
+					"amount": null,
+					"time_period": null,
+					"time_period_label": null,
+					"level": "Employee and Children",
+					"network": "IN",
+					"insurance_type": null,
+					"insurance_type_label": null,
+					"pos": null,
+					"pos_label": null,
+					"authorization_required": null,
+					"description": null,
+					"quantity_code": null,
+					"quantity_label": null,
+					"quantity": null,
+					"contact_details": [],
+					"dates": [],
+					"comments": ["Plan includes NAP"]
+				}]
+			},
+			"disclaimer": [],
+			"other_sources": {
+				"amounts": []
+			}
+		},
+		"visits": {
+			"remainings": {
+				"in_network": [],
+				"out_network": []
+			},
+			"spent": {
+				"in_network": [],
+				"out_network": []
+			},
+			"totals": {
+				"in_network": [],
+				"out_network": []
+			}
+		},
+		"additional_insurance_policies": []
+	}, {
+		"type": "99",
+		"type_label": "Professional (Physician) Visit - Inpatient",
+		"coverage_status": "11",
+		"coverage_status_label": "Generic inquiry provided no information for this service type. Retry by including service_type=99 for an explicit inquiry for this service type."
+	}],
+	"cost_estimates": [{
+		"provider_price": 1500.5,
+		"cost_estimate": 1500.5,
+		"cost_estimate_equation": {
+			"deductible": [{
+				"amount": "4999.99",
+				"level": "FAMILY",
+				"insurance_type": null,
+				"insurance_type_label": null,
+				"pos": null,
+				"pos_label": null,
+				"authorization_required": null,
+				"description": null,
+				"quantity_code": null,
+				"quantity_label": null,
+				"quantity": null,
+				"contact_details": [],
+				"dates": [],
+				"comments": ["Med Dent"]
+			}],
+			"coinsurance": [{
+				"percent": "20",
+				"time_period": null,
+				"time_period_label": null,
+				"level": "Employee and Children",
+				"insurance_type": null,
+				"insurance_type_label": null,
+				"pos": null,
+				"pos_label": null,
+				"authorization_required": true,
+				"description": null,
+				"quantity_code": null,
+				"quantity_label": null,
+				"quantity": null,
+				"contact_details": [],
+				"dates": [],
+				"comments": ["In-Network Providers", "Medical Ancillary,COINS APPLIES TO OUT OF POCKET", "Semi Private Room and Board,COINS APPLIES TO OUT OF POCKET", "Intensive Care Room and Board,COINS APPLIES TO OUT OF POCKET"]
+			}],
+			"copayment": [{
+				"amount": "0",
+				"time_period": null,
+				"time_period_label": null,
+				"level": "Employee and Children",
+				"insurance_type": null,
+				"insurance_type_label": null,
+				"pos": null,
+				"pos_label": null,
+				"authorization_required": true,
+				"description": null,
+				"quantity_code": null,
+				"quantity_label": null,
+				"quantity": null,
+				"contact_details": [],
+				"dates": [],
+				"comments": ["Medical Ancillary"]
+			}],
+			"stop_loss": [{
+				"amount": "6850",
+				"level": "INDIVIDUAL",
+				"insurance_type": null,
+				"insurance_type_label": null,
+				"pos": null,
+				"pos_label": null,
+				"authorization_required": null,
+				"description": null,
+				"quantity_code": null,
+				"quantity_label": null,
+				"quantity": null,
+				"contact_details": [],
+				"dates": [],
+				"comments": [],
+				"copayment": true,
+				"coinsurance": true,
+				"deductible": true
+			}],
+			"applied_amounts": {
+				"deductible": {
+					"amount": 1500.5,
+					"limited_by_stop_loss": true
+				},
+				"coinsurance": {
+					"percent": 20.0,
+					"applied_to": 0.0,
+					"amount": 0.0,
+					"limited_by_stop_loss": true
+				},
+				"copayment": {
+					"amount": 0.0,
+					"limited_by_stop_loss": true
+				}
+			}
+		},
+		"cost_estimate_alternatives": {
+			"deductible": [{
+				"amount": "4999.99",
+				"level": "FAMILY",
+				"insurance_type": null,
+				"insurance_type_label": null,
+				"pos": null,
+				"pos_label": null,
+				"authorization_required": null,
+				"description": null,
+				"quantity_code": null,
+				"quantity_label": null,
+				"quantity": null,
+				"contact_details": [],
+				"dates": [],
+				"comments": ["Med Dent"]
+			}],
+			"coinsurance": [{
+				"percent": "20",
+				"time_period": null,
+				"time_period_label": null,
+				"level": "Employee and Children",
+				"insurance_type": null,
+				"insurance_type_label": null,
+				"pos": null,
+				"pos_label": null,
+				"authorization_required": true,
+				"description": null,
+				"quantity_code": null,
+				"quantity_label": null,
+				"quantity": null,
+				"contact_details": [],
+				"dates": [],
+				"comments": ["In-Network Providers", "Medical Ancillary,COINS APPLIES TO OUT OF POCKET", "Semi Private Room and Board,COINS APPLIES TO OUT OF POCKET", "Intensive Care Room and Board,COINS APPLIES TO OUT OF POCKET"]
+			}],
+			"copayment": [{
+				"amount": "0",
+				"time_period": null,
+				"time_period_label": null,
+				"level": "Employee and Children",
+				"insurance_type": null,
+				"insurance_type_label": null,
+				"pos": null,
+				"pos_label": null,
+				"authorization_required": true,
+				"description": null,
+				"quantity_code": null,
+				"quantity_label": null,
+				"quantity": null,
+				"contact_details": [],
+				"dates": [],
+				"comments": ["Medical Ancillary"]
+			}, {
+				"amount": "0",
+				"time_period": null,
+				"time_period_label": null,
+				"level": "Employee and Children",
+				"insurance_type": null,
+				"insurance_type_label": null,
+				"pos": null,
+				"pos_label": null,
+				"authorization_required": true,
+				"description": null,
+				"quantity_code": null,
+				"quantity_label": null,
+				"quantity": null,
+				"contact_details": [],
+				"dates": [],
+				"comments": ["Semi Private Room and Board", "Intensive Care Room and Board"]
+			}],
+			"stop_loss": [{
+				"amount": "9999.99",
+				"level": "FAMILY",
+				"insurance_type": null,
+				"insurance_type_label": null,
+				"pos": null,
+				"pos_label": null,
+				"authorization_required": null,
+				"description": null,
+				"quantity_code": null,
+				"quantity_label": null,
+				"quantity": null,
+				"contact_details": [],
+				"dates": [],
+				"comments": []
+			}, {
+				"amount": "6850",
+				"level": "INDIVIDUAL",
+				"insurance_type": null,
+				"insurance_type_label": null,
+				"pos": null,
+				"pos_label": null,
+				"authorization_required": null,
+				"description": null,
+				"quantity_code": null,
+				"quantity_label": null,
+				"quantity": null,
+				"contact_details": [],
+				"dates": [],
+				"comments": [],
+				"copayment": true,
+				"coinsurance": true,
+				"deductible": true
+			}]
+		},
+		"network": "IN"
+	}],
+	"warnings": [{
+		"code": "authorization_required",
+		"message": "authorization required",
+		"param": null,
+		"expected_value": null
+	}],
+	"success": true
+}

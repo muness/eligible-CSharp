@@ -51,13 +51,33 @@ namespace EligibleService.Core.CoreTests
         [TestCategory("Medicare")]
         public void MedicareTest()
         {
-            MedicareResponse response = coverage.Medicare(GetCoverageSubsciberParams());
-            string expectedResponse = TestHelper.GetJson(TestResource.ExpectedResponse + "Medicare.json");
-            TestHelper.CompareProperties(expectedResponse, response.JsonResponse());
+            Hashtable medicareParams = GetCoverageSubsciberParams();
+            medicareParams["member_id"] = "cost_medicare_001";
+            medicareParams["service_type"] = "67";
+            medicareParams["payer_id"] = "00431";
 
-            MedicareResponse expectedObj = JsonConvert.DeserializeObject<MedicareResponse>(expectedResponse);
-            MedicareResponse actualObj = JsonConvert.DeserializeObject<MedicareResponse>(response.JsonResponse());
-            TestHelper.PropertyValuesAreEquals(actualObj, expectedObj);
+            try
+            {
+                MedicareResponse response = coverage.Medicare(medicareParams);
+                string expectedResponse = TestHelper.GetJson(TestResource.ExpectedResponse + "Medicare.json");
+                TestHelper.CompareProperties(expectedResponse, response.JsonResponse());
+
+                MedicareResponse expectedObj = JsonConvert.DeserializeObject<MedicareResponse>(expectedResponse);
+                MedicareResponse actualObj = JsonConvert.DeserializeObject<MedicareResponse>(response.JsonResponse());
+                TestHelper.PropertyValuesAreEquals(actualObj, expectedObj);
+            }
+            catch(EligibleService.Exceptions.EligibleException ex)
+            {
+                Assert.AreEqual("Duplicate eligibility requests using the same NPI/HICN combination are not allowed in the same 24 hour period. Please try again after 24 hours.", ex.EligibleError.Error.Details);
+                Assert.AreEqual("Y", ex.EligibleError.Error.ResponseCode);
+                Assert.AreEqual("Yes", ex.EligibleError.Error.ResponseDescription);
+                Assert.AreEqual("", ex.EligibleError.Error.AgencyQualifierCode);
+                Assert.AreEqual(null, ex.EligibleError.Error.AgencyQualifierDescription);
+                Assert.AreEqual("E3", ex.EligibleError.Error.RejectReasonCode);
+                Assert.AreEqual("Requested Record Will Not Be Sent", ex.EligibleError.Error.RejectReasonDescription);
+                Assert.AreEqual("N", ex.EligibleError.Error.FollowUpActionCode);
+                Assert.AreEqual("Resubmission Not Allowed", ex.EligibleError.Error.FollowUpActionDescription);
+            }
         }
 
         private Hashtable GetCoverageSubsciberParams()

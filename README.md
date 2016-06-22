@@ -46,6 +46,7 @@ Eligible.NET library is available on NuGet.
 		* [Retrieve All Customers](#retrieve-all-customers)
 		* [Retrieve All Customers with Page Number](#retrieve-all-customers-with-page-number)
 * [Cost Estimates](#cost-estimates)
+* [Cost Estimates](#cost-estimates-medicare)
 * [Payment Status](#payment-status)
 * [Enrollments](#enrollments)
 	* [Create Enrollment](#create-enrollment)
@@ -427,7 +428,7 @@ coverageHashParams.Add("payer_id", "00001");
 coverageHashParams.Add("provider_last_name", "Doe");
 coverageHashParams.Add("provider_first_name", "John");
 coverageHashParams.Add("provider_npi", "0123456789");
-coverageHashParams.Add("member_id", "AETNAS8398");
+coverageHashParams.Add("member_id", "cost_estimates_001");
 coverageHashParams.Add("member_first_name", "IDA");
 coverageHashParams.Add("member_last_name", "FRANKLIN");
 coverageHashParams.Add("member_dob", "1701-12-12");
@@ -562,7 +563,7 @@ param.Add("payer_id", "00001");
 param.Add("provider_last_name", "Doe");
 param.Add("provider_first_name", "John");
 param.Add("provider_npi", "0123456789");
-param.Add("member_id", "AETNAS8398");
+param.Add("member_id", "cost_estimates_001");
 param.Add("member_first_name", "IDA");
 param.Add("member_last_name", "FRANKLIN");
 param.Add("member_dob", "1701-12-12");
@@ -573,6 +574,32 @@ CostEstimatesResponse costEstimatesResponse = costEstimates.Get(param);
 Cost estimates with RequestOptions
 ```cs
 var costEstimatesResponse = costEstimates.Get(param, requestOptionsObj); 
+```
+Json Response
+```cs
+string jsonResponse = costEstimatesResponse.JsonResponse();
+```
+## Cost Estimates Medicare
+```cs
+CostEstimates costEstimates = new CostEstimates();
+
+Hashtable param = new Hashtable();
+param.Add("provider_price", "1500.50");
+param.Add("network", "IN");
+param.Add("payer_id", "00431");
+param.Add("provider_last_name", "Doe");
+param.Add("provider_first_name", "John");
+param.Add("provider_npi", "0123456789");
+param.Add("member_id", "cost_medicare_001");
+param.Add("member_first_name", "IDA");
+param.Add("member_last_name", "FRANKLIN");
+param.Add("member_dob", "1701-12-12");
+
+CostEstimateMedicareResponse costEstimatesResponse = costEstimates.Medicare(param); 
+```
+Cost Estimates Medicare with RequestOptions
+```cs
+var costEstimatesResponse = costEstimates.Medicare(param, requestOptionsObj); 
 ```
 Json Response
 ```cs

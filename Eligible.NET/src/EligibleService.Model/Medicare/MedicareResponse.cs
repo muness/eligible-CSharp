@@ -64,6 +64,9 @@ namespace EligibleService.Model
         [JsonProperty("eligibilty_dates")]
         public DatesPeriod EligibiltyDates { get; set; }
 
+        [JsonProperty("eligibility_dates")]
+        public DatesPeriod EligibilityDates { get; set; }
+
         [JsonProperty("inactivity_dates")]
         public DatesPeriod InactivityDates { get; set; }
 
@@ -84,5 +87,8 @@ namespace EligibleService.Model
 
         [JsonProperty("search_options")]
         public SearchOptions SearchOptions { get; set; }
+
+        [JsonProperty("success")]
+        public bool? Success { get; set; }
     }
 }
