@@ -86,15 +86,18 @@
       "dates":[  
          {  
             "date_type":"plan_begin",
-            "date_value":"2010-06-01"
+            "date_value": "2010-06-01",
+            "date_source": "subscriber"
          },
          {  
             "date_type":"service",
-            "date_value":"2013-11-10"
+            "date_value": "2013-11-10",
+            "date_source": "subscriber"
          },
          {  
             "date_type":"eligibility_begin",
-            "date_value":"2010-07-10"
+            "date_value": "2010-07-10",
+            "date_source": "subscriber"
          }
       ],
       "comments":[  

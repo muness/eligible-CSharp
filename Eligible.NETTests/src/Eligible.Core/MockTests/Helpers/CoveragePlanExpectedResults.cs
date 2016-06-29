@@ -20,7 +20,7 @@ namespace EligibleService.Core.Tests.Helpers
                 PlanType = "PS",
                 PlanTypeLabel = "Point of Service (POS)",
                 GroupName = "Special group INC.",
-                Dates = GetDates(),
+                Dates = GetPlanDates(),
                 Comments = new Collection<string>(),
                 Exclusions = GetExclusions(),
                 Financials = GetFinancials(),
@@ -330,6 +330,31 @@ namespace EligibleService.Core.Tests.Helpers
         #endregion
 
         #region Dates
+        public static Collection<PlanDates> GetPlanDates()
+        {
+            Collection<PlanDates> dates = new Collection<PlanDates>();
+            dates.Add(new PlanDates()
+            {
+                DateType = null,
+                DateValue = null,
+                DateSource = null
+            });
+            dates.Add(new PlanDates()
+            {
+                DateType = null,
+                DateValue = null,
+                DateSource = null
+            });
+            dates.Add(new PlanDates()
+            {
+                DateType = null,
+                DateValue = null,
+                DateSource = null
+            });
+
+            return dates;
+        }
+
         public static Collection<Dates> GetDates()
         {
             Collection<Dates> dates = new Collection<Dates>();

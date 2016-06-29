@@ -33,7 +33,7 @@ namespace EligibleService.Model.Coverage
         public Collection<CoverageBasis> CoverageBasis { get; set; }
 
         [JsonProperty("dates")]
-        public Collection<Dates> Dates { get; set; }
+        public Collection<PlanDates> Dates { get; set; }
 
         [JsonProperty("comments")]
         public Collection<string> Comments { get; set; }
