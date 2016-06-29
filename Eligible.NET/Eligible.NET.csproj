@@ -175,6 +175,7 @@
     <Compile Include="src\EligibleService.Model\Coverage\CoverageResponse.cs" />
     <Compile Include="src\EligibleService.Model\Coverage\Demographic.cs" />
     <Compile Include="src\EligibleService.Model\Coverage\Dependent.cs" />
+    <Compile Include="src\EligibleService.Model\Coverage\PlanDates.cs" />
     <Compile Include="src\EligibleService.Model\CreateCustomer.cs" />
     <Compile Include="src\EligibleService.Model\Customer.cs" />
     <Compile Include="src\EligibleService.Model\Dates.cs" />
