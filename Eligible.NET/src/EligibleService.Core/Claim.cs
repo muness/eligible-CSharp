@@ -45,11 +45,11 @@ namespace EligibleService.Core
         public ClaimResponse Create(string jsonParams, RequestOptions options = null)
         {
             response = ExecuteObj.ExecutePostPut(EligibleResources.PathToClaims, jsonParams, SetRequestOptionsObject(options));
-            ClaimResponse formattedResponse = RequestProcess.ResponseValidation<ClaimResponse, EligibleGenericError>(response);
+            ClaimResponse formattedResponse = RequestProcess.SimpleResponseValidation<ClaimResponse>(response);
             
             if (formattedResponse.Success == false)
             {
-                throw new EligibleException("Claim creation failed. Please check EligibleError for more details", formattedResponse);
+                throw new EligibleException(response.Content, formattedResponse);
             }
             else
             {

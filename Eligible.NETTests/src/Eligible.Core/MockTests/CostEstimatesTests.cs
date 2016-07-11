@@ -148,6 +148,7 @@ namespace EligibleService.Core.Tests
                 Assert.AreEqual("service_type_code", ex.EligibleError.Errors[0].Param);
                 Assert.AreEqual(null, ex.EligibleError.Errors[0].ExpectedValue);
                 Assert.AreEqual(false, ex.EligibleError.Success);
+                TestHelper.PropertiesAreEqual(ex.EligibleError, ex.Message);
             }
         }
 
@@ -178,6 +179,7 @@ namespace EligibleService.Core.Tests
                 Assert.AreEqual(null, ex.EligibleError.Warnings[0].Param);
                 Assert.AreEqual(null, ex.EligibleError.Warnings[0].ExpectedValue);
                 Assert.AreEqual(false, ex.EligibleError.Success);
+                TestHelper.PropertiesAreEqual(ex.EligibleError, ex.Message);
             }
         }
 

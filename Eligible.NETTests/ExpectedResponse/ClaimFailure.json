@@ -1,0 +1,11 @@
+﻿{
+	"success": false,
+	"created_at": "2016-07-08T17:20:53Z",
+	"errors": [{
+		"code": "rendering_provider_npi_invalid",
+		"param": "rendering_provider[npi]",
+		"message": "The rendering_provider's NPI must be exactly 10 digits",
+		"expected_value": null
+	}],
+	"reference_id": "8LT5WL4UVSJ3GZ"
+}

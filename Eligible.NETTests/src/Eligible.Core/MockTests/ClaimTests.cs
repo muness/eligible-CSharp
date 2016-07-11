@@ -213,6 +213,35 @@ namespace EligibleService.Core.Tests
             TestHelper.PropertiesAreEqual(sut, report.JsonResponse());
         }
 
+        [TestMethod]
+        [TestCategory("Claim")]
+        public void ClaimExceptionObjectTest()
+        {
+            restClient.Setup(x => x.ExecutePostPut(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<RequestOptions>(), It.IsAny<Method>()))
+                .Returns(new RestResponse()
+                {
+                    StatusCode = HttpStatusCode.OK,
+                    Content = TestHelper.GetJson(TestResource.ExpectedResponse + "ClaimFailure.json")
+                });
+
+
+            claim.ExecuteObj = restClient.Object;
+
+            try
+            {
+                var calimSuccessResponse = claim.Create(param);
+            }
+            catch (EligibleService.Exceptions.EligibleException ex)
+            {
+                Assert.AreEqual(false, ex.EligibleError.Success);
+                Assert.AreEqual("8LT5WL4UVSJ3GZ", ex.EligibleError.ReferenceId);
+                Assert.AreEqual("rendering_provider_npi_invalid", ex.EligibleError.Errors[0].Code);
+                Assert.AreEqual(null, ex.EligibleError.Errors[0].ExpectedValue);
+                Assert.AreEqual("The rendering_provider's NPI must be exactly 10 digits", ex.EligibleError.Errors[0].Message);
+                Assert.AreEqual("rendering_provider[npi]", ex.EligibleError.Errors[0].Param);
+            }
+        }
+
         /// <summary>
         /// Common steps to test Claim creation
         /// </summary>

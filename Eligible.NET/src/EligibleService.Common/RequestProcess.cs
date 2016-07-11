@@ -11,7 +11,7 @@ namespace EligibleService.Common
     {
         public static TClassResponse ResponseValidation<TClassResponse, TClassError>(IRestResponse response)
         {
-            string message = response.StatusCode.ToString() + ": " + response.Content;
+            string message = response.Content;
 
             if (response.ErrorException != null)
             {
@@ -26,11 +26,11 @@ namespace EligibleService.Common
             if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
             {
                 LogError<IRestResponse>(response);
-                throw new AuthenticationException(response.Content, response, response.ErrorException);
+                throw new AuthenticationException(message, response, response.ErrorException);
             }
             else
             {
-                TryParseJson(response, out sourceClass, out parseJson, out error);
+                TryParseJson(response, out sourceClass, out parseJson);
             }
 
             if (!parseJson)
@@ -38,7 +38,7 @@ namespace EligibleService.Common
                 TClassError errorClass;
                 parseJson = false;
                 string eligibleError = string.Empty;
-                TryParseJson(response, out errorClass, out parseJson, out eligibleError);
+                TryParseJson(response, out errorClass, out parseJson);
 
                 if (error != string.Empty)
                     eligibleError = eligibleError + ", " + error;
@@ -46,12 +46,11 @@ namespace EligibleService.Common
                 if (parseJson)
                 {
                     LogError<IRestResponse>(response);
-                    throw new EligibleException(eligibleError, errorClass);
+                    throw new EligibleException(message, errorClass);
                 }
                 else
                 {
                     LogError<IRestResponse>(response);
-                    message = eligibleError + response.Content;
                     throw new InvalidRequestException(message, response.ErrorException);
                 }
             }
@@ -62,7 +61,7 @@ namespace EligibleService.Common
         public static TClassResponse SimpleResponseValidation<TClassResponse>(IRestResponse response)
         {
             TClassResponse deserializedResponse = default(TClassResponse);
-            string message = response.StatusCode.ToString() + ":" + response.Content;
+            string message = response.Content;
             bool isParsed = false;
 
             if (response.ErrorException != null)
@@ -73,7 +72,7 @@ namespace EligibleService.Common
             else if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
             {
                 LogError<IRestResponse>(response);
-                throw new AuthenticationException(response.Content, response, response.ErrorException);
+                throw new AuthenticationException(message, response, response.ErrorException);
             }
 
             try
@@ -83,7 +82,6 @@ namespace EligibleService.Common
             }
             catch (Exception ex)
             {
-                message = response.Content + ". " + ex.Message;
                 LogError<Exception>(ex);
             }
 
@@ -96,12 +94,11 @@ namespace EligibleService.Common
             return deserializedResponse;
         }
 
-        private static void TryParseJson<TClass>(IRestResponse response, out TClass sourceClass, out bool parseJson, out string error)
+        private static void TryParseJson<TClass>(IRestResponse response, out TClass sourceClass, out bool parseJson)
         {
             TClass sourceClassLocal = default(TClass);
             sourceClass = default(TClass);
             parseJson = false;
-            error = string.Empty;
             try
             {
                 sourceClassLocal = JsonConvert.DeserializeObject<TClass>(response.Content, GetJsonSerializerSettingsObject());
@@ -124,7 +121,6 @@ namespace EligibleService.Common
             catch (Exception ex)
             {
                 parseJson = false;
-                error = ex.Message;
                 LogError<Exception>(ex);
             }
             finally
