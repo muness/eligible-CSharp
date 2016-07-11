@@ -27,7 +27,7 @@ namespace EligibleService.Core
         public CostEstimateMedicareResponse Medicare(Hashtable requiredParams, RequestOptions options = null)
         {
             response = ExecuteObj.Execute(EligibleResources.CostEstimates, SetRequestOptionsObject(options), requiredParams);
-            var formattedResponse = RequestProcess.ResponseValidation<CostEstimateMedicareResponse, EligibleGenericError>(response);
+            var formattedResponse = RequestProcess.ResponseValidation<CostEstimateMedicareResponse, MedicareCostEstimateError>(response);
             formattedResponse.SetJsonResponse(response.Content);
             return formattedResponse;
         }

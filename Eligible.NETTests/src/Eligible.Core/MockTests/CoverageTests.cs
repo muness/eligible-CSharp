@@ -421,6 +421,7 @@ namespace EligibleService.Core.Tests
                 var sut = fixture.Create<CoverageErrorDetails>();
 
                 TestHelper.PropertiesAreEqual(sut, JsonConvert.SerializeObject(ex.EligibleError));
+                TestHelper.PropertiesAreEqual(sut, ex.Message);
             }
         }
 

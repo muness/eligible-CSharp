@@ -115,6 +115,7 @@
     <None Include="ExpectedResponse\AllCustomers.json" />
     <None Include="ExpectedResponse\AllEnrollments.json" />
     <None Include="ExpectedResponse\ClaimAcknowledgements.json" />
+    <None Include="ExpectedResponse\ClaimFailure.json" />
     <None Include="ExpectedResponse\ClaimMultipleAcknowledgements.json" />
     <None Include="ExpectedResponse\ClaimPayementReports.json" />
     <None Include="ExpectedResponse\ClaimPaymentReport.json" />
@@ -139,6 +140,7 @@
     <None Include="ExpectedResponse\StatussesByPayer.json" />
     <None Include="MockFiles\ClaimAcknowledgements.json" />
     <None Include="MockFiles\ClaimFailure.json" />
+    <None Include="MockFiles\ClaimPaymentReportError.json" />
     <None Include="MockFiles\ClaimSuccess.json" />
     <None Include="MockFiles\CostEstimate.json" />
     <None Include="MockFiles\CostEstimateAdditionalPolicyWarning.json" />

@@ -80,14 +80,40 @@ namespace EligibleService.Core.CoreTests
 
         [TestMethod]
         [TestCategory("Claim")]
-        [ExpectedException(typeof(EligibleService.Exceptions.AuthenticationException))]
+        public void ClaimExceptionTest()
+        {
+            ClaimParams input = JsonConvert.DeserializeObject<ClaimParams>(ClaimInput);
+            input.Claim.ServiceLines[0].RenderingProvider.Npi = "Invalid NPI";
+            RequestOptions options = new RequestOptions();
+            options.IsTest = true;
+
+            try
+            {
+                ClaimResponse actualResponse = claim.Create(input, options);
+            }
+            catch(EligibleService.Exceptions.EligibleException ex)
+            {
+                string response = TestHelper.GetJson(TestResource.MocksPath + "ClaimFailure.json");
+                TestHelper.PropertiesAreEqual(ex.EligibleError, ex.Message);
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("Claim")]
         public void ClaimCreateAuthenticationExpceptionTest()
         {
             Eligible config = Eligible.Instance;
             config.ApiKey = "Invalid key";
             config.IsTest = true;
 
-            ClaimResponse actualResponse = claim.Create(ClaimInput);
+            try
+            {
+                ClaimResponse actualResponse = claim.Create(ClaimInput);
+            }
+            catch(Exception ex)
+            {
+                Assert.AreEqual("Could not authenticate you. Please re-try with a valid API key.", ex.Message);
+            }
         }
 
         private static void ClaimSuccessCheck(string actualResponse)
@@ -183,6 +209,39 @@ namespace EligibleService.Core.CoreTests
             ClaimPaymentReportsResponse expectedObj = JsonConvert.DeserializeObject<ClaimPaymentReportsResponse>(expectedResponse);
             ClaimPaymentReportsResponse actualObj = JsonConvert.DeserializeObject<ClaimPaymentReportsResponse>(actualResponse.JsonResponse());
             TestHelper.PropertyValuesAreEquals(actualObj, expectedObj);
+        }
+
+        [TestMethod]
+        [TestCategory("Claim")]
+        public void ClaimPayementReportErrorTest()
+        {
+            try
+            {
+                ClaimPaymentReportResponse actualResponse = claim.GetClaimPaymentReport("invalid_id");
+            }
+            catch(Exception ex)
+            {
+                string response = TestHelper.GetJson(TestResource.MocksPath + "ClaimPaymentReportError.json");
+                TestHelper.CompareProperties(response, ex.Message);
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("Claim")]
+        public void ClaimPayementReportErrorObjectTest()
+        {
+            try
+            {
+                ClaimPaymentReportResponse actualResponse = claim.GetClaimPaymentReport("invalid_id");
+            }
+            catch (EligibleService.Exceptions.EligibleException ex)
+            {
+                Assert.AreEqual(false, ex.EligibleError.Success);
+                Assert.AreEqual("reference_id_invalid", ex.EligibleError.Errors[0].Code);
+                Assert.AreEqual(null, ex.EligibleError.Errors[0].ExpectedValue);
+                Assert.AreEqual("Claim not found for reference_id: invalid_id. Please send a valid reference_id.", ex.EligibleError.Errors[0].Message);
+                Assert.AreEqual("reference_id", ex.EligibleError.Errors[0].Param);
+            }
         }
     }
 }
