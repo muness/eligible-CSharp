@@ -67,5 +67,10 @@ namespace EligibleService.Core
         public string ApiKey { get; set; }
 
         public bool? IsTest { get; set; }
+
+        /// <summary>
+        /// Optional property for mocking
+        /// </summary>
+        public string BaseUrl { get; set; }
     }
 }

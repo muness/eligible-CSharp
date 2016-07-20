@@ -9,7 +9,6 @@ using System.Net;
 using Newtonsoft.Json;
 using System.Security.Cryptography.X509Certificates;
 using System.Net.Security;
-using NLog;
 
 namespace EligibleService.Common
 {
@@ -37,8 +36,8 @@ namespace EligibleService.Common
         {
             ServicePointManager.ServerCertificateValidationCallback = this.CertificateValidation;
 
-            var request = new RestRequest();
-            var client = new RestClient(new Uri(EligibleResources.BaseUrl));
+            RestRequest request = new RestRequest();
+            RestClient client = GetBaseUrl(options);
 
             request.AddParameter("api_key", options.ApiKey);
             request.AddParameter("test", options.IsTest);
@@ -62,8 +61,8 @@ namespace EligibleService.Common
             ServicePointManager.ServerCertificateValidationCallback = this.CertificateValidation;
 
             json = FormatInputWithRequestOptions.FormatJson(json, options);
-            var request = new RestRequest(httpMethod);
-            var client = new RestClient(new Uri(EligibleResources.BaseUrl));
+            RestRequest request = new RestRequest(httpMethod);
+            RestClient client = GetBaseUrl(options);
 
             request.AddParameter("application/json; charset=utf-8", json, ParameterType.RequestBody);
 
@@ -78,8 +77,8 @@ namespace EligibleService.Common
         {
             ServicePointManager.ServerCertificateValidationCallback = this.CertificateValidation;
 
-            var request = new RestRequest(httpMethod);
-            var client = new RestClient(new Uri(EligibleResources.BaseUrl));
+            RestRequest request = new RestRequest(httpMethod);
+            RestClient client = GetBaseUrl(options);
 
             request.AddParameter("api_key", options.ApiKey);
             request.AddParameter("test", options.IsTest);
@@ -150,6 +149,16 @@ namespace EligibleService.Common
         private static void SetResource(string apiResource, RestRequest request)
         {
             request.Resource = "/" + EligibleResources.SupportedApiVersion + apiResource;
+        }
+
+        private static RestClient GetBaseUrl(RequestOptions options)
+        {
+            RestClient client = new RestClient();
+            if (string.IsNullOrEmpty(options.BaseUrl))
+                client = new RestClient(new Uri(EligibleResources.BaseUrl));
+            else
+                client = new RestClient(new Uri(options.BaseUrl));
+            return client;
         }
     }
 }
