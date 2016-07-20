@@ -25,24 +25,17 @@ namespace EligibleService.Core.CoreTests
         }
 
         [TestMethod]
+        [ExpectedException(typeof(EligibleService.Exceptions.InvalidRequestException))]
         public void InvalidBaseUrlOptionTest()
         {
             Eligible config = Eligible.Instance;
             RequestOptions options = new RequestOptions();
             options.IsTest = true;
             options.ApiKey = config.ApiKey;
-            options.BaseUrl = "https://www.google.com/";
+            options.BaseUrl = "https://www.example.com/";
             Hashtable input = JsonConvert.DeserializeObject<Hashtable>(ClaimInput);
 
-            try
-            {
-                ClaimResponse actualResponse = claim.Create(input, options);
-            }
-            catch(Exception ex)
-            {
-                Assert.IsTrue(ex.Message.Contains("The requested URL <code>/v1.5/claims</code> was not found on this server"));
-            }
-            
+            ClaimResponse actualResponse = claim.Create(input, options);
         }
 
         [TestMethod]
