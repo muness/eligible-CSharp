@@ -1,13 +1,13 @@
 ﻿{
-	"created_at": "2016-06-29T07:56:39-04:00",
-	"eligible_id": "8LN3WGVAQJ6PQR",
+	"created_at": "2016-07-25T09:41:23-04:00",
+	"eligible_id": "8M481ATX5KOXSS",
 	"known_issues": [],
 	"demographics": {
 		"subscriber": {
 			"last_name": "FRANKLIN",
 			"first_name": "BENJAMIN",
 			"middle_name": "J",
-			"member_id": "1234567890",
+			"member_id": "COST_ESTIMATES_001",
 			"group_id": "123123123",
 			"group_name": null,
 			"dob": "1967-09-09",
@@ -153,7 +153,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": []
+						"comments": [],
+						"service_delivery": null
 					}, {
 						"amount": "2531.08",
 						"level": "FAMILY",
@@ -168,7 +169,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": []
+						"comments": [],
+						"service_delivery": null
 					}],
 					"out_network": [{
 						"amount": "1531.08",
@@ -184,7 +186,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": []
+						"comments": [],
+						"service_delivery": null
 					}, {
 						"amount": "5531.08",
 						"level": "FAMILY",
@@ -199,7 +202,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": []
+						"comments": [],
+						"service_delivery": null
 					}]
 				},
 				"spent": {
@@ -226,7 +230,8 @@
 							"date_type": "benefit_begin",
 							"date_value": "2016-01-01"
 						}],
-						"comments": ["AGGREGATE, 0 PEOPLE MUST MEET INDIVIDUAL BEFORE COMPUTING AGGREGATE", "COMPREHENSIVE"]
+						"comments": ["AGGREGATE, 0 PEOPLE MUST MEET INDIVIDUAL BEFORE COMPUTING AGGREGATE", "COMPREHENSIVE"],
+						"service_delivery": null
 					}, {
 						"amount": "3000",
 						"time_period": "23",
@@ -246,7 +251,8 @@
 							"date_type": "benefit_begin",
 							"date_value": "2016-01-01"
 						}],
-						"comments": ["AGGREGATE, 0 PEOPLE MUST MEET INDIVIDUAL BEFORE COMPUTING AGGREGATE", "COMPREHENSIVE"]
+						"comments": ["AGGREGATE, 0 PEOPLE MUST MEET INDIVIDUAL BEFORE COMPUTING AGGREGATE", "COMPREHENSIVE"],
+						"service_delivery": null
 					}],
 					"out_network": [{
 						"amount": "2000",
@@ -267,7 +273,8 @@
 							"date_type": "benefit_begin",
 							"date_value": "2016-01-01"
 						}],
-						"comments": ["AGGREGATE, 0 PEOPLE MUST MEET INDIVIDUAL BEFORE COMPUTING AGGREGATE", "COMPREHENSIVE"]
+						"comments": ["AGGREGATE, 0 PEOPLE MUST MEET INDIVIDUAL BEFORE COMPUTING AGGREGATE", "COMPREHENSIVE"],
+						"service_delivery": null
 					}, {
 						"amount": "6000",
 						"time_period": "23",
@@ -287,7 +294,8 @@
 							"date_type": "benefit_begin",
 							"date_value": "2016-01-01"
 						}],
-						"comments": ["AGGREGATE, 0 PEOPLE MUST MEET INDIVIDUAL BEFORE COMPUTING AGGREGATE", "COMPREHENSIVE"]
+						"comments": ["AGGREGATE, 0 PEOPLE MUST MEET INDIVIDUAL BEFORE COMPUTING AGGREGATE", "COMPREHENSIVE"],
+						"service_delivery": null
 					}]
 				}
 			},
@@ -612,7 +620,8 @@
 							}
 						}],
 						"dates": [],
-						"comments": ["FACILITY BENEFIT"]
+						"comments": ["FACILITY BENEFIT"],
+						"service_delivery": null
 					}, {
 						"percent": "30",
 						"time_period": "27",
@@ -629,7 +638,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["APPLICABLE TO SERVICES ASSOCIATED WITH MAJOR MEDICAL BENEFITS.  TO OBTAIN BENEFITS FOR SPECIFIC OUTPATIENT FACILITY SERVICES REQUEST THE SPECIFIC SERVICE TYPE"]
+						"comments": ["APPLICABLE TO SERVICES ASSOCIATED WITH MAJOR MEDICAL BENEFITS.  TO OBTAIN BENEFITS FOR SPECIFIC OUTPATIENT FACILITY SERVICES REQUEST THE SPECIFIC SERVICE TYPE"],
+						"service_delivery": null
 					}],
 					"out_network": [{
 						"percent": "50",
@@ -665,7 +675,8 @@
 							}
 						}],
 						"dates": [],
-						"comments": ["FACILITY BENEFIT"]
+						"comments": ["FACILITY BENEFIT"],
+						"service_delivery": null
 					}, {
 						"percent": "50",
 						"time_period": "27",
@@ -682,7 +693,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["APPLICABLE TO SERVICES ASSOCIATED WITH MAJOR MEDICAL BENEFITS.  TO OBTAIN BENEFITS FOR SPECIFIC OUTPATIENT FACILITY SERVICES REQUEST THE SPECIFIC SERVICE TYPE"]
+						"comments": ["APPLICABLE TO SERVICES ASSOCIATED WITH MAJOR MEDICAL BENEFITS.  TO OBTAIN BENEFITS FOR SPECIFIC OUTPATIENT FACILITY SERVICES REQUEST THE SPECIFIC SERVICE TYPE"],
+						"service_delivery": null
 					}]
 				}
 			},
@@ -723,7 +735,13 @@
 							}
 						}],
 						"dates": [],
-						"comments": ["FACILITY BENEFIT"]
+						"comments": ["FACILITY BENEFIT"],
+						"service_delivery": {
+							"from": null,
+							"to": 1,
+							"period": null,
+							"type": "Days"
+						}
 					}]
 				}
 			},
@@ -870,7 +888,8 @@
 							}
 						}],
 						"dates": [],
-						"comments": ["FACILITY BENEFIT"]
+						"comments": ["FACILITY BENEFIT"],
+						"service_delivery": null
 					}],
 					"out_network": [{
 						"percent": "50",
@@ -906,7 +925,8 @@
 							}
 						}],
 						"dates": [],
-						"comments": ["FACILITY BENEFIT"]
+						"comments": ["FACILITY BENEFIT"],
+						"service_delivery": null
 					}]
 				}
 			},
@@ -947,7 +967,13 @@
 							}
 						}],
 						"dates": [],
-						"comments": ["FACILITY BENEFIT"]
+						"comments": ["FACILITY BENEFIT"],
+						"service_delivery": {
+							"from": null,
+							"to": 1,
+							"period": null,
+							"type": "Days"
+						}
 					}]
 				}
 			},
@@ -1076,7 +1102,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["APPLICABLE TO SERVICES ASSOCIATED WITH MAJOR MEDICAL BENEFITS.  TO OBTAIN BENEFITS FOR SPECIFIC OUTPATIENT FACILITY SERVICES REQUEST THE SPECIFIC SERVICE TYPE"]
+						"comments": ["APPLICABLE TO SERVICES ASSOCIATED WITH MAJOR MEDICAL BENEFITS.  TO OBTAIN BENEFITS FOR SPECIFIC OUTPATIENT FACILITY SERVICES REQUEST THE SPECIFIC SERVICE TYPE"],
+						"service_delivery": null
 					}],
 					"out_network": [{
 						"percent": "50",
@@ -1094,7 +1121,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["APPLICABLE TO SERVICES ASSOCIATED WITH MAJOR MEDICAL BENEFITS.  TO OBTAIN BENEFITS FOR SPECIFIC OUTPATIENT FACILITY SERVICES REQUEST THE SPECIFIC SERVICE TYPE"]
+						"comments": ["APPLICABLE TO SERVICES ASSOCIATED WITH MAJOR MEDICAL BENEFITS.  TO OBTAIN BENEFITS FOR SPECIFIC OUTPATIENT FACILITY SERVICES REQUEST THE SPECIFIC SERVICE TYPE"],
+						"service_delivery": null
 					}]
 				}
 			},
@@ -1209,7 +1237,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["REPLACEMENT DEDUCTIBLE", "FACILITY BENEFIT"]
+						"comments": ["REPLACEMENT DEDUCTIBLE", "FACILITY BENEFIT"],
+						"service_delivery": null
 					}],
 					"out_network": [{
 						"amount": "0",
@@ -1227,7 +1256,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["REPLACEMENT DEDUCTIBLE", "FACILITY BENEFIT"]
+						"comments": ["REPLACEMENT DEDUCTIBLE", "FACILITY BENEFIT"],
+						"service_delivery": null
 					}]
 				}
 			},
@@ -1263,7 +1293,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["FACILITY BENEFIT"]
+						"comments": ["FACILITY BENEFIT"],
+						"service_delivery": null
 					}],
 					"out_network": [{
 						"percent": "30",
@@ -1281,7 +1312,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["FACILITY BENEFIT"]
+						"comments": ["FACILITY BENEFIT"],
+						"service_delivery": null
 					}]
 				}
 			},
@@ -1303,7 +1335,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["FACILITY BENEFIT"]
+						"comments": ["FACILITY BENEFIT"],
+						"service_delivery": null
 					}],
 					"out_network": [{
 						"amount": "250",
@@ -1321,7 +1354,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["FACILITY BENEFIT"]
+						"comments": ["FACILITY BENEFIT"],
+						"service_delivery": null
 					}]
 				}
 			},
@@ -1430,7 +1464,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["REPLACEMENT DEDUCTIBLE", "FACILITY BENEFIT"]
+						"comments": ["REPLACEMENT DEDUCTIBLE", "FACILITY BENEFIT"],
+						"service_delivery": null
 					}],
 					"out_network": [{
 						"amount": "0",
@@ -1448,7 +1483,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["REPLACEMENT DEDUCTIBLE", "FACILITY BENEFIT"]
+						"comments": ["REPLACEMENT DEDUCTIBLE", "FACILITY BENEFIT"],
+						"service_delivery": null
 					}]
 				}
 			},
@@ -1484,7 +1520,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["FACILITY BENEFIT"]
+						"comments": ["FACILITY BENEFIT"],
+						"service_delivery": null
 					}],
 					"out_network": [{
 						"percent": "30",
@@ -1502,7 +1539,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["FACILITY BENEFIT"]
+						"comments": ["FACILITY BENEFIT"],
+						"service_delivery": null
 					}]
 				}
 			},
@@ -1524,7 +1562,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["FACILITY BENEFIT"]
+						"comments": ["FACILITY BENEFIT"],
+						"service_delivery": null
 					}],
 					"out_network": [{
 						"amount": "250",
@@ -1542,7 +1581,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["FACILITY BENEFIT"]
+						"comments": ["FACILITY BENEFIT"],
+						"service_delivery": null
 					}]
 				}
 			},
@@ -1661,7 +1701,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["REPLACEMENT DEDUCTIBLE"]
+						"comments": ["REPLACEMENT DEDUCTIBLE"],
+						"service_delivery": null
 					}, {
 						"amount": "0",
 						"time_period": "23",
@@ -1678,7 +1719,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["REPLACEMENT DEDUCTIBLE"]
+						"comments": ["REPLACEMENT DEDUCTIBLE"],
+						"service_delivery": null
 					}, {
 						"amount": "0",
 						"time_period": "23",
@@ -1695,7 +1737,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["REPLACEMENT DEDUCTIBLE", "SPECIALIST"]
+						"comments": ["REPLACEMENT DEDUCTIBLE", "SPECIALIST"],
+						"service_delivery": null
 					}, {
 						"amount": "0",
 						"time_period": "23",
@@ -1712,7 +1755,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["REPLACEMENT DEDUCTIBLE", "SPECIALIST"]
+						"comments": ["REPLACEMENT DEDUCTIBLE", "SPECIALIST"],
+						"service_delivery": null
 					}],
 					"out_network": []
 				}
@@ -1749,7 +1793,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": []
+						"comments": [],
+						"service_delivery": null
 					}, {
 						"percent": "0",
 						"time_period": "27",
@@ -1766,7 +1811,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["SPECIALIST"]
+						"comments": ["SPECIALIST"],
+						"service_delivery": null
 					}],
 					"out_network": [{
 						"percent": "50",
@@ -1784,7 +1830,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": []
+						"comments": [],
+						"service_delivery": null
 					}, {
 						"percent": "50",
 						"time_period": "27",
@@ -1801,7 +1848,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["SPECIALIST"]
+						"comments": ["SPECIALIST"],
+						"service_delivery": null
 					}]
 				}
 			},
@@ -1823,7 +1871,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": []
+						"comments": [],
+						"service_delivery": null
 					}, {
 						"amount": "15",
 						"time_period": "27",
@@ -1840,7 +1889,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": []
+						"comments": [],
+						"service_delivery": null
 					}, {
 						"amount": "50",
 						"time_period": "27",
@@ -1857,7 +1907,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["SPECIALIST"]
+						"comments": ["SPECIALIST"],
+						"service_delivery": null
 					}],
 					"out_network": []
 				}
@@ -1995,7 +2046,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["REPLACEMENT DEDUCTIBLE"]
+						"comments": ["REPLACEMENT DEDUCTIBLE"],
+						"service_delivery": null
 					}, {
 						"amount": "0",
 						"time_period": "23",
@@ -2012,7 +2064,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["REPLACEMENT DEDUCTIBLE"]
+						"comments": ["REPLACEMENT DEDUCTIBLE"],
+						"service_delivery": null
 					}],
 					"out_network": []
 				}
@@ -2049,7 +2102,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": []
+						"comments": [],
+						"service_delivery": null
 					}],
 					"out_network": [{
 						"percent": "50",
@@ -2067,7 +2121,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": []
+						"comments": [],
+						"service_delivery": null
 					}]
 				}
 			},
@@ -2190,7 +2245,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["REPLACEMENT DEDUCTIBLE", "FACILITY AND PHYSICIAN BENEFIT"]
+						"comments": ["REPLACEMENT DEDUCTIBLE", "FACILITY AND PHYSICIAN BENEFIT"],
+						"service_delivery": null
 					}, {
 						"amount": "0",
 						"time_period": "23",
@@ -2207,7 +2263,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["REPLACEMENT DEDUCTIBLE", "FACILITY AND PHYSICIAN BENEFIT"]
+						"comments": ["REPLACEMENT DEDUCTIBLE", "FACILITY AND PHYSICIAN BENEFIT"],
+						"service_delivery": null
 					}],
 					"out_network": []
 				}
@@ -2244,7 +2301,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["FACILITY AND PHYSICIAN BENEFIT"]
+						"comments": ["FACILITY AND PHYSICIAN BENEFIT"],
+						"service_delivery": null
 					}],
 					"out_network": [{
 						"percent": "50",
@@ -2262,7 +2320,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["FACILITY AND PHYSICIAN BENEFIT"]
+						"comments": ["FACILITY AND PHYSICIAN BENEFIT"],
+						"service_delivery": null
 					}]
 				}
 			},
@@ -2284,7 +2343,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["FACILITY AND PHYSICIAN BENEFIT"]
+						"comments": ["FACILITY AND PHYSICIAN BENEFIT"],
+						"service_delivery": null
 					}, {
 						"amount": "50",
 						"time_period": "27",
@@ -2301,7 +2361,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["FACILITY AND PHYSICIAN BENEFIT", "SPECIALIST"]
+						"comments": ["FACILITY AND PHYSICIAN BENEFIT", "SPECIALIST"],
+						"service_delivery": null
 					}],
 					"out_network": []
 				}

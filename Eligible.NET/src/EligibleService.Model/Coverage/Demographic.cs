@@ -13,6 +13,9 @@ namespace EligibleService.Model.Coverage
         [JsonProperty("last_name")]
         public string LastName { get; set; }
 
+        [JsonProperty("middle_name")]
+        public string MiddleName { get; set; }
+
         [JsonProperty("member_id")]
         public string MemberId { get; set; }
 

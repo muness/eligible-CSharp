@@ -9,6 +9,7 @@ using Ploeh.AutoFixture;
 using EligibleService.Exceptions;
 using EligibleService.Model;
 using Newtonsoft.Json;
+using EligibleService.Model.CostEstimates;
 
 namespace EligibleService.Core.Tests
 {
@@ -44,6 +45,63 @@ namespace EligibleService.Core.Tests
             var acknowledgements = costEstimates.Get(param);
 
             Assert.IsNotNull(acknowledgements);
+        }
+
+
+        [TestMethod]
+        [TestCategory("CostEstimate")]
+        public void CostEstimatesServiceDeliveryPropertyTest()
+        {
+            restClient.Setup(x => x.Execute(It.IsAny<string>(), It.IsAny<RequestOptions>(), It.IsAny<Hashtable>()))
+                .Returns(new RestResponse()
+                {
+                    StatusCode = HttpStatusCode.OK,
+                    Content = TestHelper.GetJson(TestResource.MocksPath + "CostEstimatesServiceDelivery.json")
+                });
+
+
+            costEstimates.ExecuteObj = restClient.Object;
+
+            var acknowledgements = costEstimates.Get(param);
+
+            Assert.AreEqual(null, acknowledgements.CostEstimates[0].CostEstimateEquation.Coinsurance[0].ServiceDelivery);
+            Assert.ReferenceEquals(acknowledgements.CostEstimates[0].CostEstimateAlternatives.Copayment[0].ServiceDelivery, new ServiceDelivery());
+            Assert.AreEqual(acknowledgements.CostEstimates[0].CostEstimateAlternatives.Copayment[0].ServiceDelivery.Type, "Units");
+            Assert.AreEqual(acknowledgements.CostEstimates[0].CostEstimateAlternatives.Copayment[0].ServiceDelivery.Period, "Years");
+            Assert.AreEqual(acknowledgements.CostEstimates[0].CostEstimateAlternatives.Copayment[0].ServiceDelivery.To, 3);
+            Assert.AreEqual(acknowledgements.CostEstimates[0].CostEstimateAlternatives.Copayment[0].ServiceDelivery.From, 1);
+        }
+
+        [TestMethod]
+        [TestCategory("CostEstimate")]
+        public void CostEstimateServiceDeliveryParseTest()
+        {
+            restClient.Setup(x => x.Execute(It.IsAny<string>(), It.IsAny<RequestOptions>(), It.IsAny<Hashtable>()))
+                .Returns(new RestResponse()
+                {
+                    StatusCode = HttpStatusCode.OK,
+                    Content = TestHelper.GetJson(TestResource.MocksPath + "CostEstimatesServiceDelivery.json")
+                });
+
+
+            costEstimates.ExecuteObj = restClient.Object;
+
+            var acknowledgements = costEstimates.Get(param);
+
+            ServiceDelivery sd = new ServiceDelivery()
+            {
+                From = 1,
+                To = 3,
+                Period = "Years",
+                Type = "Uniys"
+            };
+
+            Assert.AreEqual(null, acknowledgements.CostEstimates[0].CostEstimateEquation.Coinsurance[0].ServiceDelivery);
+            Assert.AreEqual(null, acknowledgements.CostEstimates[0].CostEstimateEquation.Copayment[0].ServiceDelivery);
+            TestHelper.PropertyValuesAreEquals(sd, acknowledgements.CostEstimates[0].CostEstimateEquation.Deductible[0].ServiceDelivery);
+            TestHelper.PropertyValuesAreEquals(sd, acknowledgements.CostEstimates[0].CostEstimateAlternatives.Copayment[0].ServiceDelivery);
+            TestHelper.PropertyValuesAreEquals(sd, acknowledgements.CostEstimates[0].CostEstimateAlternatives.Coinsurance[0].ServiceDelivery);
+            TestHelper.PropertyValuesAreEquals(sd, acknowledgements.CostEstimates[0].CostEstimateAlternatives.Deductible[0].ServiceDelivery);
         }
 
         [TestMethod]

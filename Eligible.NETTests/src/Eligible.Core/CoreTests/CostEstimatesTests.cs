@@ -33,7 +33,7 @@ namespace EligibleService.Core.CoreTests
             TestHelper.PropertyValuesAreEquals(actualObj, expectedObj);
         }
 
-        [TestMethod]
+       [TestMethod]
         [TestCategory("CostEstimate")]
         public void CostEstimatesDependentTest()
         {

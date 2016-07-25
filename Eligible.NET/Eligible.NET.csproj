@@ -164,6 +164,7 @@
     <Compile Include="src\EligibleService.Model\CostEstimates\CostEstimateMedicare.cs" />
     <Compile Include="src\EligibleService.Model\CostEstimates\CostEstimates.cs" />
     <Compile Include="src\EligibleService.Model\CostEstimates\PaymentBase.cs" />
+    <Compile Include="src\EligibleService.Model\CostEstimates\ServiceDelivery.cs" />
     <Compile Include="src\EligibleService.Model\CostEstimates\StopLoss.cs" />
     <Compile Include="src\EligibleService.Model\CostEstimates\Visits.cs" />
     <Compile Include="src\EligibleService.Model\Coverage\AdditionalInsurancePolicy.cs" />
