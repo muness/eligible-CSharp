@@ -14,6 +14,12 @@ namespace EligibleService.Model.Coverage
         [JsonProperty("entity_code_label")]
         public string EntityCodeLabel { get; set; }
 
+        [JsonProperty("first_name")]
+        public string FirstName { get; set; }
+
+        [JsonProperty("last_name")]
+        public string LastName { get; set; }
+
         [JsonProperty("identification_type")]
         public string IdentificationType { get; set; }
 

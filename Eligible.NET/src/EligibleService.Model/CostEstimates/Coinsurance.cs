@@ -12,6 +12,9 @@ namespace EligibleService.Model.CostEstimates
 
         [JsonProperty("time_period_label")]
         public string TimePeriodLabel { get; set; }
+
+        [JsonProperty("service_delivery")]
+        public ServiceDelivery ServiceDelivery { get; set; }
     }
 
 }

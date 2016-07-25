@@ -32,5 +32,8 @@ namespace EligibleService.Model.Coverage
 
         [JsonProperty("other_sources")]
         public FinancialFlowsList OtherSources { get; set; }
+
+        [JsonProperty("reserve")]
+        public FinancialRemainings Reserve { get; set; }
     }
 }

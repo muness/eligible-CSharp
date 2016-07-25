@@ -12,6 +12,7 @@ using Ploeh.AutoFixture;
 using EligibleService.Model.Coverage;
 using EligibleService.Model;
 using EligibleService.Exceptions;
+using EligibleService.Model.CostEstimates;
 
 namespace EligibleService.Core.Tests
 {
@@ -110,8 +111,8 @@ namespace EligibleService.Core.Tests
             
             Assert.AreEqual("FRANKLIN", coverages.Demographics.Subscriber.LastName);
             Assert.AreEqual("BEN", coverages.Demographics.Subscriber.FirstName);
-            Assert.AreEqual("AETNA1234", coverages.Demographics.Subscriber.MemberId);
-            Assert.AreEqual("047653201500945", coverages.Demographics.Subscriber.GroupId);
+            Assert.AreEqual("COST_ESTIMATES_001", coverages.Demographics.Subscriber.MemberId);
+            Assert.AreEqual("123123123", coverages.Demographics.Subscriber.GroupId);
             Assert.AreEqual("FREEDOM GROUP  INC.", coverages.Demographics.Subscriber.GroupName);
             Assert.AreEqual("1757-05-23", coverages.Demographics.Subscriber.Dob);
             Assert.AreEqual("M", coverages.Demographics.Subscriber.Gender);
@@ -182,8 +183,8 @@ namespace EligibleService.Core.Tests
             var coverages = coverage.All(param);
 
             Assert.IsNotNull(coverages.Insurance);
-            Assert.AreEqual("00002", coverages.Insurance.Id);
-            Assert.AreEqual("InsName", coverages.Insurance.Name);
+            Assert.AreEqual("ELIG_SNDBX", coverages.Insurance.Id);
+            Assert.AreEqual("Sandbox", coverages.Insurance.Name);
             Assert.AreEqual("PR", coverages.Insurance.PayerType);
             Assert.AreEqual("Payer", coverages.Insurance.PayerTypeLabel);
         }
@@ -211,9 +212,47 @@ namespace EligibleService.Core.Tests
             Assert.AreEqual("Point of Service (POS)", physician.InsuranceTypeLabel);
             Assert.AreEqual(true, physician.PrimaryCare);
             Assert.AreEqual(false, physician.Restricted);
-            Assert.AreEqual(0, physician.ContactDetails.Count());
+            Assert.AreEqual(1, physician.ContactDetails.Count());
+            Assert.AreEqual("PRP", physician.ContactDetails[0].EntityCode);
+            Assert.AreEqual("Primary Payer", physician.ContactDetails[0].EntityCodeLabel);
+            Assert.AreEqual(null, physician.ContactDetails[0].FirstName);
+            Assert.AreEqual("FRANKLIN", physician.ContactDetails[0].LastName);
+            Assert.AreEqual("Member Identification Number", physician.ContactDetails[0].IdentificationType);
+            Assert.AreEqual("1234567890", physician.ContactDetails[0].IdentificationCode);
             Assert.AreEqual(0, physician.Dates.Count());
             Assert.AreEqual("PCP SELECTION NOT REQUIRED", physician.Comments[0]);
+        }
+
+
+
+        [TestMethod]
+        [TestCategory("CostEstimate")]
+        public void PlanFinancialsServiceDeliveryParseTest()
+        {
+            restClient.Setup(x => x.Execute(It.IsAny<string>(), It.IsAny<RequestOptions>(), It.IsAny<Hashtable>()))
+                .Returns(new RestResponse()
+                {
+                    StatusCode = HttpStatusCode.OK,
+                    Content = TestHelper.GetJson(TestResource.MocksPath + "Coverage.json")
+                });
+
+
+            coverage.ExecuteObj = restClient.Object;
+
+            var coverageResponse = coverage.All(param);
+
+            ServiceDelivery sd = new ServiceDelivery()
+            {
+                From = 1,
+                To = 3,
+                Period = "Years",
+                Type = "Uniys"
+            };
+
+            TestHelper.PropertyValuesAreEquals(sd, coverageResponse.Plan.Financials.Deductible.Remainings.InNetwork[0].ServiceDelivery);
+            TestHelper.PropertyValuesAreEquals(sd, coverageResponse.Plan.Financials.Deductible.Remainings.OutNetwork[0].ServiceDelivery);
+            TestHelper.PropertyValuesAreEquals(sd, coverageResponse.Plan.Financials.Deductible.Totals.InNetwork[0].ServiceDelivery);
+            TestHelper.PropertyValuesAreEquals(sd, coverageResponse.Plan.Financials.Deductible.Totals.OutNetwork[0].ServiceDelivery);
         }
 
         [TestMethod]

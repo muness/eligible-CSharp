@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using EligibleService.Model.CostEstimates;
+using Newtonsoft.Json;
 using System;
 using System.Collections.ObjectModel;
 
@@ -47,6 +48,9 @@ namespace EligibleService.Model.Coverage
 
         [JsonProperty("comments")]
         public Collection<String> Comments { get; set; }
-     
+
+        [JsonProperty("service_delivery")]
+        public ServiceDelivery ServiceDelivery { get; set; }
+
     }
 }

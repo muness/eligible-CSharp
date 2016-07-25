@@ -148,6 +148,7 @@
     <None Include="MockFiles\CostEstimateError.json" />
     <None Include="MockFiles\CostEstimateMedicare.json" />
     <None Include="MockFiles\CostEstimateMedicareError.json" />
+    <None Include="MockFiles\CostEstimatesServiceDelivery.json" />
     <None Include="MockFiles\Coverage.json" />
     <None Include="MockFiles\CustomerResponse.json" />
     <None Include="MockFiles\CustomersList.json" />
