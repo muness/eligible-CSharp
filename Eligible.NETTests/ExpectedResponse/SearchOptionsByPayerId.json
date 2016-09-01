@@ -1,11 +1,12 @@
 ﻿{
-	"payer_id": "62308",
-	"search_options": [
-		["member_id", "member_dob"],
-		["member_id", "dependent_first_name", "dependent_dob"],
-		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["member_dob", "chop_member_id"],
-		["dependent_first_name", "dependent_dob", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
-	]
+  "payer_id": "62308",
+  "search_options": [
+    [ "member_id", "member_dob" ],
+    [ "member_id", "dependent_first_name", "dependent_dob" ],
+    [ "member_id", "member_first_name", "member_last_name", "member_dob" ],
+    [ "member_dob", "chop_member_id" ],
+    [ "dependent_first_name", "dependent_dob", "chop_member_id" ],
+    [ "member_first_name", "member_last_name", "member_dob", "chop_member_id" ]
+  ],
+  "eligible_id": "8M481ATX5KOXSS"
 }

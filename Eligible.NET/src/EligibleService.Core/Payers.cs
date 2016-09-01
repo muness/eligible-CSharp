@@ -24,7 +24,7 @@ namespace EligibleService.Core
             param.Add("endpoint", endpoint);
             param.Add("enrollment_required", enrollmentRequired);
             response = ExecuteObj.Execute(EligibleResources.PathToPayers, SetRequestOptionsObject(options), param);
-            var formatResponse = RequestProcess.SimpleResponseValidation<Collection<PayerResponse>>(response);
+            var formatResponse = RequestProcess.SimpleResponseValidation<Collection<PayerData>>(response);
             PayersResponse payers = new PayersResponse();
             payers.Payers = formatResponse;
             payers.SetJsonResponse(response.Content);

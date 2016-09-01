@@ -14,6 +14,9 @@ namespace EligibleService.Exceptions
 
         [JsonProperty("errors")]
         public Collection<GenericError> Errors { get; set; }
+
+        [JsonProperty("eligible_id")]
+        public string EligibleId { get; set; }
     }
 
     public class GenericError : BasicError
@@ -24,15 +27,10 @@ namespace EligibleService.Exceptions
 
     public class CostEstimateError : EligibleGenericError
     {
-        [JsonProperty("eligible_id")]
-        public string EligibleId { get; set; }
         [JsonProperty("warnings")]
         public Collection<Exceptions.GenericError> Warnings { get; set; }
     }
 
     public class MedicareCostEstimateError : EligibleGenericError
-    {
-        [JsonProperty("eligible_id")]
-        public string EligibleId { get; set; }
-    }
+    {}
 }

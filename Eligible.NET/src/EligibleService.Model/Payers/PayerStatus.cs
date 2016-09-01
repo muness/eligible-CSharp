@@ -10,6 +10,9 @@ namespace EligibleService.Model
     {
         [JsonProperty("statuses")]
         public Collection<PayerStatus> Statuses { get; set; }
+
+        [JsonProperty("eligible_id")]
+        public string EligibleId { get; set; }
     }
 
     /// <summary>

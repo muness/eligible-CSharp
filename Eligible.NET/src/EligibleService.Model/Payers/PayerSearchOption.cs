@@ -13,10 +13,16 @@ namespace EligibleService.Model
 
         [JsonProperty("search_options")]
         public Collection<Collection<string>> SearchOptions { get; set; }
+
+        [JsonProperty("eligible_id")]
+        public string EligibleId { get; set; }
     }
 
     public class PayersSearchOptionResponse : JsonResponseClass
     {
         public Collection<PayerSearchOptionResponse> SearchOptionsList { get; set; }
+
+        [JsonProperty("eligible_id")]
+        public string EligibleId { get; set; }
     }
 }

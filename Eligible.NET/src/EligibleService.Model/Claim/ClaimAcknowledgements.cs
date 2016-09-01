@@ -16,6 +16,9 @@ namespace EligibleService.Model
 
         [JsonProperty("status")]
         public string Status { get; set; }
+
+        [JsonProperty("eligible_id")]
+        public string EligibleId { get; set; }
     }
 
     public class AcknowledgementCommonProperties : JsonResponseClass
@@ -52,6 +55,9 @@ namespace EligibleService.Model
     {
         [JsonProperty("acknowledgements")]
         public Collection<MultipleAcknowledgementFormat> Acknowledgements { get; set; }
+
+        [JsonProperty("eligible_id")]
+        public string EligibleId { get; set; }
     }
 
     public class MultipleAcknowledgementFormat

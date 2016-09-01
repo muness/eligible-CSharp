@@ -1,10 +1,13 @@
 ﻿{
 	"success": false,
 	"created_at": "2016-07-08T11:12:25Z",
-	"errors": [{
-		"code": "reference_id_invalid",
-		"param": "reference_id",
-		"message": "Claim not found for reference_id: invalid_id. Please send a valid reference_id.",
-		"expected_value": null
-	}]
+  "errors": [
+    {
+      "code": "reference_id_invalid",
+      "param": "reference_id",
+      "message": "Claim not found for reference_id: invalid_id. Please send a valid reference_id.",
+      "expected_value": null
+    }
+  ],
+  "eligible_id":"8MSHJQQF8FS4TN"
 }

@@ -49,7 +49,8 @@
 			"deductible_remaining": 1288.0,
 			"coinsurance_percent": null,
 			"copayment": null,
-			"info_valid_till": "2016-12-31"
+      "info_valid_till": "2016-12-31",
+      "info_valid_until":"2016-12-31"
 		},
 		"MB": {
 			"active": true,
@@ -59,7 +60,8 @@
 			"deductible_remaining": 0.0,
 			"coinsurance_percent": 20,
 			"copayment": null,
-			"info_valid_till": "2016-12-31"
+      "info_valid_till": "2016-12-31",
+      "info_valid_until":"2016-12-31"
 		},
 		"MC": {
 			"active": false,
@@ -115,7 +117,8 @@
 		"deductible_remaining": null,
 		"coinsurance_percent": 0,
 		"copayment": null,
-		"info_valid_till": "2016-12-31",
+    "info_valid_till": "2016-12-31",
+    "info_valid_until":"2016-12-31",
 		"visits": [{
 			"base": 8,
 			"remaining": 8,
@@ -148,7 +151,8 @@
 				"deductible_remaining": null,
 				"coinsurance_percent": 0,
 				"copayment": null,
-				"info_valid_till": "2016-12-31",
+        "info_valid_till": "2016-12-31",
+        "info_valid_until":"2016-12-31",
 				"visits": [{
 					"base": 8,
 					"remaining": 8,
@@ -166,7 +170,8 @@
 				"deductible_remaining": null,
 				"coinsurance_percent": 0,
 				"copayment": null,
-				"info_valid_till": "2016-12-31",
+        "info_valid_till": "2016-12-31",
+        "info_valid_until":"2016-12-31",
 				"visits": [{
 					"base": 8,
 					"remaining": 8,
@@ -200,7 +205,8 @@
 				"deductible_remaining": null,
 				"coinsurance_percent": 0,
 				"copayment": null,
-				"info_valid_till": "2016-12-31",
+        "info_valid_till": "2016-12-31",
+        "info_valid_until":"2016-12-31",
 				"visits": [{
 					"base": 8,
 					"remaining": 8,
@@ -218,7 +224,8 @@
 				"deductible_remaining": null,
 				"coinsurance_percent": 0,
 				"copayment": null,
-				"info_valid_till": "2016-12-31",
+        "info_valid_till": "2016-12-31",
+        "info_valid_until":"2016-12-31",
 				"visits": [{
 					"base": 8,
 					"remaining": 8,

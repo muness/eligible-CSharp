@@ -12,14 +12,13 @@ namespace EligibleService.Model
     /// third-party administrators, and government entities
     /// who finance or reimburse the cost of healthcare services.
     /// </summary>
-
-    public class PayerResponse : JsonResponseClass
-	{
+    public class PayerData : JsonResponseClass
+    {
         /// <summary>
         /// payer_id - Unique ID assigned by Eligible
         /// </summary>
         [JsonProperty("payer_id")]
-		public string PayerId{ get; set; }
+        public string PayerId { get; set; }
 
         /// <summary>
         /// names - List of names of the payer
@@ -43,12 +42,21 @@ namespace EligibleService.Model
         /// supported_endpoints - List of Eligible endpoints supported by the payer.
         /// </summary>
         [JsonProperty("supported_endpoints")]
-        public Collection<Endpoint> SupportedEndpoints{ get; set; }
-	}
+        public Collection<Endpoint> SupportedEndpoints { get; set; }
+    }
+
+    public class PayerResponse : PayerData
+    {
+        [JsonProperty("eligible_id")]
+        public string EligibleId { get; set; }
+    }
 
     public class PayersResponse : JsonResponseClass
     {
-        public Collection<PayerResponse> Payers { get; set; }
+        public Collection<PayerData> Payers { get; set; }
+
+        [JsonProperty("eligible_id")]
+        public string EligibleId { get; set; }
     }
 }
 

@@ -94,7 +94,7 @@ namespace EligibleService.Core.CoreTests
             CostEstimatesResponse actualResponse = costEstimates.Get(costestimateParamas);
 
             Assert.AreEqual("authorization_required", actualResponse.Warnings[0].Code);
-            Assert.AreEqual("authorization required", actualResponse.Warnings[0].Message);
+            Assert.AreEqual("The payer has indicated that this service requires prior authorization in order to be covered. This cost estimation is provided assuming prior authorization has been granted, but you may wish to verify this with the payer.", actualResponse.Warnings[0].Message);
         }
 
         [TestMethod]
