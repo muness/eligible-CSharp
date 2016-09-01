@@ -31,8 +31,8 @@ namespace EligibleService.Core.CoreTests
                 CostEstimateMedicareResponse actualResponse = costEstimates.Medicare(costEstimatesParams);
                 string expectedResponse = TestHelper.GetJson(TestResource.MocksPath + "CostEstimateMedicare.json");
                 TestHelper.CompareProperties(expectedResponse, actualResponse.JsonResponse());
-                CostEstimatesResponse expectedObj = JsonConvert.DeserializeObject<CostEstimatesResponse>(expectedResponse);
-                CostEstimatesResponse actualObj = JsonConvert.DeserializeObject<CostEstimatesResponse>(actualResponse.JsonResponse());
+                CostEstimateMedicareResponse expectedObj = JsonConvert.DeserializeObject<CostEstimateMedicareResponse>(expectedResponse);
+                CostEstimateMedicareResponse actualObj = JsonConvert.DeserializeObject<CostEstimateMedicareResponse>(actualResponse.JsonResponse());
                 TestHelper.PropertyValuesAreEquals(actualObj, expectedObj);
             }
             catch(EligibleService.Exceptions.EligibleException ex)

@@ -22,5 +22,8 @@ namespace EligibleService.Model.Medicare
 
         [JsonProperty("info_valid_till")]
         public string InfoValidTill { get; set; }
+
+        [JsonProperty("info_valid_until")]
+        public string InfoValidUntil { get; set; }
     }
 }

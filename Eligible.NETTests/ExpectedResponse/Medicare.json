@@ -1,12 +1,12 @@
 ﻿{
-	"created_at": "2016-06-22T04:28:44Z",
-	"eligible_id": "33F8BSE2EDG44",
+	"created_at": "2016-08-31T14:03:03Z",
+	"eligible_id": "B6SBMP5TAXJP",
 	"known_issues": [],
 	"date_of_death": null,
 	"last_name": "FRANKLIN",
 	"first_name": "BENJAMIN",
 	"middle_name": "J",
-	"member_id": "1234567890",
+	"member_id": "COST_MEDICARE_001",
 	"group_id": null,
 	"group_name": null,
 	"dob": "1967-09-09",
@@ -49,6 +49,7 @@
 			"deductible_remaining": 1288.0,
 			"coinsurance_percent": null,
 			"copayment": null,
+			"info_valid_until": "2016-12-31",
 			"info_valid_till": "2016-12-31"
 		},
 		"MB": {
@@ -59,6 +60,7 @@
 			"deductible_remaining": 0.0,
 			"coinsurance_percent": 20,
 			"copayment": null,
+			"info_valid_until": "2016-12-31",
 			"info_valid_till": "2016-12-31"
 		},
 		"MC": {
@@ -115,6 +117,7 @@
 		"deductible_remaining": null,
 		"coinsurance_percent": 0,
 		"copayment": null,
+		"info_valid_until": "2016-12-31",
 		"info_valid_till": "2016-12-31",
 		"visits": [{
 			"base": 8,

@@ -20,5 +20,8 @@ namespace EligibleService.Model
 
         [JsonProperty("errors")]
         public Collection<EligibleService.Exceptions.GenericError> Errors { get; set; }
+
+        [JsonProperty("eligible_id")]
+        public string EligibleId { get; set; }
     }
 }

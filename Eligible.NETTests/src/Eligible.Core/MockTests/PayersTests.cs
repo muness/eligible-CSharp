@@ -64,7 +64,7 @@ namespace EligibleService.Core.Tests
             var payersResponse = payers.All();
 
             Fixture fixture = new Fixture();
-            Collection<PayerResponse> sut = fixture.Create<Collection<PayerResponse>>();
+            Collection<PayerData> sut = fixture.Create<Collection<PayerData>>();
 
             TestHelper.PropertiesAreEqual(sut, payersResponse.JsonResponse());
         }

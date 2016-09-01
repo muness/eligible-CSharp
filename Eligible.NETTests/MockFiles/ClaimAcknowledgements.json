@@ -21,9 +21,10 @@
     ],
     "payer_control_number": "6514322781123",
     "reference_id": "12121212",
-	"status": "accepted",
+	  "status": "accepted",
     "page": 1,
     "per_page": 30,
     "num_of_pages": 1,
-    "total": 3
+    "total": 3,
+    "eligible_id":"V2UI55DJGL9VU"
 }

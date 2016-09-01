@@ -9,13 +9,14 @@ namespace EligibleService.Model
     public class ClaimPaymentReportsResponse : AcknowledgementCommonProperties
     {
         [JsonProperty("reports")]
-        public Collection<ClaimPaymentReportResponse> Reports { get; set; }
+        public Collection<PaymentReport> Reports { get; set; }
+
+        [JsonProperty("eligible_id")]
+        public string EligibleId { get; set; }
     }
 
-
-    public class ClaimPaymentReportResponse : JsonResponseClass
+    public class PaymentReport : JsonResponseClass
     {
-
         [JsonProperty("reference_id")]
         public string ReferenceId { get; set; }
 
@@ -45,6 +46,11 @@ namespace EligibleService.Model
 
         [JsonProperty("claim")]
         public ReportsClaim Claim { get; set; }
+    }
+    public class ClaimPaymentReportResponse : PaymentReport
+    {
+        [JsonProperty("eligible_id")]
+        public string EligibleId { get; set; }
     }
 
 }

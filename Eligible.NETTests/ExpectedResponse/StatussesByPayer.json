@@ -5,7 +5,7 @@
 		"transaction_type": "270",
 		"status": "available",
 		"details": "Payer is working fine.",
-		"updated_at": "09-12-2015 13:40",
+		"updated_at": "31-08-2016 11:49",
 		"message": null
 	}, {
 		"payer_id": "00002",
@@ -15,5 +15,6 @@
 		"details": "Payer is working fine.",
 		"updated_at": "05-06-2014 21:11",
 		"message": null
-	}]
+	}],
+	"eligible_id": "8MSGU0IN2NDFDM"
 }
