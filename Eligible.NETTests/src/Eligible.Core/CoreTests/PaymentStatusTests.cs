@@ -6,6 +6,8 @@ using EligibleService.Model;
 using EligibleService.Core.Tests;
 using EligibleService.NETTests;
 using Newtonsoft.Json;
+using EligibleService.Exceptions;
+using Newtonsoft.Json.Linq;
 
 namespace EligibleService.Core.CoreTests
 {
@@ -20,24 +22,98 @@ namespace EligibleService.Core.CoreTests
             BaseTestClass.SetConfiguration();
         }
 
-        //[TestMethod]
-        //[TestCategory("PaymentStatus")]
-        //public void CostEstimatesTest()
-        //{
-        //    PayementStatusResponse actualResponse = paymentStatus.Get(PaymentStatusParams());
+        [TestMethod]
+        [TestCategory("PaymentStatus")]
+        public void PaymentStatusFinalisedButNoPaymentTest()
+        {
+            var hashParams = PaymentStatusParams();
+            hashParams.Add("member_id", "10101010");
 
-        //    string expectedResponse = TestHelper.GetJson(TestResource.ExpectedResponse + "paymentStatus.json");
-        //    TestHelper.CompareProperties(expectedResponse, actualResponse.JsonResponse());
+            PayementStatusResponse actualResponse = paymentStatus.Get(hashParams);
 
-        //    PayementStatusResponse expectedObj = JsonConvert.DeserializeObject<PayementStatusResponse>(expectedResponse);
-        //    PayementStatusResponse actualObj = JsonConvert.DeserializeObject<PayementStatusResponse>(actualResponse.JsonResponse());
-        //    TestHelper.PropertyValuesAreEquals(actualObj, expectedObj);
-        //}
+            string expectedResponse = TestHelper.GetJson(TestResource.ExpectedResponse + "paymentStatus.json");
+            TestHelper.CompareProperties(expectedResponse, actualResponse.JsonResponse());
+
+            PayementStatusResponse expectedObj = JsonConvert.DeserializeObject<PayementStatusResponse>(expectedResponse);
+            PayementStatusResponse actualObj = JsonConvert.DeserializeObject<PayementStatusResponse>(actualResponse.JsonResponse());
+            TestHelper.PropertyValuesAreEquals(actualObj, expectedObj);
+        }
+
+        [TestMethod]
+        [TestCategory("PaymentStatus")]
+        public void PaymentStatusNotFoundTest()
+        {
+            var hashParams = PaymentStatusParams();
+            hashParams.Add("member_id", "11111111");
+
+            try
+            {
+                PayementStatusResponse actualResponse = paymentStatus.Get(hashParams);
+            }
+            catch (Exception ex)
+            {
+                PaymentStatusError actualResponse = JsonConvert.DeserializeObject<PaymentStatusError>(ex.Message);
+                string expectedResponse = TestHelper.GetJson(TestResource.ExpectedResponse + "PaymentStatusNotFound.json");
+                TestHelper.CompareProperties(expectedResponse, JsonConvert.SerializeObject(actualResponse));
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("PaymentStatus")]
+        public void PaymentStatusMoreInfoRequiredTest()
+        {
+            var hashParams = PaymentStatusParams();
+            hashParams.Add("member_id", "12121212");
+
+            try
+            {
+                PayementStatusResponse actualResponse = paymentStatus.Get(hashParams);
+            }
+            catch (Exception ex)
+            {
+                PaymentStatusError actualResponse = JsonConvert.DeserializeObject<PaymentStatusError>(ex.Message);
+                string expectedResponse = TestHelper.GetJson(TestResource.ExpectedResponse + "PaymentStatusNotFound.json");
+                TestHelper.CompareProperties(expectedResponse, JsonConvert.SerializeObject(actualResponse));
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("PaymentStatus")]
+        public void PaymentStatusPaidTest()
+        {
+            var hashParams = PaymentStatusParams();
+            hashParams.Add("member_id", "12312312");
+
+            PayementStatusResponse actualResponse = paymentStatus.Get(hashParams);
+            string expectedResponse = TestHelper.GetJson(TestResource.ExpectedResponse + "PaymentStatusPaid.json");
+            TestHelper.CompareProperties(expectedResponse, actualResponse.JsonResponse());
+
+            PayementStatusResponse expectedObj = JsonConvert.DeserializeObject<PayementStatusResponse>(expectedResponse);
+            PayementStatusResponse actualObj = JsonConvert.DeserializeObject<PayementStatusResponse>(actualResponse.JsonResponse());
+            TestHelper.PropertyValuesAreEquals(actualObj, expectedObj);
+        }
+
+        [TestMethod]
+        [TestCategory("PaymentStatus")]
+        public void PaymentStatusPendingTest()
+        {
+            var hashParams = PaymentStatusParams();
+            hashParams.Add("member_id", "34343434");
+
+            PayementStatusResponse actualResponse = paymentStatus.Get(hashParams);
+            string expectedResponse = TestHelper.GetJson(TestResource.ExpectedResponse + "PaymentStatusPending.json");
+            TestHelper.CompareProperties(expectedResponse, actualResponse.JsonResponse());
+
+            PayementStatusResponse expectedObj = JsonConvert.DeserializeObject<PayementStatusResponse>(expectedResponse);
+            PayementStatusResponse actualObj = JsonConvert.DeserializeObject<PayementStatusResponse>(actualResponse.JsonResponse());
+            TestHelper.PropertyValuesAreEquals(actualObj, expectedObj);
+        }
+
 
         [TestMethod]
         [TestCategory("PaymentStatus")]
         [ExpectedException(typeof(EligibleService.Exceptions.EligibleException))]
-        public void CostEstimatesEligibleExceptionTest()
+        public void PaymentStatusExceptionTest()
         {
             Hashtable input = new Hashtable();
             var actualResponse = paymentStatus.Get(input);
@@ -51,7 +127,6 @@ namespace EligibleService.Core.CoreTests
             param.Add("payer_id", "00001");
             param.Add("provider_last_name", "Doe");
             param.Add("provider_first_name", "John");
-            param.Add("member_id", "ZZZ445554301");
             param.Add("member_first_name", "IDA");
             param.Add("member_last_name", "FRANKLIN");
             param.Add("member_dob", "1701-12-12");

@@ -12,6 +12,9 @@ namespace EligibleService.Model.Coverage
         [JsonProperty("eligibility_code_label")]
         public string EligibilityCodeLabel { get; set; }
 
+        [JsonProperty("coverage_description")]
+        public string CoverageDescription { get; set; }
+
         [JsonProperty("insurance_type")]
         public string InsuranceType { get; set; }
 

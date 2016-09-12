@@ -68,7 +68,7 @@ namespace EligibleService.Core.Tests
             catch(EligibleException ex)
             {
                 Fixture fixture = new Fixture();
-                var sut = fixture.Create<CoverageErrorDetails>();
+                var sut = fixture.Create<PaymentStatusError>();
 
                 TestHelper.PropertiesAreEqual(sut, JsonConvert.SerializeObject(ex.EligibleError));
             }

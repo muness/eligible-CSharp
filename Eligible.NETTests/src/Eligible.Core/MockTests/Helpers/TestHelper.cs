@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Reflection;
+using System.Text.RegularExpressions;
 
 namespace EligibleService.Core.Tests
 {
@@ -95,48 +96,66 @@ namespace EligibleService.Core.Tests
             if(expected.Count != actual.Count)
                 Assert.Fail("Mismatch in json properties. Expeced {0} properties but got {1}", expected.Count, actual.Count);
             else
-            foreach(string key in actual.Keys)
             {
-                Assert.IsTrue(expected.ContainsKey(key), "Miss match in property  " + key);
-                
-                if (actual[key] != null && actual[key].ToString().StartsWith("{"))
+                foreach (string key in actual.Keys)
                 {
-                    if (actual[key].ToString().StartsWith("["))
+                    if (actual[key] != null && actual.Contains("VisitsLimitation"))
                     {
-                        IList listActual = (IList)actual[key];
-                        IList listExpected = (IList)expected[key];
-                        for (int i = 0; i < listActual.Count; i++)
+                        Assert.IsTrue(expected.ContainsKey(key), "Miss match in property  " + key);
+
+                        string actualValue = Regex.Replace(actual[key].ToString(), @"\s+", "");
+
+                        if (actual[key] != null && (actualValue.StartsWith("{") || actualValue.StartsWith("[")))
                         {
-                            CheckKeys(listExpected[i].ToString(), listActual[i].ToString());
+                            if (actual[key].ToString().StartsWith("["))
+                            {
+                                IList listActual = (IList)actual[key];
+                                IList listExpected = (IList)expected[key];
+                                for (int i = 0; i < listActual.Count; i++)
+                                {
+                                    string expectedListValue = Regex.Replace(listExpected[i].ToString(), @"\s+", "");
+                                    string actualListValue = Regex.Replace(listActual[i].ToString(), @"\s+", "");
+                                    if (actualListValue.StartsWith("{") || (actualListValue.Contains("{") && actualListValue.StartsWith("[")))
+                                    {
+                                        CheckKeys(expectedListValue, actualListValue);
+                                    }
+                                    else
+                                    {
+                                        Assert.AreEqual(expectedListValue.GetType(), actualListValue.GetType());
+                                    }
+                                }
+                            }
+                            else
+                                CheckKeys(JsonConvert.SerializeObject(expected[key]), JsonConvert.SerializeObject(actual[key]));
+                        }
+                        else
+                        {
+                            var actualValu = actual[key];
+                            if(expected[key] != null)
+                            {
+                                if (expected[key].GetType() == typeof(double))
+                                {
+                                    double actValue;
+                                    bool actResult = double.TryParse(actualValu.ToString(), out actValue);
+                                    if (!actResult)
+                                        Assert.Fail("Actual json has some invalid type. Expected Doubel for " + key);
+
+                                    actualValu = actValue;
+                                }
+                                else if (expected[key].GetType() == typeof(bool))
+                                {
+                                    bool actValue;
+                                    bool actResult = bool.TryParse(actualValu.ToString(), out actValue);
+                                    if (!actResult)
+                                        Assert.Fail("Actual json has some invalid type. Expected boolean for " + key);
+
+                                    actualValu = actValue;
+                                }
+                                else
+                                    Assert.AreEqual(expected[key].GetType(), actualValu.GetType(), key + " has invalid type");
+                            }
                         }
                     }
-                    else
-                        CheckKeys(JsonConvert.SerializeObject(expected[key]), JsonConvert.SerializeObject(actual[key]));
-                }
-
-                if (actual[key] != null)
-                {
-                    var actualValu = actual[key];
-                    if(expected[key].GetType() == typeof(double))
-                    { 
-                        double actValue;
-                        bool actResult = double.TryParse(actualValu.ToString(), out actValue);
-                        if (!actResult)
-                            Assert.Fail("Actual json has some invalid type. Expected Doubel for " + key);
-
-                        actualValu = actValue;
-                    }
-                    else if (expected[key].GetType() == typeof(bool))
-                    {
-                        bool actValue;
-                        bool actResult = bool.TryParse(actualValu.ToString(), out actValue);
-                        if (!actResult)
-                            Assert.Fail("Actual json has some invalid type. Expected boolean for " + key);
-
-                        actualValu = actValue;
-                    }
-                    else
-                        Assert.AreEqual(expected[key].GetType(), actualValu.GetType(), key + " has invalid type");
                 }
             }
         }

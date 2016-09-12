@@ -19,7 +19,7 @@ namespace EligibleService.Claim.ClaimReports
         [JsonProperty("revised_intrest")]
         public double? RevisedIntrest { get; set; }
 
-        [JsonProperty("negetive_ladger_balance")]
+        [JsonProperty("negative_ledger_balance")]
         public double? NegetiveLadgerBalance { get; set; }
     }
 

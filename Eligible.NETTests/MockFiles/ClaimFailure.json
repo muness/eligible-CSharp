@@ -1,13 +1,12 @@
-﻿{  
-   "success":false,
-   "created_at":"2015-11-06T11:22:44Z",
-   "reference_id":"12121212",
-   "errors":[  
-      {  
-         "code":"claim_service_lines",
-         "param":"claim[service_lines]",
-         "message":"Invalid json structure for claim[service_lines]. Please refer the documentation and send proper json.",
-         "expected_value":null
-      }
-   ]
+﻿{
+	"success": false,
+	"created_at": "2016-09-01T17:34:42Z",
+	"errors": [{
+		"code": "rendering_provider_npi_invalid",
+		"param": "rendering_provider[npi]",
+		"message": "The rendering_provider's NPI must be exactly 10 digits",
+		"expected_value": null
+	}],
+	"eligible_id": "8LT5WL4UVSJ3GZ",
+	"reference_id": "8LT5WL4UVSJ3GZ"
 }

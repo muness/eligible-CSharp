@@ -19,6 +19,7 @@ namespace EligibleService.Core.Tests.Helpers
                 CreatedAt = Convert.ToDateTime("2014-07-20T07:17:25Z"),
                 UpdatedAt = Convert.ToDateTime("2015-06-12T13:19:53Z"),
                 SupportedEndpoints = BuildEndPoints(),
+                EligibleId = "33VV6363ERH68"
             };
         }
 
