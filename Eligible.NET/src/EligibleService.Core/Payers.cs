@@ -54,7 +54,7 @@ namespace EligibleService.Core
         {
             response = ExecuteObj.Execute(EligibleResources.PathToPayerSearchOptions, SetRequestOptionsObject(options));
             PayersSearchOptionResponse payersSearchOptionResponse = new PayersSearchOptionResponse();
-            var formattedResponse = RequestProcess.SimpleResponseValidation<Collection<PayerSearchOptionResponse>>(response);
+            var formattedResponse = RequestProcess.SimpleResponseValidation<Collection<PayerSearchOptions>>(response);
             payersSearchOptionResponse.SearchOptionsList = formattedResponse;
             payersSearchOptionResponse.SetJsonResponse(response.Content);
             return payersSearchOptionResponse; 

@@ -7,7 +7,16 @@ namespace EligibleService.Exceptions
     /// <summary>
     /// Eligible Error structure.
     /// </summary>
-    public class CoverageError
+    public class CoverageError : CoverageErrorWithoutFollowUpAction
+    {
+        [JsonProperty("follow_up_action_description")]
+        public string FollowUpActionDescription { get; set; }
+
+        [JsonProperty("follow_up_action_code")]
+        public string FollowUpActionCode { get; set; }
+    }
+
+    public class CoverageErrorWithoutFollowUpAction
     {
         [JsonProperty("response_code")]
         public string ResponseCode { get; set; }
@@ -26,12 +35,6 @@ namespace EligibleService.Exceptions
 
         [JsonProperty("reject_reason_description")]
         public string RejectReasonDescription { get; set; }
-
-        [JsonProperty("follow_up_action_code")]
-        public string FollowUpActionCode { get; set; }
-
-        [JsonProperty("follow_up_action_description")]
-        public string FollowUpActionDescription { get; set; }
 
         [JsonProperty("details")]
         public string Details { get; set; }

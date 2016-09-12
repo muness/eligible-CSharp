@@ -32,8 +32,8 @@ namespace EligibleService.Model.Payer
         /// <summary>
         /// average_enrollment_process_time for Endopoint
         /// </summary>
-        [JsonProperty("average_enrollment_processTime")]
-        public int? AverageEnrollmentProcessTime { get; set; }
+        [JsonProperty("average_enrollment_process_time")]
+        public string AverageEnrollmentProcessTime { get; set; }
 
         /// <summary>
         /// enrollment_mandatory_fields - List of mandatory fields required to enroll with particular payer. 

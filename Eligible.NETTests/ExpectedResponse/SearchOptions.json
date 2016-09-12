@@ -1,48 +1,17 @@
 ﻿[{
-	"payer_id": "00028",
-	"search_options": [
-		["member_id"],
-		["member_dob", "member_ssn"],
-		["member_first_name", "member_last_name", "member_ssn"],
-		["member_first_name", "member_last_name", "member_dob", "member_gender"],
-		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
-	]
-}, {
-	"payer_id": "00074",
-	"search_options": [
-		["member_id", "member_ssn"],
-		["member_id", "member_first_name", "member_last_name"],
-		["member_id", "member_dob"],
-		["member_first_name", "member_last_name", "member_ssn"],
-		["member_dob", "member_ssn"],
-		["member_first_name", "member_last_name", "member_dob"],
-		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["member_ssn", "chop_member_id"],
-		["member_first_name", "member_last_name", "chop_member_id"],
-		["member_dob", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
-	]
-}, {
 	"payer_id": "00143",
 	"search_options": [
 		["member_id", "member_dob"],
 		["member_id", "dependent_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
 		["member_dob", "chop_member_id"],
-		["dependent_dob", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["dependent_dob", "chop_member_id"]
 	]
 }, {
-	"payer_id": "00211",
+	"payer_id": "00164",
 	"search_options": [
-		["member_id", "member_dob"],
-		["member_first_name", "member_last_name", "member_dob", "member_group_id"],
-		["member_id", "dependent_first_name", "dependent_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["member_dob", "chop_member_id"],
-		["dependent_first_name", "dependent_dob", "chop_member_id"],
 		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
 	]
 }, {
@@ -52,29 +21,9 @@
 		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
 	]
 }, {
-	"payer_id": "00260",
+	"payer_id": "00335",
 	"search_options": [
-		["member_first_name", "member_last_name", "member_dob"],
-		["dependent_first_name", "dependent_last_name", "dependent_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
-	]
-}, {
-	"payer_id": "00329",
-	"search_options": [
-		["member_id"],
-		["member_first_name", "member_last_name", "member_dob"],
-		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
-	]
-}, {
-	"payer_id": "00340",
-	"search_options": [
-		["member_id"],
-		["member_first_name", "member_last_name", "member_dob"],
-		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
 		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
 	]
 }, {
@@ -108,6 +57,16 @@
 		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
 	]
 }, {
+	"payer_id": "01041",
+	"search_options": [
+		["member_id", "member_dob"],
+		["member_id", "dependent_first_name", "dependent_dob"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "chop_member_id"],
+		["dependent_first_name", "dependent_dob", "chop_member_id"]
+	]
+}, {
 	"payer_id": "01250",
 	"search_options": [
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
@@ -118,29 +77,39 @@
 	"search_options": [
 		["member_id"],
 		["member_id", "member_dob"],
+		["member_id", "dependent_dob"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "dependent_first_name", "dependent_last_name", "dependent_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
 		["member_dob", "member_ssn"],
 		["member_dob", "member_employee_id"],
-		["member_first_name", "member_last_name", "member_dob"],
-		["member_id", "dependent_dob"],
+		["member_dob", "chop_member_id"],
 		["member_ssn", "dependent_dob"],
 		["member_employee_id", "dependent_dob"],
-		["member_first_name", "member_last_name", "dependent_first_name", "dependent_last_name", "dependent_dob"],
-		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_dob", "chop_member_id"],
 		["dependent_dob", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["chop_member_id"]
+	]
+}, {
+	"payer_id": "02038",
+	"search_options": [
+		["member_id", "member_dob"],
+		["member_id", "dependent_first_name", "dependent_dob"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "chop_member_id"],
+		["dependent_first_name", "dependent_dob", "chop_member_id"]
 	]
 }, {
 	"payer_id": "03432",
 	"search_options": [
 		["member_id"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
 		["member_first_name", "member_last_name", "member_dob"],
 		["member_first_name", "member_last_name", "member_dob", "member_ssn"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
 		["member_dob", "member_ssn"],
-		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "04271",
@@ -148,20 +117,23 @@
 		["member_id"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
 		["member_first_name", "member_last_name", "member_dob", "member_gender"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "04298",
 	"search_options": [
 		["member_id"],
-		["member_first_name", "member_last_name", "member_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "04332",
+	"search_options": []
+}, {
+	"payer_id": "05047",
 	"search_options": []
 }, {
 	"payer_id": "06105",
@@ -179,11 +151,11 @@
 	"payer_id": "06111",
 	"search_options": [
 		["member_id"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
 		["member_first_name", "member_ssn"],
 		["member_first_name", "member_last_name", "member_dob"],
-		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "10003",
@@ -194,56 +166,73 @@
 		["dependent_dob", "dependent_ssn"]
 	]
 }, {
-	"payer_id": "10145",
-	"search_options": []
-}, {
-	"payer_id": "10146",
-	"search_options": []
-}, {
-	"payer_id": "10250",
-	"search_options": []
-}, {
-	"payer_id": "10251",
-	"search_options": []
-}, {
-	"payer_id": "10252",
+	"payer_id": "10066",
 	"search_options": []
 }, {
 	"payer_id": "10253",
 	"search_options": []
 }, {
 	"payer_id": "10262",
-	"search_options": []
+	"search_options": [
+		["member_id"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_id", "dependent_first_name", "dependent_last_name", "dependent_dob"],
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["dependent_first_name", "dependent_last_name", "dependent_dob", "chop_member_id"],
+		["chop_member_id"]
+	]
 }, {
 	"payer_id": "10340",
 	"search_options": []
 }, {
-	"payer_id": "10391",
-	"search_options": []
-}, {
-	"payer_id": "10416",
-	"search_options": []
-}, {
-	"payer_id": "10445",
-	"search_options": []
-}, {
-	"payer_id": "10659",
+	"payer_id": "10654",
 	"search_options": []
 }, {
 	"payer_id": "10988",
 	"search_options": []
 }, {
 	"payer_id": "11315",
+	"search_options": [
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+	]
+}, {
+	"payer_id": "12422",
+	"search_options": []
+}, {
+	"payer_id": "128MO",
+	"search_options": [
+		["member_id"],
+		["member_id", "member_dob"],
+		["member_id", "dependent_dob"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "dependent_first_name", "dependent_last_name", "dependent_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "member_ssn"],
+		["member_dob", "member_employee_id"],
+		["member_dob", "chop_member_id"],
+		["member_ssn", "dependent_dob"],
+		["member_employee_id", "dependent_dob"],
+		["dependent_dob", "chop_member_id"],
+		["chop_member_id"]
+	]
+}, {
+	"payer_id": "12K82",
+	"search_options": []
+}, {
+	"payer_id": "12X09",
 	"search_options": []
 }, {
 	"payer_id": "13334",
 	"search_options": [
 		["member_id"],
-		["member_dob", "member_ssn"],
-		["member_first_name", "member_last_name", "member_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "member_ssn"],
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "13335",
@@ -264,18 +253,18 @@
 	"search_options": [
 		["member_id"],
 		["member_id", "member_dob"],
+		["member_id", "dependent_dob"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "dependent_first_name", "dependent_last_name", "dependent_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
 		["member_dob", "member_ssn"],
 		["member_dob", "member_employee_id"],
-		["member_first_name", "member_last_name", "member_dob"],
-		["member_id", "dependent_dob"],
+		["member_dob", "chop_member_id"],
 		["member_ssn", "dependent_dob"],
 		["member_employee_id", "dependent_dob"],
-		["member_first_name", "member_last_name", "dependent_first_name", "dependent_last_name", "dependent_dob"],
-		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_dob", "chop_member_id"],
 		["dependent_dob", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "13402",
@@ -284,44 +273,53 @@
 		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
 	]
 }, {
+	"payer_id": "14163",
+	"search_options": [
+		["member_id", "member_dob"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "chop_member_id"]
+	]
+}, {
 	"payer_id": "14165",
 	"search_options": [
 		["member_id", "member_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
 		["member_id", "dependent_dob"],
 		["member_id", "dependent_first_name", "dependent_last_name", "dependent_dob"],
-		["member_dob", "chop_member_id"],
 		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
-		["dependent_dob", "chop_member_id"],
-		["dependent_first_name", "dependent_last_name", "dependent_dob", "chop_member_id"]
+		["member_dob", "chop_member_id"],
+		["dependent_first_name", "dependent_last_name", "dependent_dob", "chop_member_id"],
+		["dependent_dob", "chop_member_id"]
 	]
 }, {
 	"payer_id": "14179",
 	"search_options": [
 		["member_id"],
 		["member_id", "member_dob"],
+		["member_id", "dependent_dob"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "dependent_first_name", "dependent_last_name", "dependent_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
 		["member_dob", "member_ssn"],
 		["member_dob", "member_employee_id"],
-		["member_first_name", "member_last_name", "member_dob"],
-		["member_id", "dependent_dob"],
+		["member_dob", "chop_member_id"],
 		["member_ssn", "dependent_dob"],
 		["member_employee_id", "dependent_dob"],
-		["member_first_name", "member_last_name", "dependent_first_name", "dependent_last_name", "dependent_dob"],
-		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_dob", "chop_member_id"],
 		["dependent_dob", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "16117",
 	"search_options": []
 }, {
 	"payer_id": "19991",
-	"search_options": [
-		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
-	]
+	"search_options": []
+}, {
+	"payer_id": "20149",
+	"search_options": []
 }, {
 	"payer_id": "20488",
 	"search_options": [
@@ -329,13 +327,10 @@
 		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
 	]
 }, {
-	"payer_id": "22099",
-	"search_options": [
-		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
-	]
+	"payer_id": "20554",
+	"search_options": []
 }, {
-	"payer_id": "22248",
+	"payer_id": "22099",
 	"search_options": [
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
 		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
@@ -345,15 +340,12 @@
 	"search_options": [
 		["member_id", "member_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["member_dob", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "chop_member_id"]
 	]
 }, {
-	"payer_id": "22355",
-	"search_options": [
-		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
-	]
+	"payer_id": "22348",
+	"search_options": []
 }, {
 	"payer_id": "23037",
 	"search_options": [
@@ -369,23 +361,11 @@
 		["dependent_first_name", "dependent_last_name", "dependent_dob", "chop_member_id"]
 	]
 }, {
-	"payer_id": "23228",
-	"search_options": [
-		["member_id"],
-		["member_id", "member_dob"],
-		["member_dob", "member_ssn"],
-		["member_dob", "member_employee_id"],
-		["member_first_name", "member_last_name", "member_dob"],
-		["member_id", "dependent_dob"],
-		["member_ssn", "dependent_dob"],
-		["member_employee_id", "dependent_dob"],
-		["member_first_name", "member_last_name", "dependent_first_name", "dependent_last_name", "dependent_dob"],
-		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_dob", "chop_member_id"],
-		["dependent_dob", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
-	]
+	"payer_id": "23223",
+	"search_options": []
+}, {
+	"payer_id": "23281",
+	"search_options": []
 }, {
 	"payer_id": "23284",
 	"search_options": []
@@ -409,51 +389,76 @@
 	]
 }, {
 	"payer_id": "25175",
-	"search_options": []
+	"search_options": [
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+	]
 }, {
 	"payer_id": "26337",
 	"search_options": [
 		["member_id"],
 		["member_id", "member_dob"],
+		["member_id", "dependent_dob"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "dependent_first_name", "dependent_last_name", "dependent_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
 		["member_dob", "member_ssn"],
 		["member_dob", "member_employee_id"],
-		["member_first_name", "member_last_name", "member_dob"],
-		["member_id", "dependent_dob"],
+		["member_dob", "chop_member_id"],
 		["member_ssn", "dependent_dob"],
 		["member_employee_id", "dependent_dob"],
-		["member_first_name", "member_last_name", "dependent_first_name", "dependent_last_name", "dependent_dob"],
-		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_dob", "chop_member_id"],
 		["dependent_dob", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["chop_member_id"]
 	]
 }, {
-	"payer_id": "31107",
+	"payer_id": "29076",
 	"search_options": [
+		["member_id", "member_dob"],
+		["member_id", "dependent_first_name", "dependent_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob", "member_group_id"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "chop_member_id"],
+		["dependent_first_name", "dependent_dob", "chop_member_id"]
 	]
 }, {
 	"payer_id": "31114",
-	"search_options": []
+	"search_options": [
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "member_ssn"]
+	]
+}, {
+	"payer_id": "31141",
+	"search_options": [
+		["member_id", "member_dob"],
+		["member_id", "dependent_first_name", "dependent_dob"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "chop_member_id"],
+		["dependent_first_name", "dependent_dob", "chop_member_id"]
+	]
 }, {
 	"payer_id": "31417",
 	"search_options": [
 		["member_id", "member_dob"],
-		["member_first_name", "member_last_name", "member_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["member_dob", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "chop_member_id"]
 	]
+}, {
+	"payer_id": "31625",
+	"search_options": []
 }, {
 	"payer_id": "32004",
 	"search_options": [
 		["member_id"],
-		["member_first_name", "member_last_name", "member_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "33001",
@@ -465,6 +470,9 @@
 		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
 	]
 }, {
+	"payer_id": "34150",
+	"search_options": []
+}, {
 	"payer_id": "35145",
 	"search_options": [
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
@@ -473,11 +481,27 @@
 		["dependent_first_name", "dependent_last_name", "dependent_dob", "chop_member_id"]
 	]
 }, {
+	"payer_id": "35167",
+	"search_options": [
+		["member_id", "member_dob"],
+		["member_id", "dependent_first_name", "dependent_dob"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "chop_member_id"],
+		["dependent_first_name", "dependent_dob", "chop_member_id"]
+	]
+}, {
+	"payer_id": "35174",
+	"search_options": []
+}, {
 	"payer_id": "35182",
 	"search_options": [
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
 		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
 	]
+}, {
+	"payer_id": "35193",
+	"search_options": []
 }, {
 	"payer_id": "36273",
 	"search_options": [
@@ -491,24 +515,35 @@
 		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
 	]
 }, {
+	"payer_id": "37217",
+	"search_options": []
+}, {
+	"payer_id": "37287",
+	"search_options": [
+		["member_id"]
+	]
+}, {
 	"payer_id": "37602",
 	"search_options": [
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
 		["member_id", "member_last_name", "member_dob"],
 		["member_id", "member_first_name", "member_dob"],
 		["member_id", "member_dob"],
 		["member_id", "member_first_name", "member_last_name"],
-		["member_first_name", "member_last_name", "member_dob"],
 		["member_id", "dependent_first_name", "dependent_last_name", "dependent_dob"],
 		["member_id", "dependent_last_name", "dependent_dob"],
 		["member_id", "dependent_first_name", "dependent_dob"],
 		["member_id", "dependent_dob"],
 		["member_id", "dependent_first_name", "dependent_last_name"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_first_name", "member_last_name", "member_dob"],
 		["dependent_first_name", "dependent_last_name", "dependent_dob"]
 	]
 }, {
 	"payer_id": "38217",
+	"search_options": []
+}, {
+	"payer_id": "38308",
 	"search_options": []
 }, {
 	"payer_id": "38309",
@@ -517,10 +552,16 @@
 		["member_id", "member_dob", "member_ssn"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
 		["member_first_name", "member_last_name", "member_dob", "member_ssn"],
-		["chop_member_id"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
 		["member_dob", "member_ssn", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["chop_member_id"]
 	]
+}, {
+	"payer_id": "38333",
+	"search_options": []
+}, {
+	"payer_id": "38334",
+	"search_options": []
 }, {
 	"payer_id": "38520",
 	"search_options": [
@@ -532,38 +573,38 @@
 	"search_options": [
 		["member_id"],
 		["member_id", "member_dob"],
+		["member_id", "dependent_dob"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "dependent_first_name", "dependent_last_name", "dependent_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
 		["member_dob", "member_ssn"],
 		["member_dob", "member_employee_id"],
-		["member_first_name", "member_last_name", "member_dob"],
-		["member_id", "dependent_dob"],
+		["member_dob", "chop_member_id"],
 		["member_ssn", "dependent_dob"],
 		["member_employee_id", "dependent_dob"],
-		["member_first_name", "member_last_name", "dependent_first_name", "dependent_last_name", "dependent_dob"],
-		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_dob", "chop_member_id"],
 		["dependent_dob", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "39026",
 	"search_options": [
 		["member_id", "member_dob"],
 		["member_id", "member_first_name", "member_last_name"],
-		["member_dob", "member_ssn"],
-		["member_first_name", "member_last_name", "member_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
 		["member_id", "dependent_dob"],
 		["member_id", "dependent_first_name", "dependent_last_name"],
-		["member_ssn", "dependent_dob"],
-		["dependent_first_name", "dependent_last_name", "dependent_dob"],
 		["member_id", "dependent_first_name", "dependent_last_name", "dependent_dob"],
-		["member_dob", "chop_member_id"],
+		["member_first_name", "member_last_name", "member_dob"],
 		["member_first_name", "member_last_name", "chop_member_id"],
 		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
-		["dependent_dob", "chop_member_id"],
+		["member_dob", "member_ssn"],
+		["member_dob", "chop_member_id"],
+		["member_ssn", "dependent_dob"],
+		["dependent_first_name", "dependent_last_name", "dependent_dob"],
 		["dependent_first_name", "dependent_last_name", "chop_member_id"],
 		["dependent_first_name", "dependent_last_name", "dependent_dob", "chop_member_id"],
+		["dependent_dob", "chop_member_id"],
 		["dependent_dob", "dependent_ssn"]
 	]
 }, {
@@ -574,33 +615,36 @@
 	]
 }, {
 	"payer_id": "39151",
-	"search_options": []
+	"search_options": [
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+	]
 }, {
 	"payer_id": "39186",
 	"search_options": [
 		["member_id"],
-		["member_first_name", "member_last_name", "member_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "39187",
 	"search_options": [
 		["member_id"],
-		["member_first_name", "member_last_name", "member_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "39188",
 	"search_options": [
 		["member_id"],
-		["member_first_name", "member_last_name", "member_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "41099",
@@ -608,6 +652,9 @@
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
 		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
 	]
+}, {
+	"payer_id": "41147",
+	"search_options": []
 }, {
 	"payer_id": "41161",
 	"search_options": [
@@ -625,19 +672,22 @@
 	"search_options": [
 		["member_id", "member_dob"],
 		["member_id", "member_first_name", "member_last_name"],
-		["member_first_name", "member_last_name", "member_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
 		["member_id", "dependent_dob"],
 		["member_id", "dependent_first_name", "dependent_last_name"],
-		["dependent_first_name", "dependent_last_name", "dependent_dob"],
 		["member_id", "dependent_first_name", "dependent_last_name", "dependent_dob"],
-		["member_dob", "chop_member_id"],
+		["member_first_name", "member_last_name", "member_dob"],
 		["member_first_name", "member_last_name", "chop_member_id"],
 		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
-		["dependent_dob", "chop_member_id"],
+		["member_dob", "chop_member_id"],
+		["dependent_first_name", "dependent_last_name", "dependent_dob"],
 		["dependent_first_name", "dependent_last_name", "chop_member_id"],
-		["dependent_first_name", "dependent_last_name", "dependent_dob", "chop_member_id"]
+		["dependent_first_name", "dependent_last_name", "dependent_dob", "chop_member_id"],
+		["dependent_dob", "chop_member_id"]
 	]
+}, {
+	"payer_id": "43313",
+	"search_options": []
 }, {
 	"payer_id": "44054",
 	"search_options": [
@@ -645,12 +695,15 @@
 		["member_id", "dependent_first_name", "dependent_last_name", "dependent_dob", "dependent_gender"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
 		["member_first_name", "member_last_name", "member_dob", "member_gender", "chop_member_id"],
-		["dependent_first_name", "dependent_last_name", "dependent_dob", "dependent_gender", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["dependent_first_name", "dependent_last_name", "dependent_dob", "dependent_gender", "chop_member_id"]
 	]
 }, {
 	"payer_id": "44444",
-	"search_options": []
+	"search_options": [
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+	]
 }, {
 	"payer_id": "47027",
 	"search_options": [
@@ -659,6 +712,9 @@
 	]
 }, {
 	"payer_id": "48055",
+	"search_options": []
+}, {
+	"payer_id": "51062",
 	"search_options": []
 }, {
 	"payer_id": "52123",
@@ -674,9 +730,6 @@
 	]
 }, {
 	"payer_id": "52133",
-	"search_options": []
-}, {
-	"payer_id": "52148",
 	"search_options": [
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
 		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
@@ -698,11 +751,11 @@
 	"search_options": [
 		["member_id", "member_dob"],
 		["member_id", "member_first_name", "member_last_name"],
-		["member_first_name", "member_last_name", "member_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["member_dob", "chop_member_id"],
+		["member_first_name", "member_last_name", "member_dob"],
 		["member_first_name", "member_last_name", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "chop_member_id"]
 	]
 }, {
 	"payer_id": "53011",
@@ -719,9 +772,12 @@
 		["member_id", "dependent_first_name", "dependent_last_name", "dependent_dob", "dependent_gender"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
 		["member_first_name", "member_last_name", "member_dob", "member_gender", "chop_member_id"],
-		["dependent_first_name", "dependent_last_name", "dependent_dob", "dependent_gender", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["dependent_first_name", "dependent_last_name", "dependent_dob", "dependent_gender", "chop_member_id"]
 	]
+}, {
+	"payer_id": "54154",
+	"search_options": []
 }, {
 	"payer_id": "54763",
 	"search_options": [
@@ -730,24 +786,27 @@
 	]
 }, {
 	"payer_id": "55764",
-	"search_options": []
+	"search_options": [
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+	]
 }, {
 	"payer_id": "57604",
 	"search_options": [
 		["member_id"],
 		["member_id", "member_dob"],
+		["member_id", "dependent_dob"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "dependent_first_name", "dependent_last_name", "dependent_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
 		["member_dob", "member_ssn"],
 		["member_dob", "member_employee_id"],
-		["member_first_name", "member_last_name", "member_dob"],
-		["member_id", "dependent_dob"],
+		["member_dob", "chop_member_id"],
 		["member_ssn", "dependent_dob"],
 		["member_employee_id", "dependent_dob"],
-		["member_first_name", "member_last_name", "dependent_first_name", "dependent_last_name", "dependent_dob"],
-		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_dob", "chop_member_id"],
 		["dependent_dob", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "58210",
@@ -755,9 +814,9 @@
 		["member_id", "member_dob"],
 		["member_id", "dependent_first_name", "dependent_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
 		["member_dob", "chop_member_id"],
-		["dependent_first_name", "dependent_dob", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["dependent_first_name", "dependent_dob", "chop_member_id"]
 	]
 }, {
 	"payer_id": "58226",
@@ -770,18 +829,18 @@
 	"search_options": [
 		["member_id"],
 		["member_id", "member_dob"],
+		["member_id", "dependent_dob"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "dependent_first_name", "dependent_last_name", "dependent_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
 		["member_dob", "member_ssn"],
 		["member_dob", "member_employee_id"],
-		["member_first_name", "member_last_name", "member_dob"],
-		["member_id", "dependent_dob"],
+		["member_dob", "chop_member_id"],
 		["member_ssn", "dependent_dob"],
 		["member_employee_id", "dependent_dob"],
-		["member_first_name", "member_last_name", "dependent_first_name", "dependent_last_name", "dependent_dob"],
-		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_dob", "chop_member_id"],
 		["dependent_dob", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "59221",
@@ -818,23 +877,20 @@
 	"search_options": [
 		["member_id", "member_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["member_dob", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "chop_member_id"]
 	]
 }, {
-	"payer_id": "59321",
-	"search_options": []
-}, {
-	"payer_id": "593222484",
+	"payer_id": "59322",
 	"search_options": []
 }, {
 	"payer_id": "59354",
 	"search_options": [
 		["member_id", "member_dob"],
-		["member_first_name", "member_last_name", "member_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["member_dob", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "chop_member_id"]
 	]
 }, {
 	"payer_id": "59608",
@@ -847,36 +903,46 @@
 	"search_options": [
 		["member_id"],
 		["member_id", "member_dob"],
+		["member_id", "dependent_dob"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "dependent_first_name", "dependent_last_name", "dependent_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
 		["member_dob", "member_ssn"],
 		["member_dob", "member_employee_id"],
-		["member_first_name", "member_last_name", "member_dob"],
-		["member_id", "dependent_dob"],
+		["member_dob", "chop_member_id"],
 		["member_ssn", "dependent_dob"],
 		["member_employee_id", "dependent_dob"],
-		["member_first_name", "member_last_name", "dependent_first_name", "dependent_last_name", "dependent_dob"],
-		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_dob", "chop_member_id"],
 		["dependent_dob", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["chop_member_id"]
+	]
+}, {
+	"payer_id": "61127",
+	"search_options": [
+		["member_id", "member_dob"],
+		["member_id", "dependent_first_name", "dependent_dob"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "chop_member_id"],
+		["dependent_first_name", "dependent_dob", "chop_member_id"]
 	]
 }, {
 	"payer_id": "61425",
 	"search_options": [
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["member_first_name", "member_last_name", "member_dob"],
 		["member_id", "dependent_first_name", "dependent_last_name", "dependent_dob"],
-		["dependent_first_name", "dependent_last_name", "dependent_dob"],
+		["member_first_name", "member_last_name", "member_dob"],
 		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["dependent_first_name", "dependent_last_name", "dependent_dob"],
 		["dependent_first_name", "dependent_last_name", "dependent_dob", "chop_member_id"]
 	]
 }, {
 	"payer_id": "62073",
 	"search_options": [
-		["member_first_name", "member_last_name", "member_dob"],
-		["dependent_first_name", "dependent_last_name", "dependent_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["dependent_first_name", "dependent_last_name", "dependent_dob"]
 	]
 }, {
 	"payer_id": "62129",
@@ -884,9 +950,18 @@
 		["member_id", "member_dob"],
 		["member_id", "dependent_first_name", "dependent_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
 		["member_dob", "chop_member_id"],
-		["dependent_first_name", "dependent_dob", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["dependent_first_name", "dependent_dob", "chop_member_id"]
+	]
+}, {
+	"payer_id": "62179",
+	"search_options": [
+		["member_id"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "62308",
@@ -894,9 +969,9 @@
 		["member_id", "member_dob"],
 		["member_id", "dependent_first_name", "dependent_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
 		["member_dob", "chop_member_id"],
-		["dependent_first_name", "dependent_dob", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["dependent_first_name", "dependent_dob", "chop_member_id"]
 	]
 }, {
 	"payer_id": "64157",
@@ -912,57 +987,39 @@
 	"search_options": [
 		["member_id"],
 		["member_id", "member_dob"],
+		["member_id", "dependent_dob"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "dependent_first_name", "dependent_last_name", "dependent_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
 		["member_dob", "member_ssn"],
 		["member_dob", "member_employee_id"],
-		["member_first_name", "member_last_name", "member_dob"],
-		["member_id", "dependent_dob"],
+		["member_dob", "chop_member_id"],
 		["member_ssn", "dependent_dob"],
 		["member_employee_id", "dependent_dob"],
-		["member_first_name", "member_last_name", "dependent_first_name", "dependent_last_name", "dependent_dob"],
-		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_dob", "chop_member_id"],
 		["dependent_dob", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["chop_member_id"]
 	]
 }, {
+	"payer_id": "68011",
+	"search_options": []
+}, {
 	"payer_id": "68035",
-	"search_options": []
-}, {
-	"payer_id": "68047",
-	"search_options": []
-}, {
-	"payer_id": "68048",
 	"search_options": []
 }, {
 	"payer_id": "68050",
 	"search_options": []
 }, {
-	"payer_id": "68051",
-	"search_options": []
-}, {
 	"payer_id": "68052",
 	"search_options": []
-}, {
-	"payer_id": "68053",
-	"search_options": []
-}, {
-	"payer_id": "68054",
-	"search_options": [
-		["member_id"],
-		["member_first_name", "member_last_name", "member_dob"],
-		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
-	]
 }, {
 	"payer_id": "68055",
 	"search_options": [
 		["member_id"],
-		["member_first_name", "member_last_name", "member_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "68056",
@@ -971,31 +1028,22 @@
 	"payer_id": "68057",
 	"search_options": [
 		["member_id"],
-		["member_first_name", "member_last_name", "member_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["chop_member_id"]
 	]
 }, {
-	"payer_id": "68058",
-	"search_options": []
-}, {
-	"payer_id": "68059",
-	"search_options": []
-}, {
 	"payer_id": "68060",
-	"search_options": []
-}, {
-	"payer_id": "68061",
 	"search_options": []
 }, {
 	"payer_id": "68062",
 	"search_options": [
 		["member_id"],
-		["member_first_name", "member_last_name", "member_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "68065",
@@ -1004,10 +1052,10 @@
 	"payer_id": "68066",
 	"search_options": [
 		["member_id"],
-		["member_first_name", "member_last_name", "member_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "68067",
@@ -1019,9 +1067,6 @@
 	"payer_id": "68069",
 	"search_options": []
 }, {
-	"payer_id": "68099",
-	"search_options": []
-}, {
 	"payer_id": "68609",
 	"search_options": []
 }, {
@@ -1030,9 +1075,9 @@
 		["member_id", "member_dob"],
 		["member_id", "dependent_first_name", "dependent_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
 		["member_dob", "chop_member_id"],
-		["dependent_first_name", "dependent_dob", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["dependent_first_name", "dependent_dob", "chop_member_id"]
 	]
 }, {
 	"payer_id": "74227",
@@ -1041,32 +1086,29 @@
 		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
 	]
 }, {
+	"payer_id": "74289",
+	"search_options": []
+}, {
+	"payer_id": "75273",
+	"search_options": []
+}, {
 	"payer_id": "76342",
 	"search_options": [
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
 		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
 	]
 }, {
-	"payer_id": "77001",
+	"payer_id": "77054",
 	"search_options": [
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
 		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
 	]
 }, {
-	"payer_id": "77002",
-	"search_options": [
-		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
-	]
+	"payer_id": "77082",
+	"search_options": []
 }, {
 	"payer_id": "77160",
 	"search_options": []
-}, {
-	"payer_id": "79480",
-	"search_options": [
-		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
-	]
 }, {
 	"payer_id": "80141",
 	"search_options": [
@@ -1074,9 +1116,12 @@
 		["member_id", "member_dob"],
 		["member_id", "member_first_name", "member_last_name"],
 		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
-		["member_dob", "chop_member_id"],
-		["member_first_name", "member_last_name", "chop_member_id"]
+		["member_first_name", "member_last_name", "chop_member_id"],
+		["member_dob", "chop_member_id"]
 	]
+}, {
+	"payer_id": "80142",
+	"search_options": []
 }, {
 	"payer_id": "80314",
 	"search_options": [
@@ -1091,9 +1136,9 @@
 		["member_id", "member_dob"],
 		["member_id", "member_first_name", "member_last_name"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["member_dob", "chop_member_id"],
 		["member_first_name", "member_last_name", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "chop_member_id"]
 	]
 }, {
 	"payer_id": "81264",
@@ -1133,20 +1178,20 @@
 		["member_id", "member_dob"],
 		["member_id", "dependent_first_name", "dependent_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
 		["member_dob", "chop_member_id"],
-		["dependent_first_name", "dependent_dob", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["dependent_first_name", "dependent_dob", "chop_member_id"]
 	]
 }, {
 	"payer_id": "86047",
 	"search_options": [
 		["member_id"],
-		["member_dob", "member_ssn"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
 		["member_first_name", "member_last_name", "member_ssn"],
 		["member_first_name", "member_last_name", "member_dob"],
-		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "member_ssn"],
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "86048",
@@ -1161,20 +1206,38 @@
 		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
 	]
 }, {
+	"payer_id": "86052",
+	"search_options": [
+		["member_id"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["chop_member_id"]
+	]
+}, {
+	"payer_id": "87042",
+	"search_options": []
+}, {
+	"payer_id": "87043",
+	"search_options": []
+}, {
 	"payer_id": "87726",
 	"search_options": [
 		["member_id", "member_dob"],
-		["member_dob", "member_ssn"],
 		["member_id", "member_first_name", "member_last_name"],
-		["member_first_name", "member_last_name", "member_dob", "member_state"],
 		["member_id", "dependent_first_name", "dependent_dob"],
-		["dependent_first_name", "dependent_last_name", "dependent_dob", "dependent_state"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["member_dob", "chop_member_id"],
+		["member_first_name", "member_last_name", "member_dob", "member_state"],
 		["member_first_name", "member_last_name", "chop_member_id"],
-		["dependent_first_name", "dependent_dob", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "member_ssn"],
+		["member_dob", "chop_member_id"],
+		["dependent_first_name", "dependent_last_name", "dependent_dob", "dependent_state"],
+		["dependent_first_name", "dependent_dob", "chop_member_id"]
 	]
+}, {
+	"payer_id": "88030",
+	"search_options": []
 }, {
 	"payer_id": "89070",
 	"search_options": [
@@ -1194,6 +1257,9 @@
 	"payer_id": "91051",
 	"search_options": []
 }, {
+	"payer_id": "93029",
+	"search_options": []
+}, {
 	"payer_id": "93221",
 	"search_options": []
 }, {
@@ -1203,10 +1269,46 @@
 		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
 	]
 }, {
+	"payer_id": "95308",
+	"search_options": []
+}, {
+	"payer_id": "95321",
+	"search_options": []
+}, {
 	"payer_id": "95378",
 	"search_options": [
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
 		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+	]
+}, {
+	"payer_id": "95379",
+	"search_options": [
+		["member_id", "member_dob"],
+		["member_id", "member_first_name", "member_last_name"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "chop_member_id"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "chop_member_id"]
+	]
+}, {
+	"payer_id": "95388",
+	"search_options": [
+		["member_id", "member_dob"],
+		["member_id", "member_first_name", "member_last_name"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "chop_member_id"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "chop_member_id"]
+	]
+}, {
+	"payer_id": "95412",
+	"search_options": [
+		["member_id", "member_dob"],
+		["member_id", "member_first_name", "member_last_name"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "chop_member_id"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "chop_member_id"]
 	]
 }, {
 	"payer_id": "95467",
@@ -1216,23 +1318,37 @@
 	]
 }, {
 	"payer_id": "95567",
-	"search_options": []
+	"search_options": [
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_id", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+	]
+}, {
+	"payer_id": "95569",
+	"search_options": [
+		["member_id", "member_dob"],
+		["member_id", "member_first_name", "member_last_name"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "chop_member_id"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "chop_member_id"]
+	]
 }, {
 	"payer_id": "95604",
 	"search_options": [
-		["member_first_name", "member_last_name", "member_dob"],
-		["dependent_first_name", "dependent_last_name", "dependent_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["dependent_first_name", "dependent_last_name", "dependent_dob"]
 	]
 }, {
 	"payer_id": "95958",
 	"search_options": [
 		["member_id"],
-		["member_first_name", "member_last_name", "member_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "95959",
@@ -1254,14 +1370,17 @@
 	]
 }, {
 	"payer_id": "96385",
-	"search_options": []
+	"search_options": [
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+	]
 }, {
 	"payer_id": "ABHOH",
 	"search_options": [
 		["member_id", "member_dob"],
-		["member_first_name", "member_last_name", "member_dob"],
 		["member_id", "member_first_name", "member_last_name"],
-		["member_id"]
+		["member_id"],
+		["member_first_name", "member_last_name", "member_dob"]
 	]
 }, {
 	"payer_id": "AKMCR",
@@ -1280,14 +1399,17 @@
 		["dependent_first_name", "dependent_last_name", "dependent_dob", "chop_member_id"]
 	]
 }, {
+	"payer_id": "ALIHP",
+	"search_options": []
+}, {
 	"payer_id": "ALMCD",
 	"search_options": [
 		["member_id"],
-		["member_dob", "member_ssn"],
-		["member_first_name", "member_last_name", "member_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "member_ssn"],
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "ALMCR",
@@ -1302,11 +1424,11 @@
 	"search_options": [
 		["member_id", "member_dob"],
 		["member_id", "member_first_name", "member_last_name"],
-		["member_first_name", "member_last_name", "member_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["member_dob", "chop_member_id"],
+		["member_first_name", "member_last_name", "member_dob"],
 		["member_first_name", "member_last_name", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "chop_member_id"]
 	]
 }, {
 	"payer_id": "ARBLS",
@@ -1323,12 +1445,12 @@
 	"payer_id": "ARMCD",
 	"search_options": [
 		["member_id"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
 		["member_first_name", "member_last_name", "member_ssn"],
 		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
 		["member_dob", "member_ssn"],
-		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "ARMCR",
@@ -1339,6 +1461,9 @@
 		["member_id", "member_first_name", "member_last_name"]
 	]
 }, {
+	"payer_id": "AZMCD",
+	"search_options": []
+}, {
 	"payer_id": "AZMCR",
 	"search_options": [
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
@@ -1347,17 +1472,20 @@
 		["member_id", "member_first_name", "member_last_name"]
 	]
 }, {
+	"payer_id": "BANKLC",
+	"search_options": []
+}, {
 	"payer_id": "BC001",
 	"search_options": [
 		["member_id", "member_dob"],
 		["member_id", "dependent_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
 		["member_dob", "chop_member_id"],
-		["dependent_dob", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["dependent_dob", "chop_member_id"]
 	]
 }, {
-	"payer_id": "BCBSMDP",
+	"payer_id": "BCBSCNY",
 	"search_options": []
 }, {
 	"payer_id": "BCBSRA",
@@ -1369,22 +1497,15 @@
 	"payer_id": "BCBSX",
 	"search_options": []
 }, {
-	"payer_id": "BCCBC",
+	"payer_id": "BCIBC",
 	"search_options": [
+		["member_id"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
 		["member_id", "dependent_first_name", "dependent_last_name", "dependent_dob"],
+		["member_first_name", "member_last_name", "member_dob"],
 		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
-		["dependent_first_name", "dependent_last_name", "dependent_dob", "chop_member_id"]
-	]
-}, {
-	"payer_id": "BCVAC",
-	"search_options": [
-		["member_id", "member_first_name", "member_last_name", "member_dob", "member_gender"],
-		["member_id", "dependent_first_name", "dependent_last_name", "dependent_dob", "dependent_gender"],
-		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["member_first_name", "member_last_name", "member_dob", "member_gender", "chop_member_id"],
-		["dependent_first_name", "dependent_last_name", "dependent_dob", "dependent_gender", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["dependent_first_name", "dependent_last_name", "dependent_dob", "chop_member_id"],
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "BRIDG",
@@ -1404,26 +1525,8 @@
 	"payer_id": "CALOP",
 	"search_options": []
 }, {
-	"payer_id": "CAPAD",
+	"payer_id": "CAPOR",
 	"search_options": []
-}, {
-	"payer_id": "CBRIA",
-	"search_options": [
-		["member_id"],
-		["member_first_name", "member_last_name", "member_dob"],
-		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
-	]
-}, {
-	"payer_id": "CMGHP",
-	"search_options": [
-		["member_id"],
-		["member_first_name", "member_last_name", "member_dob"],
-		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
-	]
 }, {
 	"payer_id": "CNHLT1",
 	"search_options": []
@@ -1446,6 +1549,12 @@
 }, {
 	"payer_id": "COKSR",
 	"search_options": []
+}, {
+	"payer_id": "COMCD",
+	"search_options": [
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+	]
 }, {
 	"payer_id": "COMCR",
 	"search_options": [
@@ -1493,11 +1602,11 @@
 	"search_options": [
 		["member_id", "member_ssn"],
 		["member_id", "member_dob"],
-		["member_dob", "member_ssn"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["member_ssn", "chop_member_id"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "member_ssn"],
 		["member_dob", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_ssn", "chop_member_id"]
 	]
 }, {
 	"payer_id": "CTMCR",
@@ -1508,15 +1617,6 @@
 		["member_id", "member_first_name", "member_last_name"]
 	]
 }, {
-	"payer_id": "CTOTL",
-	"search_options": [
-		["member_id"],
-		["member_first_name", "member_last_name", "member_dob"],
-		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
-	]
-}, {
 	"payer_id": "DCMCD",
 	"search_options": []
 }, {
@@ -1524,10 +1624,16 @@
 	"search_options": []
 }, {
 	"payer_id": "DEBLS",
-	"search_options": []
+	"search_options": [
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+	]
 }, {
 	"payer_id": "DEMCD",
-	"search_options": []
+	"search_options": [
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+	]
 }, {
 	"payer_id": "DHS01",
 	"search_options": []
@@ -1535,7 +1641,7 @@
 	"payer_id": "EBMS1",
 	"search_options": []
 }, {
-	"payer_id": "EBSRMSCO",
+	"payer_id": "ELIG_SNDBX",
 	"search_options": []
 }, {
 	"payer_id": "EMBLM",
@@ -1550,13 +1656,106 @@
 	"payer_id": "EVRGR",
 	"search_options": []
 }, {
+	"payer_id": "EXCAR",
+	"search_options": []
+}, {
 	"payer_id": "F2370600",
 	"search_options": [
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
 		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
 	]
 }, {
-	"payer_id": "F6127102",
+	"payer_id": "F2512100",
+	"search_options": [
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+	]
+}, {
+	"payer_id": "F2512300",
+	"search_options": [
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+	]
+}, {
+	"payer_id": "F2512400",
+	"search_options": [
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+	]
+}, {
+	"payer_id": "F2512500",
+	"search_options": [
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+	]
+}, {
+	"payer_id": "F2512600",
+	"search_options": [
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+	]
+}, {
+	"payer_id": "F2512700",
+	"search_options": [
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+	]
+}, {
+	"payer_id": "F2512800",
+	"search_options": [
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+	]
+}, {
+	"payer_id": "F2513000",
+	"search_options": [
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+	]
+}, {
+	"payer_id": "F2513100",
+	"search_options": [
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+	]
+}, {
+	"payer_id": "F2513200",
+	"search_options": [
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+	]
+}, {
+	"payer_id": "F2513500",
+	"search_options": [
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+	]
+}, {
+	"payer_id": "F2513600",
+	"search_options": [
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+	]
+}, {
+	"payer_id": "F2513700",
+	"search_options": [
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+	]
+}, {
+	"payer_id": "F2514200",
+	"search_options": [
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+	]
+}, {
+	"payer_id": "F2514300",
+	"search_options": [
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+	]
+}, {
+	"payer_id": "F2515000",
 	"search_options": [
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
 		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
@@ -1575,12 +1774,12 @@
 	"payer_id": "FLMCD",
 	"search_options": [
 		["member_id"],
-		["member_dob", "member_ssn"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
 		["member_first_name", "member_last_name", "member_ssn"],
 		["member_first_name", "member_last_name", "member_dob"],
-		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "member_ssn"],
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "FLMCR",
@@ -1608,6 +1807,17 @@
 		["dependent_first_name", "dependent_last_name", "dependent_dob", "chop_member_id"]
 	]
 }, {
+	"payer_id": "GAMCD",
+	"search_options": [
+		["member_id"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_ssn"],
+		["member_first_name", "member_last_name", "member_dob", "member_gender"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "member_ssn"],
+		["chop_member_id"]
+	]
+}, {
 	"payer_id": "GAMCR",
 	"search_options": [
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
@@ -1623,8 +1833,8 @@
 	"search_options": [
 		["member_id"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "HIBLS",
@@ -1638,15 +1848,18 @@
 		["member_id", "member_first_name", "member_last_name"]
 	]
 }, {
+	"payer_id": "HMA01",
+	"search_options": []
+}, {
 	"payer_id": "HUMANA",
 	"search_options": [
 		["member_id", "member_dob"],
 		["member_id", "member_dob", "member_state"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["member_dob", "chop_member_id"],
-		["member_dob", "member_state", "chop_member_id"],
+		["member_id", "dependent_dob"],
 		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
-		["member_id", "dependent_dob"]
+		["member_dob", "chop_member_id"],
+		["member_dob", "member_state", "chop_member_id"]
 	]
 }, {
 	"payer_id": "IABLS",
@@ -1681,14 +1894,14 @@
 		["member_id", "member_dob"],
 		["member_id", "member_ssn"],
 		["member_id", "member_first_name", "member_last_name"],
-		["member_first_name", "member_last_name", "member_ssn"],
-		["member_dob", "member_ssn"],
-		["member_first_name", "member_last_name", "member_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["member_dob", "chop_member_id"],
-		["member_ssn", "chop_member_id"],
+		["member_first_name", "member_last_name", "member_ssn"],
+		["member_first_name", "member_last_name", "member_dob"],
 		["member_first_name", "member_last_name", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "member_ssn"],
+		["member_dob", "chop_member_id"],
+		["member_ssn", "chop_member_id"]
 	]
 }, {
 	"payer_id": "IDMCR",
@@ -1698,6 +1911,9 @@
 		["member_id", "member_first_name", "member_dob"],
 		["member_id", "member_first_name", "member_last_name"]
 	]
+}, {
+	"payer_id": "IEHP1",
+	"search_options": []
 }, {
 	"payer_id": "ILBLS",
 	"search_options": [
@@ -1710,12 +1926,12 @@
 	"payer_id": "ILMCD",
 	"search_options": [
 		["member_id"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
 		["member_first_name", "member_last_name", "member_ssn"],
 		["member_first_name", "member_last_name", "member_dob", "member_ssn"],
 		["member_first_name", "member_last_name", "member_dob"],
-		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "ILMCR",
@@ -1737,11 +1953,11 @@
 	"payer_id": "INMCD",
 	"search_options": [
 		["member_id"],
-		["member_ssn"],
-		["member_first_name", "member_last_name", "member_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_ssn"],
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "INMCR",
@@ -1759,9 +1975,6 @@
 	"search_options": []
 }, {
 	"payer_id": "JHHP",
-	"search_options": []
-}, {
-	"payer_id": "JNHOP1",
 	"search_options": []
 }, {
 	"payer_id": "KCBLS",
@@ -1785,9 +1998,6 @@
 		["member_id", "member_dob"]
 	]
 }, {
-	"payer_id": "KEYBEN",
-	"search_options": []
-}, {
 	"payer_id": "KPIC1",
 	"search_options": []
 }, {
@@ -1809,7 +2019,10 @@
 	]
 }, {
 	"payer_id": "KSMCD",
-	"search_options": []
+	"search_options": [
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+	]
 }, {
 	"payer_id": "KSMCR",
 	"search_options": [
@@ -1830,11 +2043,11 @@
 	"payer_id": "KYMCD",
 	"search_options": [
 		["member_id"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
 		["member_first_name", "member_last_name", "member_ssn"],
 		["member_first_name", "member_last_name", "member_dob", "member_gender"],
-		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "KYMCR",
@@ -1851,12 +2064,27 @@
 		["member_id", "dependent_first_name", "dependent_last_name", "dependent_dob", "dependent_gender"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
 		["member_first_name", "member_last_name", "member_dob", "member_gender", "chop_member_id"],
-		["dependent_first_name", "dependent_last_name", "dependent_dob", "dependent_gender", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["dependent_first_name", "dependent_last_name", "dependent_dob", "dependent_gender", "chop_member_id"]
 	]
 }, {
-	"payer_id": "LACARE ",
+	"payer_id": "LACAR",
 	"search_options": []
+}, {
+	"payer_id": "LAMCD",
+	"search_options": [
+		["member_id", "member_ssn"],
+		["member_id", "member_first_name", "member_last_name"],
+		["member_id", "member_dob"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_ssn"],
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "chop_member_id"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "member_ssn"],
+		["member_dob", "chop_member_id"],
+		["member_ssn", "chop_member_id"]
+	]
 }, {
 	"payer_id": "LAMCR",
 	"search_options": [
@@ -1872,38 +2100,37 @@
 		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
 	]
 }, {
-	"payer_id": "LOOMS1",
-	"search_options": []
-}, {
 	"payer_id": "MABLS",
 	"search_options": [
 		["member_id", "member_dob"],
 		["member_id", "member_first_name", "member_last_name"],
-		["member_first_name", "member_last_name", "member_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
 		["member_id", "dependent_dob"],
 		["member_id", "dependent_first_name", "dependent_last_name"],
-		["dependent_first_name", "dependent_last_name", "dependent_dob"],
 		["member_id", "dependent_first_name", "dependent_last_name", "dependent_dob"],
-		["member_dob", "chop_member_id"],
+		["member_first_name", "member_last_name", "member_dob"],
 		["member_first_name", "member_last_name", "chop_member_id"],
 		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
-		["dependent_dob", "chop_member_id"],
+		["member_dob", "chop_member_id"],
+		["dependent_first_name", "dependent_last_name", "dependent_dob"],
 		["dependent_first_name", "dependent_last_name", "chop_member_id"],
-		["dependent_first_name", "dependent_last_name", "dependent_dob", "chop_member_id"]
+		["dependent_first_name", "dependent_last_name", "dependent_dob", "chop_member_id"],
+		["dependent_dob", "chop_member_id"]
 	]
 }, {
 	"payer_id": "MAGNA",
-	"search_options": []
+	"search_options": [
+		["member_id", "member_first_name", "member_last_name", "member_dob"]
+	]
 }, {
 	"payer_id": "MAMCD",
 	"search_options": [
 		["member_id"],
-		["member_ssn"],
-		["member_first_name", "member_last_name", "member_dob", "member_gender"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob", "member_gender"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_ssn"],
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "MAMCR",
@@ -1919,9 +2146,9 @@
 		["member_id", "member_dob"],
 		["member_id", "dependent_first_name", "dependent_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
 		["member_dob", "chop_member_id"],
-		["dependent_first_name", "dependent_dob", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["dependent_first_name", "dependent_dob", "chop_member_id"]
 	]
 }, {
 	"payer_id": "MDAHLT",
@@ -1944,16 +2171,13 @@
 	"payer_id": "MDMCD",
 	"search_options": [
 		["member_id"],
-		["member_dob", "member_ssn"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
 		["member_first_name", "member_last_name", "member_ssn"],
 		["member_first_name", "member_last_name", "member_dob"],
-		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "member_ssn"],
+		["chop_member_id"]
 	]
-}, {
-	"payer_id": "MDPHS1",
-	"search_options": []
 }, {
 	"payer_id": "MEBLS",
 	"search_options": [
@@ -1979,8 +2203,12 @@
 }, {
 	"payer_id": "MIBLS",
 	"search_options": [
+		["member_id", "member_dob"],
+		["member_id", "dependent_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "chop_member_id"],
+		["dependent_dob", "chop_member_id"]
 	]
 }, {
 	"payer_id": "MIMCD",
@@ -2005,17 +2233,17 @@
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
 		["member_id", "member_dob"],
 		["member_id", "member_first_name", "member_last_name"],
-		["member_first_name", "member_last_name", "member_dob"],
 		["member_id", "dependent_first_name", "dependent_last_name", "dependent_dob"],
 		["member_id", "dependent_dob"],
 		["member_id", "dependent_first_name", "dependent_last_name"],
-		["dependent_first_name", "dependent_last_name", "dependent_dob"],
+		["member_first_name", "member_last_name", "member_dob"],
 		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
-		["member_dob", "chop_member_id"],
 		["member_first_name", "member_last_name", "chop_member_id"],
+		["member_dob", "chop_member_id"],
+		["dependent_first_name", "dependent_last_name", "dependent_dob"],
 		["dependent_first_name", "dependent_last_name", "dependent_dob", "chop_member_id"],
-		["dependent_dob", "chop_member_id"],
-		["dependent_first_name", "dependent_last_name", "chop_member_id"]
+		["dependent_first_name", "dependent_last_name", "chop_member_id"],
+		["dependent_dob", "chop_member_id"]
 	]
 }, {
 	"payer_id": "MNMCD",
@@ -2043,13 +2271,13 @@
 	"payer_id": "MOMCD",
 	"search_options": [
 		["member_id"],
-		["member_first_name", "member_last_name", "member_dob"],
-		["member_dob", "member_ssn"],
 		["member_id", "dependent_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "member_ssn"],
 		["dependent_dob", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "MOMCR",
@@ -2061,16 +2289,19 @@
 	]
 }, {
 	"payer_id": "MSBLS",
-	"search_options": []
+	"search_options": [
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+	]
 }, {
 	"payer_id": "MSMCD",
 	"search_options": [
 		["member_id"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
 		["member_first_name", "member_last_name", "member_ssn"],
 		["member_first_name", "member_last_name", "member_dob"],
-		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "MSMCR",
@@ -2081,13 +2312,8 @@
 		["member_id", "member_first_name", "member_last_name"]
 	]
 }, {
-	"payer_id": "MTMCD",
-	"search_options": [
-		["member_id"],
-		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
-	]
+	"payer_id": "MTBLS",
+	"search_options": []
 }, {
 	"payer_id": "MTMCR",
 	"search_options": [
@@ -2096,6 +2322,9 @@
 		["member_id", "member_first_name", "member_dob"],
 		["member_id", "member_first_name", "member_last_name"]
 	]
+}, {
+	"payer_id": "MUTOM",
+	"search_options": []
 }, {
 	"payer_id": "MWMCR",
 	"search_options": [
@@ -2128,7 +2357,10 @@
 	]
 }, {
 	"payer_id": "NCMCD",
-	"search_options": []
+	"search_options": [
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+	]
 }, {
 	"payer_id": "NCMCR",
 	"search_options": [
@@ -2137,12 +2369,6 @@
 		["member_id", "member_first_name", "member_dob"],
 		["member_id", "member_first_name", "member_last_name"]
 	]
-}, {
-	"payer_id": "NDBLS",
-	"search_options": []
-}, {
-	"payer_id": "NDMCD",
-	"search_options": []
 }, {
 	"payer_id": "NDMCR",
 	"search_options": [
@@ -2157,9 +2383,6 @@
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
 		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
 	]
-}, {
-	"payer_id": "NEMCD",
-	"search_options": []
 }, {
 	"payer_id": "NEMCR",
 	"search_options": [
@@ -2189,12 +2412,15 @@
 		["dependent_first_name", "dependent_last_name", "dependent_dob", "chop_member_id"]
 	]
 }, {
+	"payer_id": "NHC04",
+	"search_options": []
+}, {
 	"payer_id": "NHMCD",
 	"search_options": [
 		["member_id"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "NHMCR",
@@ -2206,7 +2432,10 @@
 	]
 }, {
 	"payer_id": "NJMCD",
-	"search_options": []
+	"search_options": [
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+	]
 }, {
 	"payer_id": "NJMCR",
 	"search_options": [
@@ -2215,6 +2444,9 @@
 		["member_id", "member_first_name", "member_dob"],
 		["member_id", "member_first_name", "member_last_name"]
 	]
+}, {
+	"payer_id": "NM505",
+	"search_options": []
 }, {
 	"payer_id": "NMBLS",
 	"search_options": [
@@ -2227,12 +2459,12 @@
 	"payer_id": "NMMCD",
 	"search_options": [
 		["member_id"],
-		["member_first_name", "member_last_name", "member_ssn"],
-		["member_dob", "member_ssn"],
-		["member_first_name", "member_last_name", "member_dob", "member_gender"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_ssn"],
+		["member_first_name", "member_last_name", "member_dob", "member_gender"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "member_ssn"],
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "NMMCR",
@@ -2296,7 +2528,10 @@
 	]
 }, {
 	"payer_id": "OHMCD",
-	"search_options": []
+	"search_options": [
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+	]
 }, {
 	"payer_id": "OHMCR",
 	"search_options": [
@@ -2315,11 +2550,11 @@
 	"payer_id": "OKMCD",
 	"search_options": [
 		["member_id"],
-		["member_dob", "member_ssn"],
-		["member_first_name", "member_last_name", "member_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "member_ssn"],
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "OKMCR",
@@ -2339,8 +2574,8 @@
 		["member_id", "dependent_first_name", "dependent_last_name"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
 		["member_first_name", "member_last_name", "chop_member_id"],
-		["dependent_first_name", "dependent_last_name", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["dependent_first_name", "dependent_last_name", "chop_member_id"]
 	]
 }, {
 	"payer_id": "ORMCD",
@@ -2354,19 +2589,22 @@
 		["member_id", "member_first_name", "member_last_name"]
 	]
 }, {
-	"payer_id": "PAIB",
+	"payer_id": "PABLS",
 	"search_options": [
-		["member_id"]
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_id", "dependent_first_name", "dependent_last_name", "dependent_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["dependent_first_name", "dependent_last_name", "dependent_dob", "chop_member_id"]
 	]
 }, {
 	"payer_id": "PAMCD",
 	"search_options": [
 		["member_id"],
-		["member_dob", "member_ssn"],
-		["member_first_name", "member_last_name", "member_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "member_ssn"],
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "PAMCR",
@@ -2377,10 +2615,16 @@
 		["member_id", "member_first_name", "member_last_name"]
 	]
 }, {
+	"payer_id": "PHP01",
+	"search_options": []
+}, {
 	"payer_id": "PHP02",
 	"search_options": []
 }, {
-	"payer_id": "PRTHP",
+	"payer_id": "PHP03",
+	"search_options": []
+}, {
+	"payer_id": "RGA01",
 	"search_options": []
 }, {
 	"payer_id": "RGBLS",
@@ -2389,8 +2633,8 @@
 		["member_id", "dependent_first_name", "dependent_last_name"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
 		["member_first_name", "member_last_name", "chop_member_id"],
-		["dependent_first_name", "dependent_last_name", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["dependent_first_name", "dependent_last_name", "chop_member_id"]
 	]
 }, {
 	"payer_id": "RIBLS",
@@ -2409,9 +2653,6 @@
 		["member_id", "member_first_name", "member_last_name"]
 	]
 }, {
-	"payer_id": "RINHP",
-	"search_options": []
-}, {
 	"payer_id": "RRWMC",
 	"search_options": []
 }, {
@@ -2423,14 +2664,60 @@
 		["dependent_first_name", "dependent_last_name", "dependent_dob", "chop_member_id"]
 	]
 }, {
+	"payer_id": "SC400",
+	"search_options": [
+		["member_id", "member_dob"],
+		["member_id", "dependent_dob"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "chop_member_id"],
+		["dependent_dob", "chop_member_id"]
+	]
+}, {
+	"payer_id": "SC402",
+	"search_options": [
+		["member_id", "member_dob"],
+		["member_id", "dependent_dob"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "chop_member_id"],
+		["dependent_dob", "chop_member_id"]
+	]
+}, {
+	"payer_id": "SC886",
+	"search_options": [
+		["member_id", "member_dob"],
+		["member_id", "dependent_dob"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "chop_member_id"],
+		["dependent_dob", "chop_member_id"]
+	]
+}, {
+	"payer_id": "SC922",
+	"search_options": [
+		["member_id", "member_dob"],
+		["member_id", "dependent_dob"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "chop_member_id"],
+		["dependent_dob", "chop_member_id"]
+	]
+}, {
+	"payer_id": "SCAN",
+	"search_options": []
+}, {
+	"payer_id": "SCAN1",
+	"search_options": []
+}, {
 	"payer_id": "SCBLS",
 	"search_options": [
 		["member_id", "member_dob"],
 		["member_id", "dependent_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
 		["member_dob", "chop_member_id"],
-		["dependent_dob", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["dependent_dob", "chop_member_id"]
 	]
 }, {
 	"payer_id": "SCMCD",
@@ -2478,14 +2765,23 @@
 	"payer_id": "SX065",
 	"search_options": []
 }, {
+	"payer_id": "SX087",
+	"search_options": []
+}, {
 	"payer_id": "SX091",
 	"search_options": []
 }, {
 	"payer_id": "SX105",
-	"search_options": []
+	"search_options": [
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+	]
 }, {
 	"payer_id": "SX106",
-	"search_options": []
+	"search_options": [
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+	]
 }, {
 	"payer_id": "SX155",
 	"search_options": []
@@ -2532,12 +2828,12 @@
 	"payer_id": "TXMCD",
 	"search_options": [
 		["member_id"],
-		["member_last_name", "member_ssn"],
-		["member_first_name", "member_last_name", "member_dob"],
-		["member_dob", "member_ssn"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_last_name", "member_ssn"],
+		["member_dob", "member_ssn"],
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "TXMCR",
@@ -2555,9 +2851,18 @@
 	"search_options": []
 }, {
 	"payer_id": "UH107",
+	"search_options": [
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+	]
+}, {
+	"payer_id": "UNINW",
 	"search_options": []
 }, {
 	"payer_id": "UNTDA1",
+	"search_options": []
+}, {
+	"payer_id": "USFHP",
 	"search_options": []
 }, {
 	"payer_id": "UTBLS",
@@ -2577,18 +2882,28 @@
 		["member_id", "member_first_name", "member_last_name"]
 	]
 }, {
+	"payer_id": "VABLS",
+	"search_options": [
+		["member_id", "member_first_name", "member_last_name", "member_dob", "member_gender"],
+		["member_id", "dependent_first_name", "dependent_last_name", "dependent_dob", "dependent_gender"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "member_gender", "chop_member_id"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["dependent_first_name", "dependent_last_name", "dependent_dob", "dependent_gender", "chop_member_id"]
+	]
+}, {
 	"payer_id": "VALHP1",
 	"search_options": []
 }, {
 	"payer_id": "VAMCD",
 	"search_options": [
 		["member_id"],
-		["member_dob", "member_ssn"],
+		["member_id", "member_first_name", "member_last_name", "member_dob"],
 		["member_first_name", "member_last_name", "member_ssn"],
 		["member_first_name", "member_last_name", "member_dob"],
-		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "member_ssn"],
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "VAMCR",
@@ -2599,15 +2914,6 @@
 		["member_id", "member_first_name", "member_last_name"]
 	]
 }, {
-	"payer_id": "VAPCCC3",
-	"search_options": []
-}, {
-	"payer_id": "VAPCCC51",
-	"search_options": []
-}, {
-	"payer_id": "VAPCCC6",
-	"search_options": []
-}, {
 	"payer_id": "VTBLS",
 	"search_options": []
 }, {
@@ -2615,8 +2921,8 @@
 	"search_options": [
 		["member_id"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "VTMCR",
@@ -2638,6 +2944,7 @@
 	"payer_id": "WAMCD",
 	"search_options": [
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
+		["member_id"],
 		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
 	]
 }, {
@@ -2652,28 +2959,19 @@
 	"payer_id": "WCOHP",
 	"search_options": [
 		["member_id", "member_dob"],
-		["member_first_name", "member_last_name", "member_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["member_dob", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
-	]
-}, {
-	"payer_id": "WCSWA",
-	"search_options": [
-		["member_id", "member_dob"],
 		["member_first_name", "member_last_name", "member_dob"],
-		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["member_dob", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "chop_member_id"]
 	]
 }, {
 	"payer_id": "WCSWK",
 	"search_options": [
 		["member_id", "member_dob"],
-		["member_first_name", "member_last_name", "member_dob"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["member_dob", "chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob"],
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "chop_member_id"]
 	]
 }, {
 	"payer_id": "WHAP",
@@ -2698,13 +2996,16 @@
 		["member_id", "member_first_name", "member_last_name"]
 	]
 }, {
+	"payer_id": "WVBLS",
+	"search_options": []
+}, {
 	"payer_id": "WVMCD",
 	"search_options": [
 		["member_id"],
-		["member_dob", "member_ssn"],
 		["member_id", "member_first_name", "member_last_name", "member_dob"],
-		["chop_member_id"],
-		["member_first_name", "member_last_name", "member_dob", "chop_member_id"]
+		["member_first_name", "member_last_name", "member_dob", "chop_member_id"],
+		["member_dob", "member_ssn"],
+		["chop_member_id"]
 	]
 }, {
 	"payer_id": "WVMCR",
@@ -2714,9 +3015,6 @@
 		["member_id", "member_first_name", "member_dob"],
 		["member_id", "member_first_name", "member_last_name"]
 	]
-}, {
-	"payer_id": "WYBLS",
-	"search_options": []
 }, {
 	"payer_id": "WYMCR",
 	"search_options": [

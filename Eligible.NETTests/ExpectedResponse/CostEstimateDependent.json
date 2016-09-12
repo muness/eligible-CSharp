@@ -1,13 +1,13 @@
 ﻿{
-	"created_at": "2016-06-22T13:09:17Z",
-	"eligible_id": "8LIJO9WS55EZFY",
+	"created_at": "2016-09-07T18:33:17Z",
+	"eligible_id": "8MX8LTNASBXTRQ",
 	"known_issues": [],
 	"demographics": {
 		"subscriber": {
 			"last_name": "FRANKLIN",
 			"first_name": "BENJAMIN",
 			"middle_name": null,
-			"member_id": "1234567890",
+			"member_id": "COST_ESTIMATES_002",
 			"group_id": "123123123",
 			"group_name": "FIDELITY NATIONAL FINANCIAL  INC.",
 			"dob": "1967-09-09",
@@ -79,13 +79,16 @@
 		"group_name": "FIDELITY NATIONAL FINANCIAL  INC.",
 		"dates": [{
 			"date_type": "plan_begin",
-			"date_value": "2016-01-01"
+			"date_value": "2016-01-01",
+			"date_source": "subscriber"
 		}, {
 			"date_type": "service",
-			"date_value": "2016-02-27"
+			"date_value": "2016-02-27",
+			"date_source": "subscriber"
 		}, {
 			"date_type": "eligibility_begin",
-			"date_value": "2010-01-01"
+			"date_value": "2010-01-01",
+			"date_source": "subscriber"
 		}],
 		"comments": [],
 		"exclusions": {
@@ -111,7 +114,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["Med Dent"]
+						"comments": ["Med Dent"],
+						"service_delivery": null
 					}],
 					"out_network": [{
 						"amount": "11199.99",
@@ -127,7 +131,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["Med Dent"]
+						"comments": ["Med Dent"],
+						"service_delivery": null
 					}]
 				},
 				"spent": {
@@ -151,7 +156,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["Med Dent,In-Network Providers,DED INCLUDED IN OOP,Chiropractor Visit or Evaluation,Lab Performed by Chiropractor,Xray by Chiropractor,Manipulation by Chiropractor,Occupational Therapy by Chiropractor,Physical Therapy by Chiropractor,Emergency use of Emergency Room", "Outpatient Medical Ancillary,Ambulatory Medical Ancillary,Medical Ancillary,Semi Private Room and Board,Intensive Care Room and Board,Outpatient Surgery Facility,Non Emergency use of Emergency Room,Emergency Room Physician,Urgent Care", "Non Urgent Services at an Urgent Care Facility,GYN Visit,Specialist Visit or Evaluation,Primary Care Visit or Evaluation"]
+						"comments": ["Med Dent,In-Network Providers,DED INCLUDED IN OOP,Chiropractor Visit or Evaluation,Lab Performed by Chiropractor,Xray by Chiropractor,Manipulation by Chiropractor,Occupational Therapy by Chiropractor,Physical Therapy by Chiropractor,Emergency use of Emergency Room", "Outpatient Medical Ancillary,Ambulatory Medical Ancillary,Medical Ancillary,Semi Private Room and Board,Intensive Care Room and Board,Outpatient Surgery Facility,Non Emergency use of Emergency Room,Emergency Room Physician,Urgent Care", "Non Urgent Services at an Urgent Care Facility,GYN Visit,Specialist Visit or Evaluation,Primary Care Visit or Evaluation"],
+						"service_delivery": null
 					}],
 					"out_network": [{
 						"amount": "11200",
@@ -169,7 +175,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["Med Dent,DED INCLUDED IN OOP,Chiropractor Visit or Evaluation,Lab Performed by Chiropractor,Xray by Chiropractor,Manipulation by Chiropractor,Occupational Therapy by Chiropractor,Physical Therapy by Chiropractor,Chiropractor Visit or Evaluation in Office", "Lab Performed by Chiropractor in Office,Xray by Chiropractor in Office,Manipulation by Chiropractor in Office,Occupational Therapy by Chiropractor in Office,Physical Therapy by Chiropractor in Office,Emergency use of Emergency Room,Outpatient Medical Ancillary", "Ambulatory Medical Ancillary,Medical Ancillary,Semi Private Room and Board,Intensive Care Room and Board,Inpatient Medical Ancillary,Non Emergency use of Emergency Room,Emergency Room Physician,Urgent Care,Non Urgent Services at an Urgent Care Facility,GYN Visit", "Specialist Visit or Evaluation,Primary Care Visit or Evaluation,GYN Visit when Performed in an Office,Specialist Visit or Evaluation when Performed in an Office,Primary Care Visit or Evaluation in Office"]
+						"comments": ["Med Dent,DED INCLUDED IN OOP,Chiropractor Visit or Evaluation,Lab Performed by Chiropractor,Xray by Chiropractor,Manipulation by Chiropractor,Occupational Therapy by Chiropractor,Physical Therapy by Chiropractor,Chiropractor Visit or Evaluation in Office", "Lab Performed by Chiropractor in Office,Xray by Chiropractor in Office,Manipulation by Chiropractor in Office,Occupational Therapy by Chiropractor in Office,Physical Therapy by Chiropractor in Office,Emergency use of Emergency Room,Outpatient Medical Ancillary", "Ambulatory Medical Ancillary,Medical Ancillary,Semi Private Room and Board,Intensive Care Room and Board,Inpatient Medical Ancillary,Non Emergency use of Emergency Room,Emergency Room Physician,Urgent Care,Non Urgent Services at an Urgent Care Facility,GYN Visit", "Specialist Visit or Evaluation,Primary Care Visit or Evaluation,GYN Visit when Performed in an Office,Specialist Visit or Evaluation when Performed in an Office,Primary Care Visit or Evaluation in Office"],
+						"service_delivery": null
 					}]
 				}
 			},
@@ -505,7 +512,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["In-Network Providers", "Medical Ancillary,COINS APPLIES TO OUT OF POCKET", "Semi Private Room and Board,COINS APPLIES TO OUT OF POCKET", "Intensive Care Room and Board,COINS APPLIES TO OUT OF POCKET"]
+						"comments": ["In-Network Providers", "Medical Ancillary,COINS APPLIES TO OUT OF POCKET", "Semi Private Room and Board,COINS APPLIES TO OUT OF POCKET", "Intensive Care Room and Board,COINS APPLIES TO OUT OF POCKET"],
+						"service_delivery": null
 					}],
 					"out_network": [{
 						"percent": "50",
@@ -523,7 +531,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["Medical Ancillary,COINS APPLIES TO OUT OF POCKET", "Semi Private Room and Board,COINS APPLIES TO OUT OF POCKET", "Intensive Care Room and Board,COINS APPLIES TO OUT OF POCKET", "Inpatient Medical Ancillary,COINS APPLIES TO OUT OF POCKET"]
+						"comments": ["Medical Ancillary,COINS APPLIES TO OUT OF POCKET", "Semi Private Room and Board,COINS APPLIES TO OUT OF POCKET", "Intensive Care Room and Board,COINS APPLIES TO OUT OF POCKET", "Inpatient Medical Ancillary,COINS APPLIES TO OUT OF POCKET"],
+						"service_delivery": null
 					}]
 				}
 			},
@@ -545,7 +554,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["Medical Ancillary"]
+						"comments": ["Medical Ancillary"],
+						"service_delivery": null
 					}, {
 						"amount": "0",
 						"time_period": null,
@@ -562,7 +572,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["Semi Private Room and Board", "Intensive Care Room and Board"]
+						"comments": ["Semi Private Room and Board", "Intensive Care Room and Board"],
+						"service_delivery": null
 					}],
 					"out_network": [{
 						"amount": "0",
@@ -580,7 +591,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["Medical Ancillary"]
+						"comments": ["Medical Ancillary"],
+						"service_delivery": null
 					}, {
 						"amount": "0",
 						"time_period": null,
@@ -597,7 +609,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["Semi Private Room and Board", "Intensive Care Room and Board"]
+						"comments": ["Semi Private Room and Board", "Intensive Care Room and Board"],
+						"service_delivery": null
 					}, {
 						"amount": "0",
 						"time_period": null,
@@ -614,7 +627,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": ["Inpatient Medical Ancillary"]
+						"comments": ["Inpatient Medical Ancillary"],
+						"service_delivery": null
 					}]
 				}
 			},
@@ -717,7 +731,9 @@
 				"quantity": null,
 				"contact_details": [],
 				"dates": [],
-				"comments": ["Med Dent"]
+				"comments": ["Med Dent"],
+				"service_delivery": null,
+				"service_type": "48"
 			}],
 			"coinsurance": [{
 				"percent": "20",
@@ -735,7 +751,9 @@
 				"quantity": null,
 				"contact_details": [],
 				"dates": [],
-				"comments": ["In-Network Providers", "Medical Ancillary,COINS APPLIES TO OUT OF POCKET", "Semi Private Room and Board,COINS APPLIES TO OUT OF POCKET", "Intensive Care Room and Board,COINS APPLIES TO OUT OF POCKET"]
+				"comments": ["In-Network Providers", "Medical Ancillary,COINS APPLIES TO OUT OF POCKET", "Semi Private Room and Board,COINS APPLIES TO OUT OF POCKET", "Intensive Care Room and Board,COINS APPLIES TO OUT OF POCKET"],
+				"service_delivery": null,
+				"service_type": "48"
 			}],
 			"copayment": [{
 				"amount": "0",
@@ -753,7 +771,9 @@
 				"quantity": null,
 				"contact_details": [],
 				"dates": [],
-				"comments": ["Medical Ancillary"]
+				"comments": ["Medical Ancillary"],
+				"service_delivery": null,
+				"service_type": "48"
 			}],
 			"stop_loss": [{
 				"amount": "6850",
@@ -772,22 +792,26 @@
 				"comments": [],
 				"copayment": true,
 				"coinsurance": true,
-				"deductible": true
+				"deductible": true,
+				"service_type": "48"
 			}],
 			"applied_amounts": {
 				"deductible": {
 					"amount": 1500.5,
-					"limited_by_stop_loss": true
+					"limited_by_stop_loss": true,
+					"service_type": "48"
 				},
 				"coinsurance": {
 					"percent": 20.0,
 					"applied_to": 0.0,
 					"amount": 0.0,
-					"limited_by_stop_loss": true
+					"limited_by_stop_loss": true,
+					"service_type": "48"
 				},
 				"copayment": {
 					"amount": 0.0,
-					"limited_by_stop_loss": true
+					"limited_by_stop_loss": true,
+					"service_type": "48"
 				}
 			}
 		},
@@ -806,7 +830,9 @@
 				"quantity": null,
 				"contact_details": [],
 				"dates": [],
-				"comments": ["Med Dent"]
+				"comments": ["Med Dent"],
+				"service_delivery": null,
+				"service_type": "48"
 			}],
 			"coinsurance": [{
 				"percent": "20",
@@ -824,7 +850,9 @@
 				"quantity": null,
 				"contact_details": [],
 				"dates": [],
-				"comments": ["In-Network Providers", "Medical Ancillary,COINS APPLIES TO OUT OF POCKET", "Semi Private Room and Board,COINS APPLIES TO OUT OF POCKET", "Intensive Care Room and Board,COINS APPLIES TO OUT OF POCKET"]
+				"comments": ["In-Network Providers", "Medical Ancillary,COINS APPLIES TO OUT OF POCKET", "Semi Private Room and Board,COINS APPLIES TO OUT OF POCKET", "Intensive Care Room and Board,COINS APPLIES TO OUT OF POCKET"],
+				"service_delivery": null,
+				"service_type": "48"
 			}],
 			"copayment": [{
 				"amount": "0",
@@ -842,7 +870,9 @@
 				"quantity": null,
 				"contact_details": [],
 				"dates": [],
-				"comments": ["Medical Ancillary"]
+				"comments": ["Medical Ancillary"],
+				"service_delivery": null,
+				"service_type": "48"
 			}, {
 				"amount": "0",
 				"time_period": null,
@@ -859,7 +889,9 @@
 				"quantity": null,
 				"contact_details": [],
 				"dates": [],
-				"comments": ["Semi Private Room and Board", "Intensive Care Room and Board"]
+				"comments": ["Semi Private Room and Board", "Intensive Care Room and Board"],
+				"service_delivery": null,
+				"service_type": "48"
 			}],
 			"stop_loss": [{
 				"amount": "9999.99",
@@ -875,7 +907,8 @@
 				"quantity": null,
 				"contact_details": [],
 				"dates": [],
-				"comments": []
+				"comments": [],
+				"service_type": "48"
 			}, {
 				"amount": "6850",
 				"level": "INDIVIDUAL",
@@ -893,16 +926,18 @@
 				"comments": [],
 				"copayment": true,
 				"coinsurance": true,
-				"deductible": true
+				"deductible": true,
+				"service_type": "48"
 			}]
 		},
 		"network": "IN"
 	}],
 	"warnings": [{
 		"code": "authorization_required",
-		"message": "authorization required",
+		"message": "The payer has indicated that this service requires prior authorization in order to be covered. This cost estimation is provided assuming prior authorization has been granted, but you may wish to verify this with the payer.",
 		"param": null,
-		"expected_value": null
+		"expected_value": null,
+		"path": ["cost_estimates[0].cost_estimate_equation.copayment[0].authorization_required"]
 	}],
 	"success": true
 }

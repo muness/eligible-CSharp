@@ -1,0 +1,119 @@
+﻿{
+	"created_at": "2016-09-02T09:46:06-04:00",
+	"eligible_id": "V2ZDG9D3PF4TT",
+	"known_issues": [],
+	"payer": {
+		"name": "UNITEDHEALTHCARE",
+		"id": "GDS",
+		"contacts": []
+	},
+	"service_provider": [{
+		"first_name": "",
+		"last_name": "",
+		"middle_name": "",
+		"npi": "1609976398"
+	}],
+	"patients": [{
+		"first_name": "BENJAMIN",
+		"last_name": "FRANKLIN",
+		"middle_name": "",
+		"id": "1234567890"
+	}],
+	"claims": [{
+		"payer_control_number": "123123123",
+		"trace_number": "BHUYTOK98IK",
+		"bill_type": "123123123",
+		"account_number": "123123123",
+		"prescription_number": null,
+		"voucher_id": null,
+		"start_date": "2015-11-24",
+		"end_date": "2015-12-15",
+		"statuses": [{
+			"paid": true,
+			"adjudication_status": "completed",
+			"codes": [{
+				"category_code": "F1",
+				"category_label": "Finalized/Payment-The claim/line has been paid.",
+				"status_code": "65",
+				"status_label": "Claim/line has been paid.",
+				"entity_code": null,
+				"entity_label": null
+			}],
+			"effective_date": "2016-09-02",
+			"finalized_date": "2016-01-13",
+			"remittance_date": "2016-01-19",
+			"amount": {
+				"billed": 300.0,
+				"paid": 174.75
+			},
+			"trace_number": "PH10132244"
+		}],
+		"service_lines": [{
+			"procedure_code": "90834",
+			"procedure_modifiers": [],
+			"procedure_qualifier_code": "HC",
+			"procedure_qualifier_label": "Health Care Financing Administration Common Procedural Coding System (HCPCS) Codes. HCFA coding scheme to group procedure(s) performed on an outpatient basis for payment to hospital under Medicare; primarily used for ambulatory surgical and other diagnostic departments",
+			"amount": {
+				"billed": 100.0,
+				"paid": 58.25
+			},
+			"quantity": "1",
+			"codes": [{
+				"category_code": "F1",
+				"category_label": "Finalized/Payment-The claim/line has been paid.",
+				"status_code": "107",
+				"status_label": "Processed according to contract provisions (Contract refers to provisions that exist between the Health Plan and a Provider of Health Care Services)",
+				"entity_code": null,
+				"entity_label": null
+			}],
+			"control_number": "123123123",
+			"start_date": "2015-11-24",
+			"end_date": null,
+			"effective_date": "2016-01-19"
+		}, {
+			"procedure_code": "90834",
+			"procedure_modifiers": [],
+			"procedure_qualifier_code": "HC",
+			"procedure_qualifier_label": "Health Care Financing Administration Common Procedural Coding System (HCPCS) Codes. HCFA coding scheme to group procedure(s) performed on an outpatient basis for payment to hospital under Medicare; primarily used for ambulatory surgical and other diagnostic departments",
+			"amount": {
+				"billed": 100.0,
+				"paid": 58.25
+			},
+			"quantity": "1",
+			"codes": [{
+				"category_code": "F1",
+				"category_label": "Finalized/Payment-The claim/line has been paid.",
+				"status_code": "107",
+				"status_label": "Processed according to contract provisions (Contract refers to provisions that exist between the Health Plan and a Provider of Health Care Services)",
+				"entity_code": null,
+				"entity_label": null
+			}],
+			"control_number": "123123123",
+			"start_date": "2015-12-08",
+			"end_date": null,
+			"effective_date": "2016-01-19"
+		}, {
+			"procedure_code": "90834",
+			"procedure_modifiers": [],
+			"procedure_qualifier_code": "HC",
+			"procedure_qualifier_label": "Health Care Financing Administration Common Procedural Coding System (HCPCS) Codes. HCFA coding scheme to group procedure(s) performed on an outpatient basis for payment to hospital under Medicare; primarily used for ambulatory surgical and other diagnostic departments",
+			"amount": {
+				"billed": 100.0,
+				"paid": 58.25
+			},
+			"quantity": "1",
+			"codes": [{
+				"category_code": "F1",
+				"category_label": "Finalized/Payment-The claim/line has been paid.",
+				"status_code": "107",
+				"status_label": "Processed according to contract provisions (Contract refers to provisions that exist between the Health Plan and a Provider of Health Care Services)",
+				"entity_code": null,
+				"entity_label": null
+			}],
+			"control_number": "123123123",
+			"start_date": "2015-12-15",
+			"end_date": null,
+			"effective_date": "2016-01-19"
+		}]
+	}]
+}

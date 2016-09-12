@@ -38,7 +38,7 @@ namespace EligibleService.Core.Tests
                 .Returns(new RestResponse()
                 {
                     StatusCode = HttpStatusCode.OK,
-                    Content = TestHelper.GetJson(TestResource.MocksPath + "Coverage.json")
+                    Content = TestHelper.GetJson(TestResource.ExpectedResponse + "CoverageDependent.json")
                 });
 
 

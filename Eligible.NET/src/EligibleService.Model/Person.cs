@@ -7,7 +7,6 @@ namespace EligibleService.Model
         public string PhoneNumber { get; set; }
         [JsonProperty("address")]
         public Address Address { get; set; }
-
     }
 
     public class Name

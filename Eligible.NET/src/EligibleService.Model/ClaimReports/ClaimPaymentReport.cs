@@ -20,6 +20,9 @@ namespace EligibleService.Model
         [JsonProperty("reference_id")]
         public string ReferenceId { get; set; }
 
+        [JsonProperty("id")]
+        public string ID { get; set; }
+
         [JsonProperty("effective_date")]
         public string EffectiveDate { get; set; }
 

@@ -1,0 +1,16 @@
+﻿{
+	"created_at": "2016-09-01T14:26:56-04:00",
+	"eligible_id": "8MTAPPA06RHPU6",
+	"known_issues": [],
+	"error": {
+		"response_code": "Y",
+		"response_description": "Yes",
+		"agency_qualifier_code": "",
+		"agency_qualifier_description": "",
+		"reject_reason_code": "A4",
+		"reject_reason_description": "Acknowledgement/Not Found-The claim/encounter can not be found in the adjudication system.",
+		"follow-up_action_code": "C",
+		"follow-up_action_description": "Please Correct and Resubmit",
+		"details": "Cannot provide further status electronically."
+	}
+}

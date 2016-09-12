@@ -158,7 +158,7 @@ namespace EligibleService.Core.Tests
                 .Returns(new RestResponse()
                 {
                     StatusCode = HttpStatusCode.OK,
-                    Content = TestHelper.GetJson(TestResource.MocksPath + "PaymentReportsPerReference.json")
+                    Content = TestHelper.GetJson(TestResource.ExpectedResponse + "ClaimPayementReports.json")
                 });
 
 
@@ -179,7 +179,7 @@ namespace EligibleService.Core.Tests
                 .Returns(new RestResponse()
                 {
                     StatusCode = HttpStatusCode.OK,
-                    Content = TestHelper.GetJson(TestResource.MocksPath + "PaymentReportsPerReference.json")
+                    Content = TestHelper.GetJson(TestResource.ExpectedResponse + "ClaimPayementReports.json")
                 });
 
 
@@ -235,6 +235,7 @@ namespace EligibleService.Core.Tests
             {
                 Assert.AreEqual(false, ex.EligibleError.Success);
                 Assert.AreEqual("8LT5WL4UVSJ3GZ", ex.EligibleError.ReferenceId);
+                Assert.AreEqual("8LT5WL4UVSJ3GZ", ex.EligibleError.EligibleId);
                 Assert.AreEqual("rendering_provider_npi_invalid", ex.EligibleError.Errors[0].Code);
                 Assert.AreEqual(null, ex.EligibleError.Errors[0].ExpectedValue);
                 Assert.AreEqual("The rendering_provider's NPI must be exactly 10 digits", ex.EligibleError.Errors[0].Message);

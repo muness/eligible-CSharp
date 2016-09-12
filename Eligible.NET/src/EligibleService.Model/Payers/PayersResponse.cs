@@ -54,9 +54,6 @@ namespace EligibleService.Model
     public class PayersResponse : JsonResponseClass
     {
         public Collection<PayerData> Payers { get; set; }
-
-        [JsonProperty("eligible_id")]
-        public string EligibleId { get; set; }
     }
 }
 

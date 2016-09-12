@@ -136,6 +136,9 @@
     <None Include="ExpectedResponse\PayersWithCoverageEndPoint.json" />
     <None Include="ExpectedResponse\PaymentReports.json" />
     <None Include="ExpectedResponse\PaymentStatus.json" />
+    <None Include="ExpectedResponse\PaymentStatusNotFound.json" />
+    <None Include="ExpectedResponse\PaymentStatusPaid.json" />
+    <None Include="ExpectedResponse\PaymentStatusPending.json" />
     <None Include="ExpectedResponse\ReatimeClaimResponse.json" />
     <None Include="ExpectedResponse\SearchOptionsByPayerId.json" />
     <None Include="ExpectedResponse\StatussesByPayer.json" />
@@ -163,7 +166,6 @@
     <None Include="MockFiles\PayerStatus.json" />
     <None Include="MockFiles\PayerstatusById.json" />
     <None Include="MockFiles\PaymentReports.json" />
-    <None Include="MockFiles\PaymentReportsPerReference.json" />
     <None Include="MockFiles\PaymentStatus.json" />
     <None Include="MockFiles\PreCertification.json" />
     <None Include="MockFiles\RealtimeClaimResponse.json" />

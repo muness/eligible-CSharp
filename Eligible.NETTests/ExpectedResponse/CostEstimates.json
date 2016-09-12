@@ -1,13 +1,13 @@
 ﻿{
-	"created_at": "2016-06-16T19:51:13Z",
-	"eligible_id": "8LESHCRK18IAHX",
+	"created_at": "2016-09-07T18:37:06Z",
+	"eligible_id": "V3BO09T1Y0HR6",
 	"known_issues": [],
 	"demographics": {
 		"subscriber": {
 			"last_name": "FRANKLIN",
 			"first_name": "BENJAMIN",
 			"middle_name": "J",
-			"member_id": "1234567890",
+			"member_id": "COST_ESTIMATES_001",
 			"group_id": "123123123",
 			"group_name": null,
 			"dob": "1967-09-09",
@@ -109,10 +109,12 @@
 		"group_name": null,
 		"dates": [{
 			"date_type": "plan_begin",
-			"date_value": "2014-01-01"
+			"date_value": "2014-01-01",
+			"date_source": "subscriber"
 		}, {
 			"date_type": "plan_end",
-			"date_value": "9999-12-31"
+			"date_value": "9999-12-31",
+			"date_source": "subscriber"
 		}],
 		"comments": [],
 		"exclusions": {
@@ -151,7 +153,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": []
+						"comments": [],
+						"service_delivery": null
 					}, {
 						"amount": "2531.08",
 						"level": "FAMILY",
@@ -166,7 +169,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": []
+						"comments": [],
+						"service_delivery": null
 					}],
 					"out_network": [{
 						"amount": "1531.08",
@@ -182,7 +186,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": []
+						"comments": [],
+						"service_delivery": null
 					}, {
 						"amount": "5531.08",
 						"level": "FAMILY",
@@ -197,7 +202,8 @@
 						"quantity": null,
 						"contact_details": [],
 						"dates": [],
-						"comments": []
+						"comments": [],
+						"service_delivery": null
 					}]
 				},
 				"spent": {
@@ -224,7 +230,8 @@
 							"date_type": "benefit_begin",
 							"date_value": "2016-01-01"
 						}],
-						"comments": ["AGGREGATE, 0 PEOPLE MUST MEET INDIVIDUAL BEFORE COMPUTING AGGREGATE", "COMPREHENSIVE"]
+						"comments": ["AGGREGATE, 0 PEOPLE MUST MEET INDIVIDUAL BEFORE COMPUTING AGGREGATE", "COMPREHENSIVE"],
+						"service_delivery": null
 					}, {
 						"amount": "3000",
 						"time_period": "23",
@@ -244,7 +251,8 @@
 							"date_type": "benefit_begin",
 							"date_value": "2016-01-01"
 						}],
-						"comments": ["AGGREGATE, 0 PEOPLE MUST MEET INDIVIDUAL BEFORE COMPUTING AGGREGATE", "COMPREHENSIVE"]
+						"comments": ["AGGREGATE, 0 PEOPLE MUST MEET INDIVIDUAL BEFORE COMPUTING AGGREGATE", "COMPREHENSIVE"],
+						"service_delivery": null
 					}],
 					"out_network": [{
 						"amount": "2000",
@@ -265,7 +273,8 @@
 							"date_type": "benefit_begin",
 							"date_value": "2016-01-01"
 						}],
-						"comments": ["AGGREGATE, 0 PEOPLE MUST MEET INDIVIDUAL BEFORE COMPUTING AGGREGATE", "COMPREHENSIVE"]
+						"comments": ["AGGREGATE, 0 PEOPLE MUST MEET INDIVIDUAL BEFORE COMPUTING AGGREGATE", "COMPREHENSIVE"],
+						"service_delivery": null
 					}, {
 						"amount": "6000",
 						"time_period": "23",
@@ -285,7 +294,8 @@
 							"date_type": "benefit_begin",
 							"date_value": "2016-01-01"
 						}],
-						"comments": ["AGGREGATE, 0 PEOPLE MUST MEET INDIVIDUAL BEFORE COMPUTING AGGREGATE", "COMPREHENSIVE"]
+						"comments": ["AGGREGATE, 0 PEOPLE MUST MEET INDIVIDUAL BEFORE COMPUTING AGGREGATE", "COMPREHENSIVE"],
+						"service_delivery": null
 					}]
 				}
 			},
@@ -528,8 +538,8 @@
 		}]
 	},
 	"services": [{
-		"type": "1",
-		"type_label": "Medical Care",
+		"type": "98",
+		"type_label": "Professional (Physician) Visit - Office",
 		"coverage_status": "1",
 		"coverage_status_label": "Active Coverage",
 		"coverage_basis": [],
@@ -559,7 +569,79 @@
 					"out_network": []
 				},
 				"totals": {
-					"in_network": [],
+					"in_network": [{
+						"amount": "0",
+						"time_period": "23",
+						"time_period_label": "calendar_year",
+						"level": "INDIVIDUAL",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": null,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [],
+						"comments": ["REPLACEMENT DEDUCTIBLE"],
+						"service_delivery": null
+					}, {
+						"amount": "0",
+						"time_period": "23",
+						"time_period_label": "calendar_year",
+						"level": "FAMILY",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": null,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [],
+						"comments": ["REPLACEMENT DEDUCTIBLE"],
+						"service_delivery": null
+					}, {
+						"amount": "0",
+						"time_period": "23",
+						"time_period_label": "calendar_year",
+						"level": "INDIVIDUAL",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": null,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [],
+						"comments": ["REPLACEMENT DEDUCTIBLE", "SPECIALIST"],
+						"service_delivery": null
+					}, {
+						"amount": "0",
+						"time_period": "23",
+						"time_period_label": "calendar_year",
+						"level": "FAMILY",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": null,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [],
+						"comments": ["REPLACEMENT DEDUCTIBLE", "SPECIALIST"],
+						"service_delivery": null
+					}],
 					"out_network": []
 				}
 			},
@@ -579,8 +661,328 @@
 			},
 			"coinsurance": {
 				"percents": {
+					"in_network": [{
+						"percent": "0",
+						"time_period": "27",
+						"time_period_label": "visit",
+						"level": "INDIVIDUAL",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": null,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [],
+						"comments": [],
+						"service_delivery": null
+					}, {
+						"percent": "0",
+						"time_period": "27",
+						"time_period_label": "visit",
+						"level": "INDIVIDUAL",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": null,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [],
+						"comments": ["SPECIALIST"],
+						"service_delivery": null
+					}],
+					"out_network": [{
+						"percent": "50",
+						"time_period": "27",
+						"time_period_label": "visit",
+						"level": "INDIVIDUAL",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": null,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [],
+						"comments": [],
+						"service_delivery": null
+					}, {
+						"percent": "50",
+						"time_period": "27",
+						"time_period_label": "visit",
+						"level": "INDIVIDUAL",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": null,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [],
+						"comments": ["SPECIALIST"],
+						"service_delivery": null
+					}]
+				}
+			},
+			"copayment": {
+				"amounts": {
+					"in_network": [{
+						"amount": "30",
+						"time_period": "27",
+						"time_period_label": "visit",
+						"level": "INDIVIDUAL",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": null,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [],
+						"comments": [],
+						"service_delivery": null
+					}, {
+						"amount": "15",
+						"time_period": "27",
+						"time_period_label": "visit",
+						"level": "INDIVIDUAL",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": "17",
+						"pos_label": null,
+						"authorization_required": null,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [],
+						"comments": [],
+						"service_delivery": null
+					}, {
+						"amount": "50",
+						"time_period": "27",
+						"time_period_label": "visit",
+						"level": "INDIVIDUAL",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": null,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [],
+						"comments": ["SPECIALIST"],
+						"service_delivery": null
+					}],
+					"out_network": []
+				}
+			},
+			"cost_containment": {
+				"remainings": {
 					"in_network": [],
 					"out_network": []
+				},
+				"spent": {
+					"in_network": [],
+					"out_network": []
+				},
+				"totals": {
+					"in_network": [],
+					"out_network": []
+				}
+			},
+			"spend_down": {
+				"remainings": {
+					"in_network": [],
+					"out_network": []
+				},
+				"spent": {
+					"in_network": [],
+					"out_network": []
+				},
+				"totals": {
+					"in_network": [],
+					"out_network": []
+				}
+			},
+			"reserve": {
+				"remainings": {
+					"in_network": [],
+					"out_network": []
+				}
+			},
+			"limitations": {
+				"amounts": []
+			},
+			"disclaimer": [],
+			"other_sources": {
+				"amounts": []
+			}
+		},
+		"visits": {
+			"remainings": {
+				"in_network": [],
+				"out_network": []
+			},
+			"spent": {
+				"in_network": [],
+				"out_network": []
+			},
+			"totals": {
+				"in_network": [],
+				"out_network": []
+			}
+		},
+		"additional_insurance_policies": []
+	}, {
+		"type": "BZ",
+		"type_label": "Physician Visit - Well",
+		"coverage_status": "1",
+		"coverage_status_label": "Active Coverage",
+		"coverage_basis": [{
+			"_": null,
+			"comments": ["ADDITIONAL LIMITATIONS MAY APPLY"]
+		}],
+		"facility": {
+			"amounts": []
+		},
+		"noncovered": [],
+		"benefit_details": {
+			"benefit_description": {
+				"amounts": []
+			},
+			"managed_care": {
+				"amounts": []
+			},
+			"unlimited": {
+				"amounts": []
+			}
+		},
+		"financials": {
+			"deductible": {
+				"remainings": {
+					"in_network": [],
+					"out_network": []
+				},
+				"spent": {
+					"in_network": [],
+					"out_network": []
+				},
+				"totals": {
+					"in_network": [{
+						"amount": "0",
+						"time_period": "23",
+						"time_period_label": "calendar_year",
+						"level": "INDIVIDUAL",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": null,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [],
+						"comments": ["REPLACEMENT DEDUCTIBLE"],
+						"service_delivery": null
+					}, {
+						"amount": "0",
+						"time_period": "23",
+						"time_period_label": "calendar_year",
+						"level": "FAMILY",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": null,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [],
+						"comments": ["REPLACEMENT DEDUCTIBLE"],
+						"service_delivery": null
+					}],
+					"out_network": []
+				}
+			},
+			"stop_loss": {
+				"remainings": {
+					"in_network": [],
+					"out_network": []
+				},
+				"spent": {
+					"in_network": [],
+					"out_network": []
+				},
+				"totals": {
+					"in_network": [],
+					"out_network": []
+				}
+			},
+			"coinsurance": {
+				"percents": {
+					"in_network": [{
+						"percent": "0",
+						"time_period": "27",
+						"time_period_label": "visit",
+						"level": "INDIVIDUAL",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": null,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [],
+						"comments": [],
+						"service_delivery": null
+					}],
+					"out_network": [{
+						"percent": "50",
+						"time_period": "27",
+						"time_period_label": "visit",
+						"level": "INDIVIDUAL",
+						"insurance_type": null,
+						"insurance_type_label": null,
+						"pos": null,
+						"pos_label": null,
+						"authorization_required": null,
+						"description": null,
+						"quantity_code": null,
+						"quantity_label": null,
+						"quantity": null,
+						"contact_details": [],
+						"dates": [],
+						"comments": [],
+						"service_delivery": null
+					}]
 				}
 			},
 			"copayment": {
@@ -647,97 +1049,39 @@
 		},
 		"additional_insurance_policies": []
 	}, {
-		"type": "2",
-		"type_label": "Surgical",
+		"type": "BY",
+		"type_label": "Physician Visit - Sick",
 		"coverage_status": "11",
-		"coverage_status_label": "Generic inquiry provided no information for this service type. Retry by including service_type=2 for an explicit inquiry for this service type."
-	}, {
-		"type": "3",
-		"type_label": "Consultation",
-		"coverage_status": "11",
-		"coverage_status_label": "Generic inquiry provided no information for this service type. Retry by including service_type=3 for an explicit inquiry for this service type."
-	}, {
-		"type": "4",
-		"type_label": "Diagnostic X-Ray",
-		"coverage_status": "11",
-		"coverage_status_label": "Generic inquiry provided no information for this service type. Retry by including service_type=4 for an explicit inquiry for this service type."
-	}, {
-		"type": "5",
-		"type_label": "Diagnostic Lab",
-		"coverage_status": "11",
-		"coverage_status_label": "Generic inquiry provided no information for this service type. Retry by including service_type=5 for an explicit inquiry for this service type."
-	}, {
-		"type": "12",
-		"type_label": "Durable Medical Equipment Purchase",
-		"coverage_status": "11",
-		"coverage_status_label": "Generic inquiry provided no information for this service type. Retry by including service_type=12 for an explicit inquiry for this service type."
-	}, {
-		"type": "18",
-		"type_label": "Durable Medical Equipment Rental",
-		"coverage_status": "11",
-		"coverage_status_label": "Generic inquiry provided no information for this service type. Retry by including service_type=18 for an explicit inquiry for this service type."
-	}, {
-		"type": "42",
-		"type_label": "Home Health Care",
-		"coverage_status": "11",
-		"coverage_status_label": "Generic inquiry provided no information for this service type. Retry by including service_type=42 for an explicit inquiry for this service type."
-	}, {
-		"type": "45",
-		"type_label": "Hospice",
-		"coverage_status": "11",
-		"coverage_status_label": "Generic inquiry provided no information for this service type. Retry by including service_type=45 for an explicit inquiry for this service type."
-	}, {
-		"type": "54",
-		"type_label": "Long Term Care",
-		"coverage_status": "11",
-		"coverage_status_label": "Generic inquiry provided no information for this service type. Retry by including service_type=54 for an explicit inquiry for this service type."
-	}, {
-		"type": "69",
-		"type_label": "Maternity",
-		"coverage_status": "11",
-		"coverage_status_label": "Generic inquiry provided no information for this service type. Retry by including service_type=69 for an explicit inquiry for this service type."
-	}, {
-		"type": "73",
-		"type_label": "Diagnostic Medical",
-		"coverage_status": "11",
-		"coverage_status_label": "Generic inquiry provided no information for this service type. Retry by including service_type=73 for an explicit inquiry for this service type."
-	}, {
-		"type": "76",
-		"type_label": "Dialysis",
-		"coverage_status": "11",
-		"coverage_status_label": "Generic inquiry provided no information for this service type. Retry by including service_type=76 for an explicit inquiry for this service type."
-	}, {
-		"type": "83",
-		"type_label": "Infertility",
-		"coverage_status": "11",
-		"coverage_status_label": "Generic inquiry provided no information for this service type. Retry by including service_type=83 for an explicit inquiry for this service type."
-	}, {
-		"type": "AG",
-		"type_label": "Skilled Nursing Care",
-		"coverage_status": "11",
-		"coverage_status_label": "Generic inquiry provided no information for this service type. Retry by including service_type=AG for an explicit inquiry for this service type."
-	}, {
-		"type": "BT",
-		"type_label": "Gynecological",
-		"coverage_status": "11",
-		"coverage_status_label": "Generic inquiry provided no information for this service type. Retry by including service_type=BT for an explicit inquiry for this service type."
-	}, {
-		"type": "BU",
-		"type_label": "Obstetrical",
-		"coverage_status": "11",
-		"coverage_status_label": "Generic inquiry provided no information for this service type. Retry by including service_type=BU for an explicit inquiry for this service type."
-	}, {
-		"type": "DM",
-		"type_label": "Durable Medical Equipment",
-		"coverage_status": "11",
-		"coverage_status_label": "Generic inquiry provided no information for this service type. Retry by including service_type=DM for an explicit inquiry for this service type."
+		"coverage_status_label": "Generic inquiry provided no information for this service type. Retry by including service_type=BY for an explicit inquiry for this service type."
 	}],
 	"cost_estimates": [{
 		"provider_price": 1500.5,
-		"cost_estimate": 531.08,
+		"cost_estimate": 30.0,
 		"cost_estimate_equation": {
 			"deductible": [{
-				"amount": "531.08",
+				"amount": "0",
+				"time_period": "23",
+				"time_period_label": "calendar_year",
+				"level": "FAMILY",
+				"insurance_type": null,
+				"insurance_type_label": null,
+				"pos": null,
+				"pos_label": null,
+				"authorization_required": null,
+				"description": null,
+				"quantity_code": null,
+				"quantity_label": null,
+				"quantity": null,
+				"contact_details": [],
+				"dates": [],
+				"comments": ["REPLACEMENT DEDUCTIBLE"],
+				"service_delivery": null,
+				"service_type": "98"
+			}],
+			"coinsurance": [{
+				"percent": "0",
+				"time_period": "27",
+				"time_period_label": "visit",
 				"level": "INDIVIDUAL",
 				"insurance_type": null,
 				"insurance_type_label": null,
@@ -750,10 +1094,30 @@
 				"quantity": null,
 				"contact_details": [],
 				"dates": [],
-				"comments": []
+				"comments": [],
+				"service_delivery": null,
+				"service_type": "98"
 			}],
-			"coinsurance": [],
-			"copayment": [],
+			"copayment": [{
+				"amount": "30",
+				"time_period": "27",
+				"time_period_label": "visit",
+				"level": "INDIVIDUAL",
+				"insurance_type": null,
+				"insurance_type_label": null,
+				"pos": null,
+				"pos_label": null,
+				"authorization_required": null,
+				"description": null,
+				"quantity_code": null,
+				"quantity_label": null,
+				"quantity": null,
+				"contact_details": [],
+				"dates": [],
+				"comments": [],
+				"service_delivery": null,
+				"service_type": "98"
+			}],
 			"stop_loss": [{
 				"amount": "5352.53",
 				"level": "INDIVIDUAL",
@@ -771,18 +1135,34 @@
 				"comments": [],
 				"copayment": true,
 				"coinsurance": true,
-				"deductible": true
+				"deductible": true,
+				"service_type": "98"
 			}],
 			"applied_amounts": {
 				"deductible": {
-					"amount": 531.08,
-					"limited_by_stop_loss": true
+					"amount": 0.0,
+					"limited_by_stop_loss": true,
+					"service_type": "98"
+				},
+				"coinsurance": {
+					"percent": 0.0,
+					"applied_to": 1500.5,
+					"amount": 0.0,
+					"limited_by_stop_loss": true,
+					"service_type": "98"
+				},
+				"copayment": {
+					"amount": 30.0,
+					"limited_by_stop_loss": true,
+					"service_type": "98"
 				}
 			}
 		},
 		"cost_estimate_alternatives": {
 			"deductible": [{
-				"amount": "2531.08",
+				"amount": "0",
+				"time_period": "23",
+				"time_period_label": "calendar_year",
 				"level": "FAMILY",
 				"insurance_type": null,
 				"insurance_type_label": null,
@@ -795,9 +1175,33 @@
 				"quantity": null,
 				"contact_details": [],
 				"dates": [],
-				"comments": []
+				"comments": ["REPLACEMENT DEDUCTIBLE"],
+				"service_delivery": null,
+				"service_type": "98"
 			}, {
-				"amount": "531.08",
+				"amount": "0",
+				"time_period": "23",
+				"time_period_label": "calendar_year",
+				"level": "FAMILY",
+				"insurance_type": null,
+				"insurance_type_label": null,
+				"pos": null,
+				"pos_label": null,
+				"authorization_required": null,
+				"description": null,
+				"quantity_code": null,
+				"quantity_label": null,
+				"quantity": null,
+				"contact_details": [],
+				"dates": [],
+				"comments": ["REPLACEMENT DEDUCTIBLE", "SPECIALIST"],
+				"service_delivery": null,
+				"service_type": "98"
+			}],
+			"coinsurance": [{
+				"percent": "0",
+				"time_period": "27",
+				"time_period_label": "visit",
 				"level": "INDIVIDUAL",
 				"insurance_type": null,
 				"insurance_type_label": null,
@@ -810,10 +1214,87 @@
 				"quantity": null,
 				"contact_details": [],
 				"dates": [],
-				"comments": []
+				"comments": [],
+				"service_delivery": null,
+				"service_type": "98"
+			}, {
+				"percent": "0",
+				"time_period": "27",
+				"time_period_label": "visit",
+				"level": "INDIVIDUAL",
+				"insurance_type": null,
+				"insurance_type_label": null,
+				"pos": null,
+				"pos_label": null,
+				"authorization_required": null,
+				"description": null,
+				"quantity_code": null,
+				"quantity_label": null,
+				"quantity": null,
+				"contact_details": [],
+				"dates": [],
+				"comments": ["SPECIALIST"],
+				"service_delivery": null,
+				"service_type": "98"
 			}],
-			"coinsurance": [],
-			"copayment": [],
+			"copayment": [{
+				"amount": "30",
+				"time_period": "27",
+				"time_period_label": "visit",
+				"level": "INDIVIDUAL",
+				"insurance_type": null,
+				"insurance_type_label": null,
+				"pos": null,
+				"pos_label": null,
+				"authorization_required": null,
+				"description": null,
+				"quantity_code": null,
+				"quantity_label": null,
+				"quantity": null,
+				"contact_details": [],
+				"dates": [],
+				"comments": [],
+				"service_delivery": null,
+				"service_type": "98"
+			}, {
+				"amount": "15",
+				"time_period": "27",
+				"time_period_label": "visit",
+				"level": "INDIVIDUAL",
+				"insurance_type": null,
+				"insurance_type_label": null,
+				"pos": "17",
+				"pos_label": null,
+				"authorization_required": null,
+				"description": null,
+				"quantity_code": null,
+				"quantity_label": null,
+				"quantity": null,
+				"contact_details": [],
+				"dates": [],
+				"comments": [],
+				"service_delivery": null,
+				"service_type": "98"
+			}, {
+				"amount": "50",
+				"time_period": "27",
+				"time_period_label": "visit",
+				"level": "INDIVIDUAL",
+				"insurance_type": null,
+				"insurance_type_label": null,
+				"pos": null,
+				"pos_label": null,
+				"authorization_required": null,
+				"description": null,
+				"quantity_code": null,
+				"quantity_label": null,
+				"quantity": null,
+				"contact_details": [],
+				"dates": [],
+				"comments": ["SPECIALIST"],
+				"service_delivery": null,
+				"service_type": "98"
+			}],
 			"stop_loss": [{
 				"amount": "11352.53",
 				"level": "FAMILY",
@@ -828,7 +1309,8 @@
 				"quantity": null,
 				"contact_details": [],
 				"dates": [],
-				"comments": []
+				"comments": [],
+				"service_type": "98"
 			}, {
 				"amount": "5352.53",
 				"level": "INDIVIDUAL",
@@ -846,16 +1328,18 @@
 				"comments": [],
 				"copayment": true,
 				"coinsurance": true,
-				"deductible": true
+				"deductible": true,
+				"service_type": "98"
 			}]
 		},
 		"network": "IN"
 	}],
 	"warnings": [{
 		"code": "additional_policy",
-		"message": "additional policy found",
+		"message": "An additional policy was found. The cost estimate can still be performed, but may not reflect true out-of-pocket expenses if the patient is covered by an additional policy.",
 		"param": null,
-		"expected_value": null
+		"expected_value": null,
+		"path": ["plan.additional_insurance_policies"]
 	}],
 	"success": true
 }
