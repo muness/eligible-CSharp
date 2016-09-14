@@ -10,7 +10,7 @@ namespace EligibleService.Model.Coverage
         public Financial Deductible { get; set; }
 
         [JsonProperty("stop_loss")]
-        public Financial StopLoss { get; set; }
+        public StopLossFinancial StopLoss { get; set; }
 
         [JsonProperty("coinsurance")]
         public FinancialFlowsPercents Coinsurance { get; set; }
@@ -25,7 +25,7 @@ namespace EligibleService.Model.Coverage
         public Financial SpendDown { get; set; }
 
         [JsonProperty("limitations")]
-        public FinancialFlowsList Limitations { get; set; }
+        public LimitationsFinancialFlowsList Limitations { get; set; }
 
         [JsonProperty("disclaimer")]
         public Collection<String> Disclaimer { get; set; }

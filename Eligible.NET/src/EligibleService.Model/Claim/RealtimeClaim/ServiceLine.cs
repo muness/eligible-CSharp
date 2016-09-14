@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using EligibleService.Claim.ClaimReports;
+using Newtonsoft.Json;
 using System.Collections.ObjectModel;
 
 namespace EligibleService.Claim.RealtimeClaims
@@ -24,13 +25,19 @@ namespace EligibleService.Claim.RealtimeClaims
         public string ServiceEnd { get; set; }
 
         [JsonProperty("amount")]
-        public Amount Amount { get; set; }
+        public Amount2 Amount { get; set; }
 
         [JsonProperty("quantity")]
         public Quantity Quantity { get; set; }
 
         [JsonProperty("adjustments")]
         public Collection<Adjustment> Adjustments { get; set; }
+
+        [JsonProperty("rendering_provider_ids")]
+        public Collection<RealRenderingProviderIds> RenderingProviderIds { get; set; }
+
+        [JsonProperty("allowed_amount")]
+        public double? AllowedAmount { get; set; }
     }
 
 }

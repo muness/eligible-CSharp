@@ -8,6 +8,9 @@ namespace EligibleService.Model.Precertification
         [JsonProperty("procedure_code")]
         public string ProcedureCode { get; set; }
 
+        [JsonProperty("procedure_description")]
+        public string ProcedureDescription { get; set; }
+        
         [JsonProperty("procedure_modifiers")]
         public Collection<string> ProcedureModifiers { get; set; }
 

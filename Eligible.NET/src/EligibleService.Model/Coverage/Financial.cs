@@ -14,6 +14,18 @@ namespace EligibleService.Model.Coverage
     public class FinancialRemainings
     {
         [JsonProperty("remainings")]
-        public FinancialFlows Remainings { get; set; }
+        public FinancialFlowsRemainings Remainings { get; set; }
+    }
+
+    public class StopLossFinancial
+    {
+        [JsonProperty("spent")]
+        public StopLossFinancialFlows Spent { get; set; }
+
+        [JsonProperty("totals")]
+        public StopLossFinancialFlowTotals Totals { get; set; }
+
+        [JsonProperty("remainings")]
+        public StopLossFinancialFlows Remainings { get; set; }
     }
 }

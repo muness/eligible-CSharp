@@ -12,6 +12,9 @@ namespace EligibleService.Model.Precertification
 
         [JsonProperty("taxonomy_code")]
         public string TaxonomyCode { get; set; }
+
+        [JsonProperty("type")]
+        public string Type { get; set; }
     }
 
 }

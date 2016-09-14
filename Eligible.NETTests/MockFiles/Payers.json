@@ -125,20 +125,6 @@
                 "status_details": "Payer is experiencing high number of failures.",
                 "status_updated_at": "2015-08-06T04:57:10+00:00",
                 "original_signature_pdf": null
-            },
-            {
-                "endpoint": "payment status",
-                "pass_through_fee": 0,
-                "enrollment_required": false,
-                "signature_required": false,
-                "average_enrollment_process_time": null,
-                "blue_ink_required": false,
-                "message": null,
-                "enrollment_mandatory_fields": [],
-                "status": "available",
-                "status_details": "Payer is working fine.",
-                "status_updated_at": "2015-06-22T15:49:03+00:00",
-                "original_signature_pdf": null
             }
         ]
     }
