@@ -12,7 +12,7 @@ namespace EligibleService.Model.PaymentStatus
         [JsonProperty("procedure_modifiers")]
         public Collection<string> ProcedureModifiers { get; set; }
 
-        [JsonProperty("procedu_qualifier_code")]
+        [JsonProperty("procedure_qualifier_code")]
         public string ProcedureQualifierCode { get; set; }
 
         [JsonProperty("procedure_qualifier_label")]

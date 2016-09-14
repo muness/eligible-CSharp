@@ -110,10 +110,10 @@ namespace EligibleService.Core.Tests
             var coverages = coverage.All(param);
             
             Assert.AreEqual("FRANKLIN", coverages.Demographics.Subscriber.LastName);
-            Assert.AreEqual("BEN", coverages.Demographics.Subscriber.FirstName);
-            Assert.AreEqual("COST_ESTIMATES_001", coverages.Demographics.Subscriber.MemberId);
+            Assert.AreEqual("BENJAMIN", coverages.Demographics.Subscriber.FirstName);
+            Assert.AreEqual("AETNA00DEP_ACPOSII", coverages.Demographics.Subscriber.MemberId);
             Assert.AreEqual("123123123", coverages.Demographics.Subscriber.GroupId);
-            Assert.AreEqual("FREEDOM GROUP  INC.", coverages.Demographics.Subscriber.GroupName);
+            Assert.AreEqual("BLACKBOARD INC.", coverages.Demographics.Subscriber.GroupName);
             Assert.AreEqual("1757-05-23", coverages.Demographics.Subscriber.Dob);
             Assert.AreEqual("M", coverages.Demographics.Subscriber.Gender);
         }
@@ -135,11 +135,11 @@ namespace EligibleService.Core.Tests
             coverage.ExecuteObj = restClient.Object;
             var coverages = coverage.All(param);
 
-            Assert.AreEqual("323 REASON ROAD", coverages.Demographics.Subscriber.Address.StreetLine1);
-            Assert.AreEqual(null, coverages.Demographics.Subscriber.Address.StreetLine2);
-            Assert.AreEqual("HILLSBORO", coverages.Demographics.Subscriber.Address.City);
-            Assert.AreEqual("TX", coverages.Demographics.Subscriber.Address.State);
-            Assert.AreEqual("76645", coverages.Demographics.Subscriber.Address.Zip);          
+            Assert.AreEqual("1842 Union Street", coverages.Demographics.Dependent.Address.StreetLine1);
+            Assert.AreEqual(null, coverages.Demographics.Dependent.Address.StreetLine2);
+            Assert.AreEqual("San Francisco", coverages.Demographics.Dependent.Address.City);
+            Assert.AreEqual("UT", coverages.Demographics.Dependent.Address.State);
+            Assert.AreEqual("94123", coverages.Demographics.Dependent.Address.Zip);          
         }
 
         [TestMethod]
@@ -159,11 +159,11 @@ namespace EligibleService.Core.Tests
 
             var coverages = coverage.All(param);
 
-            Assert.AreEqual("01", coverages.Demographics.Dependent.Relationship);
-            Assert.AreEqual("MARK", coverages.Demographics.Dependent.DependentFirstName);
-            Assert.AreEqual("FRANKLIN", coverages.Demographics.Dependent.DependentLastName);
-            Assert.AreEqual("1938-01-25", coverages.Demographics.Dependent.DependentDob);
-            Assert.AreEqual("test", coverages.Demographics.Dependent.RelationshipCode);
+            Assert.AreEqual("Spouse", coverages.Demographics.Dependent.Relationship);
+            Assert.AreEqual("BENJAMIN", coverages.Demographics.Dependent.FirstName);
+            Assert.AreEqual("FRANKLIN", coverages.Demographics.Dependent.LastName);
+            Assert.AreEqual("1967-09-09", coverages.Demographics.Dependent.Dob);
+            Assert.AreEqual("01", coverages.Demographics.Dependent.RelationshipCode);
         }
         
         [TestMethod]
@@ -223,37 +223,35 @@ namespace EligibleService.Core.Tests
             Assert.AreEqual("PCP SELECTION NOT REQUIRED", physician.Comments[0]);
         }
 
+        //[TestMethod]
+        //[TestCategory("CostEstimate")]
+        //public void PlanFinancialsServiceDeliveryParseTest()
+        //{
+        //    restClient.Setup(x => x.Execute(It.IsAny<string>(), It.IsAny<RequestOptions>(), It.IsAny<Hashtable>()))
+        //        .Returns(new RestResponse()
+        //        {
+        //            StatusCode = HttpStatusCode.OK,
+        //            Content = TestHelper.GetJson(TestResource.MocksPath + "Coverage.json")
+        //        });
 
 
-        [TestMethod]
-        [TestCategory("CostEstimate")]
-        public void PlanFinancialsServiceDeliveryParseTest()
-        {
-            restClient.Setup(x => x.Execute(It.IsAny<string>(), It.IsAny<RequestOptions>(), It.IsAny<Hashtable>()))
-                .Returns(new RestResponse()
-                {
-                    StatusCode = HttpStatusCode.OK,
-                    Content = TestHelper.GetJson(TestResource.MocksPath + "Coverage.json")
-                });
+        //    coverage.ExecuteObj = restClient.Object;
 
+        //    var coverageResponse = coverage.All(param);
 
-            coverage.ExecuteObj = restClient.Object;
+        //    ServiceDelivery sd = new ServiceDelivery()
+        //    {
+        //        From = 1,
+        //        To = 3,
+        //        Period = "Years",
+        //        Type = "Uniys"
+        //    };
 
-            var coverageResponse = coverage.All(param);
-
-            ServiceDelivery sd = new ServiceDelivery()
-            {
-                From = 1,
-                To = 3,
-                Period = "Years",
-                Type = "Uniys"
-            };
-
-            TestHelper.PropertyValuesAreEquals(sd, coverageResponse.Plan.Financials.Deductible.Remainings.InNetwork[0].ServiceDelivery);
-            TestHelper.PropertyValuesAreEquals(sd, coverageResponse.Plan.Financials.Deductible.Remainings.OutNetwork[0].ServiceDelivery);
-            TestHelper.PropertyValuesAreEquals(sd, coverageResponse.Plan.Financials.Deductible.Totals.InNetwork[0].ServiceDelivery);
-            TestHelper.PropertyValuesAreEquals(sd, coverageResponse.Plan.Financials.Deductible.Totals.OutNetwork[0].ServiceDelivery);
-        }
+        //    TestHelper.PropertyValuesAreEquals(sd, coverageResponse.Plan.Financials.Deductible.Remainings.InNetwork[0].ServiceDelivery);
+        //    TestHelper.PropertyValuesAreEquals(sd, coverageResponse.Plan.Financials.Deductible.Remainings.OutNetwork[0].ServiceDelivery);
+        //    TestHelper.PropertyValuesAreEquals(sd, coverageResponse.Plan.Financials.Deductible.Totals.InNetwork[0].ServiceDelivery);
+        //    TestHelper.PropertyValuesAreEquals(sd, coverageResponse.Plan.Financials.Deductible.Totals.OutNetwork[0].ServiceDelivery);
+        //}
 
         [TestMethod]
         [TestCategory("CoverageMockTest")]
@@ -291,9 +289,9 @@ namespace EligibleService.Core.Tests
 
             coverage.ExecuteObj = restClient.Object;
             CoverageResponse coverageResponse = coverage.All(param);
-            Plan expectedCoverage = CoveragePlanExpectedResults.GetExpectedCoveragePlan();
+            Financials expectedCoverage = CoveragePlanExpectedResults.GetFinancials();
 
-            TestHelper.PropertyValuesAreEquals(coverageResponse.Plan.Financials.StopLoss, expectedCoverage.Financials.StopLoss);
+            TestHelper.PropertyValuesAreEquals(coverageResponse.Plan.Financials.StopLoss, expectedCoverage.StopLoss);
 
         }
 
@@ -354,10 +352,10 @@ namespace EligibleService.Core.Tests
             coverage.ExecuteObj = restClient.Object;
             var coverageResponse = coverage.All(param);
 
-            Financial expectedCoverage = CoveragePlanExpectedResults.GetFinancial();
+            Financials expectedCoverage = CoveragePlanExpectedResults.GetFinancials();
 
-            TestHelper.PropertyValuesAreEquals(coverageResponse.Plan.Financials.CostContainment, expectedCoverage);
-            TestHelper.PropertyValuesAreEquals(coverageResponse.Plan.Financials.SpendDown, expectedCoverage);
+            TestHelper.PropertyValuesAreEquals(coverageResponse.Plan.Financials.CostContainment, expectedCoverage.CostContainment);
+            TestHelper.PropertyValuesAreEquals(coverageResponse.Plan.Financials.SpendDown, expectedCoverage.SpendDown);
 
         }
         [TestMethod]

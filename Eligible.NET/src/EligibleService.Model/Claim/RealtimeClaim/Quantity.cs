@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using EligibleService.Claim.ClaimReports;
+using Newtonsoft.Json;
 
 namespace EligibleService.Claim.RealtimeClaims
 {
@@ -9,6 +10,9 @@ namespace EligibleService.Claim.RealtimeClaims
 
         [JsonProperty("paid")]
         public double? Paid { get; set; }
+
+        [JsonProperty("federal")]
+        public Federal Federal { get; set; }
     }
 
 }

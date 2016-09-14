@@ -1,5 +1,7 @@
-﻿using Newtonsoft.Json;
+﻿using EligibleService.Model.CostEstimates;
+using Newtonsoft.Json;
 using System;
+using System.Collections.ObjectModel;
 
 namespace EligibleService.Model.Medicare
 {
@@ -25,6 +27,10 @@ namespace EligibleService.Model.Medicare
 
         [JsonProperty("endDate")]
         public string EndDate { get; set; }
+
+
+        [JsonProperty("visits")]
+        public Collection<Visits> Visits { get; set; }
 
     }
 }

@@ -23,10 +23,7 @@ namespace EligibleService.Model.Coverage
         [JsonProperty("coverage_basis")]
         public Collection<CoverageBasis> CoverageBasis { get; set; }
 
-        [JsonProperty("financial_flowsList")]
-        public FinancialFlowsList FinancialFlowsList { get; set; }
-
-        [JsonProperty("non_covered")]
+        [JsonProperty("noncovered")]
         public Collection<NonCovered> NonCovered { get; set; }
 
         [JsonProperty("benefit_details")]

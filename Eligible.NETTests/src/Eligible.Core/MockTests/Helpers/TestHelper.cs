@@ -99,7 +99,7 @@ namespace EligibleService.Core.Tests
             {
                 foreach (string key in actual.Keys)
                 {
-                    if (actual[key] != null && actual.Contains("VisitsLimitation"))
+                    if (actual[key] != null && !actual.Contains("VisitsLimitation") && key != "services")
                     {
                         Assert.IsTrue(expected.ContainsKey(key), "Miss match in property  " + key);
 
@@ -113,15 +113,18 @@ namespace EligibleService.Core.Tests
                                 IList listExpected = (IList)expected[key];
                                 for (int i = 0; i < listActual.Count; i++)
                                 {
-                                    string expectedListValue = Regex.Replace(listExpected[i].ToString(), @"\s+", "");
-                                    string actualListValue = Regex.Replace(listActual[i].ToString(), @"\s+", "");
-                                    if (actualListValue.StartsWith("{") || (actualListValue.Contains("{") && actualListValue.StartsWith("[")))
+                                    if (i < listExpected.Count)
                                     {
-                                        CheckKeys(expectedListValue, actualListValue);
-                                    }
-                                    else
-                                    {
-                                        Assert.AreEqual(expectedListValue.GetType(), actualListValue.GetType());
+                                        string expectedListValue = Regex.Replace(listExpected[i].ToString(), @"\s+", "");
+                                        string actualListValue = Regex.Replace(listActual[i].ToString(), @"\s+", "");
+                                        if (actualListValue.StartsWith("{") || (actualListValue.Contains("{") && actualListValue.StartsWith("[")))
+                                        {
+                                            CheckKeys(expectedListValue, actualListValue);
+                                        }
+                                        else
+                                        {
+                                            Assert.AreEqual(expectedListValue.GetType(), actualListValue.GetType());
+                                        }
                                     }
                                 }
                             }

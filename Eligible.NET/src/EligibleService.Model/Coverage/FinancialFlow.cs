@@ -5,22 +5,31 @@ using System.Collections.ObjectModel;
 
 namespace EligibleService.Model.Coverage
 {
-    public class FinancialFlow
+    public class FinancialFlow : StopLossFinancialFlow
     {
-        [JsonProperty("amount")]
-        public string Amount { get; set; }
-
         [JsonProperty("time_period")]
         public string TimePeriod { get; set; }
 
         [JsonProperty("time_period_label")]
         public string TimePeriodLabel { get; set; }
 
+        [JsonProperty("service_delivery")]
+        public ServiceDelivery ServiceDelivery { get; set; }
+    }
+
+    public class FinancialFlowRemainings : StopLossFinancialFlow
+    {
+        [JsonProperty("service_delivery")]
+        public ServiceDelivery ServiceDelivery { get; set; }
+    }
+
+    public class StopLossFinancialFlow
+    {
+        [JsonProperty("amount")]
+        public string Amount { get; set; }
+
         [JsonProperty("level")]
         public string Level { get; set; }
-
-        [JsonProperty("network")]
-        public string Network { get; set; }
 
         [JsonProperty("insurance_type")]
         public string InsuranceType { get; set; }
@@ -49,8 +58,22 @@ namespace EligibleService.Model.Coverage
         [JsonProperty("comments")]
         public Collection<String> Comments { get; set; }
 
-        [JsonProperty("service_delivery")]
-        public ServiceDelivery ServiceDelivery { get; set; }
+        [JsonProperty("quantity_code")]
+        public string QuantityCode { get; set; }
 
+        [JsonProperty("quantity_label")]
+        public string QuantityLabel { get; set; }
+
+        [JsonProperty("quantity")]
+        public string Quantity { get; set; }
+    }
+
+    public class StopLossFinancialFlowTotal : StopLossFinancialFlow
+    {
+        [JsonProperty("time_period")]
+        public string TimePeriod { get; set; }
+
+        [JsonProperty("time_period_label")]
+        public string TimePeriodLabel { get; set; }
     }
 }

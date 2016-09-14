@@ -1,5 +1,6 @@
 ﻿using EligibleService.Model.Precertification;
 using Newtonsoft.Json;
+using System;
 using System.Collections.ObjectModel;
 
 namespace EligibleService.Model
@@ -7,7 +8,7 @@ namespace EligibleService.Model
     public class PrecertificationInquiryResponse : JsonResponseClass
     {
         [JsonProperty("created_at")]
-        public string CreatedAt { get; set; }
+        public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("eligible_id")]
         public string EligibleId { get; set; }

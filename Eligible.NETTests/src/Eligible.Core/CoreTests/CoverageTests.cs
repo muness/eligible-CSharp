@@ -45,6 +45,7 @@ namespace EligibleService.Core.CoreTests
             CoverageResponse expectedObj = JsonConvert.DeserializeObject<CoverageResponse>(expectedResponse);
             CoverageResponse actualObj = JsonConvert.DeserializeObject<CoverageResponse>(response.JsonResponse());
             TestHelper.PropertyValuesAreEquals(actualObj, expectedObj);
+            TestHelper.CompareProperties(expectedResponse, JsonConvert.SerializeObject(actualObj));
         }
 
         [TestMethod]
@@ -102,7 +103,7 @@ namespace EligibleService.Core.CoreTests
             param.Add("provider_last_name", "Doe");
             param.Add("provider_first_name", "John");
             param.Add("provider_npi", "0123456789");
-            param.Add("member_id", "cost_estimates_001");
+            param.Add("member_id", "AETNA00DEP_ACPOSII");
             param.Add("member_first_name", "IDA");
             param.Add("member_last_name", "FRANKLIN");
             param.Add("member_dob", "1701-12-12");

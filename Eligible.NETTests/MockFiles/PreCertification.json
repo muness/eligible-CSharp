@@ -1,23 +1,24 @@
 ﻿{
-  "created_at": "1234-12-123",
-  "eligible_id": "12345-12345-124531-122121",
+  "created_at": "2013-04-18T02:59:14-04:00",
+  "eligible_id": "UJ14EY3SG9JJI",
   "payer": {
     "name": "AETNA",
     "id": "60054"
   },
   "requester": {
+    "type": "Facility",
     "first_name": null,
     "last_name": null,
     "middle_name": null,
-    "organization_name": "Union Imaging",
-    "npi": "1111111111",
+    "organization_name": "Some Imaging",
+    "npi": "1234567890",
     "taxonomy_code": null
   },
   "subscriber": {
-    "first_name": "TEST",
-    "last_name": "TEST",
+    "first_name": "BENJAMIN",
+    "last_name": "FRANKLIN",
     "middle_name": "M",
-    "id": "1234567890",
+    "id": "AETNAS8398",
     "ssn": null,
     "dob": "1966-09-09",
     "gender": null,
@@ -29,116 +30,39 @@
       "zip": null
     }
   },
-   "dependent": {
-        "first_name": "TEST",
-        "last_name": "TEST",
-        "middle_name": "M",
-        "ssn": "987987987",
-        "dob": "1966-09-09",
-        "gender": "M",
-        "relationship_code": null,
-        "address": {
-            "street_line_1": "Some street",
-            "street_line_2": "second",
-            "city": "San Francisco",
-            "state": "CA",
-            "zip": "94109"
-        }
-   },
+  "dependent": {
+    "first_name": "BILL",
+    "last_name": "FRANKLIN",
+    "middle_name": "M",
+    "ssn": "987987987",
+    "dob": "1966-09-09",
+    "gender": "M",
+    "relationship_code": "19",
+    "address": {
+      "street_line_1": "Some street",
+      "street_line_2": "second",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94109"
+    }
+  },
   "patient_events": [
     {
       "place_of_service": "22",
       "diagnosis_codes": [
-        "72610"
-      ],
-      "message": null,
-      "certification": {
-        "action_code": "A3",
-        "action_label": "Not Certified",
-        "id": "1234567",
-        "decision_code": null,
-        "decision_label": null,
-        "admin_ref_number": null,
-        "previous_review_auth_number": null,
-        "expiration_date": null,
-        "effective_start_date": null,
-        "effective_end_date": null
-      },
-      "providers": [
-        {
-          "type": "Facility",
-          "first_name": null,
-          "last_name": null,
-          "middle_name": null,
-          "organization_name": "ABC Diagnostic",
-          "npi": "1111111111",
-          "taxonomy_code": null,
-          "address": {
-            "street_line_1": null,
-            "street_line_2": null,
-            "city": null,
-            "state": null,
-            "zip": null
-          }
-        },
-        {
-          "type": "Attending Physician",
-          "first_name": "BEN",
-          "last_name": "FRANKLIN",
-          "middle_name": "R",
-          "organization_name": null,
-          "npi": "1222222222",
-          "taxonomy_code": null,
-          "address": {
-            "street_line_1": null,
-            "street_line_2": null,
-            "city": null,
-            "state": null,
-            "zip": null
-          }
-        }
-      ],
-      "services": [
-        {
-          "procedure_code": "73221",
-          "procedure_modifiers": [],
-          "amount": null,
-          "quantity": null,
-          "message": null,
-          "certification": {
-            "action_code": "A3",
-            "action_label": "Not Certified",
-            "id": "1111111111",
-            "decision_code": "0N",
-            "decision_label": "No Prior Approval",
-            "admin_ref_number": null,
-            "previous_review_auth_number": null,
-            "service_start_date": "2014-04-30",
-            "service_end_date": "2014-04-30",
-            "issue_date": null,
-            "expiration_date": null,
-            "effective_start_date": null,
-            "effective_end_date": null
-          },
-          "providers": []
-        }
-      ]
-    },
-    {
-      "place_of_service": "22",
-      "diagnosis_codes": [
-        "7220"
+        ""
       ],
       "message": null,
       "certification": {
         "action_code": "A1",
         "action_label": "Certified in total",
-        "id": "1111111111",
+        "id": "Precertification id",
         "decision_code": null,
         "decision_label": null,
-        "admin_ref_number": null,
-        "previous_review_auth_number": null,
-        "expiration_date": null,
+        "admin_ref_number": "Case number on payer end",
+        "previous_review_auth_number": "Previous precert number",
+        "issue_date": "2016-08-17",
+        "expiration_date": "2016-10-01",
         "effective_start_date": null,
         "effective_end_date": null
       },
@@ -148,8 +72,8 @@
           "first_name": null,
           "last_name": null,
           "middle_name": null,
-          "organization_name": "ABC DIAGNOSTICS",
-          "npi": "1111111111",
+          "organization_name": "Some Imaging",
+          "npi": "1234567890",
           "taxonomy_code": null,
           "address": {
             "street_line_1": null,
@@ -161,11 +85,11 @@
         },
         {
           "type": "Attending Physician",
-          "first_name": "BEN",
-          "last_name": "FRANKLIN",
-          "middle_name": "R",
+          "first_name": "Tim",
+          "last_name": "Franklin",
+          "middle_name": "P",
           "organization_name": null,
-          "npi": "1111111111",
+          "npi": "1234567890",
           "taxonomy_code": null,
           "address": {
             "street_line_1": null,
@@ -178,23 +102,31 @@
       ],
       "services": [
         {
-          "procedure_code": "72141",
+          "procedure_code": "73721",
+          "procedure_description": "MRI LOWER EXTREMITY JOINT W/O",
           "procedure_modifiers": [],
           "amount": null,
           "quantity": null,
           "message": null,
+          "delivery": {
+            "quantity": "1",
+            "type": "units",
+            "frequency": null,
+            "time_period": null,
+            "time_period_qualifier": null
+          },
           "certification": {
             "action_code": "A1",
             "action_label": "Certified in total",
-            "id": "1234567890",
+            "id": "Precertification id",
             "decision_code": null,
             "decision_label": null,
-            "admin_ref_number": null,
-            "previous_review_auth_number": null,
-            "service_start_date": "2014-04-30",
-            "service_end_date": "2014-07-29",
-            "issue_date": null,
-            "expiration_date": null,
+            "admin_ref_number": "Case number on payer end",
+            "previous_review_auth_number": "Previous precert number",
+            "service_start_date": "",
+            "service_end_date": "",
+            "issue_date": "2016-08-17",
+            "expiration_date": "2016-10-01",
             "effective_start_date": null,
             "effective_end_date": null
           },

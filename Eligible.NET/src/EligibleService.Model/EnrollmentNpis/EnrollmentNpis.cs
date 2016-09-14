@@ -14,8 +14,5 @@ namespace EligibleService.Model
     {
         [JsonProperty("enrollment_npis")]
         public Collection<EnrollmentNpisResponse> EnrollmentNpis { get; set; }
-
-        [JsonProperty("eligible_id")]
-        public string EligibleId { get; set; }
     }
 }

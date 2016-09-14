@@ -69,69 +69,23 @@ namespace EligibleService.Core.Tests.Helpers
         {
             Financials financials = new Financials()
             {
-                Deductible = GetDeductable(),
-                StopLoss = GetFinancial(),
+                Deductible = GetFinancial(),
+                CostContainment = GetFinancial(),
+                SpendDown = GetFinancial(),
+                StopLoss = GetStopLoss()
             };
             
             return financials;
         }
 
-        public static Financial GetFinancial()
+        public static StopLossFinancial GetStopLoss()
         {
-            Financial financial = new Financial();
-            FinancialFlows remainings = new FinancialFlows();
-            Collection<FinancialFlow> inNetwork = new Collection<FinancialFlow>();
-            inNetwork.Add(new FinancialFlow()
+            StopLossFinancial financial = new StopLossFinancial();
+            StopLossFinancialFlows remaindings = new StopLossFinancialFlows();
+            Collection<StopLossFinancialFlow> inNetwork = new Collection<StopLossFinancialFlow>();
+            inNetwork.Add(new StopLossFinancialFlow()
             {
-                Amount = "4862.15",
-                Level = "FAMILY",
-                InsuranceType = null,
-                InsuranceTypeLabel = null,
-                Pos = null,
-                PosLabel = null,
-                AuthorizationRequired = null,
-                Description = null,
-                ContactDetails = new Collection<ContactDetail>(),
-                Dates = new Collection<Dates>(),
-                Comments = new Collection<string>(),
-            });
-
-            Collection<FinancialFlow> outNetwork = new Collection<FinancialFlow>();
-            outNetwork.Add(new FinancialFlow()
-                {
-                    Amount = "9237.15",
-                    Level = "FAMILY",
-                    InsuranceType = null,
-                    InsuranceTypeLabel = null,
-                    Pos = null,
-                    PosLabel = null,
-                    AuthorizationRequired = null,
-                    Description = null,
-                    ContactDetails = new Collection<ContactDetail>(),
-                    Dates = new Collection<Dates>(),
-                    Comments = new Collection<string>(),
-                });
-            remainings.InNetwork = inNetwork;
-            remainings.OutNetwork = outNetwork;
-
-            FinancialFlows spent = new FinancialFlows();
-            spent.InNetwork = new Collection<FinancialFlow>();
-            spent.OutNetwork = new Collection<FinancialFlow>();
-
-
-            FinancialFlows totals = new FinancialFlows();
-            inNetwork = new Collection<FinancialFlow>();
-            Collection<Dates> dates = new Collection<Dates>();
-            dates.Add(new Dates()
-            {
-                DateType = "eligibilty",
-                DateValue = "2013-07-01"
-            });
-            inNetwork.Add(new FinancialFlow()
-            {
-                Amount = "4975",
-                TimePeriod = null,
-                TimePeriodLabel = null,
+                Amount = "4238.35",
                 Level = "FAMILY",
                 InsuranceType = null,
                 InsuranceTypeLabel = null,
@@ -142,16 +96,30 @@ namespace EligibleService.Core.Tests.Helpers
                 ContactDetails = new Collection<ContactDetail>(),
                 Dates = new Collection<Dates>(),
                 Comments = new Collection<string>(){
-                        "In-Network Providers"
-                        },
+                        "INT MED AND RX"
+                    },
             });
 
-            outNetwork = new Collection<FinancialFlow>();
-            outNetwork.Add(new FinancialFlow()
+            Collection<StopLossFinancialFlow> outNetwork = new Collection<StopLossFinancialFlow>();
+            remaindings.InNetwork = inNetwork;
+            remaindings.OutNetwork = outNetwork;
+
+            StopLossFinancialFlows spent = new StopLossFinancialFlows();
+            spent.InNetwork = inNetwork;
+            spent.OutNetwork = outNetwork;
+
+
+            StopLossFinancialFlowTotals totals = new StopLossFinancialFlowTotals();
+            Collection<StopLossFinancialFlowTotal> inNetwork1 = new Collection<StopLossFinancialFlowTotal>();
+            Collection<Dates> dates = new Collection<Dates>();
+            dates.Add(new Dates()
             {
-                Amount = "9350",
-                TimePeriod = null,
-                TimePeriodLabel = null,
+                DateType = "eligibilty",
+                DateValue = "2013-07-01"
+            });
+            inNetwork1.Add(new StopLossFinancialFlowTotal()
+            {
+                Amount = "4350",
                 Level = "FAMILY",
                 InsuranceType = null,
                 InsuranceTypeLabel = null,
@@ -160,26 +128,30 @@ namespace EligibleService.Core.Tests.Helpers
                 AuthorizationRequired = null,
                 Description = null,
                 ContactDetails = new Collection<ContactDetail>(),
-                Dates = new Collection<Dates>(),
-                Comments = new Collection<string>()
+                Dates = dates,
+                Comments = new Collection<string>(){
+                        "INT MED AND RX,DED INCLUDED IN OOP,Visit or Evaluation by Chiropractor,Manipulation by Chiropractor,Emergency use of Emergency Room,Outpatient Surgery Facility,Outpatient Medical Ancillary,Ambulatory Medical Ancillary,Medical Ancillary,Inpatient Xray and Lab",
+                        "Room and Board,Intensive Care Room and Board,Non Emergency use of Emergency Room,Emergency Room Physician,Urgent Care,Non Urgent Services at an Urgent Care Facility,GYN Visit,Specialist Visit or Evaluation,Primary Care Visit or Evaluation,Physician Xray and Lab",
+                        "Xray and Lab,Outpatient Xray and Lab"
+                        },
             });
 
-            totals.InNetwork = inNetwork;
-            totals.OutNetwork = outNetwork;
+            totals.InNetwork = inNetwork1;
+            totals.OutNetwork = new Collection<StopLossFinancialFlowTotal>();
 
-            financial.Remainings = remainings;
+            financial.Remainings = remaindings;
             financial.Spent = spent;
             financial.Totals = totals;
 
             return financial;
         }
 
-        public static Financial GetDeductable()
+        public static Financial GetFinancial()
         {
             Financial financial = new Financial();
-            FinancialFlows remaindings = new FinancialFlows();
-            Collection<FinancialFlow> inNetwork = new Collection<FinancialFlow>();
-            inNetwork.Add(new FinancialFlow()
+            FinancialFlowsRemainings remaindings = new FinancialFlowsRemainings();
+            Collection<FinancialFlowRemainings> inNetwork = new Collection<FinancialFlowRemainings>();
+            inNetwork.Add(new FinancialFlowRemainings()
                 {
                     Amount = "4238.35",
                     Level = "FAMILY",
@@ -196,7 +168,7 @@ namespace EligibleService.Core.Tests.Helpers
                     },
                 });
 
-            Collection<FinancialFlow> outNetwork = new Collection<FinancialFlow>();
+            Collection<FinancialFlowRemainings> outNetwork = new Collection<FinancialFlowRemainings>();
             remaindings.InNetwork = inNetwork;
             remaindings.OutNetwork = outNetwork;
 
@@ -206,14 +178,14 @@ namespace EligibleService.Core.Tests.Helpers
 
             
             FinancialFlows totals = new FinancialFlows();
-            inNetwork = new Collection<FinancialFlow>();
+            Collection<FinancialFlow> inNetwork1 = new Collection<FinancialFlow>();
             Collection<Dates> dates = new Collection<Dates>();
             dates.Add(new Dates()
             {
                 DateType = "eligibilty",
                 DateValue = "2013-07-01"
             });
-            inNetwork.Add(new FinancialFlow()
+            inNetwork1.Add(new FinancialFlow()
             {
                 Amount = "4350",
                 TimePeriod = "25",
@@ -234,7 +206,7 @@ namespace EligibleService.Core.Tests.Helpers
                         },
             });
 
-            totals.InNetwork = inNetwork;
+            totals.InNetwork = inNetwork1;
             totals.OutNetwork = new Collection<FinancialFlow>();
 
             financial.Remainings = remaindings;
@@ -248,9 +220,9 @@ namespace EligibleService.Core.Tests.Helpers
         public static FinancialFlowsPercents GetCoinsurance()
         {
             FinancialFlowsPercents coInsurence = new FinancialFlowsPercents();
-            FinancialFlows finacialFLows = new FinancialFlows();
-            finacialFLows.InNetwork = new Collection<FinancialFlow>();
-            finacialFLows.OutNetwork = new Collection<FinancialFlow>();
+            CoinsurancePercents finacialFLows = new CoinsurancePercents();
+            finacialFLows.InNetwork = new Collection<CoinsurancePercent>();
+            finacialFLows.OutNetwork = new Collection<CoinsurancePercent>();
             coInsurence.Percents = finacialFLows;
             return coInsurence;
         }
@@ -275,7 +247,6 @@ namespace EligibleService.Core.Tests.Helpers
                 TimePeriod = "25",
                 TimePeriodLabel = "contract",
                 Level = "INDIVIDUAL",
-                Network = "IN",
                 InsuranceType = "SELF",
                 InsuranceTypeLabel = "SELFLABEL",
                 Pos = "POS",

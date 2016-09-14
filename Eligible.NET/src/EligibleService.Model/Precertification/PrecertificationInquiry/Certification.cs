@@ -25,6 +25,9 @@ namespace EligibleService.Model.Precertification
         [JsonProperty("previous_review_auth_number")]
         public string PreviousReviewAuthNumber { get; set; }
 
+        [JsonProperty("issue_date")]
+        public string IssueDate { get; set; }
+
         [JsonProperty("expiration_date")]
         public string ExpirationDate { get; set; }
 

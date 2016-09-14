@@ -351,13 +351,6 @@
 				"reason_label": "Incentive adjustment, e.g. preferred product/service.",
 				"amount": 4.98,
 				"quantity": 0.0
-			}, {
-				"type_code": "CO",
-				"type_label": "Contractual Obligations",
-				"reason_code": "45",
-				"reason_label": "Charge exceeds fee schedule/maximum allowable or contracted/legislated fee arrangement. (Use only with Group Codes PR or CO depending upon liability)",
-				"amount": 45.44,
-				"quantity": 0.0
 			}]
 		}]
 	},

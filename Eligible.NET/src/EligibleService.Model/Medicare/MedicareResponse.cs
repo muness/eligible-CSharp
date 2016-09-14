@@ -84,11 +84,5 @@ namespace EligibleService.Model
 
         [JsonProperty("history")]
         public History History { get; set; }
-
-        [JsonProperty("search_options")]
-        public SearchOptions SearchOptions { get; set; }
-
-        [JsonProperty("success")]
-        public bool? Success { get; set; }
     }
 }

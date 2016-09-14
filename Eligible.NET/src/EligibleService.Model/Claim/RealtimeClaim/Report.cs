@@ -1,9 +1,13 @@
-﻿using Newtonsoft.Json;
+﻿using EligibleService.Claim.ClaimReports;
+using Newtonsoft.Json;
 
 namespace EligibleService.Claim.RealtimeClaims
 {
     public class Report
     {
+        [JsonProperty("service_provider")]
+        public ServiceProvider ServiceProvider { get; set; }
+
         [JsonProperty("reference_id")]
         public string ReferenceId { get; set; }
 
@@ -11,7 +15,7 @@ namespace EligibleService.Claim.RealtimeClaims
         public string EffectiveDate { get; set; }
 
         [JsonProperty("payer")]
-        public RealPayer Payer { get; set; }
+        public ReportsPayer Payer { get; set; }
 
         [JsonProperty("financials")]
         public Financials Financials { get; set; }
