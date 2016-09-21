@@ -35,7 +35,12 @@ namespace EligibleService.Common
                 TryParseJson(response, out errorClass, out parseJson);
 
                 if (!parseJson)
-                    return JsonConvert.DeserializeObject<TClassResponse>(response.Content, GetJsonSerializerSettingsObject());
+                {
+                    parseJson = false;
+                    sourceClass = JsonConvert.DeserializeObject<TClassResponse>(response.Content, GetJsonSerializerSettingsObject());
+                    if (sourceClass != null)
+                        return sourceClass;
+                }
                 else
                 {
                     LogError<IRestResponse>(response);
