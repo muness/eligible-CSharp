@@ -74,6 +74,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\Eligible.Core\CoreTests\BaseTestClass.cs" />
     <Compile Include="src\Eligible.Core\CoreTests\CostEstimatesMedicareTests.cs" />
+    <Compile Include="src\Eligible.Core\CoreTests\CoverageIDSTests.cs" />
     <Compile Include="src\Eligible.Core\CoreTests\CoverageTests.cs" />
     <Compile Include="src\Eligible.Core\CoreTests\PayersTests.cs" />
     <Compile Include="src\Eligible.Core\CoreTests\ClaimTests.cs" />
@@ -165,7 +166,6 @@
     <None Include="MockFiles\Payers.json" />
     <None Include="MockFiles\PayerStatus.json" />
     <None Include="MockFiles\PayerstatusById.json" />
-    <None Include="MockFiles\PaymentReports.json" />
     <None Include="MockFiles\PaymentStatus.json" />
     <None Include="MockFiles\PreCertification.json" />
     <None Include="MockFiles\RealtimeClaimResponse.json" />

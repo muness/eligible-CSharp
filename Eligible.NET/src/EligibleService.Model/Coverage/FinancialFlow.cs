@@ -66,6 +66,18 @@ namespace EligibleService.Model.Coverage
 
         [JsonProperty("quantity")]
         public string Quantity { get; set; }
+
+        [JsonProperty("copayment")]
+        public bool? Copayment { get; set; }
+
+        [JsonProperty("coinsurance")]
+        public bool? Coinsurance { get; set; }
+
+        [JsonProperty("deductible")]
+        public bool? Deductible { get; set; }
+
+        [JsonProperty("service_type")]
+        public string ServiceType { get; set; }
     }
 
     public class StopLossFinancialFlowTotal : StopLossFinancialFlow

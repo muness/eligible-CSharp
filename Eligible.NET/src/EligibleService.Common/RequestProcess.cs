@@ -9,7 +9,7 @@ namespace EligibleService.Common
 {
     public class RequestProcess
     {
-        public static TClassResponse ResponseValidation<TClassResponse, TClassError>(IRestResponse response)
+        public static TClassResponse ResponseValidation<TClassResponse, TClassError>(IRestResponse response, bool returnOnly = false)
         {
             string message = response.Content;
 
@@ -20,6 +20,7 @@ namespace EligibleService.Common
             }
 
             TClassResponse sourceClass = default(TClassResponse);
+            TClassError errorClass;
             bool parseJson = false;
             string error = string.Empty;
 
@@ -28,6 +29,19 @@ namespace EligibleService.Common
                 LogError<IRestResponse>(response);
                 throw new AuthenticationException(message, response, response.ErrorException);
             }
+            else if(returnOnly)
+            {
+                parseJson = false;
+                TryParseJson(response, out errorClass, out parseJson);
+
+                if (!parseJson)
+                    return JsonConvert.DeserializeObject<TClassResponse>(response.Content, GetJsonSerializerSettingsObject());
+                else
+                {
+                    LogError<IRestResponse>(response);
+                    throw new EligibleException(message, errorClass);
+                }
+            }
             else
             {
                 TryParseJson(response, out sourceClass, out parseJson);
@@ -35,7 +49,6 @@ namespace EligibleService.Common
 
             if (!parseJson)
             {
-                TClassError errorClass;
                 parseJson = false;
                 string eligibleError = string.Empty;
                 TryParseJson(response, out errorClass, out parseJson);

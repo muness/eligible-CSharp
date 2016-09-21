@@ -9,6 +9,9 @@ namespace EligibleService.Model.CostEstimates
 
         [JsonProperty("coinsurance")]
         public CoinsuranceMedicare Coinsurance { get; set; }
+
+        [JsonProperty("copayment")]
+        public DeductibleMedicare Copayment { get; set; }
     }
 
     public class DeductibleMedicare
@@ -18,6 +21,9 @@ namespace EligibleService.Model.CostEstimates
 
         [JsonProperty("limited_by_stop_loss")]
         public bool? LimitedByStopLoss { get; set; }
+
+        [JsonProperty("service_type")]
+        public string ServiceType { get; set; }
     }
 
     public class CoinsuranceMedicare
@@ -33,5 +39,8 @@ namespace EligibleService.Model.CostEstimates
 
         [JsonProperty("limited_by_stop_loss")]
         public bool? LimitedByStopLoss { get; set; }
+
+        [JsonProperty("service_type")]
+        public string ServiceType { get; set; }
     }
 }

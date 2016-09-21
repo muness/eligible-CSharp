@@ -27,7 +27,10 @@ namespace EligibleService.Model.Coverage
                     key = payer_key;
                 }
             }
-            VisitsLimitation = _additionalData[key].ToString();
+            if (key != "")
+                VisitsLimitation = _additionalData[key].ToString();
+            else
+                VisitsLimitation = null;
         }
 
         public CoverageBasis()

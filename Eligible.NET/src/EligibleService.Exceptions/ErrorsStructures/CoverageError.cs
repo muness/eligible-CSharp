@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System;
+using System.Collections.ObjectModel;
 
 namespace EligibleService.Exceptions
 {
@@ -50,5 +51,8 @@ namespace EligibleService.Exceptions
 
         [JsonProperty("error")]
         public CoverageError Error { get; set; }
+
+        [JsonProperty("known_issues")]
+        public Collection<string> KnownIssues { get; set; }
     }
 }

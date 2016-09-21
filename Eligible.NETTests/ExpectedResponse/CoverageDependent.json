@@ -1,6 +1,6 @@
 ﻿{
-	"created_at": "2016-09-12T14:18:29-04:00",
-	"eligible_id": "33YQTS5RAH1H3",
+	"created_at": "2016-09-21T07:55:55-04:00",
+	"eligible_id": "8N68X9UDOT79G5",
 	"known_issues": [],
 	"demographics": {
 		"subscriber": {
@@ -139,6 +139,19 @@
 			}, {
 				"type": "86",
 				"type_label": "Emergency Services",
+				"time_period": null,
+				"time_period_label": null,
+				"level": "FAMILY",
+				"network": "IN",
+				"pos": null,
+				"pos_label": null,
+				"authorization_required": null,
+				"contact_details": [],
+				"dates": [],
+				"comments": ["Non Urgent Services at an Urgent Care Facility/EXCLUSION"]
+			}, {
+				"type": "UC",
+				"type_label": "Urgent Care",
 				"time_period": null,
 				"time_period_label": null,
 				"level": "FAMILY",
