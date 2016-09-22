@@ -15,6 +15,20 @@ namespace EligibleService.Model.CostEstimates
 
         [JsonProperty("service_delivery")]
         public ServiceDelivery ServiceDelivery { get; set; }
+
+        [JsonProperty("service_type")]
+        public string ServiceType { get; set; }
     }
 
+    public class Deductible : PaymentBase
+    {
+        [JsonProperty("amount")]
+        public string Amount { get; set; }
+
+        [JsonProperty("service_delivery")]
+        public ServiceDelivery ServiceDelivery { get; set; }
+
+        [JsonProperty("service_type")]
+        public string ServiceType { get; set; }
+    }
 }

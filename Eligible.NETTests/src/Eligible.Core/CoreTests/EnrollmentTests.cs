@@ -85,11 +85,7 @@ namespace EligibleService.Core.CoreTests
 
             string expectedResponse = TestHelper.GetJson(TestResource.ExpectedResponse + "AllEnrollments.json");
 
-            TestHelper.CompareProperties(expectedResponse, actualResponse.JsonResponse());
-
-            EnrollmentNpisResponses expectedObj = JsonConvert.DeserializeObject<EnrollmentNpisResponses>(expectedResponse);
-            EnrollmentNpisResponses actualObj = JsonConvert.DeserializeObject<EnrollmentNpisResponses>(actualResponse.JsonResponse());
-            TestHelper.PropertyValuesAreEquals(actualObj, expectedObj);
+            TestHelper.CompareProperties(expectedResponse, JsonConvert.SerializeObject(actualResponse));
         }
     }
 }

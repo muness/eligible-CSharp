@@ -15,6 +15,9 @@ namespace EligibleService.Model.CostEstimates
 
         [JsonProperty("service_delivery")]
         public ServiceDelivery ServiceDelivery { get; set; }
+
+        [JsonProperty("service_type")]
+        public string ServiceType { get; set; }
     }
 
 }

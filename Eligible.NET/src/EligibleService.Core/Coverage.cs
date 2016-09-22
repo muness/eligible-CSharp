@@ -21,8 +21,9 @@ namespace EligibleService.Core
         /// <returns>All coverages</returns>
         public CoverageResponse All(Hashtable requiredParams, RequestOptions options = null)
         {
+            bool returnOnly = requiredParams.ContainsKey("return_only");
             response = ExecuteObj.Execute(EligibleResources.PathToAllCoverages, SetRequestOptionsObject(options), requiredParams);
-            var fomatedResponse = RequestProcess.ResponseValidation<CoverageResponse, CoverageErrorDetails>(response);
+            var fomatedResponse = RequestProcess.ResponseValidation<CoverageResponse, CoverageErrorDetails>(response, returnOnly);
             fomatedResponse.SetJsonResponse(response.Content);
             return fomatedResponse;
         }
@@ -35,8 +36,9 @@ namespace EligibleService.Core
         /// <returns>All medicare results</returns>
         public MedicareResponse Medicare(Hashtable requiredParams, RequestOptions options = null)
         {
+            bool returnOnly = requiredParams.ContainsKey("return_only");
             response = ExecuteObj.Execute(EligibleResources.PathToMedicare, SetRequestOptionsObject(options), requiredParams);
-            var formattedResponse = RequestProcess.ResponseValidation<MedicareResponse, CoverageErrorDetails>(response);
+            var formattedResponse = RequestProcess.ResponseValidation<MedicareResponse, CoverageErrorDetails>(response, returnOnly);
             formattedResponse.SetJsonResponse(response.Content);
             return formattedResponse;
         }

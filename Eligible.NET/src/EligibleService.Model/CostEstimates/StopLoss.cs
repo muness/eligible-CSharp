@@ -15,6 +15,9 @@ namespace EligibleService.Model.CostEstimates
 
         [JsonProperty("deductible")]
         public bool? Deductible { get; set; }
+
+        [JsonProperty("service_type")]
+        public string ServiceType { get; set; }
     }
 
 }

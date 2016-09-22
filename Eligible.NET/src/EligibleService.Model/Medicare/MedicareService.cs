@@ -25,12 +25,10 @@ namespace EligibleService.Model.Medicare
         [JsonProperty("start_date")]
         public string StartDate { get; set; }
 
-        [JsonProperty("endDate")]
+        [JsonProperty("end_date")]
         public string EndDate { get; set; }
-
 
         [JsonProperty("visits")]
         public Collection<Visits> Visits { get; set; }
-
     }
 }

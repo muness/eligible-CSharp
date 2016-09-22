@@ -77,6 +77,7 @@
     <Compile Include="src\EligibleService.Core\PaymentStatus.cs" />
     <Compile Include="src\EligibleService.Core\Precertification.cs" />
     <Compile Include="src\EligibleService.Core\RealtimeClaims.cs" />
+    <Compile Include="src\EligibleService.Exceptions\ErrorsStructures\CostEstimateError.cs" />
     <Compile Include="src\EligibleService.Exceptions\ErrorsStructures\PaymentStatusError.cs" />
     <Compile Include="src\EligibleService.Exceptions\InvalidRequestException.cs" />
     <Compile Include="src\EligibleService.Model\BasicParams.cs" />

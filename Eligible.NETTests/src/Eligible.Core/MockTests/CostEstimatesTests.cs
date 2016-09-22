@@ -206,7 +206,6 @@ namespace EligibleService.Core.Tests
                 Assert.AreEqual("service_type_code", ex.EligibleError.Errors[0].Param);
                 Assert.AreEqual(null, ex.EligibleError.Errors[0].ExpectedValue);
                 Assert.AreEqual(false, ex.EligibleError.Success);
-                TestHelper.PropertiesAreEqual(ex.EligibleError, ex.Message);
             }
         }
 
@@ -233,11 +232,11 @@ namespace EligibleService.Core.Tests
                 Assert.AreEqual("8LIKGP596MDI41", ex.EligibleError.EligibleId);
                 Assert.AreEqual("6/22/2016 1:57:23 PM", ex.EligibleError.CreatedAt.ToString());
                 Assert.AreEqual("additional_policy", ex.EligibleError.Warnings[0].Code);
-                Assert.AreEqual("additional policy found", ex.EligibleError.Warnings[0].Message);
+                Assert.AreEqual("An additional policy was found. The cost estimate can still be performed, but may not reflect true out-of-pocket expenses if the patient is covered by an additional policy.", ex.EligibleError.Warnings[0].Message);
                 Assert.AreEqual(null, ex.EligibleError.Warnings[0].Param);
+                Assert.AreEqual("plan.additional_insurance_policies", ex.EligibleError.Warnings[0].Path[0]);
                 Assert.AreEqual(null, ex.EligibleError.Warnings[0].ExpectedValue);
                 Assert.AreEqual(false, ex.EligibleError.Success);
-                TestHelper.PropertiesAreEqual(ex.EligibleError, ex.Message);
             }
         }
 

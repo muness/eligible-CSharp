@@ -200,7 +200,7 @@ namespace EligibleService.Core.Tests
                 .Returns(new RestResponse()
                 {
                     StatusCode = HttpStatusCode.OK,
-                    Content = TestHelper.GetJson(TestResource.MocksPath + "PaymentReports.json")
+                    Content = TestHelper.GetJson(TestResource.ExpectedResponse + "PaymentReports.json")
                 });
 
 

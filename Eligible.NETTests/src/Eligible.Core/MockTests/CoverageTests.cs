@@ -50,7 +50,7 @@ namespace EligibleService.Core.Tests
             Fixture fixture = new Fixture();
             var sut = fixture.Create<CoverageResponse>();
 
-            TestHelper.PropertiesAreEqual(sut, coverages.JsonResponse());
+            TestHelper.PropertiesAreEqual(sut, JsonConvert.SerializeObject(coverages));
         }
 
         [TestMethod()]
@@ -458,7 +458,6 @@ namespace EligibleService.Core.Tests
                 var sut = fixture.Create<CoverageErrorDetails>();
 
                 TestHelper.PropertiesAreEqual(sut, JsonConvert.SerializeObject(ex.EligibleError));
-                TestHelper.PropertiesAreEqual(sut, ex.Message);
             }
         }
 

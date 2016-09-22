@@ -16,7 +16,12 @@
 			"tax_id": "12345678",
 			"updated_at": "2016-09-08T12:34:05Z",
 			"zip": "94107",
-			"original_signature_pdf": {},
+			"original_signature_pdf": {
+				"name": "enrollment_pdf_729779783.pdf",
+				"created_at": "2016-09-21T16:26:26Z",
+				"updated_at": "2016-09-21T16:26:26Z",
+				"download_url": "https://gds.eligibleapi.com/v1.5/enrollment_npis/:enrollment_npi_id/original_signature_pdf/download?api_key=YOUR_API_KEY"
+			},
 			"received_pdf": {
 				"name": "enrollment_pdf_895232287.pdf",
 				"created_at": "2016-09-08T12:34:05Z",
@@ -68,7 +73,12 @@
 			"tax_id": "12345678",
 			"updated_at": "2016-09-08T12:33:55Z",
 			"zip": "94107",
-			"original_signature_pdf": {},
+			"original_signature_pdf": {
+				"name": "enrollment_pdf_729779783.pdf",
+				"created_at": "2016-09-21T16:26:26Z",
+				"updated_at": "2016-09-21T16:26:26Z",
+				"download_url": "https://gds.eligibleapi.com/v1.5/enrollment_npis/:enrollment_npi_id/original_signature_pdf/download?api_key=YOUR_API_KEY"
+			},
 			"received_pdf": {
 				"name": "enrollment_pdf_867302036.pdf",
 				"created_at": "2016-09-08T12:33:55Z",
