@@ -46,7 +46,7 @@ namespace EligibleService.Claim.RealtimeClaims
         public ClaimReports.Quantity Quantity { get; set; }
 
         [JsonProperty("amount")]
-        public ClaimReports.Amount Amount { get; set; }
+        public Amount Amount { get; set; }
 
         [JsonProperty("service_lines")]
         public Collection<ServiceLine> ServiceLines { get; set; }

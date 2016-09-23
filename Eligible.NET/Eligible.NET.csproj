@@ -134,7 +134,6 @@
     <Compile Include="src\EligibleService.Model\Claim\RealtimeClaimsParams\ServiceLine.cs" />
     <Compile Include="src\EligibleService.Model\Claim\RealtimeClaimsParams\Subscriber.cs" />
     <Compile Include="src\EligibleService.Model\Claim\RealtimeClaim\Adjustment.cs" />
-    <Compile Include="src\EligibleService.Model\Claim\RealtimeClaim\Amount.cs" />
     <Compile Include="src\EligibleService.Model\Claim\RealtimeClaim\Claim.cs" />
     <Compile Include="src\EligibleService.Model\Claim\RealtimeClaim\Contact.cs" />
     <Compile Include="src\EligibleService.Model\Claim\RealtimeClaim\Detail.cs" />

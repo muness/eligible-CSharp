@@ -377,10 +377,17 @@ namespace EligibleService.Core.Tests
             }
             catch(EligibleException ex)
             {
-                Fixture fixture = new Fixture();
-                var sut = fixture.Create<CoverageErrorDetails>();
-
-                TestHelper.PropertiesAreEqual(sut, JsonConvert.SerializeObject(ex.EligibleError));
+                Assert.IsNotNull(ex.EligibleError.EligibleId);
+                Assert.IsNotNull(ex.EligibleError.CreatedAt);
+                Assert.AreEqual("Y", ex.EligibleError.Error.ResponseCode);
+                Assert.AreEqual("Yes", ex.EligibleError.Error.ResponseDescription);
+                Assert.AreEqual(null, ex.EligibleError.Error.AgencyQualifierCode);
+                Assert.AreEqual(null, ex.EligibleError.Error.AgencyQualifierDescription);
+                Assert.AreEqual("E3", ex.EligibleError.Error.RejectReasonCode);
+                Assert.AreEqual("Requested Record Will Not Be Sent", ex.EligibleError.Error.RejectReasonDescription);
+                Assert.AreEqual("Duplicate eligibility requests using the same NPI/HICN combination are not allowed in the same 24 hour period. Please try again after 24 hours.", ex.EligibleError.Error.Details);
+                Assert.AreEqual("N", ex.EligibleError.Error.FollowUpActionCode);
+                Assert.AreEqual("Resubmission Not Allowed", ex.EligibleError.Error.FollowUpActionDescription);
             }
         }
 
@@ -454,10 +461,17 @@ namespace EligibleService.Core.Tests
             }
             catch(EligibleException ex)
             {
-                Fixture fixture = new Fixture();
-                var sut = fixture.Create<CoverageErrorDetails>();
-
-                TestHelper.PropertiesAreEqual(sut, JsonConvert.SerializeObject(ex.EligibleError));
+                Assert.IsNotNull(ex.EligibleError.EligibleId);
+                Assert.IsNotNull(ex.EligibleError.CreatedAt);
+                Assert.AreEqual("Y", ex.EligibleError.Error.ResponseCode);
+                Assert.AreEqual("Yes", ex.EligibleError.Error.ResponseDescription);
+                Assert.AreEqual(null, ex.EligibleError.Error.AgencyQualifierCode);
+                Assert.AreEqual(null, ex.EligibleError.Error.AgencyQualifierDescription);
+                Assert.AreEqual("E3", ex.EligibleError.Error.RejectReasonCode);
+                Assert.AreEqual("Requested Record Will Not Be Sent", ex.EligibleError.Error.RejectReasonDescription);
+                Assert.AreEqual("Duplicate eligibility requests using the same NPI/HICN combination are not allowed in the same 24 hour period. Please try again after 24 hours.", ex.EligibleError.Error.Details);
+                Assert.AreEqual("N", ex.EligibleError.Error.FollowUpActionCode);
+                Assert.AreEqual("Resubmission Not Allowed", ex.EligibleError.Error.FollowUpActionDescription);
             }
         }
 
