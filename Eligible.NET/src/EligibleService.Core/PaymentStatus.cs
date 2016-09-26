@@ -20,7 +20,7 @@ namespace EligibleService.Core
         public PayementStatusResponse Get(Hashtable requiredParams, RequestOptions options = null)
         {
             IRestResponse response = ExecuteObj.Execute(EligibleResources.PaymentStatus, SetRequestOptionsObject(options), requiredParams);
-            var fomatedResponse = RequestProcess.ResponseValidation<PayementStatusResponse, PaymentStatusError>(response);
+            var fomatedResponse = RequestProcess.ResponseValidation<PayementStatusResponse, CoverageErrorDetails>(response);
             fomatedResponse.SetJsonResponse(response.Content);
             return fomatedResponse;
         }

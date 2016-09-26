@@ -50,11 +50,20 @@ namespace EligibleService.Core.CoreTests
             {
                 PayementStatusResponse actualResponse = paymentStatus.Get(hashParams);
             }
-            catch (Exception ex)
+            catch (EligibleException ex)
             {
-                PaymentStatusError actualResponse = JsonConvert.DeserializeObject<PaymentStatusError>(ex.Message);
-                string expectedResponse = TestHelper.GetJson(TestResource.ExpectedResponse + "PaymentStatusNotFound.json");
-                TestHelper.CompareProperties(expectedResponse, JsonConvert.SerializeObject(actualResponse));
+                Assert.IsNotNull(ex.EligibleError.EligibleId);
+                Assert.IsNotNull(ex.EligibleError.CreatedAt);
+                Assert.AreEqual("Y", ex.EligibleError.Error.ResponseCode);
+                Assert.AreEqual("Yes", ex.EligibleError.Error.ResponseDescription);
+                Assert.AreEqual("", ex.EligibleError.Error.AgencyQualifierCode);
+                Assert.AreEqual("", ex.EligibleError.Error.AgencyQualifierDescription);
+                Assert.AreEqual("A4", ex.EligibleError.Error.RejectReasonCode);
+                Assert.AreEqual("Acknowledgement/Not Found-The claim/encounter can not be found in the adjudication system.", ex.EligibleError.Error.RejectReasonDescription);
+                Assert.AreEqual("Cannot provide further status electronically.", ex.EligibleError.Error.Details);
+                Assert.AreEqual("C", ex.EligibleError.Error.FollowUpActionCode);
+                Assert.AreEqual("Please Correct and Resubmit", ex.EligibleError.Error.FollowUpActionDescription);
+                Assert.AreEqual(0, ex.EligibleError.KnownIssues.Count);
             }
         }
 
@@ -71,7 +80,7 @@ namespace EligibleService.Core.CoreTests
             }
             catch (Exception ex)
             {
-                PaymentStatusError actualResponse = JsonConvert.DeserializeObject<PaymentStatusError>(ex.Message);
+                CoverageErrorDetails actualResponse = JsonConvert.DeserializeObject<CoverageErrorDetails>(ex.Message);
                 string expectedResponse = TestHelper.GetJson(TestResource.ExpectedResponse + "PaymentStatusNotFound.json");
                 TestHelper.CompareProperties(expectedResponse, JsonConvert.SerializeObject(actualResponse));
             }
@@ -107,16 +116,6 @@ namespace EligibleService.Core.CoreTests
             PayementStatusResponse expectedObj = JsonConvert.DeserializeObject<PayementStatusResponse>(expectedResponse);
             PayementStatusResponse actualObj = JsonConvert.DeserializeObject<PayementStatusResponse>(actualResponse.JsonResponse());
             TestHelper.PropertyValuesAreEquals(actualObj, expectedObj);
-        }
-
-
-        [TestMethod]
-        [TestCategory("PaymentStatus")]
-        [ExpectedException(typeof(EligibleService.Exceptions.EligibleException))]
-        public void PaymentStatusExceptionTest()
-        {
-            Hashtable input = new Hashtable();
-            var actualResponse = paymentStatus.Get(input);
         }
 
         private Hashtable PaymentStatusParams()

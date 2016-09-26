@@ -20,7 +20,7 @@ namespace EligibleService.Exceptions
         public PaymentStatusErrorStructure Error { get; set; }
     }
 
-    public class PaymentStatusErrorStructure : CoverageErrorWithoutFollowUpAction
+    public class PaymentStatusErrorStructure
     {
         [JsonProperty("follow-up_action_description")]
         public string FollowUpActionDescription { get; set; }
