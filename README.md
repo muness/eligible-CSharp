@@ -114,7 +114,7 @@ class Program
         Payers payers = new Payers();
         PayersResponse payersResponse = payers.All();
 
-        foreach (PayerResponse payer in payersResponse.Payers)
+        foreach (PayerData payer in payersResponse.Payers)
         {
             foreach (string PayerName in payer.Names)
             {
